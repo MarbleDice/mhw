@@ -34,7 +34,7 @@ public class DataParser {
 		// Static class
 	}
 
-	public static void parseAndOutput(Reader reader) throws IOException {
+	public static void printSkills(Reader reader) throws IOException {
 		Map<String, List<String>> skills = new TreeMap<>();
 
 		String currentSkill = null;
@@ -122,7 +122,7 @@ public class DataParser {
 		Equipment equipment = new Equipment();
 
 		// Name
-		equipment.setName(record.get(NAME));
+		equipment.setArmorName(record.get(NAME));
 		equipment.setType(type);
 
 		// Parse skills and slots
