@@ -15,6 +15,11 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.lang3.StringUtils;
 
+import com.bromleyoil.mhw.model.Equipment;
+import com.bromleyoil.mhw.model.EquipmentType;
+import com.bromleyoil.mhw.model.PointValue;
+import com.bromleyoil.mhw.model.Skill;
+
 public class DataParser {
 
 	private static final String NAME = "Name";

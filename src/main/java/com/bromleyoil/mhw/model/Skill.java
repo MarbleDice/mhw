@@ -1,4 +1,4 @@
-package com.bromleyoil.mhw;
+package com.bromleyoil.mhw.model;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -478,7 +478,7 @@ public enum Skill {
 		return valueOf(getEnumName(skillName));
 	}
 
-	protected static String getEnumName(String skillName) {
+	public static String getEnumName(String skillName) {
 		return skillName.toUpperCase().replace(" ", "_").replace("-", "_").replace("/", "_").replace("'", "");
 	}
 

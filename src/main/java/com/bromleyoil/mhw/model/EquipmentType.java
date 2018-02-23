@@ -1,4 +1,4 @@
-package com.bromleyoil.mhw;
+package com.bromleyoil.mhw.model;
 
 public enum EquipmentType {
 	HEAD("Head"), BODY("Body"), HANDS("Hands"), WAIST("Waist"), LEGS("Legs"), CHARM("Charm");

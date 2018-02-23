@@ -1,4 +1,4 @@
-package com.bromleyoil.mhw;
+package com.bromleyoil.mhw.model;
 
 import java.util.Comparator;
 import java.util.Map;

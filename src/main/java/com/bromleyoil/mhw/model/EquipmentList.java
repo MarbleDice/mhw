@@ -1,4 +1,4 @@
-package com.bromleyoil.mhw;
+package com.bromleyoil.mhw.model;
 
 import java.util.Collections;
 import java.util.List;
