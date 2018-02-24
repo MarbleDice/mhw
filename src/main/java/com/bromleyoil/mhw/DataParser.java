@@ -1,6 +1,7 @@
 package com.bromleyoil.mhw;
 
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +38,10 @@ public class DataParser {
 
 	private DataParser() {
 		// Static class
+	}
+
+	public static Reader openResource(String resourceName) {
+		return new InputStreamReader(Thread.currentThread().getContextClassLoader().getResourceAsStream(resourceName));
 	}
 
 	public static void printSkills(Reader reader) throws IOException {
