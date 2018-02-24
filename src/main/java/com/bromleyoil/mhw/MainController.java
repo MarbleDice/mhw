@@ -9,6 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentList;
@@ -38,6 +39,15 @@ public class MainController {
 		}
 
 		return sb.toString();
+	}
+
+	@RequestMapping("/skills")
+	public ModelAndView skills() {
+		ModelAndView mav = new ModelAndView("skills");
+
+		mav.addObject("skills", Skill.values());
+
+		return mav;
 	}
 
 	public static void main(String[] args) {

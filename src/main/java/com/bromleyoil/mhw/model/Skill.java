@@ -464,7 +464,7 @@ public enum Skill {
 		"Negates minor wind pressure and reduces the effects of major wind pressure.",
 		"Negates minor and major wind pressure.");
 
-	public static final Comparator<Skill> NAME_ORDER = (a, b) -> a.getSkillName().compareTo(b.getSkillName());
+	public static final Comparator<Skill> NAME_ORDER = (a, b) -> a.getName().compareTo(b.getName());
 
 	private String skillName;
 	private List<String> descriptions;
@@ -484,10 +484,10 @@ public enum Skill {
 
 	@Override
 	public String toString() {
-		return getSkillName();
+		return getName();
 	}
 
-	public String getSkillName() {
+	public String getName() {
 		return skillName;
 	}
 
