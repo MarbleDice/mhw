@@ -1,10 +1,9 @@
 package com.bromleyoil.mhw.model;
 
 import java.io.IOException;
-import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
@@ -23,7 +22,7 @@ public class EquipmentList {
 
 	public EquipmentList(List<Equipment> items) {
 		this.items = items;
-		Collections.sort(items, Equipment.ARMOR_NAME_AND_TYPE_ORDER);
+		// Collections.sort(items, Equipment.ARMOR_NAME_AND_TYPE_ORDER);
 	}
 
 	@PostConstruct
@@ -46,7 +45,7 @@ public class EquipmentList {
 	}
 
 	public Map<String, Equipment[]> getMatrix() {
-		Map<String, Equipment[]> matrix = new TreeMap<>();
+		Map<String, Equipment[]> matrix = new LinkedHashMap<>();
 
 		for (Equipment equipment : items) {
 			if (equipment.getType() == EquipmentType.CHARM) {
