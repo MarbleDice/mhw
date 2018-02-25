@@ -23,18 +23,18 @@ import com.bromleyoil.mhw.model.Skill;
 
 public class DataParser {
 
-	private static final String NAME = "Name";
-	private static final String HEAD = "Head";
-	private static final String BODY = "Body";
-	private static final String HANDS = "Hands";
-	private static final String WAIST = "Waist";
-	private static final String LEGS = "Legs";
-	private static final String SET2 = "Set2";
-	private static final String SET3 = "Set3";
-	private static final String SET4 = "Set4";
+	protected static final String NAME = "Name";
+	protected static final String HEAD = "Head";
+	protected static final String BODY = "Body";
+	protected static final String HANDS = "Hands";
+	protected static final String WAIST = "Waist";
+	protected static final String LEGS = "Legs";
+	protected static final String SET2 = "Set2";
+	protected static final String SET3 = "Set3";
+	protected static final String SET4 = "Set4";
 
-	private static final Pattern descriptionPattern = Pattern.compile("\\s*([a-zA-Z0-9'/, -]+)\\s*(\\(.+\\))?\\s*");
-	private static final Pattern skillPattern = Pattern.compile("\\s*(.+)\\s+(\\d+)\\s*");
+	protected static final Pattern descriptionPattern = Pattern.compile("\\s*([a-zA-Z0-9'/, -]+)\\s*(\\(.+\\))?\\s*");
+	protected static final Pattern skillPattern = Pattern.compile("\\s*(.+)\\s+(\\d+)\\s*");
 
 	private DataParser() {
 		// Static class
@@ -142,7 +142,7 @@ public class DataParser {
 			addSkills(equipment, matcher.group(1));
 
 			// Slots
-			if (matcher.groupCount() > 2) {
+			if (matcher.groupCount() > 1 && !StringUtils.isBlank(matcher.group(2))) {
 				addSlots(equipment, matcher.group(2));
 			}
 		} else {

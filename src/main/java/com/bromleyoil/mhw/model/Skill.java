@@ -478,6 +478,10 @@ public enum Skill {
 		return valueOf(getEnumName(skillName));
 	}
 
+	public String getUrlName() {
+		return name().toLowerCase().replace("_", "-");
+	}
+
 	public static String getEnumName(String skillName) {
 		return skillName.toUpperCase().replace(" ", "_").replace("-", "_").replace("/", "_").replace("'", "");
 	}
