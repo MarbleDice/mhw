@@ -7,9 +7,12 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class Equipment {
 
-	private String setName;
+	private String name;
+	private String armorName;
 	private EquipmentType type;
 	private Set<SkillValue> skills = new TreeSet<>(SkillValue.POINT_ORDER);
 	private List<Integer> slots = new ArrayList<>();
@@ -24,7 +27,7 @@ public class Equipment {
 
 	@Override
 	public String toString() {
-		return setName + " " + type;
+		return armorName + " " + type;
 	}
 
 	public static String getSlotLabel(Integer slotLevel) {
@@ -38,12 +41,20 @@ public class Equipment {
 		return "?";
 	}
 
+	public String getName() {
+		return StringUtils.isBlank(name) ? armorName + " " + type : name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getArmorName() {
-		return setName;
+		return armorName;
 	}
 
 	public void setArmorName(String name) {
-		this.setName = name;
+		this.armorName = name;
 	}
 
 	public EquipmentType getType() {

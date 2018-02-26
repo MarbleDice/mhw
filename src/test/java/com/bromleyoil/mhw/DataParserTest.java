@@ -1,10 +1,11 @@
 package com.bromleyoil.mhw;
 
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.List;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
@@ -15,8 +16,20 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentType;
 
+
 @RunWith(SpringRunner.class)
 public class DataParserTest {
+
+	@Test
+	public void parseSkills_fullFile_parsed() throws IOException {
+		List<String> lines = DataParser.parseSkills(DataParser.openResource("skills.tsv"));
+		assertThat("num skill lines", lines.size(), is(467));
+
+		lines.clear();
+		for (String line : lines) {
+			System.out.println(line);
+		}
+	}
 
 	@Test
 	public void createEquipment_withSlots_parsed() {
@@ -29,6 +42,13 @@ public class DataParserTest {
 		Equipment equipment = new Equipment();
 		DataParser.addSlots(equipment, "(3,1)");
 		assertThat("num slots", equipment.getSlots().size(), is(2));
+	}
+
+	@Test
+	public void parseCharms_fullFile_parsed() throws IOException {
+		List<Equipment> charms = DataParser.parseCharms(DataParser.openResource("charms.tsv"));
+
+		assertThat("num charms", charms.size(), is(228));
 	}
 
 	public CSVRecord mockRecord(String name, String... setBonuses) {

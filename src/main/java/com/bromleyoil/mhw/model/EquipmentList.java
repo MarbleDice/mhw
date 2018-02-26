@@ -22,13 +22,13 @@ public class EquipmentList {
 
 	public EquipmentList(List<Equipment> items) {
 		this.items = items;
-		// Collections.sort(items, Equipment.ARMOR_NAME_AND_TYPE_ORDER);
 	}
 
 	@PostConstruct
 	public void postConstruct() throws IOException {
 		if (items == null) {
 			items = DataParser.parseEquipment(DataParser.openResource("equipment.tsv"));
+			items.addAll(DataParser.parseCharms(DataParser.openResource("charms.tsv")));
 		}
 	}
 

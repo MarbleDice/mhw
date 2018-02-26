@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -33,6 +34,10 @@ public class DataParser {
 	protected static final String SET3 = "Set3";
 	protected static final String SET4 = "Set4";
 
+	protected static final String SKILL1 = "Skill1";
+	protected static final String SKILL2 = "Skill2";
+	protected static final String MAX = "Max";
+
 	protected static final Pattern descriptionPattern = Pattern.compile("\\s*([a-zA-Z0-9'/, -]+)\\s*(\\(.+\\))?\\s*");
 	protected static final Pattern skillPattern = Pattern.compile("\\s*(.+)\\s+(\\d+)\\s*");
 
@@ -44,7 +49,7 @@ public class DataParser {
 		return new InputStreamReader(Thread.currentThread().getContextClassLoader().getResourceAsStream(resourceName));
 	}
 
-	public static void printSkills(Reader reader) throws IOException {
+	public static List<String> parseSkills(Reader reader) throws IOException {
 		Map<String, List<String>> skills = new TreeMap<>();
 
 		String currentSkill = null;
@@ -75,13 +80,14 @@ public class DataParser {
 		}
 		skills.put(currentSkill, skillDescriptions);
 
-		printEnumInitializers(skills);
+		return printEnumInitializers(skills);
 	}
 
-	protected static void printEnumInitializers(Map<String, List<String>> skills) {
+	protected static List<String> printEnumInitializers(Map<String, List<String>> skills) {
+		List<String> lines = new ArrayList<>();
 		for (Entry<String, List<String>> skill : skills.entrySet()) {
 			// Start the enum initializer block
-			System.out.println(String.format("\t%s(\"%s\",", Skill.getEnumName(skill.getKey()), skill.getKey()));
+			lines.add(String.format("\t%s(\"%s\",", Skill.getEnumName(skill.getKey()), skill.getKey()));
 
 			// Determine the terminator for the last description of this skill
 			String lastDescriptionTerminator;
@@ -101,9 +107,10 @@ public class DataParser {
 					descriptionTerminator = ",";
 				}
 
-				System.out.println(String.format("\t\t\"%s\"%s", description, descriptionTerminator));
+				lines.add(String.format("\t\t\"%s\"%s", description, descriptionTerminator));
 			}
 		}
+		return lines;
 	}
 
 	public static List<Equipment> parseEquipment(Reader reader) throws IOException {
@@ -163,6 +170,29 @@ public class DataParser {
 		}
 
 		return equipment;
+	}
+
+	public static List<Equipment> parseCharms(Reader reader) throws IOException {
+		List<Equipment> charms = new ArrayList<>();
+		for (CSVRecord record : CSVFormat.TDF.withFirstRecordAsHeader().parse(reader)) {
+			Equipment charm = new Equipment();
+
+			int maxLevel = Integer.parseInt(record.get(MAX));
+			for (int level = 1; level <= maxLevel; level++) {
+				String suffix = String.join("", Collections.nCopies(level, "I"));
+				charm.setName(record.get(NAME) + (maxLevel == 1 ? "" : " " + suffix));
+
+				Skill skill;
+				skill = Skill.valueOfName(record.get(SKILL1));
+				charm.addSkill(skill, PointValue.valueOf(level));
+				if (!StringUtils.isBlank(record.get(SKILL2))) {
+					skill = Skill.valueOfName(record.get(SKILL2));
+					charm.addSkill(skill, PointValue.valueOf(level));
+				}
+				charms.add(charm);
+			}
+		}
+		return charms;
 	}
 
 	protected static void addSkills(Equipment equipment, String skills) {
