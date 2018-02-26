@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<table>
+	<tbody th:each="skill : ${skills}">
+		<tr>
+			<td th:attr="rowspan=${skill.descriptions.size()}">
+				<a th:href="@{/skill/{skill}(skill=${skill.urlName})}" th:text="${skill.name}"></a>
+			</td>
+			<td th:text="${skill.descriptions.get(0)}" />
+		</tr>
+		<tr th:if="${skill.descriptions.size()} gt 1" th:each="description : ${skill.descriptions.subList(1, skill.descriptions.size())}">
+			<td th:text="${description}" />
+		</tr>
+	</tbody>
+</table>
+</html>

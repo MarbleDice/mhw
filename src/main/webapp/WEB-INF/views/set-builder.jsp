@@ -1,5 +1,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:set var="subtitle" value="Home" />
+<c:set var="subtitle" value="Set Builder" />
 <%@include file="includes/header.jsp"%>
-<p>Work in progress.</p>
+
+
 <%@include file="includes/footer.jsp"%>

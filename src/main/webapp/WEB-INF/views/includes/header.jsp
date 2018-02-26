@@ -13,6 +13,6 @@
 			<li><a href="/">Home</a></li>
 			<li><a href="/skill-list">Skill List</a></li>
 			<li><a href="/equipment-list">Equipment List</a></li>
-			<li>Set Builder</li>
+			<li><a href="/set-builder">Set Builder</a></li>
 		</ul>
 		<h2>${subtitle}</h2>

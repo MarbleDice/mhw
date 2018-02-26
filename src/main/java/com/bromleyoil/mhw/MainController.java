@@ -21,8 +21,8 @@ public class MainController {
 	private EquipmentList equipmentList;
 
 	@RequestMapping("/")
-	public String home() {
-		return "home";
+	public String index() {
+		return "index";
 	}
 
 	@RequestMapping("/skill-list")
@@ -51,6 +51,13 @@ public class MainController {
 
 		mav.addObject("matrix", equipmentList.getMatrix());
 
+		return mav;
+	}
+
+	@RequestMapping("/set-builder")
+	public ModelAndView setBuilder() {
+		ModelAndView mav = new ModelAndView("set-builder");
+		mav.addObject("skills", Skill.values());
 		return mav;
 	}
 

@@ -31,7 +31,7 @@ public class Equipment {
 		if (slotLevel == 1) {
 			return "①";
 		} else if (slotLevel == 2) {
-			return "② ";
+			return "②";
 		} else if (slotLevel == 3) {
 			return "③";
 		}
