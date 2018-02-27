@@ -1,9 +1,9 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-	<title>MHW</title>
-</head>
-<body>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{template}" th:with="title='Skill List'">
+<th:block layout:fragment="content">
 	<table>
 		<tbody th:each="skill : ${skills}">
 			<tr>
@@ -17,5 +17,5 @@
 			</tr>
 		</tbody>
 	</table>
-</body>
+</th:block>
 </html>

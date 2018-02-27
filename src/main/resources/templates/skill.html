@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{template}" th:with="title=${skill}">
+<th:block layout:fragment="content">
+	<table>
+		<tr th:each="description : ${skill.descriptions}">
+			<td th:text="'Lv ' + ${descriptionStat.count}"></td>
+			<td th:text="${description}"></td>
+		</tr>
+	</table>
+
+	<h3 th:text="'Equipment with ' + ${skill.name}"></h3>
+	<table th:insert="~{fragments/equipment-table :: standard}"></table>
+
+</th:block>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<title th:text="'MHW - ' + ${title}">MHW</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="/styles/default.css" />
+</head>
+<body>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/skill-list">Skill List</a></li>
+		<li><a href="/equipment-list">Equipment List</a></li>
+	</ul>
+	<h2 th:text="${title}">Page Title</h2>
+	<th:block layout:fragment="content"></th:block>
+</body>
+</html>
