@@ -19,7 +19,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentType;
-import com.bromleyoil.mhw.model.PointValue;
+import com.bromleyoil.mhw.model.Fraction;
 import com.bromleyoil.mhw.model.Skill;
 
 public class DataParser {
@@ -158,15 +158,15 @@ public class DataParser {
 
 		// Set bonus skills
 		if (!StringUtils.isBlank(record.get(SET2))) {
-			equipment.addSkill(Skill.valueOfName(record.get(SET2)), PointValue.SET2);
+			equipment.addSkill(Skill.valueOfName(record.get(SET2)), Fraction.SET2);
 		}
 
 		if (!StringUtils.isBlank(record.get(SET3))) {
-			equipment.addSkill(Skill.valueOfName(record.get(SET3)), PointValue.SET3);
+			equipment.addSkill(Skill.valueOfName(record.get(SET3)), Fraction.SET3);
 		}
 
 		if (!StringUtils.isBlank(record.get(SET4))) {
-			equipment.addSkill(Skill.valueOfName(record.get(SET4)), PointValue.SET4);
+			equipment.addSkill(Skill.valueOfName(record.get(SET4)), Fraction.SET4);
 		}
 
 		return equipment;
@@ -184,10 +184,10 @@ public class DataParser {
 
 				Skill skill;
 				skill = Skill.valueOfName(record.get(SKILL1));
-				charm.addSkill(skill, PointValue.valueOf(level));
+				charm.addSkill(skill, level);
 				if (!StringUtils.isBlank(record.get(SKILL2))) {
 					skill = Skill.valueOfName(record.get(SKILL2));
-					charm.addSkill(skill, PointValue.valueOf(level));
+					charm.addSkill(skill, level);
 				}
 				charms.add(charm);
 			}
@@ -203,8 +203,7 @@ public class DataParser {
 			}
 			Matcher matcher = skillPattern.matcher(skill);
 			if (matcher.matches()) {
-				equipment.addSkill(Skill.valueOfName(matcher.group(1)),
-						PointValue.valueOf(Integer.valueOf(matcher.group(2))));
+				equipment.addSkill(Skill.valueOfName(matcher.group(1)), Integer.valueOf(matcher.group(2)));
 			} else {
 				throw new IllegalArgumentException("Invalid skill string: " + skills);
 			}

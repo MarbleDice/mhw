@@ -1,8 +1,6 @@
 package com.bromleyoil.mhw.model;
 
 import java.util.Comparator;
-import java.util.Set;
-import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
@@ -12,8 +10,8 @@ public class Equipment {
 	private String name;
 	private String armorName;
 	private EquipmentType type;
-	private Set<SkillValue> skillValues = new TreeSet<>(SkillValue.POINT_ORDER);
-	private SlotSet slots = new SlotSet();
+	private SkillSet skillSet = new SkillSet();
+	private SlotSet slotSet = new SlotSet();
 
 	public static final Comparator<Equipment> ARMOR_NAME_AND_TYPE_ORDER = (a, b) -> {
 		int rv = a.getArmorName().compareTo(b.getArmorName());
@@ -29,13 +27,12 @@ public class Equipment {
 	}
 
 	public String getNameAndSlots() {
-		return getName() + (hasSlots() ? " " + slots.getAsciiLabel() : "");
+		return getName() + (hasSlots() ? " " + slotSet.getAsciiLabel() : "");
 	}
 
 	public String getFullDescription() {
-		return getName()
-				+ " | " + skillValues.stream().map(SkillValue::toString).collect(Collectors.joining(", "))
-				+ (hasSlots() ? " " + slots.getAsciiLabel() : "");
+		return getName() + " | " + skillSet.getSkillLabels().stream().map(x -> x.getKey() + " " + x.getValue())
+				.collect(Collectors.joining(", ")) + (hasSlots() ? " " + slotSet.getAsciiLabel() : "");
 	}
 
 	public String getName() {
@@ -62,42 +59,43 @@ public class Equipment {
 		this.type = type;
 	}
 
-	public void addSkill(Skill skill, PointValue pointValue) {
-		skillValues.add(new SkillValue(skill, pointValue));
+	public void addSkill(Skill skill, int level) {
+		skillSet.add(skill, level);
+	}
+
+	public void addSkill(Skill skill, Fraction fraction) {
+		skillSet.add(skill, fraction);
 	}
 
 	public boolean hasSkill(Skill skill) {
-		return skillValues.stream().anyMatch(x -> skill.equals(x.getSkill()));
+		return skillSet.contains(skill);
 	}
 
 	public int getValue(Skill skill) {
-		return skillValues.stream()
-				.filter(x -> x.getSkill().equals(skill))
-				.map(x -> x.getPointValue().getValue())
-				.findFirst().orElse(0);
+		return skillSet.getValue(skill);
 	}
 
-	public Set<SkillValue> getSkillValues() {
-		return skillValues;
+	public SkillSet getSkillSet() {
+		return skillSet;
 	}
 
-	public void setSkillValues(Set<SkillValue> skillValues) {
-		this.skillValues = skillValues;
+	public void setSkillSet(SkillSet skillSet) {
+		this.skillSet = skillSet;
 	}
 
 	public void addSlot(int level) {
-		slots.add(level);
+		slotSet.add(level);
 	}
 
 	public boolean hasSlots() {
-		return slots.getCount() > 0;
+		return slotSet.getCount() > 0;
 	}
 
-	public SlotSet getSlots() {
-		return slots;
+	public SlotSet getSlotSet() {
+		return slotSet;
 	}
 
-	public void setSlots(SlotSet slots) {
-		this.slots = slots;
+	public void setSlotSet(SlotSet slots) {
+		this.slotSet = slots;
 	}
 }

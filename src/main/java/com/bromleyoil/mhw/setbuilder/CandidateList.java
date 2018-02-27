@@ -7,7 +7,6 @@ import java.util.EnumMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,18 +15,18 @@ import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.EquipmentType;
 import com.bromleyoil.mhw.model.Skill;
-import com.bromleyoil.mhw.model.SkillValue;
+import com.bromleyoil.mhw.model.SkillSet;
 import com.bromleyoil.mhw.model.SlotSet;
 
 public class CandidateList {
 
 	private static Logger log = LoggerFactory.getLogger(CandidateList.class);
 
-	private List<SkillValue> requiredSkillValues;
+	private SkillSet requiredSkillSet;
 	private EnumMap<EquipmentType, List<Equipment>> candidates;
 
-	public CandidateList(EquipmentList equipmentList, List<SkillValue> requiredSkillValues) {
-		this.requiredSkillValues = requiredSkillValues;
+	public CandidateList(EquipmentList equipmentList, SkillSet requiredSkillSet) {
+		this.requiredSkillSet = requiredSkillSet;
 		buildCandidates(equipmentList);
 	}
 
@@ -38,14 +37,12 @@ public class CandidateList {
 			candidates.put(type, new ArrayList<>());
 		}
 
-		Set<Skill> requiredSkills = requiredSkillValues.stream().map(SkillValue::getSkill).collect(Collectors.toSet());
 		// Add all gear with matching skills or slots
 		for (Equipment equipment : equipmentList.getItems()) {
-			Set<Skill> equipmentSkills = equipment.getSkillValues().stream()
-					.map(SkillValue::getSkill).collect(Collectors.toSet());
+			Set<Skill> equipmentSkills = equipment.getSkillSet().getSkills();
 
 			// Non-disjoint sets mean there is overlap
-			if (!Collections.disjoint(requiredSkills, equipmentSkills) || equipment.hasSlots()) {
+			if (!Collections.disjoint(requiredSkillSet.getSkills(), equipmentSkills) || equipment.hasSlots()) {
 				addCandidate(equipment);
 			}
 		}
@@ -57,14 +54,14 @@ public class CandidateList {
 		boolean isWorse = false;
 
 		// Compare the equipment skill values for all required skills
-		for (SkillValue skillValue : requiredSkillValues) {
-			rv = Integer.compare(a.getValue(skillValue.getSkill()), b.getValue(skillValue.getSkill()));
+		for (Skill skill : requiredSkillSet.getSkills()) {
+			rv = Integer.compare(a.getValue(skill), b.getValue(skill));
 			isBetter |= rv > 0;
 			isWorse |= rv < 0;
 		}
 		log.info("    Skills {} {}", (isBetter ? " better" : ""), (isWorse ? " worse" : ""));
 		// Compare equipment slots
-		rv = SlotSet.SUPERIORITY.compare(a.getSlots(), b.getSlots());
+		rv = SlotSet.SUPERIORITY.compare(a.getSlotSet(), b.getSlotSet());
 		isBetter |= rv > 0;
 		isWorse |= rv < 0;
 		log.info("    Skills+slots {} {}", (isBetter ? " better" : ""), (isWorse ? " worse" : ""));

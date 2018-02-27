@@ -26,22 +26,26 @@ public class SkillSet {
 
 	public void add(Skill skill, int level) {
 		if (contains(skill)) {
-			skillValues.put(skill, Fraction.getNumerator(level));
-		} else {
 			skillValues.put(skill, skillValues.get(skill) + Fraction.getNumerator(level));
+		} else {
+			skillValues.put(skill, Fraction.getNumerator(level));
 		}
 	}
 
 	public void add(Skill skill, Fraction fraction) {
 		if (contains(skill)) {
-			skillValues.put(skill, fraction.getValue());
-		} else {
 			skillValues.put(skill, skillValues.get(skill) + fraction.getValue());
+		} else {
+			skillValues.put(skill, fraction.getValue());
 		}
 	}
 
 	public boolean contains(Skill skill) {
 		return skillValues.containsKey(skill);
+	}
+
+	public int getValue(Skill skill) {
+		return contains(skill) ? skillValues.get(skill) : 0;
 	}
 
 	public Set<Skill> getSkills() {
@@ -50,14 +54,14 @@ public class SkillSet {
 
 	public List<Entry<Skill, String>> getSkillLabels() {
 		return skillValues.entrySet().stream()
-				.sorted((a, b) -> Integer.compare(a.getValue(), b.getValue()))
+				.sorted((a, b) -> Integer.compare(b.getValue(), a.getValue()))
 				.map(x -> new SimpleEntry<>(x.getKey(), Fraction.getLabel(x.getValue())))
 				.collect(Collectors.toList());
 	}
 
 	public List<Entry<Skill, Integer>> getSkillLevels() {
 		return skillValues.entrySet().stream()
-				.sorted((a, b) -> Integer.compare(a.getValue(), b.getValue()))
+				.sorted((a, b) -> Integer.compare(b.getValue(), a.getValue()))
 				.map(x -> new SimpleEntry<>(x.getKey(), Fraction.getLevel(x.getValue())))
 				.collect(Collectors.toList());
 	}

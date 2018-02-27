@@ -12,7 +12,6 @@ import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.EquipmentSet;
 import com.bromleyoil.mhw.model.EquipmentType;
-import com.bromleyoil.mhw.model.SkillValue;
 
 @Configurable
 public class SetBuilder {
@@ -34,7 +33,7 @@ public class SetBuilder {
 		this.solutions = setBuilder.solutions;
 	}
 
-	public List<EquipmentSet> search(List<SkillValue> requiredSkills) {
+	public List<EquipmentSet> search() {
 		return null;
 	}
 }

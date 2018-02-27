@@ -17,11 +17,11 @@
 			<th th:text="${entry.key}"></th>
 			<td th:each="equipment : ${entry.value}">
 				<ul th:if="${equipment != null}">
-					<li th:each="skillValue : ${equipment.skillValues}">
-						<a th:href="${'/skill/' + skillValue.skill.urlName}" th:text="${skillValue.skill.name}"></a>
-						<span th:text="${skillValue.pointValue.label}"></span>
+					<li th:each="skillLabel : ${equipment.skillSet.skillLabels}">
+						<a th:href="${'/skill/' + skillLabel.key.urlName}" th:text="${skillLabel.key.name}"></a>
+						<span th:text="${skillLabel.value}"></span>
 					</li>
-					<li th:if="${equipment.slots.count gt 0}"><span th:text="${equipment.slots.label}"></span></li>
+					<li th:if="${equipment.slotSet.count gt 0}"><span th:text="${equipment.slotSet.label}"></span></li>
 				</ul>
 			</td>
 		</tr>
