@@ -175,10 +175,9 @@ public class DataParser {
 	public static List<Equipment> parseCharms(Reader reader) throws IOException {
 		List<Equipment> charms = new ArrayList<>();
 		for (CSVRecord record : CSVFormat.TDF.withFirstRecordAsHeader().parse(reader)) {
-			Equipment charm = new Equipment();
-
 			int maxLevel = Integer.parseInt(record.get(MAX));
 			for (int level = 1; level <= maxLevel; level++) {
+				Equipment charm = new Equipment();
 				String suffix = String.join("", Collections.nCopies(level, "I"));
 				charm.setName(record.get(NAME) + (maxLevel == 1 ? "" : " " + suffix));
 				charm.setType(EquipmentType.CHARM);

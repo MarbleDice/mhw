@@ -30,6 +30,8 @@ public class SlotSet {
 		}
 	};
 
+	private static final Comparator<Integer> DESCENDING = (a, b) -> b - a;
+
 	private List<Integer> slots = new ArrayList<>();
 
 	public SlotSet() {
@@ -50,12 +52,12 @@ public class SlotSet {
 			}
 			this.slots.add(slot);
 		}
-		this.slots.sort(Integer::compareTo);
+		this.slots.sort(DESCENDING);
 	}
 
 	public void add(SlotSet slotSet) {
 		slots.addAll(slotSet.slots);
-		slots.sort(Integer::compareTo);
+		slots.sort(DESCENDING);
 	}
 
 	public List<Integer> getSlots() {
@@ -73,6 +75,10 @@ public class SlotSet {
 
 	public String getLabel() {
 		return slots.stream().map(SlotSet::getSlotLabel).collect(Collectors.joining(" "));
+	}
+
+	public String getAsciiLabel() {
+		return slots.stream().map(x -> String.format("(%d)", x)).collect(Collectors.joining(" "));
 	}
 
 	public void setSlots(List<Integer> slots) {

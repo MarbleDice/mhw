@@ -17,7 +17,7 @@
 			<th th:text="${entry.key}"></th>
 			<td th:each="equipment : ${entry.value}">
 				<ul th:if="${equipment != null}">
-					<li th:each="skillValue : ${equipment.skills}">
+					<li th:each="skillValue : ${equipment.skillValues}">
 						<a th:href="${'/skill/' + skillValue.skill.urlName}" th:text="${skillValue.skill.name}"></a>
 						<span th:text="${skillValue.pointValue.label}"></span>
 					</li>

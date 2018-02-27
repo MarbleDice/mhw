@@ -18,6 +18,11 @@ public class SkillValue {
 	public SkillValue() {
 	}
 
+	public SkillValue(Skill skill, int value) {
+		this.skill = skill;
+		this.pointValue = PointValue.valueOf(value);
+	}
+
 	public SkillValue(Skill skill, PointValue pointValue) {
 		this.skill = skill;
 		this.pointValue = pointValue;

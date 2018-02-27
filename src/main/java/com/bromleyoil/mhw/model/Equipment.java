@@ -3,6 +3,7 @@ package com.bromleyoil.mhw.model;
 import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -11,7 +12,7 @@ public class Equipment {
 	private String name;
 	private String armorName;
 	private EquipmentType type;
-	private Set<SkillValue> skills = new TreeSet<>(SkillValue.POINT_ORDER);
+	private Set<SkillValue> skillValues = new TreeSet<>(SkillValue.POINT_ORDER);
 	private SlotSet slots = new SlotSet();
 
 	public static final Comparator<Equipment> ARMOR_NAME_AND_TYPE_ORDER = (a, b) -> {
@@ -24,7 +25,17 @@ public class Equipment {
 
 	@Override
 	public String toString() {
-		return armorName + " " + type;
+		return getName();
+	}
+
+	public String getNameAndSlots() {
+		return getName() + (hasSlots() ? " " + slots.getAsciiLabel() : "");
+	}
+
+	public String getFullDescription() {
+		return getName()
+				+ " | " + skillValues.stream().map(SkillValue::toString).collect(Collectors.joining(", "))
+				+ (hasSlots() ? " " + slots.getAsciiLabel() : "");
 	}
 
 	public String getName() {
@@ -52,23 +63,34 @@ public class Equipment {
 	}
 
 	public void addSkill(Skill skill, PointValue pointValue) {
-		skills.add(new SkillValue(skill, pointValue));
+		skillValues.add(new SkillValue(skill, pointValue));
 	}
 
 	public boolean hasSkill(Skill skill) {
-		return skills.stream().anyMatch(x -> skill.equals(x.getSkill()));
+		return skillValues.stream().anyMatch(x -> skill.equals(x.getSkill()));
 	}
 
-	public Set<SkillValue> getSkills() {
-		return skills;
+	public int getValue(Skill skill) {
+		return skillValues.stream()
+				.filter(x -> x.getSkill().equals(skill))
+				.map(x -> x.getPointValue().getValue())
+				.findFirst().orElse(0);
 	}
 
-	public void setSkills(Set<SkillValue> skills) {
-		this.skills = skills;
+	public Set<SkillValue> getSkillValues() {
+		return skillValues;
+	}
+
+	public void setSkillValues(Set<SkillValue> skillValues) {
+		this.skillValues = skillValues;
 	}
 
 	public void addSlot(int level) {
 		slots.add(level);
+	}
+
+	public boolean hasSlots() {
+		return slots.getCount() > 0;
 	}
 
 	public SlotSet getSlots() {
