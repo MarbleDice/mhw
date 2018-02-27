@@ -1,11 +1,8 @@
 package com.bromleyoil.mhw.model;
 
-import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -15,7 +12,7 @@ public class Equipment {
 	private String armorName;
 	private EquipmentType type;
 	private Set<SkillValue> skills = new TreeSet<>(SkillValue.POINT_ORDER);
-	private List<Integer> slots = new ArrayList<>();
+	private SlotSet slots = new SlotSet();
 
 	public static final Comparator<Equipment> ARMOR_NAME_AND_TYPE_ORDER = (a, b) -> {
 		int rv = a.getArmorName().compareTo(b.getArmorName());
@@ -28,17 +25,6 @@ public class Equipment {
 	@Override
 	public String toString() {
 		return armorName + " " + type;
-	}
-
-	public static String getSlotLabel(Integer slotLevel) {
-		if (slotLevel == 1) {
-			return "①";
-		} else if (slotLevel == 2) {
-			return "②";
-		} else if (slotLevel == 3) {
-			return "③";
-		}
-		return "?";
 	}
 
 	public String getName() {
@@ -85,15 +71,11 @@ public class Equipment {
 		slots.add(level);
 	}
 
-	public List<Integer> getSlots() {
+	public SlotSet getSlots() {
 		return slots;
 	}
 
-	public List<String> getSlotLabels() {
-		return slots.stream().map(Equipment::getSlotLabel).collect(Collectors.toList());
-	}
-
-	public void setSlots(List<Integer> slots) {
+	public void setSlots(SlotSet slots) {
 		this.slots = slots;
 	}
 }

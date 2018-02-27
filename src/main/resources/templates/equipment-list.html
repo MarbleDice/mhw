@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>MHW</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>Armor Set</th>
+			<th>Head</th>
+			<th>Chest</th>
+			<th>Hands</th>
+			<th>Waist</th>
+			<th>Legs</th>
+		</tr>
+		<tr th:each="entry : ${matrix.entrySet()}">
+			<th th:text="${entry.key}"></th>
+			<td th:each="equipment : ${entry.value}">
+				<ul th:if="${equipment != null}">
+					<li th:each="skillValue : ${equipment.skills}">
+						<a th:href="${'/skill/' + skillValue.skill.urlName}" th:text="${skillValue.skill.name}"></a>
+						<span th:text="${skillValue.pointValue.label}"></span>
+					</li>
+					<li th:if="${equipment.slots.count gt 0}"><span th:text="${equipment.slots.label}"></span></li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
+

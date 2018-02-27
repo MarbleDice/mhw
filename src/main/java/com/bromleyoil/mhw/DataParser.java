@@ -181,6 +181,7 @@ public class DataParser {
 			for (int level = 1; level <= maxLevel; level++) {
 				String suffix = String.join("", Collections.nCopies(level, "I"));
 				charm.setName(record.get(NAME) + (maxLevel == 1 ? "" : " " + suffix));
+				charm.setType(EquipmentType.CHARM);
 
 				Skill skill;
 				skill = Skill.valueOfName(record.get(SKILL1));
