@@ -16,21 +16,6 @@ public class SlotSet {
 	public static final SlotSet THREE = new SlotSet(3);
 	public static final SlotSet THREE_ONE = new SlotSet(3, 1);
 
-	public static final Comparator<SlotSet> SUPERIORITY = (a, b) -> {
-		int onePlus = Integer.compare(a.getOnePlus(), b.getOnePlus());
-		int twoPlus = Integer.compare(a.getTwoPlus(), b.getTwoPlus());
-		int three = Integer.compare(a.getThree(), b.getThree());
-		if (onePlus == 0 && twoPlus == 0 && three == 0) {
-			return 0;
-		} else if (onePlus >= 0 && twoPlus >= 0 && three >= 0) {
-			return 1;
-		} else if (onePlus <= 0 && twoPlus <= 0 && three <= 0) {
-			return -1;
-		} else {
-			return 0;
-		}
-	};
-
 	private static final Comparator<Integer> DESCENDING = (a, b) -> b - a;
 
 	private List<Integer> slots = new ArrayList<>();

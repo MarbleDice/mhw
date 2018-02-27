@@ -17,6 +17,10 @@ public class SkillSet {
 	public SkillSet() {
 	}
 
+	public SkillSet(Skill skill, int level) {
+		add(skill, level);
+	}
+
 	public SkillSet(List<Skill> skills, List<Integer> levels) {
 		Assert.isTrue(skills.size() == levels.size(), "Number of skills and levels must match");
 		for (int i = 0; i < skills.size(); i++) {
