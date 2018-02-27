@@ -39,9 +39,8 @@ public class SlotSet {
 		add(slots);
 	}
 
-	public void add(SlotSet slotSet) {
-		slots.addAll(slotSet.slots);
-		slots.sort(Integer::compareTo);
+	public SlotSet(SlotSet slotSet) {
+		add(slotSet);
 	}
 
 	public void add(int... slots) {
@@ -54,6 +53,11 @@ public class SlotSet {
 		this.slots.sort(Integer::compareTo);
 	}
 
+	public void add(SlotSet slotSet) {
+		slots.addAll(slotSet.slots);
+		slots.sort(Integer::compareTo);
+	}
+
 	public List<Integer> getSlots() {
 		return slots;
 	}
@@ -63,10 +67,8 @@ public class SlotSet {
 			return "①";
 		} else if (slotLevel == 2) {
 			return "②";
-		} else if (slotLevel == 3) {
-			return "③";
 		}
-		return "?";
+		return "③";
 	}
 
 	public String getLabel() {
