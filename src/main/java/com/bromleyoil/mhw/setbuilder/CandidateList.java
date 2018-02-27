@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.EquipmentType;
@@ -17,6 +20,8 @@ import com.bromleyoil.mhw.model.SkillValue;
 import com.bromleyoil.mhw.model.SlotSet;
 
 public class CandidateList {
+
+	private static Logger log = LoggerFactory.getLogger(CandidateList.class);
 
 	private List<SkillValue> requiredSkillValues;
 	private EnumMap<EquipmentType, List<Equipment>> candidates;
@@ -57,11 +62,12 @@ public class CandidateList {
 			isBetter |= rv > 0;
 			isWorse |= rv < 0;
 		}
-
+		log.info("    Skills {} {}", (isBetter ? " better" : ""), (isWorse ? " worse" : ""));
 		// Compare equipment slots
-		rv = SlotSet.SUPERIOR_ORDER.compare(a.getSlots(), b.getSlots());
+		rv = SlotSet.SUPERIORITY.compare(a.getSlots(), b.getSlots());
 		isBetter |= rv > 0;
 		isWorse |= rv < 0;
+		log.info("    Skills+slots {} {}", (isBetter ? " better" : ""), (isWorse ? " worse" : ""));
 
 		if (isBetter && !isWorse) {
 			return 1;
@@ -87,15 +93,18 @@ public class CandidateList {
 			int rv = superiorOrder.compare(potential, existing);
 			if (rv < 0) {
 				// Potential candidate is worse than an existing candidate, so it should not be used
+				log.info("Will not add " + potential.getFullDescription());
 				return;
 			} else if (rv > 0) {
 				// Potential candidate is better than an existing candidate which should be removed
 				iterator.remove();
+				log.info("  Removing " + existing.getFullDescription());
 			}
 		}
 
 		// The potential candidate is not worse than any existing one, so it should be added
 		candidates.get(potential.getType()).add(potential);
+		log.info("Adding " + potential.getFullDescription());
 	}
 
 	public List<Equipment> getCandidates(EquipmentType type) {

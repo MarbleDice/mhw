@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.bromleyoil.mhw.model.Equipment;
@@ -36,8 +37,8 @@ public class CandidateListTest {
 		equipmentList = new EquipmentList();
 		equipmentList.postConstruct();
 		CandidateList candidateList = new CandidateList(equipmentList,
-				Arrays.asList(new SkillValue(Skill.EARPLUGS, 1), new SkillValue(Skill.FOCUS, 1),
-						new SkillValue(Skill.WEAKNESS_EXPLOIT, 1)));
+				Arrays.asList(new SkillValue(Skill.EARPLUGS, 5), new SkillValue(Skill.FOCUS, 3),
+						new SkillValue(Skill.WEAKNESS_EXPLOIT, 3)));
 
 		System.out.println("Candidates");
 		for (EquipmentType type : EquipmentType.values()) {

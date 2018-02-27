@@ -16,7 +16,7 @@ public class SlotSet {
 	public static final SlotSet THREE = new SlotSet(3);
 	public static final SlotSet THREE_ONE = new SlotSet(3, 1);
 
-	public static final Comparator<SlotSet> SUPERIOR_ORDER = (a, b) -> {
+	public static final Comparator<SlotSet> SUPERIORITY = (a, b) -> {
 		int onePlus = Integer.compare(a.getOnePlus(), b.getOnePlus());
 		int twoPlus = Integer.compare(a.getTwoPlus(), b.getTwoPlus());
 		int three = Integer.compare(a.getThree(), b.getThree());

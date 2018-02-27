@@ -3,7 +3,8 @@ package com.bromleyoil.mhw.model;
 import java.util.Comparator;
 
 public enum PointValue {
-	SET4(15, "¼"), SET3(20, "⅓"), SET2(30, "½"), ONE(60, "1"), TWO(120, "2"), THREE(180, "3");
+	SET4(15, "¼"), SET3(20, "⅓"), SET2(30, "½"), ONE(60, "1"), TWO(120, "2"), THREE(180, "3"),
+	FOUR(240, "4"), FIVE(300, "5"), SIX(360, "6"), SEVEN(420, "7");
 
 	public static final Comparator<PointValue> VALUE_ORDER = Comparator.comparingInt(PointValue::getValue).reversed();
 
