@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 public class SlotSet {
 
+	public static final SlotSet ZERO = new SlotSet();
 	public static final SlotSet ONE = new SlotSet(1);
 	public static final SlotSet ONE_ONE = new SlotSet(1, 1);
 	public static final SlotSet ONE_ONE_ONE = new SlotSet(1, 1, 1);
