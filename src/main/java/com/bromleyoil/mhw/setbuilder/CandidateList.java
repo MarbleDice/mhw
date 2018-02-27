@@ -78,4 +78,17 @@ public class CandidateList {
 	public List<Equipment> getCandidates(EquipmentType type) {
 		return candidates.get(type);
 	}
+
+	@Override
+	public String toString() {
+		List<String> lines = new ArrayList<>();
+		lines.add("Candidates");
+		for (EquipmentType type : EquipmentType.values()) {
+			lines.add("  " + type + ": " + getCandidates(type).size());
+			for (Equipment equipment : getCandidates(type)) {
+				lines.add("    " + equipment.getFullDescription());
+			}
+		}
+		return String.join("\n", lines);
+	}
 }
