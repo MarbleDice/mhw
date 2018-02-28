@@ -40,6 +40,14 @@ public class EquipmentSet {
 
 	@Override
 	public String toString() {
+		return getShortDescription();
+	}
+
+	public String getShortDescription() {
+		return equipmentMap.values().stream().map(Equipment::getArmorName).collect(Collectors.joining("|"));
+	}
+
+	public String getLongDescription() {
 		List<String> lines = new ArrayList<>();
 		lines.add("Set:");
 		for (Equipment equipment : equipmentMap.values()) {

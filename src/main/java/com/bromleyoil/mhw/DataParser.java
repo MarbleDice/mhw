@@ -180,6 +180,7 @@ public class DataParser {
 				Equipment charm = new Equipment();
 				String suffix = String.join("", Collections.nCopies(level, "I"));
 				charm.setName(record.get(NAME) + (maxLevel == 1 ? "" : " " + suffix));
+				charm.setArmorName(charm.getName());
 				charm.setType(EquipmentType.CHARM);
 
 				Skill skill;

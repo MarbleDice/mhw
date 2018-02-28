@@ -66,14 +66,14 @@ public class CandidateList {
 				return;
 			} else if (superiority == Superiority.BETTER) {
 				// Potential candidate is better than an existing candidate which should be removed
-				iterator.remove();
 				log.debug("  Removing " + existing.getFullDescription());
+				iterator.remove();
 			}
 		}
 
 		// The potential candidate is not worse than any existing one, so it should be added
-		candidates.get(potential.getType()).add(potential);
 		log.debug("Adding " + potential.getFullDescription());
+		candidates.get(potential.getType()).add(potential);
 	}
 
 	public List<Equipment> getCandidates(EquipmentType type) {

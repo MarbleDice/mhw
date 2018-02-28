@@ -30,13 +30,13 @@ public class SetBuilderTest {
 	@Test
 	public void search_ig_solutionsFound() {
 		SetBuilder builder = new SetBuilder();
-		SkillSet requiredSkillSet = new SkillSet(
-				Arrays.asList(POWER_PROLONGER, AGITATOR, WEAKNESS_EXPLOIT, ATTACK_BOOST),
-				Arrays.asList(3, 3, 2, 2));
+		 SkillSet requiredSkillSet = new SkillSet(
+		 Arrays.asList(POWER_PROLONGER, AGITATOR, WEAKNESS_EXPLOIT),
+		 Arrays.asList(3, 4, 2));
 
 		List<EquipmentSet> solutions = builder.search(equipmentList, requiredSkillSet);
 		for (int i = 0; i < 10 && i < solutions.size(); i++) {
-			log.info(solutions.get(i).toString());
+			log.info(solutions.get(i).getLongDescription());
 		}
 	}
 }

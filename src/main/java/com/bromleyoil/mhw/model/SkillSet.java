@@ -59,6 +59,10 @@ public class SkillSet {
 		return skillValues.containsKey(skill);
 	}
 
+	public int getLevel(Skill skill) {
+		return contains(skill) ? Fraction.getLevel(skillValues.get(skill)) : 0;
+	}
+
 	public int getValue(Skill skill) {
 		return contains(skill) ? skillValues.get(skill) : 0;
 	}

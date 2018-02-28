@@ -10,10 +10,13 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
+import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
+import com.bromleyoil.mhw.model.SlotSet;
 
 public class SuperiorityTest {
 
@@ -52,6 +55,25 @@ public class SuperiorityTest {
 	@Test
 	public void compare_differentNonRequired_equal() {
 		assertThat("marathon1 guard1", compare(marathon1, guard1, greatSwordSkills), is(EQUAL));
+	}
+
+	/**
+	 * Candidates are somewhat permissive, "equal" entries according to interesting skills are allowed in for more
+	 * variety, however in this example one really is superior and could be filtered out of the candidate list. Sets
+	 * with the inferior piece will get filtered out of solutions.
+	 */
+	@Test
+	@Ignore
+	public void compare_higherUninterestingSkills_better() {
+		Equipment e1 = new Equipment();
+		e1.setSlotSet(SlotSet.THREE);
+		e1.setSkillSet(new SkillSet(WINDPROOF, 2));
+
+		Equipment e2 = new Equipment();
+		e2.setSlotSet(SlotSet.THREE);
+		e2.setSkillSet(new SkillSet(WINDPROOF, 1));
+
+		assertThat("Rath Soul β vs Ingot β", compare(e1, e2, greatSwordSkills), is(BETTER));
 	}
 
 	@Test

@@ -4,6 +4,7 @@ import static com.bromleyoil.mhw.model.EquipmentType.*;
 import static com.bromleyoil.mhw.setbuilder.Superiority.*;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -38,10 +39,9 @@ public class SetBuilder {
 								set.add(candidateList.getCandidates(LEGS).get(m));
 								set.add(candidateList.getCandidates(CHARM).get(n));
 								// Check if the potential solution meets the required skills
-								Superiority sup = Superiority.compare(set.getSkillSet(), requiredSkillSet,
-										requiredSkillSet.getSkills());
+								Superiority sup = Superiority.compare(set.getSkillSet(), requiredSkillSet);
 								if (sup == BETTER || sup == EQUAL) {
-									solutions.add(set);
+									addSolution(solutions, set);
 								}
 							}
 						}
@@ -51,5 +51,25 @@ public class SetBuilder {
 		}
 		log.info("Found {} solutions", solutions.size());
 		return solutions;
+	}
+
+	protected void addSolution(List<EquipmentSet> solutions, EquipmentSet newSolution) {
+		Iterator<EquipmentSet> iterator = solutions.iterator();
+		while (iterator.hasNext()) {
+			EquipmentSet solution = iterator.next();
+			Superiority sup = Superiority.compare(newSolution, solution);
+			if (sup == WORSE) {
+				// New solution is worse than an existing solution, so it should not be used
+				log.debug("Will not add " + newSolution);
+				return;
+			} else if (sup == BETTER) {
+				// Potential candidate is better than an existing candidate which should be removed
+				log.debug("  Removing " + solution);
+				iterator.remove();
+			}
+		}
+		// The new solution is not worse than any existing one, so it should be added
+		log.debug("Adding " + newSolution);
+		solutions.add(newSolution);
 	}
 }
