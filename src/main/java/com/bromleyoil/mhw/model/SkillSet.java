@@ -29,18 +29,29 @@ public class SkillSet {
 	}
 
 	public void add(Skill skill, int level) {
-		if (contains(skill)) {
-			skillValues.put(skill, skillValues.get(skill) + Fraction.getNumerator(level));
-		} else {
-			skillValues.put(skill, Fraction.getNumerator(level));
-		}
+		addByValue(skill, Fraction.getNumerator(level));
 	}
 
 	public void add(Skill skill, Fraction fraction) {
+		addByValue(skill, fraction.getValue());
+	}
+
+	public void add(SkillSet skillSet) {
+		for (Entry<Skill, Integer> entry : skillSet.skillValues.entrySet()) {
+			addByValue(entry.getKey(), entry.getValue());
+		}
+	}
+
+	protected void addByValue(Skill skill, int value) {
 		if (contains(skill)) {
-			skillValues.put(skill, skillValues.get(skill) + fraction.getValue());
+			skillValues.put(skill, skillValues.get(skill) + value);
 		} else {
-			skillValues.put(skill, fraction.getValue());
+			skillValues.put(skill, value);
+		}
+
+		int maxValue = Fraction.getNumerator(skill.getMaxLevel());
+		if (skillValues.get(skill) > maxValue) {
+			skillValues.put(skill, maxValue);
 		}
 	}
 
@@ -65,6 +76,7 @@ public class SkillSet {
 
 	public List<Entry<Skill, Integer>> getSkillLevels() {
 		return skillValues.entrySet().stream()
+				.filter(x -> Fraction.getLevel(x.getValue()) > 0)
 				.sorted((a, b) -> Integer.compare(b.getValue(), a.getValue()))
 				.map(x -> new SimpleEntry<>(x.getKey(), Fraction.getLevel(x.getValue())))
 				.collect(Collectors.toList());

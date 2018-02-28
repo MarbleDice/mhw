@@ -67,6 +67,10 @@ public class SlotSet {
 		return slots.stream().map(x -> String.format("(%d)", x)).collect(Collectors.joining(" "));
 	}
 
+	public boolean isEmpty() {
+		return slots.isEmpty();
+	}
+
 	public void setSlots(List<Integer> slots) {
 		this.slots = slots;
 	}

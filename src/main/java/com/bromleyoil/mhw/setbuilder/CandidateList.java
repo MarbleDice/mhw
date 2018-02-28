@@ -6,6 +6,7 @@ import java.util.EnumMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -77,6 +78,15 @@ public class CandidateList {
 
 	public List<Equipment> getCandidates(EquipmentType type) {
 		return candidates.get(type);
+	}
+
+	public int size(EquipmentType type) {
+		return candidates.get(type).size();
+	}
+
+	public int size() {
+		return candidates.entrySet().stream().map(x -> x.getValue().size())
+				.collect(Collectors.reducing(1, (a, b) -> a * b));
 	}
 
 	@Override

@@ -496,6 +496,10 @@ public enum Skill {
 		return skillName.toUpperCase().replace(" ", "_").replace("-", "_").replace("/", "_").replace("'", "");
 	}
 
+	public int getMaxLevel() {
+		return descriptions.size();
+	}
+
 	@Override
 	public String toString() {
 		return getName();
