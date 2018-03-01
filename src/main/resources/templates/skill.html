@@ -5,7 +5,11 @@
 	layout:decorate="~{template}" th:with="title=${skill}">
 <th:block layout:fragment="content">
 	<table class="data">
-		<tr th:each="description : ${skill.descriptions}">
+		<tr>
+			<th>Level</th>
+			<th>Description</th>
+		</tr>
+		<tr th:each="description : ${skill.descriptions}" th:class="${descriptionStat.odd ? 'odd' : 'even'}">
 			<td th:text="'Lv ' + ${descriptionStat.count}"></td>
 			<td th:text="${description}"></td>
 		</tr>

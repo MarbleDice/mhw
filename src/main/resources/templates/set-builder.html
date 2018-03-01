@@ -65,23 +65,17 @@
 <p th:text="|Searched ${result.permutationCount} permutations with ${result.candidateCount} pieces of equipment and
 	found ${result.solutions.size()} solutions.|"><p>
 <table class="data">
-<th:block th:each="set : ${result.solutions}">
-	<tr th:class="${setStat.odd ? 'odd' : 'even'}">
+	<tr>
 		<th>Equipment</th>
-		<td th:each="equipment : ${set.equipment}">
-			<ul class="unstyled" th:if="${equipment != null}">
-				<li th:text="${equipment.name}"></li>
-				<li th:each="skillLabel : ${equipment.skillSet.skillLabels}">
-					<a th:href="${'/skill/' + skillLabel.key.urlName}" th:text="${skillLabel.key.name}"></a>
-					<span th:text="${skillLabel.value}"></span>
-				</li>
-				<li th:if="${equipment.slotSet.count gt 0}"><span th:text="${equipment.slotSet.label}"></span></li>
+		<th>Total Skills</th>
+	</tr>
+	<tr th:each="set : ${result.solutions}" th:class="${setStat.odd ? 'odd' : 'even'}">
+		<td>
+			<ul class="unstyled">
+				<li th:each="equipment : ${set.equipment}" th:text="${equipment.name}"></li>
 			</ul>
 		</td>
-	</tr>
-	<tr th:class="${setStat.odd ? 'odd' : 'even'}">
-		<th>Total</th>
-		<td colspan="6">
+		<td>
 			<ul class="unstyled">
 				<!-- Total skills on one line -->
 				<li>
@@ -89,13 +83,12 @@
 					<a th:href="${'/skill/' + entry.key.urlName}" th:text="${entry.key.name}"></a>
 					<span th:text="${entry.value + (entryStat.last ? '' : ',')}"></span>
 					</th:block>
- 				</li>
+					</li>
 				<!-- Total slots on the next line -->
 				<li th:if="${set.slotSet.count gt 0}"><span th:text="${set.slotSet.label}"></span></li>
 			</ul>
 		</td>
-	</tr>
-</th:block>
+	</th:block>
 </table>
 </div>
 

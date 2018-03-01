@@ -5,12 +5,17 @@
 	layout:decorate="~{template}" th:with="title='Skill List'">
 <th:block layout:fragment="content">
 	<table class="data">
+		<tr>
+			<th>Skill</th>
+			<th>Level</th>
+			<th>Description</th>
+		</tr>
 		<th:block th:each="skill : ${skills}">
 		<tr th:each="description : ${skill.descriptions}"
 				th:class="${skillStat.odd ? 'odd' : 'even'}">
-			<td th:attr="rowspan=${descriptionStat.size}" th:if="${descriptionStat.first}">
+			<th th:attr="rowspan=${descriptionStat.size}" th:if="${descriptionStat.first}">
 				<a th:href="${'/skill/' + skill.urlName}" th:text="${skill.name}"></a>
-			</td>
+			</th>
 			<td th:text="'Lv ' + ${descriptionStat.count}" />
 			<td th:text="${description}" />
 		</tr>
