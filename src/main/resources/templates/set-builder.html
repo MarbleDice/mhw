@@ -25,7 +25,7 @@
 			<input type="hidden" th:field="*{skills[__${skillStat.index}__]}" />
 		</td>
 		<td>
-			<input type="text" th:field="*{levels[__${skillStat.index}__]}" th:attr="autofocus=${skillStat.last ? '' : null}"
+			<input type="text" th:field="*{levels[__${skillStat.index}__]}" th:attr="autofocus=${autofocus eq skill ? '' : null}"
 					class="numberBox" maxlength="1" placeholder="0" />
 			<span th:text="' / ' + ${skill.maxLevel}"></span>
 		</td>
@@ -35,7 +35,8 @@
 		<td>
 			<select th:field="*{newSkill}" onchange="document.getElementById('addSkill').click()">
 				<option disabled selected value="">Select a skill</option>
-				<option th:each="skill : ${skillList}" th:if="${not #lists.contains(form.skills, skill)}"th:value="${skill.urlName}" th:text="${skill.name}"></option>
+				<option th:each="skill : ${skillList}" th:if="${not #lists.contains(form.skills, skill)}"
+						th:value="${skill.urlName}" th:text="${skill.name}"></option>
 			</select>
 			<button id="addSkill" name="addSkill" style="display: none;">+</button>
 		</td>

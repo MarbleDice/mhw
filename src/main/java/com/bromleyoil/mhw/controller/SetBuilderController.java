@@ -41,9 +41,11 @@ public class SetBuilderController {
 
 	@RequestMapping(params = "addSkill")
 	public ModelAndView addSkill(SetBuilderForm form, HttpServletRequest request) {
-		form.addSkillLevel(form.getNewSkill(), 0);
+		ModelAndView mav = modelAndView(form);
+		mav.addObject("autofocus", form.getNewSkill());
+		form.addSkillLevel(form.getNewSkill(), null);
 		form.setNewSkill(null);
-		return modelAndView(form);
+		return mav;
 	}
 
 	@RequestMapping(params = "removeSkill")
@@ -51,7 +53,6 @@ public class SetBuilderController {
 		int index = Integer.parseInt(request.getParameter("removeSkill"));
 		form.getSkills().remove(index);
 		form.getLevels().remove(index);
-
 		return modelAndView(form);
 	}
 

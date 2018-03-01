@@ -46,7 +46,7 @@ public class SetBuilderForm {
 	 * @param skill
 	 * @param level
 	 */
-	public void addSkillLevel(Skill skill, int level) {
+	public void addSkillLevel(Skill skill, Integer level) {
 		skills.add(skill);
 		skills.sort(Skill.NAME_ORDER);
 		levels.add(skills.indexOf(skill), level);
