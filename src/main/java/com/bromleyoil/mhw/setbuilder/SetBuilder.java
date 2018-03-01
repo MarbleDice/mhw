@@ -45,6 +45,9 @@ public class SetBuilder {
 								if (sup == BETTER || sup == EQUAL) {
 									addSolution(result.getSolutions(), set);
 								}
+								if (result.getSolutions().size() >= 100) {
+									return result;
+								}
 							}
 						}
 					}

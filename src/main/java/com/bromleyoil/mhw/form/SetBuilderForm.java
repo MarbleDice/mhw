@@ -39,6 +39,19 @@ public class SetBuilderForm {
 		this.levels = requiredSkillLevels;
 	}
 
+	/**
+	 * Adds a skill with the given level, sorting the skills and inserting the level at the same index in the parallel
+	 * list. This is only well behaved when elements are not added through any other means.
+	 * 
+	 * @param skill
+	 * @param level
+	 */
+	public void addSkillLevel(Skill skill, int level) {
+		skills.add(skill);
+		skills.sort(Skill.NAME_ORDER);
+		levels.add(skills.indexOf(skill), level);
+	}
+
 	public int getRequiredSlots3() {
 		return requiredSlots3;
 	}

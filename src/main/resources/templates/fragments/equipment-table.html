@@ -13,7 +13,7 @@
 			<th>Waist</th>
 			<th>Legs</th>
 		</tr>
-		<tr th:each="entry : ${matrix.entrySet()}">
+		<tr th:each="entry : ${matrix.entrySet()}" th:class="${entryStat.odd ? 'odd' : 'even'}">
 			<th th:text="${entry.key}"></th>
 			<td th:each="equipment : ${entry.value}">
 				<ul class="unstyled" th:if="${equipment != null}">

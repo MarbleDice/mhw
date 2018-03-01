@@ -5,17 +5,16 @@
 	layout:decorate="~{template}" th:with="title='Skill List'">
 <th:block layout:fragment="content">
 	<table class="data">
-		<tbody th:each="skill : ${skills}">
-			<tr>
-				<td th:attr="rowspan=${skill.descriptions.size()}">
-					<a th:href="${'/skill/' + skill.urlName}" th:text="${skill.name}"></a>
-				</td>
-				<td th:text="${skill.descriptions.get(0)}" />
-			</tr>
-			<tr th:if="${skill.descriptions.size() gt 1}" th:each="description : ${skill.descriptions.subList(1, skill.descriptions.size())}">
-				<td th:text="${description}" />
-			</tr>
-		</tbody>
+		<th:block th:each="skill : ${skills}">
+		<tr th:each="description : ${skill.descriptions}"
+				th:class="${skillStat.odd ? 'odd' : 'even'}">
+			<td th:attr="rowspan=${descriptionStat.size}" th:if="${descriptionStat.first}">
+				<a th:href="${'/skill/' + skill.urlName}" th:text="${skill.name}"></a>
+			</td>
+			<td th:text="'Lv ' + ${descriptionStat.count}" />
+			<td th:text="${description}" />
+		</tr>
+		</th:block>
 	</table>
 </th:block>
 </html>

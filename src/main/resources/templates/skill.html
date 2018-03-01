@@ -4,7 +4,7 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{template}" th:with="title=${skill}">
 <th:block layout:fragment="content">
-	<table>
+	<table class="data">
 		<tr th:each="description : ${skill.descriptions}">
 			<td th:text="'Lv ' + ${descriptionStat.count}"></td>
 			<td th:text="${description}"></td>

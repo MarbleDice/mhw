@@ -10,6 +10,27 @@ ul.unstyled {
 	padding: 0;
 }
 
+a, a:visited {
+	color: #b0530e;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ea7c10;
+}
+
+button {
+	cursor: pointer;
+}
+
+tr.odd {
+	background-color: #e2e2f5;
+}
+
+tr.even {
+	background-color: #bdbdfb;
+}
+
 /**
  * Data tables
  */

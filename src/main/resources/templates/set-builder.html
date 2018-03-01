@@ -31,10 +31,11 @@
 	<tr>
 		<td></td>
 		<td>
-			<select th:field="*{newSkill}">
+			<select th:field="*{newSkill}" onchange="document.getElementById('addSkill').click()">
+				<option disabled selected value="">Select a skill</option>
 				<option th:each="skill : ${skillList}" th:if="${not #lists.contains(form.skills, skill)}"th:value="${skill.urlName}" th:text="${skill.name}"></option>
 			</select>
-			<button name="addSkill">+</button>
+			<button id="addSkill" name="addSkill" style="display: none;">+</button>
 		</td>
 		<td></td>
 	</tr>
@@ -61,9 +62,11 @@
 
 <div th:if="${result}">
 <h3>Results</h3>
-<p th:text="|Searched ${result.permutationCount} permutations with ${result.candidateCount} pieces of equipment and found ${result.solutions.size()} solutions.|"><p>
-<table th:each="set : ${result.solutions}" class="data">
-	<tr>
+<p th:text="|Searched ${result.permutationCount} permutations with ${result.candidateCount} pieces of equipment and
+	found ${result.solutions.size()} solutions.|"><p>
+<table class="data">
+<th:block th:each="set : ${result.solutions}">
+	<tr th:class="${setStat.odd ? 'odd' : 'even'}">
 		<th>Equipment</th>
 		<td th:each="equipment : ${set.equipment}">
 			<ul class="unstyled" th:if="${equipment != null}">
@@ -76,7 +79,7 @@
 			</ul>
 		</td>
 	</tr>
-	<tr>
+	<tr th:class="${setStat.odd ? 'odd' : 'even'}">
 		<th>Total</th>
 		<td colspan="6">
 			<ul class="unstyled">
@@ -92,6 +95,7 @@
 			</ul>
 		</td>
 	</tr>
+</th:block>
 </table>
 </div>
 

@@ -41,9 +41,8 @@ public class SetBuilderController {
 
 	@RequestMapping(params = "addSkill")
 	public ModelAndView addSkill(SetBuilderForm form, HttpServletRequest request) {
-		form.getSkills().add(form.getNewSkill());
-		form.getLevels().add(0);
-
+		form.addSkillLevel(form.getNewSkill(), 0);
+		form.setNewSkill(null);
 		return modelAndView(form);
 	}
 
