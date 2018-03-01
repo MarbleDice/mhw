@@ -44,6 +44,15 @@ public class EquipmentList {
 		return items;
 	}
 
+	public Equipment find(String armorName, EquipmentType type) {
+		return items.stream().filter(x -> x.getArmorName().equals(armorName) && x.getType() == type)
+				.findFirst().orElse(null);
+	}
+
+	public Equipment find(String name) {
+		return items.stream().filter(x -> x.getName().equals(name)).findFirst().orElse(null);
+	}
+
 	public Map<String, Equipment[]> getMatrix() {
 		Map<String, Equipment[]> matrix = new LinkedHashMap<>();
 

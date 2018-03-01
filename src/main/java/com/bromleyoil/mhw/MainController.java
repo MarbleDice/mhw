@@ -65,11 +65,4 @@ public class MainController {
 
 		return mav;
 	}
-
-	@RequestMapping("/set-builder")
-	public ModelAndView setBuilder() {
-		ModelAndView mav = new ModelAndView("set-builder");
-		mav.addObject("skills", Skill.values());
-		return mav;
-	}
 }

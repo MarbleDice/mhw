@@ -1,10 +1,50 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-	<title>MHW</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<body>
-	<p th:text="'Skills ' + ${skills.length}" />
-</body>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{template}" th:with="title='Set Builder'">
+<th:block layout:fragment="content">
+
+<form action="/set-builder" th:object="${form}" method="post">
+<table class="form">
+	<tr>
+		<th colspan="2">Skills of Interest</th>
+	</tr>
+	<tr>
+		<th class="subheader">Name</th>
+		<th class="subheader">Required Level</th>
+	</tr>
+	<tr th:each="skill : ${form.interestingSkills}">
+		<td th:text="${skill.name}"></td>
+		<td><input type="text" class="numberBox" maxlength="1" value="0" /> / <span th:text="${skill.maxLevel}"></span></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<select>
+				<option th:each="skill : ${skillList}" th:value="${skill.urlName}" th:text="${skill.name}"></option>
+			</select>
+			<input type="submit" name="addSkill" />
+		</td>
+	</tr>
+</table>
+<table class="form">
+	<tr>
+		<th colspan="3">Required Slots</th>
+	</tr>
+	<tr>
+		<th class="subheader">L3</th>
+		<th class="subheader">L2</th>
+		<th class="subheader">L1</th>
+	</tr>
+	<tr>
+		<td><input type="text" th:field="*{requiredSlots3}" class="numberBox" maxlength="1" value="0" /></td>
+		<td><input type="text" th:field="*{requiredSlots2}" class="numberBox" maxlength="1" value="0" /></td>
+		<td><input type="text" th:field="*{requiredSlots1}" class="numberBox" maxlength="1" value="0" /></td>
+	</tr>
+</table>
+<div class="actions">
+	<input type="submit" name="search" value="Search" />
+</div>
+</form>
+</th:block>
 </html>

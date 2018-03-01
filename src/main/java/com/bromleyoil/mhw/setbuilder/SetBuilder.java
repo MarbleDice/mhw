@@ -60,16 +60,16 @@ public class SetBuilder {
 			Superiority sup = Superiority.compare(newSolution, solution);
 			if (sup == WORSE) {
 				// New solution is worse than an existing solution, so it should not be used
-				log.debug("Will not add " + newSolution);
+				log.debug("Will not add {}", newSolution);
 				return;
 			} else if (sup == BETTER) {
 				// Potential candidate is better than an existing candidate which should be removed
-				log.debug("  Removing " + solution);
+				log.debug("  Removing {}", solution);
 				iterator.remove();
 			}
 		}
 		// The new solution is not worse than any existing one, so it should be added
-		log.debug("Adding " + newSolution);
+		log.debug("Adding {}", newSolution);
 		solutions.add(newSolution);
 	}
 }

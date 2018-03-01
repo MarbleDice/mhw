@@ -1,16 +1,63 @@
-table {
-	border-collapse: collapse;
+/**
+ * Primary elements
+ */
+h2, h3, p {
+	margin: 10px 20px;
 }
 
-th, td {
+ul.unstyled {
+	list-style-type: none;
+	padding: 0;
+}
+
+/**
+ * Data tables
+ */
+table.data {
+	border-collapse: collapse;
+	margin: 10px 20px;
+}
+
+table.data th, table.data td {
 	border: 1px solid black;
 	padding: 4px 8px;
 }
 
-th {
+table.data th {
 	vertical-align: center;
 }
 
-td {
+table.data td {
 	vertical-align: top;
+}
+
+/**
+ * Form tables
+ */
+table.form {
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin: 10px 20px;
+}
+
+table.form th, table.form td {
+	padding: 4px 8px;
+}
+
+table.form th {
+	background-color: #eee;
+}
+
+table.form th.subheader {
+	background-color: #ddd;
+	font-weight: normal;
+	font-size: smaller;
+}
+
+input.numberBox {
+	width: 20px;
+}
+
+.actions {
+	margin: 10px 20px;
 }
