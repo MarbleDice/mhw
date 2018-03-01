@@ -2,6 +2,7 @@ package com.bromleyoil.mhw.controller;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.bromleyoil.mhw.form.SetBuilderForm;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
+import com.bromleyoil.mhw.model.SlotSet;
 import com.bromleyoil.mhw.setbuilder.SearchResult;
 import com.bromleyoil.mhw.setbuilder.SetBuilder;
 
@@ -60,6 +62,16 @@ public class SetBuilderController {
 	public ModelAndView search(SetBuilderForm form) {
 		setBuilder.setRequiredSkillSet(new SkillSet(form.getSkills(),
 				form.getLevels().stream().map(x -> x != null ? x : 0).collect(Collectors.toList())));
+
+		SlotSet requiredSlotSet = new SlotSet();
+		List<Integer> slotLevels = Arrays.asList(form.getRequiredSlots1(), form.getRequiredSlots2(),
+				form.getRequiredSlots3());
+		for (int level = 0; level < slotLevels.size(); level++) {
+			for (int i = 0; i < Optional.ofNullable(slotLevels.get(level)).orElse(0); i++) {
+				requiredSlotSet.add(level + 1);
+			}
+		}
+		setBuilder.setRequiredSlotSet(requiredSlotSet);
 
 		SearchResult result = setBuilder.search();
 

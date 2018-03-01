@@ -58,8 +58,10 @@ public class SetBuilder {
 								set.add(candidateList.getCandidates(WAIST).get(l));
 								set.add(candidateList.getCandidates(LEGS).get(m));
 								set.add(candidateList.getCandidates(CHARM).get(n));
-								// Check if the potential solution meets the required skills
-								Superiority sup = Superiority.compare(set.getSkillSet(), requiredSkillSet);
+								// Check if the potential solution meets the required skills and slots
+								Superiority sup = Superiority.combine(
+										Superiority.compare(set.getSkillSet(), requiredSkillSet),
+										Superiority.compare(set.getSlotSet(), requiredSlotSet));
 								if (sup == BETTER || sup == EQUAL) {
 									addSolution(result.getSolutions(), set);
 								}
