@@ -2,6 +2,7 @@ package com.bromleyoil.mhw.controller;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -56,7 +57,8 @@ public class SetBuilderController {
 
 	@RequestMapping(params = "search")
 	public ModelAndView search(SetBuilderForm form) {
-		setBuilder.setRequiredSkillSet(new SkillSet(form.getSkills(), form.getLevels()));
+		setBuilder.setRequiredSkillSet(new SkillSet(form.getSkills(),
+				form.getLevels().stream().map(x -> x != null ? x : 0).collect(Collectors.toList())));
 
 		SearchResult result = setBuilder.search();
 

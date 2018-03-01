@@ -11,9 +11,9 @@ public class SetBuilderForm {
 
 	private List<Skill> skills = new ArrayList<>();
 	private List<Integer> levels = new ArrayList<>();
-	private int requiredSlots3;
-	private int requiredSlots2;
-	private int requiredSlots1;
+	private Integer requiredSlots3;
+	private Integer requiredSlots2;
+	private Integer requiredSlots1;
 
 	public Skill getNewSkill() {
 		return newSkill;
@@ -52,27 +52,27 @@ public class SetBuilderForm {
 		levels.add(skills.indexOf(skill), level);
 	}
 
-	public int getRequiredSlots3() {
+	public Integer getRequiredSlots3() {
 		return requiredSlots3;
 	}
 
-	public void setRequiredSlots3(int requiredSlots3) {
+	public void setRequiredSlots3(Integer requiredSlots3) {
 		this.requiredSlots3 = requiredSlots3;
 	}
 
-	public int getRequiredSlots2() {
+	public Integer getRequiredSlots2() {
 		return requiredSlots2;
 	}
 
-	public void setRequiredSlots2(int requiredSlots2) {
+	public void setRequiredSlots2(Integer requiredSlots2) {
 		this.requiredSlots2 = requiredSlots2;
 	}
 
-	public int getRequiredSlots1() {
+	public Integer getRequiredSlots1() {
 		return requiredSlots1;
 	}
 
-	public void setRequiredSlots1(int requiredSlots1) {
+	public void setRequiredSlots1(Integer requiredSlots1) {
 		this.requiredSlots1 = requiredSlots1;
 	}
 }
