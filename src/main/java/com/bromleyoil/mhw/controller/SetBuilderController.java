@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bromleyoil.mhw.form.SetBuilderForm;
-import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
 import com.bromleyoil.mhw.setbuilder.SearchResult;
@@ -27,7 +26,7 @@ public class SetBuilderController {
 	Logger log = LoggerFactory.getLogger(SetBuilderController.class);
 
 	@Autowired
-	private EquipmentList equipmentList;
+	private SetBuilder setBuilder;
 
 	@ModelAttribute
 	public List<Skill> getSkillList() {
@@ -48,7 +47,7 @@ public class SetBuilderController {
 
 	@RequestMapping(params = "removeSkill")
 	public ModelAndView removeSkill(SetBuilderForm form, HttpServletRequest request) {
-		int index = Integer.valueOf(request.getParameter("removeSkill"));
+		int index = Integer.parseInt(request.getParameter("removeSkill"));
 		form.getSkills().remove(index);
 		form.getLevels().remove(index);
 
@@ -57,10 +56,9 @@ public class SetBuilderController {
 
 	@RequestMapping(params = "search")
 	public ModelAndView search(SetBuilderForm form) {
-		SetBuilder setBuilder = new SetBuilder();
+		setBuilder.setRequiredSkillSet(new SkillSet(form.getSkills(), form.getLevels()));
 
-		SearchResult result = setBuilder.search(equipmentList,
-				new SkillSet(form.getSkills(), form.getLevels()));
+		SearchResult result = setBuilder.search();
 
 		ModelAndView mav = modelAndView(form);
 		mav.addObject("result", result);

@@ -8,21 +8,39 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
 
-import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.EquipmentSet;
 import com.bromleyoil.mhw.model.SkillSet;
+import com.bromleyoil.mhw.model.SlotSet;
 
-@Configurable
+@Component
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class SetBuilder {
 
 	private static Logger log = LoggerFactory.getLogger(SetBuilder.class);
 
-	public SearchResult search(EquipmentList equipmentList, SkillSet requiredSkillSet) {
+	@Autowired
+	private CandidateList candidateList;
+
+	private SkillSet requiredSkillSet = new SkillSet();;
+	private SlotSet requiredSlotSet = new SlotSet();
+
+	public SetBuilder() {
+	}
+
+	public SetBuilder(CandidateList candidateList) {
+		this.candidateList = candidateList;
+	}
+
+	public SearchResult search() {
 		SearchResult result = new SearchResult();
 
-		CandidateList candidateList = new CandidateList(equipmentList, requiredSkillSet);
+		candidateList.setRequiredSkillSet(requiredSkillSet);
 		result.setCandidateCount(candidateList.size());
 		result.setPermutationCount(candidateList.getPermutationCount());
 
@@ -76,5 +94,21 @@ public class SetBuilder {
 		// The new solution is not worse than any existing one, so it should be added
 		log.debug("Adding {}", newSolution);
 		solutions.add(newSolution);
+	}
+
+	public SkillSet getRequiredSkillSet() {
+		return requiredSkillSet;
+	}
+
+	public void setRequiredSkillSet(SkillSet requiredSkillSet) {
+		this.requiredSkillSet = requiredSkillSet;
+	}
+
+	public SlotSet getRequiredSlotSet() {
+		return requiredSlotSet;
+	}
+
+	public void setRequiredSlotSet(SlotSet requiredSlotSet) {
+		this.requiredSlotSet = requiredSlotSet;
 	}
 }

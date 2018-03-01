@@ -10,6 +10,11 @@ import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
 
 import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentList;
@@ -17,16 +22,23 @@ import com.bromleyoil.mhw.model.EquipmentType;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
 
+@Component
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class CandidateList {
 
 	private static Logger log = LoggerFactory.getLogger(CandidateList.class);
 
+	@Autowired
+	private EquipmentList equipmentList;
+
 	private SkillSet requiredSkillSet;
 	private EnumMap<EquipmentType, List<Equipment>> candidates;
 
-	public CandidateList(EquipmentList equipmentList, SkillSet requiredSkillSet) {
-		this.requiredSkillSet = requiredSkillSet;
-		buildCandidates(equipmentList);
+	public CandidateList() {
+	}
+
+	public CandidateList(EquipmentList equipmentList) {
+		this.equipmentList = equipmentList;
 	}
 
 	protected void buildCandidates(EquipmentList equipmentList) {
@@ -74,6 +86,15 @@ public class CandidateList {
 		// The potential candidate is not worse than any existing one, so it should be added
 		log.debug("Adding " + potential.getFullDescription());
 		candidates.get(potential.getType()).add(potential);
+	}
+
+	public SkillSet getRequiredSkillSet() {
+		return requiredSkillSet;
+	}
+
+	public void setRequiredSkillSet(SkillSet requiredSkillSet) {
+		this.requiredSkillSet = requiredSkillSet;
+		buildCandidates(equipmentList);
 	}
 
 	public List<Equipment> getCandidates(EquipmentType type) {

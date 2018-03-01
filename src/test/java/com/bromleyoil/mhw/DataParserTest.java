@@ -11,12 +11,12 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.junit.runners.JUnit4;
 
 import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentType;
 
-@RunWith(SpringRunner.class)
+@RunWith(JUnit4.class)
 public class DataParserTest {
 
 	@Test

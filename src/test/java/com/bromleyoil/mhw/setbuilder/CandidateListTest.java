@@ -9,28 +9,33 @@ import java.util.Arrays;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.bromleyoil.mhw.DataParser;
 import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
 
+@RunWith(JUnit4.class)
 public class CandidateListTest {
 
 	private static Logger log = LoggerFactory.getLogger(CandidateList.class);
 
 	private EquipmentList equipmentList;
+	private CandidateList candidateList;
 
 	@Before
 	public void before() throws IOException {
-		equipmentList = new EquipmentList();
-		equipmentList.postConstruct();
+		equipmentList = new EquipmentList(DataParser.parseAllEquipment());
+		candidateList = new CandidateList(equipmentList);
 	}
 
 	@Test
 	public void buildCandidates_noSkills_onlySlotted() {
-		CandidateList candidateList = new CandidateList(equipmentList, new SkillSet());
+		candidateList.setRequiredSkillSet(new SkillSet());
 
 		log.debug(candidateList.toString());
 
@@ -44,7 +49,7 @@ public class CandidateListTest {
 
 	@Test
 	public void buildCandidates_greatSword_correct() {
-		CandidateList candidateList = new CandidateList(equipmentList, new SkillSet(
+		candidateList.setRequiredSkillSet(new SkillSet(
 				Arrays.asList(Skill.EARPLUGS, Skill.FOCUS, Skill.WEAKNESS_EXPLOIT),
 				Arrays.asList(5, 3, 3)));
 

@@ -113,7 +113,13 @@ public class DataParser {
 		return lines;
 	}
 
-	public static List<Equipment> parseEquipment(Reader reader) throws IOException {
+	public static List<Equipment> parseAllEquipment() throws IOException {
+		List<Equipment> items = DataParser.parseEquipment(DataParser.openResource("equipment.tsv"));
+		items.addAll(DataParser.parseCharms(DataParser.openResource("charms.tsv")));
+		return items;
+	}
+
+	protected static List<Equipment> parseEquipment(Reader reader) throws IOException {
 		List<Equipment> equipment = new ArrayList<>();
 		for (CSVRecord record : CSVFormat.TDF.withFirstRecordAsHeader().parse(reader)) {
 			if (!StringUtils.isBlank(record.get(HEAD))) {
@@ -172,7 +178,7 @@ public class DataParser {
 		return equipment;
 	}
 
-	public static List<Equipment> parseCharms(Reader reader) throws IOException {
+	protected static List<Equipment> parseCharms(Reader reader) throws IOException {
 		List<Equipment> charms = new ArrayList<>();
 		for (CSVRecord record : CSVFormat.TDF.withFirstRecordAsHeader().parse(reader)) {
 			int maxLevel = Integer.parseInt(record.get(MAX));

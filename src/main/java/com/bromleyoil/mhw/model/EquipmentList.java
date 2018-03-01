@@ -27,8 +27,7 @@ public class EquipmentList {
 	@PostConstruct
 	public void postConstruct() throws IOException {
 		if (items == null) {
-			items = DataParser.parseEquipment(DataParser.openResource("equipment.tsv"));
-			items.addAll(DataParser.parseCharms(DataParser.openResource("charms.tsv")));
+			items = DataParser.parseAllEquipment();
 		}
 	}
 
