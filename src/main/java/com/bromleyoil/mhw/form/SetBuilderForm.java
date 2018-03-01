@@ -7,26 +7,36 @@ import com.bromleyoil.mhw.model.Skill;
 
 public class SetBuilderForm {
 
-	private List<Skill> interestingSkills = new ArrayList<>();
-	private List<Integer> requiredSkillLevels = new ArrayList<>();
+	private Skill newSkill;
+
+	private List<Skill> skills = new ArrayList<>();
+	private List<Integer> levels = new ArrayList<>();
 	private int requiredSlots3;
 	private int requiredSlots2;
 	private int requiredSlots1;
 
-	public List<Skill> getInterestingSkills() {
-		return interestingSkills;
+	public Skill getNewSkill() {
+		return newSkill;
 	}
 
-	public void setInterestingSkills(List<Skill> interestingSkills) {
-		this.interestingSkills = interestingSkills;
+	public void setNewSkill(Skill newSkill) {
+		this.newSkill = newSkill;
 	}
 
-	public List<Integer> getRequiredSkillLevels() {
-		return requiredSkillLevels;
+	public List<Skill> getSkills() {
+		return skills;
 	}
 
-	public void setRequiredSkillLevels(List<Integer> requiredSkillLevels) {
-		this.requiredSkillLevels = requiredSkillLevels;
+	public void setSkills(List<Skill> skills) {
+		this.skills = skills;
+	}
+
+	public List<Integer> getLevels() {
+		return levels;
+	}
+
+	public void setLevels(List<Integer> requiredSkillLevels) {
+		this.levels = requiredSkillLevels;
 	}
 
 	public int getRequiredSlots3() {

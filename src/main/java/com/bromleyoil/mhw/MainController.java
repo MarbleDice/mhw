@@ -5,11 +5,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.format.Formatter;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bromleyoil.mhw.form.SkillFormatter;
 import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.Skill;
 
@@ -20,16 +22,21 @@ import nz.net.ultraq.thymeleaf.LayoutDialect;
 @Controller
 public class MainController {
 
-	@Bean
-	public LayoutDialect layoutDialect() {
-		return new LayoutDialect();
-	}
-
 	@Autowired
 	private EquipmentList equipmentList;
 
 	public static void main(String[] args) {
 		SpringApplication.run(MainController.class, args);
+	}
+
+	@Bean
+	public LayoutDialect layoutDialect() {
+		return new LayoutDialect();
+	}
+
+	@Bean
+	public Formatter<Skill> skillFormatter() {
+		return new SkillFormatter();
 	}
 
 	@RequestMapping("/")

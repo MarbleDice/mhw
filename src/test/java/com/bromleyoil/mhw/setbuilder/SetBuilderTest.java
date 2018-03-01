@@ -35,7 +35,7 @@ public class SetBuilderTest {
 				Arrays.asList(EARPLUGS, FOCUS, WEAKNESS_EXPLOIT, AGITATOR, ATTACK_BOOST, CRITICAL_EYE, MAXIMUM_MIGHT),
 				Arrays.asList(5, 3, 2, 0, 0, 0, 0));
 
-		List<EquipmentSet> solutions = builder.search(equipmentList, requiredSkillSet);
+		List<EquipmentSet> solutions = builder.search(equipmentList, requiredSkillSet).getSolutions();
 		for (int i = 0; i < 10 && i < solutions.size(); i++) {
 			log.info(solutions.get(i).getLongDescription());
 		}
@@ -49,7 +49,7 @@ public class SetBuilderTest {
 				Arrays.asList(POWER_PROLONGER, AGITATOR, WEAKNESS_EXPLOIT),
 				Arrays.asList(3, 4, 2));
 
-		List<EquipmentSet> solutions = builder.search(equipmentList, requiredSkillSet);
+		List<EquipmentSet> solutions = builder.search(equipmentList, requiredSkillSet).getSolutions();
 		for (int i = 0; i < 10 && i < solutions.size(); i++) {
 			log.info(solutions.get(i).getLongDescription());
 		}

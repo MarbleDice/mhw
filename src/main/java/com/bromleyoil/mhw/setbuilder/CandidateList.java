@@ -86,6 +86,11 @@ public class CandidateList {
 
 	public int size() {
 		return candidates.entrySet().stream().map(x -> x.getValue().size())
+				.collect(Collectors.reducing(0, (a, b) -> a + b));
+	}
+
+	public int getPermutationCount() {
+		return candidates.entrySet().stream().map(x -> x.getValue().size())
 				.collect(Collectors.reducing(1, (a, b) -> a * b));
 	}
 

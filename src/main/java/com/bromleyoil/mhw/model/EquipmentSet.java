@@ -1,6 +1,7 @@
 package com.bromleyoil.mhw.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -20,6 +21,10 @@ public class EquipmentSet {
 		equipmentMap.put(equipment.getType(), equipment);
 		skillSet.add(equipment.getSkillSet());
 		slotSet.add(equipment.getSlotSet());
+	}
+
+	public Collection<Equipment> getEquipment() {
+		return equipmentMap.values();
 	}
 
 	public SkillSet getSkillSet() {

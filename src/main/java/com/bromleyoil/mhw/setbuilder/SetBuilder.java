@@ -3,7 +3,6 @@ package com.bromleyoil.mhw.setbuilder;
 import static com.bromleyoil.mhw.model.EquipmentType.*;
 import static com.bromleyoil.mhw.setbuilder.Superiority.*;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -20,11 +19,14 @@ public class SetBuilder {
 
 	private static Logger log = LoggerFactory.getLogger(SetBuilder.class);
 
-	public List<EquipmentSet> search(EquipmentList equipmentList, SkillSet requiredSkillSet) {
-		List<EquipmentSet> solutions = new ArrayList<>();
-		CandidateList candidateList = new CandidateList(equipmentList, requiredSkillSet);
+	public SearchResult search(EquipmentList equipmentList, SkillSet requiredSkillSet) {
+		SearchResult result = new SearchResult();
 
-		log.info("Searching {} possibilities", candidateList.size());
+		CandidateList candidateList = new CandidateList(equipmentList, requiredSkillSet);
+		result.setCandidateCount(candidateList.size());
+		result.setPermutationCount(candidateList.getPermutationCount());
+
+		log.info("Searching {} possibilities", candidateList.getPermutationCount());
 		for (int i = 0; i < candidateList.size(HEAD); i++) {
 			for (int j = 0; j < candidateList.size(BODY); j++) {
 				for (int k = 0; k < candidateList.size(HANDS); k++) {
@@ -41,7 +43,7 @@ public class SetBuilder {
 								// Check if the potential solution meets the required skills
 								Superiority sup = Superiority.compare(set.getSkillSet(), requiredSkillSet);
 								if (sup == BETTER || sup == EQUAL) {
-									addSolution(solutions, set);
+									addSolution(result.getSolutions(), set);
 								}
 							}
 						}
@@ -49,8 +51,8 @@ public class SetBuilder {
 				}
 			}
 		}
-		log.info("Found {} solutions", solutions.size());
-		return solutions;
+		log.info("Found {} solutions", result.getSolutions().size());
+		return result;
 	}
 
 	protected void addSolution(List<EquipmentSet> solutions, EquipmentSet newSolution) {

@@ -8,23 +8,35 @@
 <form action="/set-builder" th:object="${form}" method="post">
 <table class="form">
 	<tr>
-		<th colspan="2">Skills of Interest</th>
+		<th colspan="3">Skills of Interest</th>
 	</tr>
 	<tr>
+		<th class="subheader"></th>
 		<th class="subheader">Name</th>
 		<th class="subheader">Required Level</th>
 	</tr>
-	<tr th:each="skill : ${form.interestingSkills}">
-		<td th:text="${skill.name}"></td>
-		<td><input type="text" class="numberBox" maxlength="1" value="0" /> / <span th:text="${skill.maxLevel}"></span></td>
+	<tr th:each="skill : ${form.skills}">
+		<td>
+			<button name="removeSkill" th:value="${skillStat.index}">X</button>
+		</td>
+		<td>
+			<span th:text="${skill.name}"></span>
+			<input type="hidden" th:field="*{skills[__${skillStat.index}__]}" />
+		</td>
+		<td>
+			<input type="text" th:field="*{levels[__${skillStat.index}__]}" maxlength="1" class="numberBox" />
+			<span th:text="' / ' + ${skill.maxLevel}"></span>
+		</td>
 	</tr>
 	<tr>
-		<td colspan="2">
-			<select>
-				<option th:each="skill : ${skillList}" th:value="${skill.urlName}" th:text="${skill.name}"></option>
+		<td></td>
+		<td>
+			<select th:field="*{newSkill}">
+				<option th:each="skill : ${skillList}" th:if="${not #lists.contains(form.skills, skill)}"th:value="${skill.urlName}" th:text="${skill.name}"></option>
 			</select>
-			<input type="submit" name="addSkill" />
+			<button name="addSkill">+</button>
 		</td>
+		<td></td>
 	</tr>
 </table>
 <table class="form">
@@ -43,8 +55,45 @@
 	</tr>
 </table>
 <div class="actions">
-	<input type="submit" name="search" value="Search" />
+	<button name="search">Search</button>
 </div>
 </form>
+
+<div th:if="${result}">
+<h3>Results</h3>
+<p th:text="|Searched ${result.permutationCount} permutations with ${result.candidateCount} pieces of equipment and found ${result.solutions.size()} solutions.|"><p>
+<table th:each="set : ${result.solutions}" class="data">
+	<tr>
+		<th>Equipment</th>
+		<td th:each="equipment : ${set.equipment}">
+			<ul class="unstyled" th:if="${equipment != null}">
+				<li th:text="${equipment.name}"></li>
+				<li th:each="skillLabel : ${equipment.skillSet.skillLabels}">
+					<a th:href="${'/skill/' + skillLabel.key.urlName}" th:text="${skillLabel.key.name}"></a>
+					<span th:text="${skillLabel.value}"></span>
+				</li>
+				<li th:if="${equipment.slotSet.count gt 0}"><span th:text="${equipment.slotSet.label}"></span></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th>Total</th>
+		<td colspan="6">
+			<ul class="unstyled">
+				<!-- Total skills on one line -->
+				<li>
+					<th:block th:each="entry : ${set.skillSet.skillLevels}">
+					<a th:href="${'/skill/' + entry.key.urlName}" th:text="${entry.key.name}"></a>
+					<span th:text="${entry.value + (entryStat.last ? '' : ',')}"></span>
+					</th:block>
+ 				</li>
+				<!-- Total slots on the next line -->
+				<li th:if="${set.slotSet.count gt 0}"><span th:text="${set.slotSet.label}"></span></li>
+			</ul>
+		</td>
+	</tr>
+</table>
+</div>
+
 </th:block>
 </html>
