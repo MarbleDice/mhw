@@ -8,13 +8,22 @@
 	<link rel="stylesheet" type="text/css" th:href="@{/styles/default.css}" />
 </head>
 <body>
+<header>
+	<h1>Monster Hunter: World Set Search</h1>
+</header>
+<nav>
 	<ul>
 		<li><a th:href="@{/}">Home</a></li>
 		<li><a th:href="@{/skill-list}">Skill List</a></li>
 		<li><a th:href="@{/equipment-list}">Equipment List</a></li>
 		<li><a th:href="@{/set-builder}">Set Builder</a></li>
 	</ul>
+</nav>
+<main>
 	<h2 th:text="${title}">Page Title</h2>
 	<th:block layout:fragment="content"></th:block>
+</main>
+<footer>
+</footer>
 </body>
 </html>

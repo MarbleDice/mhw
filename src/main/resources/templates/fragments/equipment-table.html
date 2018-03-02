@@ -4,7 +4,7 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{template}" th:with="title='Equipment Table'">
 <th:block layout:fragment="content">
-	<table class="data" th:fragment="standard">
+	<table class="equipment data" th:fragment="standard">
 		<tr>
 			<th>Armor Set</th>
 			<th>Head</th>
@@ -15,7 +15,7 @@
 		</tr>
 		<tr th:each="entry : ${matrix.entrySet()}" th:class="${entryStat.odd ? 'odd' : 'even'}">
 			<th th:text="${entry.key}"></th>
-			<td th:each="equipment : ${entry.value}">
+			<td th:each="equipment : ${entry.value}" th:class="${equipment eq null ? 'empty' : ''}">
 				<ul class="unstyled" th:if="${equipment != null}">
 					<li th:each="skillLabel : ${equipment.skillSet.skillLabels}">
 						<a th:href="@{${'/skill/' + skillLabel.key.urlName}}" th:text="${skillLabel.key.name}"></a>

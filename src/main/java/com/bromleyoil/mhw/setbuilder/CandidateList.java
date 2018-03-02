@@ -33,6 +33,7 @@ public class CandidateList {
 
 	private SkillSet requiredSkillSet;
 	private EnumMap<EquipmentType, List<Equipment>> candidates;
+	private int filteredCandidateCount;
 
 	public CandidateList() {
 	}
@@ -49,6 +50,7 @@ public class CandidateList {
 		}
 
 		// Add all gear with matching skills or slots
+		filteredCandidateCount = 0;
 		for (Equipment equipment : equipmentList.getItems()) {
 			Set<Skill> equipmentSkills = equipment.getSkillSet().getSkills();
 
@@ -75,10 +77,12 @@ public class CandidateList {
 			if (superiority == Superiority.WORSE) {
 				// Potential candidate is worse than an existing candidate, so it should not be used
 				log.debug("Will not add " + potential.getFullDescription());
+				filteredCandidateCount++;
 				return;
 			} else if (superiority == Superiority.BETTER) {
 				// Potential candidate is better than an existing candidate which should be removed
 				log.debug("  Removing " + existing.getFullDescription());
+				filteredCandidateCount++;
 				iterator.remove();
 			}
 		}
@@ -113,6 +117,14 @@ public class CandidateList {
 	public int getPermutationCount() {
 		return candidates.entrySet().stream().map(x -> x.getValue().size())
 				.collect(Collectors.reducing(1, (a, b) -> a * b));
+	}
+
+	public int getFilteredCandidateCount() {
+		return filteredCandidateCount;
+	}
+
+	public void setFilteredCandidateCount(int filteredCandidateCount) {
+		this.filteredCandidateCount = filteredCandidateCount;
 	}
 
 	@Override

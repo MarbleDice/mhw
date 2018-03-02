@@ -65,8 +65,9 @@
 
 <div th:if="${result}">
 <h3>Results</h3>
-<p th:text="|Searched ${result.permutationCount} permutations with ${result.candidateCount} pieces of equipment and
+<p th:text="|Searched ${result.permutationCount} combinations of ${result.candidateCount} pieces of equipment and
 	found ${result.solutions.size()} solutions.|"><p>
+<p th:text="|Filtered out ${result.filteredCandidateCount} pieces of equipment and ${result.filteredSetCount} inferior sets.|"><p>
 <table th:if="${!result.solutions.isEmpty()}" class="data">
 	<tr>
 		<th>Equipment</th>

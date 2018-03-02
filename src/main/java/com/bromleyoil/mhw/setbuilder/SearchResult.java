@@ -10,6 +10,8 @@ public class SearchResult {
 	private int candidateCount;
 	private int permutationCount;
 	private List<EquipmentSet> solutions = new ArrayList<>();
+	private int filteredCandidateCount;
+	private int filteredSetCount;
 
 	public int getCandidateCount() {
 		return candidateCount;
@@ -33,5 +35,21 @@ public class SearchResult {
 
 	public void setSolutions(List<EquipmentSet> solutions) {
 		this.solutions = solutions;
+	}
+
+	public int getFilteredCandidateCount() {
+		return filteredCandidateCount;
+	}
+
+	public void setFilteredCandidateCount(int filteredCandidateCount) {
+		this.filteredCandidateCount = filteredCandidateCount;
+	}
+
+	public int getFilteredSetCount() {
+		return filteredSetCount;
+	}
+
+	public void setFilteredSetCount(int filteredSetCount) {
+		this.filteredSetCount = filteredSetCount;
 	}
 }

@@ -29,6 +29,7 @@ public class SetBuilder {
 
 	private SkillSet requiredSkillSet = new SkillSet();;
 	private SlotSet requiredSlotSet = new SlotSet();
+	private SearchResult result;
 
 	public SetBuilder() {
 	}
@@ -38,11 +39,12 @@ public class SetBuilder {
 	}
 
 	public SearchResult search() {
-		SearchResult result = new SearchResult();
+		result = new SearchResult();
 
 		candidateList.setRequiredSkillSet(requiredSkillSet);
 		result.setCandidateCount(candidateList.size());
 		result.setPermutationCount(candidateList.getPermutationCount());
+		result.setFilteredCandidateCount(candidateList.getFilteredCandidateCount());
 
 		log.info("Searching {} possibilities", candidateList.getPermutationCount());
 		for (int i = 0; i < candidateList.size(HEAD); i++) {
@@ -86,10 +88,12 @@ public class SetBuilder {
 			if (sup == WORSE) {
 				// New solution is worse than an existing solution, so it should not be used
 				log.debug("Will not add {}", newSolution);
+				result.setFilteredSetCount(result.getFilteredSetCount() + 1);
 				return;
 			} else if (sup == BETTER) {
 				// Potential candidate is better than an existing candidate which should be removed
 				log.debug("  Removing {}", solution);
+				result.setFilteredSetCount(result.getFilteredSetCount() + 1);
 				iterator.remove();
 			}
 		}
