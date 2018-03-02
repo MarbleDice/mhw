@@ -14,7 +14,7 @@
 		<tr th:each="description : ${skill.descriptions}"
 				th:class="${skillStat.odd ? 'odd' : 'even'}">
 			<th th:attr="rowspan=${descriptionStat.size}" th:if="${descriptionStat.first}">
-				<a th:href="${'/skill/' + skill.urlName}" th:text="${skill.name}"></a>
+				<a th:href="@{${'/skill/' + skill.urlName}}" th:text="${skill.name}"></a>
 			</th>
 			<td th:text="'Lv ' + ${descriptionStat.count}" />
 			<td th:text="${description}" />

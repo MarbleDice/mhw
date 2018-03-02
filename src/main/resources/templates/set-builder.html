@@ -5,7 +5,7 @@
 	layout:decorate="~{template}" th:with="title='Set Builder'">
 <th:block layout:fragment="content">
 
-<form action="/set-builder" th:object="${form}" method="post">
+<form th:action="@{/set-builder}" th:object="${form}" method="post">
 <button name="search" style="display: none;"></button>
 <table class="form">
 	<tr>
@@ -83,7 +83,7 @@
 				<!-- Total skills on one line -->
 				<li>
 					<th:block th:each="entry : ${set.skillSet.skillLevels}">
-					<a th:href="${'/skill/' + entry.key.urlName}" th:text="${entry.key.name}"></a>
+					<a th:href="@{${'/skill/' + entry.key.urlName}}" th:text="${entry.key.name}"></a>
 					<span th:text="${entry.value + (entryStat.last ? '' : ',')}"></span>
 					</th:block>
 					</li>
