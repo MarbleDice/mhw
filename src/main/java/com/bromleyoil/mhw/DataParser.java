@@ -3,6 +3,7 @@ package com.bromleyoil.mhw;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -46,7 +47,8 @@ public class DataParser {
 	}
 
 	public static Reader openResource(String resourceName) {
-		return new InputStreamReader(Thread.currentThread().getContextClassLoader().getResourceAsStream(resourceName));
+		return new InputStreamReader(Thread.currentThread().getContextClassLoader().getResourceAsStream(resourceName),
+				StandardCharsets.UTF_8);
 	}
 
 	public static List<String> parseSkills(Reader reader) throws IOException {
