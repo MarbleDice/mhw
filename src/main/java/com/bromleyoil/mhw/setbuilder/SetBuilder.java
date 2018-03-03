@@ -68,6 +68,7 @@ public class SetBuilder {
 									addSolution(result.getSolutions(), set);
 								}
 								if (result.getSolutions().size() >= 100) {
+									log.info("Aborting search with {} solutions.", result.getSolutions().size());
 									return result;
 								}
 							}
