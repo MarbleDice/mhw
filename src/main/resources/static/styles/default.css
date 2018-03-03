@@ -139,7 +139,7 @@ table.data td {
 table.form {
 	border: 1px solid black;
 	border-collapse: collapse;
-	margin: 10px 20px;
+	margin: 10px 0;
 }
 
 table.form th, table.form td {
@@ -161,5 +161,9 @@ input.numberBox {
 }
 
 .actions {
-	margin: 10px 20px;
+	margin: 10px 0;
+}
+
+.errors, .field-error {
+	color: red;
 }

@@ -11,11 +11,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.bromleyoil.mhw.form.SetBuilderForm;
+import com.bromleyoil.mhw.form.SkillRow;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
 import com.bromleyoil.mhw.model.SlotSet;
@@ -26,7 +28,9 @@ import com.bromleyoil.mhw.setbuilder.SetBuilder;
 @RequestMapping("/set-builder")
 public class SetBuilderController {
 
-	Logger log = LoggerFactory.getLogger(SetBuilderController.class);
+	private Logger log = LoggerFactory.getLogger(SetBuilderController.class);
+
+	private static final String VIEW = "set-builder";
 
 	@Autowired
 	private SetBuilder setBuilder;
@@ -37,31 +41,31 @@ public class SetBuilderController {
 	}
 
 	@RequestMapping
-	public ModelAndView initialRequest() {
-		return modelAndView(new SetBuilderForm());
+	public String initialRequest(SetBuilderForm form) {
+		return VIEW;
 	}
 
 	@RequestMapping(params = "addSkill")
-	public ModelAndView addSkill(SetBuilderForm form, HttpServletRequest request) {
-		ModelAndView mav = modelAndView(form);
-		mav.addObject("autofocus", form.getNewSkill());
-		form.addSkillLevel(form.getNewSkill(), null);
+	public String addSkill(SetBuilderForm form, BindingResult bindingResult, ModelMap modelMap) {
+		modelMap.put("autofocus", form.getNewSkill());
+		form.getSkillRows().add(new SkillRow(form.getNewSkill()));
 		form.setNewSkill(null);
-		return mav;
+		return VIEW;
 	}
 
 	@RequestMapping(params = "removeSkill")
-	public ModelAndView removeSkill(SetBuilderForm form, HttpServletRequest request) {
+	public String removeSkill(SetBuilderForm form, BindingResult bindingResult, HttpServletRequest request) {
 		int index = Integer.parseInt(request.getParameter("removeSkill"));
-		form.getSkills().remove(index);
-		form.getLevels().remove(index);
-		return modelAndView(form);
+		form.getSkillRows().remove(index);
+		return VIEW;
 	}
 
 	@RequestMapping(params = "search")
-	public ModelAndView search(SetBuilderForm form) {
-		setBuilder.setRequiredSkillSet(new SkillSet(form.getSkills(),
-				form.getLevels().stream().map(x -> x != null ? x : 0).collect(Collectors.toList())));
+	public String search(SetBuilderForm form, BindingResult bindingResult, ModelMap modelMap) {
+		if (bindingResult.hasErrors()) {
+			return VIEW;
+		}
+		setBuilder.setRequiredSkillSet(new SkillSet(form.getSkills(), form.getLevels()));
 
 		SlotSet requiredSlotSet = new SlotSet();
 		List<Integer> slotLevels = Arrays.asList(form.getRequiredSlots1(), form.getRequiredSlots2(),
@@ -73,14 +77,8 @@ public class SetBuilderController {
 		}
 		setBuilder.setRequiredSlotSet(requiredSlotSet);
 
-		SearchResult result = setBuilder.search();
+		modelMap.put("result", setBuilder.search());
 
-		ModelAndView mav = modelAndView(form);
-		mav.addObject("result", result);
-		return mav;
-	}
-
-	protected ModelAndView modelAndView(SetBuilderForm form) {
-		return new ModelAndView("set-builder", "form", form);
+		return VIEW;
 	}
 }

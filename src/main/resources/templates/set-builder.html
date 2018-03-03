@@ -5,8 +5,11 @@
 	layout:decorate="~{template}" th:with="title='Set Builder'">
 <th:block layout:fragment="content">
 
-<form th:action="@{/set-builder}" th:object="${form}" method="post">
+<form th:action="@{/set-builder}" th:object="${setBuilderForm}" method="post">
 <button name="search" style="display: none;"></button>
+<p th:if="${#fields.hasAnyErrors()}" class="errors">
+	There were input errors, please correct them below.
+</p>
 <table class="form">
 	<tr>
 		<th colspan="3">Skills of Interest</th>
@@ -16,18 +19,18 @@
 		<th class="subheader">Name</th>
 		<th class="subheader">Required Level</th>
 	</tr>
-	<tr th:each="skill : ${form.skills}">
+	<tr th:each="row : ${setBuilderForm.skillRows}">
 		<td>
-			<button name="removeSkill" th:value="${skillStat.index}">X</button>
+			<button name="removeSkill" th:value="${rowStat.index}">X</button>
 		</td>
 		<td>
-			<span th:text="${skill.name}"></span>
-			<input type="hidden" th:field="*{skills[__${skillStat.index}__]}" />
+			<span th:text="${row.skill.name}"></span>
+			<input type="hidden" th:field="*{skillRows[__${rowStat.index}__].skill}" />
 		</td>
 		<td>
-			<input type="text" th:field="*{levels[__${skillStat.index}__]}" th:attr="autofocus=${autofocus eq skill ? '' : null}"
-					class="numberBox" maxlength="1" placeholder="0" />
-			<span th:text="' / ' + ${skill.maxLevel}"></span>
+			<input type="text" th:field="*{skillRows[__${rowStat.index}__].level}" th:attr="autofocus=${autofocus eq row.skill ? '' : null}"
+					class="numberBox" maxlength="1" placeholder="0" th:errorclass="field-error" />
+			<span th:text="' / ' + ${row.skill.maxLevel}"></span>
 		</td>
 	</tr>
 	<tr>
@@ -35,7 +38,7 @@
 		<td>
 			<select th:field="*{newSkill}" onchange="document.getElementById('addSkill').click()">
 				<option disabled selected value="">Select a skill</option>
-				<option th:each="skill : ${skillList}" th:if="${not #lists.contains(form.skills, skill)}"
+				<option th:each="skill : ${skillList}" th:if="${not setBuilderForm.contains(skill)}"
 						th:value="${skill.urlName}" th:text="${skill.name}"></option>
 			</select>
 			<button id="addSkill" name="addSkill" style="display: none;">+</button>
@@ -53,9 +56,9 @@
 		<th class="subheader">L1</th>
 	</tr>
 	<tr>
-		<td><input type="text" th:field="*{requiredSlots3}" class="numberBox" maxlength="1" placeholder="0" /></td>
-		<td><input type="text" th:field="*{requiredSlots2}" class="numberBox" maxlength="1" placeholder="0" /></td>
-		<td><input type="text" th:field="*{requiredSlots1}" class="numberBox" maxlength="1" placeholder="0" /></td>
+		<td><input type="text" th:field="*{requiredSlots3}" maxlength="1" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
+		<td><input type="text" th:field="*{requiredSlots2}" maxlength="1" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
+		<td><input type="text" th:field="*{requiredSlots1}" maxlength="1" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
 	</tr>
 </table>
 <div class="actions">

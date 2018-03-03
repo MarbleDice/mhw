@@ -2,6 +2,7 @@ package com.bromleyoil.mhw.form;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.bromleyoil.mhw.model.Skill;
 
@@ -9,8 +10,7 @@ public class SetBuilderForm {
 
 	private Skill newSkill;
 
-	private List<Skill> skills = new ArrayList<>();
-	private List<Integer> levels = new ArrayList<>();
+	private List<SkillRow> skillRows = new ArrayList<>();
 	private Integer requiredSlots3;
 	private Integer requiredSlots2;
 	private Integer requiredSlots1;
@@ -23,35 +23,25 @@ public class SetBuilderForm {
 		this.newSkill = newSkill;
 	}
 
-	public List<Skill> getSkills() {
-		return skills;
+	public List<SkillRow> getSkillRows() {
+		return skillRows;
 	}
 
-	public void setSkills(List<Skill> skills) {
-		this.skills = skills;
+	public void setSkillRows(List<SkillRow> skillRows) {
+		this.skillRows = skillRows;
+	}
+
+	public List<Skill> getSkills() {
+		return skillRows.stream().map(SkillRow::getSkill).collect(Collectors.toList());
 	}
 
 	public List<Integer> getLevels() {
-		return levels;
+		return skillRows.stream().map(x -> x.getLevel() != null ? x.getLevel() : 0).collect(Collectors.toList());
 	}
-
-	public void setLevels(List<Integer> requiredSkillLevels) {
-		this.levels = requiredSkillLevels;
+		
+	public boolean contains(Skill skill) {
+		return skillRows.stream().anyMatch(x -> x.getSkill() == skill);
 	}
-
-	/**
-	 * Adds a skill with the given level, sorting the skills and inserting the level at the same index in the parallel
-	 * list. This is only well behaved when elements are not added through any other means.
-	 * 
-	 * @param skill
-	 * @param level
-	 */
-	public void addSkillLevel(Skill skill, Integer level) {
-		skills.add(skill);
-		skills.sort(Skill.NAME_ORDER);
-		levels.add(skills.indexOf(skill), level);
-	}
-
 	public Integer getRequiredSlots3() {
 		return requiredSlots3;
 	}
