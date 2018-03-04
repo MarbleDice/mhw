@@ -3,12 +3,9 @@ package com.bromleyoil.mhw.controller;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -21,14 +18,11 @@ import com.bromleyoil.mhw.form.SkillRow;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
 import com.bromleyoil.mhw.model.SlotSet;
-import com.bromleyoil.mhw.setbuilder.SearchResult;
 import com.bromleyoil.mhw.setbuilder.SetBuilder;
 
 @Controller
 @RequestMapping("/set-builder")
 public class SetBuilderController {
-
-	private Logger log = LoggerFactory.getLogger(SetBuilderController.class);
 
 	private static final String VIEW = "set-builder";
 

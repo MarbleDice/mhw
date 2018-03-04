@@ -12,12 +12,13 @@
 </p>
 <table class="form">
 	<tr>
-		<th colspan="3">Skills of Interest</th>
+		<th colspan="4">Skills of Interest</th>
 	</tr>
 	<tr>
 		<th class="subheader"></th>
 		<th class="subheader">Name</th>
-		<th class="subheader">Required Level</th>
+		<th class="subheader">Req Level</th>
+		<th class="subheader">Decoration Count</th>
 	</tr>
 	<tr th:each="row : ${setBuilderForm.skillRows}">
 		<td>
@@ -32,6 +33,10 @@
 					class="numberBox" maxlength="1" placeholder="0" th:errorclass="field-error" />
 			<span th:text="' / ' + ${row.skill.maxLevel}"></span>
 		</td>
+		<td>
+			<input type="text" th:field="*{skillRows[__${rowStat.index}__].decorationCount}"
+					class="numberBox" maxlength="1" placeholder="0" th:errorclass="field-error" />
+		</td>
 	</tr>
 	<tr>
 		<td></td>
@@ -43,7 +48,7 @@
 			</select>
 			<button id="addSkill" name="addSkill" style="display: none;">+</button>
 		</td>
-		<td></td>
+		<td colspan="2"></td>
 	</tr>
 </table>
 <table class="form">
