@@ -34,8 +34,11 @@
 			<span th:text="' / ' + ${row.skill.maxLevel}"></span>
 		</td>
 		<td>
+			<th:block th:if="${row.skill.decorationLevel > 0}">
 			<input type="text" th:field="*{skillRows[__${rowStat.index}__].decorationCount}"
 					class="numberBox" maxlength="1" placeholder="0" th:errorclass="field-error" />
+			<span th:text="${row.skill.decorationName}"></span>
+			</th:block>
 		</td>
 	</tr>
 	<tr>

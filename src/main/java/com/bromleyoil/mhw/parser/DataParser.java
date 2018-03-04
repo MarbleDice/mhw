@@ -1,4 +1,4 @@
-package com.bromleyoil.mhw;
+package com.bromleyoil.mhw.parser;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,10 +7,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.SortedSet;
-import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -49,70 +45,6 @@ public class DataParser {
 	public static Reader openResource(String resourceName) {
 		return new InputStreamReader(Thread.currentThread().getContextClassLoader().getResourceAsStream(resourceName),
 				StandardCharsets.UTF_8);
-	}
-
-	public static List<String> parseSkills(Reader reader) throws IOException {
-		Map<String, List<String>> skills = new TreeMap<>();
-
-		String currentSkill = null;
-		List<String> skillDescriptions = new ArrayList<>();
-		for (CSVRecord record : CSVFormat.TDF.parse(reader)) {
-			String newSkill = record.get(0);
-			String skillDescription = record.get(1);
-
-			if (StringUtils.isBlank(skillDescription)) {
-				continue;
-			}
-
-			// Starting a new skill
-			if (!StringUtils.isBlank(newSkill)) {
-				// There was a skill before this one
-				if (currentSkill != null) {
-					skills.put(currentSkill, skillDescriptions);
-					skillDescriptions = new ArrayList<>();
-				}
-
-				currentSkill = newSkill;
-			}
-
-			// Add the description to the list for the current skill
-			skillDescriptions.add(
-					skillDescription.replace("Lv1,", "").replace("Lv2,", "").replace("Lv3,", "").replace("Lv4,", "")
-							.replace("Lv5,", "").replace("Lv6,", "").replace("Lv7,", "").replace("\"", ""));
-		}
-		skills.put(currentSkill, skillDescriptions);
-
-		return printEnumInitializers(skills);
-	}
-
-	protected static List<String> printEnumInitializers(Map<String, List<String>> skills) {
-		List<String> lines = new ArrayList<>();
-		for (Entry<String, List<String>> skill : skills.entrySet()) {
-			// Start the enum initializer block
-			lines.add(String.format("\t%s(\"%s\",", Skill.getEnumName(skill.getKey()), skill.getKey()));
-
-			// Determine the terminator for the last description of this skill
-			String lastDescriptionTerminator;
-			if (skill.getKey() == ((SortedSet<String>) skills.keySet()).last()) {
-				lastDescriptionTerminator = ");";
-			} else {
-				lastDescriptionTerminator = "),";
-			}
-
-			// New line for each skill level description
-			for (String description : skill.getValue()) {
-				// Determine the description terminator
-				String descriptionTerminator;
-				if (description == skill.getValue().get(skill.getValue().size() - 1)) {
-					descriptionTerminator = lastDescriptionTerminator;
-				} else {
-					descriptionTerminator = ",";
-				}
-
-				lines.add(String.format("\t\t\"%s\"%s", description, descriptionTerminator));
-			}
-		}
-		return lines;
 	}
 
 	public static List<Equipment> parseAllEquipment() throws IOException {

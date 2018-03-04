@@ -10,7 +10,7 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Component;
 
-import com.bromleyoil.mhw.DataParser;
+import com.bromleyoil.mhw.parser.DataParser;
 
 @Component
 public class EquipmentList {

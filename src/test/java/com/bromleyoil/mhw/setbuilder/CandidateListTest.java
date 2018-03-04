@@ -14,10 +14,10 @@ import org.junit.runners.JUnit4;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.bromleyoil.mhw.DataParser;
 import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
+import com.bromleyoil.mhw.parser.DataParser;
 
 @RunWith(JUnit4.class)
 public class CandidateListTest {

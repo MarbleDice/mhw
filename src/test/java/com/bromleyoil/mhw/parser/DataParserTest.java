@@ -1,4 +1,4 @@
-package com.bromleyoil.mhw;
+package com.bromleyoil.mhw.parser;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
@@ -18,17 +18,6 @@ import com.bromleyoil.mhw.model.EquipmentType;
 
 @RunWith(JUnit4.class)
 public class DataParserTest {
-
-	@Test
-	public void parseSkills_fullFile_parsed() throws IOException {
-		List<String> lines = DataParser.parseSkills(DataParser.openResource("skills.tsv"));
-		assertThat("num skill lines", lines.size(), is(467));
-
-		lines.clear();
-		for (String line : lines) {
-			System.out.println(line);
-		}
-	}
 
 	@Test
 	public void createEquipment_withSlots_parsed() {

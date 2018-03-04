@@ -12,9 +12,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import com.bromleyoil.mhw.DataParser;
 import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.SkillSet;
+import com.bromleyoil.mhw.parser.DataParser;
 
 @RunWith(JUnit4.class)
 public class SetBuilderTest {
