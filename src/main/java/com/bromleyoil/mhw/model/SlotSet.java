@@ -3,6 +3,8 @@ package com.bromleyoil.mhw.model;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 public class SlotSet {
@@ -19,6 +21,8 @@ public class SlotSet {
 	private static final Comparator<Integer> DESCENDING = (a, b) -> b - a;
 
 	private List<Integer> slots = new ArrayList<>();
+	private List<Integer> filledSlots = new ArrayList<>();
+	private Map<Skill, Integer> decorationCounts = new TreeMap<>(Skill.DECORATION_AND_NAME_ORDER);
 
 	public SlotSet() {
 	}
@@ -46,6 +50,23 @@ public class SlotSet {
 		slots.sort(DESCENDING);
 	}
 
+	public boolean decorate(Skill skill) {
+		for (int level = skill.getDecorationLevel(); level <= 3; level++) {
+			if (slots.contains(level)) {
+				slots.remove(level);
+				filledSlots.add(level);
+				filledSlots.sort(DESCENDING);
+				decorationCounts.compute(skill, (k, v) -> v != null ? v + 1 : 1);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public boolean hasSlot(int level) {
+		return slots.contains(level);
+	}
+
 	public List<Integer> getSlots() {
 		return slots;
 	}
@@ -59,12 +80,23 @@ public class SlotSet {
 		return "③";
 	}
 
+	public static String getFilledSlotLabel(Integer slotLevel) {
+		if (slotLevel == 1) {
+			return "❶";
+		} else if (slotLevel == 2) {
+			return "❷";
+		}
+		return "❸";
+	}
+
 	public String getLabel() {
-		return slots.stream().map(SlotSet::getSlotLabel).collect(Collectors.joining(" "));
+		return String.join(" ", filledSlots.stream().map(SlotSet::getFilledSlotLabel).collect(Collectors.joining(" ")),
+				slots.stream().map(SlotSet::getSlotLabel).collect(Collectors.joining(" ")));
 	}
 
 	public String getAsciiLabel() {
-		return slots.stream().map(x -> String.format("(%d)", x)).collect(Collectors.joining(" "));
+		return String.join(" ", slots.stream().map(x -> String.format("[%d]", x)).collect(Collectors.joining(" ")),
+				slots.stream().map(x -> String.format("(%d)", x)).collect(Collectors.joining(" ")));
 	}
 
 	public boolean isEmpty() {

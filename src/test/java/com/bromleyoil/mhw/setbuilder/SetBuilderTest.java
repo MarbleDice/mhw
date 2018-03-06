@@ -53,4 +53,28 @@ public class SetBuilderTest {
 
 		assertThat("solutions", result.getSolutions().size(), is(10));
 	}
+
+	@Test
+	public void search_godlyDamageNoDeco_notPossible() {
+		SkillSet requiredSkillSet = new SkillSet(
+				Arrays.asList(AGITATOR, ATTACK_BOOST, WEAKNESS_EXPLOIT),
+				Arrays.asList(5, 7, 3));
+		setBuilder.setRequiredSkillSet(requiredSkillSet);
+
+		SearchResult result = setBuilder.search();
+
+		assertThat("solutions", result.getSolutions().size(), is(0));
+	}
+
+	@Test
+	public void search_godlyDamageWithDeco_hasSolutions() {
+		SkillSet requiredSkillSet = new SkillSet(
+				Arrays.asList(AGITATOR, ATTACK_BOOST, WEAKNESS_EXPLOIT),
+				Arrays.asList(5, 7, 3));
+		setBuilder.setRequiredSkillSet(requiredSkillSet);
+
+		SearchResult result = setBuilder.search();
+
+		assertThat("solutions", result.getSolutions().size(), is(1));
+	}
 }

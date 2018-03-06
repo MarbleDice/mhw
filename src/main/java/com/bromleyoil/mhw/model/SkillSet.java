@@ -1,7 +1,9 @@
 package com.bromleyoil.mhw.model;
 
 import java.util.AbstractMap.SimpleEntry;
+import java.util.Collection;
 import java.util.EnumMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -21,10 +23,12 @@ public class SkillSet {
 		add(skill, level);
 	}
 
-	public SkillSet(List<Skill> skills, List<Integer> levels) {
+	public SkillSet(Collection<Skill> skills, Collection<Integer> levels) {
 		Assert.isTrue(skills.size() == levels.size(), "Number of skills and levels must match");
-		for (int i = 0; i < skills.size(); i++) {
-			add(skills.get(i), levels.get(i));
+		Iterator<Skill> skillIter = skills.iterator();
+		Iterator<Integer> levelIter = levels.iterator();
+		while (skillIter.hasNext()) {
+			add(skillIter.next(), levelIter.next());
 		}
 	}
 
@@ -53,6 +57,24 @@ public class SkillSet {
 		if (skillValues.get(skill) > maxValue) {
 			skillValues.put(skill, maxValue);
 		}
+	}
+
+	
+	public SkillSet subtract(SkillSet subtrahend) {
+		SkillSet difference = new SkillSet(skillValues.keySet(), skillValues.values());
+		for (Entry<Skill, Integer> entry : subtrahend.skillValues.entrySet()) {
+			Skill skill = entry.getKey();
+			int subtrahendValue = entry.getValue();
+			int minuendValue = difference.getValue(skill);
+			if (difference.contains(skill)) {
+				if (difference.getValue(skill) <= subtrahendValue) {
+					difference.skillValues.remove(skill);
+				} else {
+					difference.skillValues.put(skill, minuendValue - subtrahendValue);
+				}
+			}
+		}
+		return difference;
 	}
 
 	public boolean contains(Skill skill) {

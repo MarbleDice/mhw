@@ -2,6 +2,7 @@ package com.bromleyoil.mhw.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -23,24 +24,8 @@ public class EquipmentSet {
 		slotSet.add(equipment.getSlotSet());
 	}
 
-	public Collection<Equipment> getEquipment() {
-		return equipmentMap.values();
-	}
-
-	public SkillSet getSkillSet() {
-		return skillSet;
-	}
-
-	public void setSkillSet(SkillSet skillSet) {
-		this.skillSet = skillSet;
-	}
-
-	public SlotSet getSlotSet() {
-		return slotSet;
-	}
-
-	public void setSlotSet(SlotSet slotSet) {
-		this.slotSet = slotSet;
+	public boolean decorate(Skill skill) {
+		return false;
 	}
 
 	@Override
@@ -61,5 +46,25 @@ public class EquipmentSet {
 		lines.add("Total: " + skillSet.getSkillLevels().stream().map(x -> x.getKey() + " " + x.getValue())
 				.collect(Collectors.joining(", ")) + (!slotSet.isEmpty() ? " " + slotSet.getAsciiLabel() : ""));
 		return String.join("\n", lines);
+	}
+
+	public Collection<Equipment> getEquipment() {
+		return equipmentMap.values();
+	}
+
+	public SkillSet getSkillSet() {
+		return skillSet;
+	}
+
+	public void setSkillSet(SkillSet skillSet) {
+		this.skillSet = skillSet;
+	}
+
+	public SlotSet getSlotSet() {
+		return slotSet;
+	}
+
+	public void setSlotSet(SlotSet slotSet) {
+		this.slotSet = slotSet;
 	}
 }

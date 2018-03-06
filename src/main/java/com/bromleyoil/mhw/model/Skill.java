@@ -475,6 +475,13 @@ public enum Skill {
 		"Negates minor and major wind pressure.");
 
 	public static final Comparator<Skill> NAME_ORDER = (a, b) -> a.getName().compareTo(b.getName());
+	public static final Comparator<Skill> DECORATION_AND_NAME_ORDER = (a, b) -> {
+		int rv = Integer.compare(a.getDecorationLevel(), b.getDecorationLevel());
+		if (rv == 0) {
+				rv = a.getName().compareTo(b.getName());
+		}
+		return rv;
+	};
 
 	private String skillName;
 	private List<String> descriptions;
