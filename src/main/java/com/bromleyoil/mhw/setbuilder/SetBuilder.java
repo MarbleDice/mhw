@@ -85,10 +85,8 @@ public class SetBuilder {
 		set.decorate(requiredSkillSet, decorationCounts);
 
 		// Check if the potential solution meets the required skills and slots
-		Superiority sup = Superiority.combine(
-				Superiority.compare(set.getSkillSet(), requiredSkillSet),
-				Superiority.compare(set.getSlotSet(), requiredSlotSet));
-		if (sup == BETTER || sup == EQUAL) {
+		if (Superiority.equalOrBetter(set.getSkillSet(), requiredSkillSet)
+				&& Superiority.equalOrBetter(set.getSlotSet(), requiredSlotSet)) {
 			addSolution(result.getSolutions(), set);
 		}
 	}

@@ -89,6 +89,35 @@ public enum Superiority {
 	}
 
 	/**
+	 * Checks if the skill levels of the first skill set are equal to or better than the levels of the second one.
+	 * 
+	 * @param a
+	 * @param b
+	 * @return True if a has equal or higher levels for all skills in b, false otherwise.
+	 */
+	public static boolean equalOrBetter(SkillSet a, SkillSet b) {
+		for (Skill skill : b.getSkills()) {
+			if (a.getLevel(skill) < b.getLevel(skill)) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * Checks if the slot of the first slot set are equal to or better than the slots of the second one.
+	 * 
+	 * @param a
+	 * @param b
+	 * @return True if a has equal or more slots than b, false otherwise.
+	 */
+	public static boolean equalOrBetter(SlotSet a, SlotSet b) {
+		// Short-circuit if a is worse than b
+		return a.getThree() >= b.getThree() && a.getTwoPlus() >= b.getTwoPlus() && a.getOnePlus() >= b.getOnePlus();
+	}
+
+	/**
 	 * Compares slots and partial skills on two pieces of equipment, using only the interesting skills.
 	 * 
 	 * @param a

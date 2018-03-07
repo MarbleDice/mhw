@@ -47,7 +47,42 @@ public class SuperiorityTest {
 
 	@Test
 	public void compare_sameSlots_equal() {
-		assertThat("2 vs 1 1", compare(THREE, THREE), is(EQUAL));
+		assertThat("3 vs 3", compare(THREE, THREE), is(EQUAL));
+	}
+
+	@Test
+	public void equalOrBetter_moreSlots_true() {
+		assertThat("1 1 vs 1", equalOrBetter(ONE_ONE, ONE), is(true));
+	}
+
+	@Test
+	public void equalOrBetter_higherSlots_true() {
+		assertThat("2 vs 1", equalOrBetter(TWO, ONE), is(true));
+	}
+
+	@Test
+	public void equalOrBetter_moreAndLowerSlots_false() {
+		assertThat("2 vs 1 1", equalOrBetter(TWO, ONE_ONE), is(false));
+	}
+
+	@Test
+	public void equalOrBetter_sameSlots_true() {
+		assertThat("3 vs 3", equalOrBetter(THREE, THREE), is(true));
+	}
+
+	@Test
+	public void equalOrBetter_missingSkill_false() {
+		assertThat("earplugs1 < focus1", equalOrBetter(earplugs1, focus1), is(false));
+	}
+
+	@Test
+	public void equalOrBetter_lowSkill_false() {
+		assertThat("earplugs1 < earplugs2", equalOrBetter(earplugs1, earplugs2), is(false));
+	}
+
+	@Test
+	public void equalOrBetter_equalSkills_true() {
+		assertThat("guard1 = guard1", equalOrBetter(guard1, guard1), is(true));
 	}
 
 	@Test
