@@ -1,7 +1,7 @@
 package com.bromleyoil.mhw.parser;
 
-import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.*;
 
 import java.io.IOException;
 import java.util.List;
