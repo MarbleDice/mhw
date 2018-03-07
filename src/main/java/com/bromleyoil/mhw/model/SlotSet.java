@@ -53,7 +53,8 @@ public class SlotSet {
 	public boolean decorate(Skill skill) {
 		for (int level = skill.getDecorationLevel(); level <= 3; level++) {
 			if (slots.contains(level)) {
-				slots.remove(level);
+				// Remove by reference (not index)
+				slots.remove(Integer.valueOf(level));
 				filledSlots.add(level);
 				filledSlots.sort(DESCENDING);
 				decorationCounts.compute(skill, (k, v) -> v != null ? v + 1 : 1);
@@ -63,8 +64,17 @@ public class SlotSet {
 		return false;
 	}
 
-	public boolean hasSlot(int level) {
-		return slots.contains(level);
+	public boolean hasSlots() {
+		return !slots.isEmpty() || !filledSlots.isEmpty();
+	}
+
+	public boolean hasOpenSlot(int level) {
+		for (int l = level; l <= 3; l++) {
+			if (slots.contains(l)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public List<Integer> getSlots() {

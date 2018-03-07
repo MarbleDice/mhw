@@ -2,6 +2,7 @@ package com.bromleyoil.mhw.form;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import com.bromleyoil.mhw.model.Skill;
@@ -21,6 +22,11 @@ public class SetBuilderForm {
 
 	public void setNewSkill(Skill newSkill) {
 		this.newSkill = newSkill;
+	}
+
+	public void addSkillRow(SkillRow skillRow) {
+		skillRows.add(skillRow);
+		skillRows.sort((a, b) -> Skill.NAME_ORDER.compare(a.getSkill(), b.getSkill()));
 	}
 
 	public List<SkillRow> getSkillRows() {
@@ -64,5 +70,10 @@ public class SetBuilderForm {
 
 	public void setRequiredSlots1(Integer requiredSlots1) {
 		this.requiredSlots1 = requiredSlots1;
+	}
+
+	public Map<Skill, Integer> getDecorationCounts() {
+		return skillRows.stream().collect(Collectors.toMap(SkillRow::getSkill,
+				x -> x.getDecorationCount() != null ? x.getDecorationCount() : 0));
 	}
 }

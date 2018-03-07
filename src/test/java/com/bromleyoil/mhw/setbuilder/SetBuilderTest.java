@@ -6,6 +6,8 @@ import static org.junit.Assert.*;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.EnumMap;
+import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -13,6 +15,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import com.bromleyoil.mhw.model.EquipmentList;
+import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
 import com.bromleyoil.mhw.parser.DataParser;
 
@@ -73,8 +76,12 @@ public class SetBuilderTest {
 				Arrays.asList(5, 7, 3));
 		setBuilder.setRequiredSkillSet(requiredSkillSet);
 
+		Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
+		decorationCounts.put(WEAKNESS_EXPLOIT, 3);
+		setBuilder.setDecorationCounts(decorationCounts);
+
 		SearchResult result = setBuilder.search();
 
-		assertThat("solutions", result.getSolutions().size(), is(1));
+		assertThat("solutions", result.getSolutions().size(), is(2));
 	}
 }

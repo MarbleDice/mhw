@@ -47,11 +47,7 @@ public class SkillSet {
 	}
 
 	protected void addByValue(Skill skill, int value) {
-		if (contains(skill)) {
-			skillValues.put(skill, skillValues.get(skill) + value);
-		} else {
-			skillValues.put(skill, value);
-		}
+		skillValues.compute(skill, (k, v) -> v != null ? v + value : value);
 
 		int maxValue = Fraction.getNumerator(skill.getMaxLevel());
 		if (skillValues.get(skill) > maxValue) {
@@ -59,18 +55,19 @@ public class SkillSet {
 		}
 	}
 
-	
-	public SkillSet subtract(SkillSet subtrahend) {
-		SkillSet difference = new SkillSet(skillValues.keySet(), skillValues.values());
-		for (Entry<Skill, Integer> entry : subtrahend.skillValues.entrySet()) {
+	public SkillSet subtractByLevel(SkillSet subtrahend) {
+		SkillSet difference = new SkillSet();
+		getSkillLevels().stream().filter(x -> x.getValue() > 0).forEach(x -> difference.add(x.getKey(), x.getValue()));
+
+		for (Entry<Skill, Integer> entry : subtrahend.getSkillLevels()) {
 			Skill skill = entry.getKey();
-			int subtrahendValue = entry.getValue();
-			int minuendValue = difference.getValue(skill);
+			int subtrahendLevel = entry.getValue();
+			int minuendLevel = difference.getLevel(skill);
 			if (difference.contains(skill)) {
-				if (difference.getValue(skill) <= subtrahendValue) {
+				if (minuendLevel <= subtrahendLevel) {
 					difference.skillValues.remove(skill);
 				} else {
-					difference.skillValues.put(skill, minuendValue - subtrahendValue);
+					difference.skillValues.put(skill, Fraction.getNumerator(minuendLevel - subtrahendLevel));
 				}
 			}
 		}

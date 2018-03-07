@@ -98,9 +98,16 @@
 					<a th:href="@{${'/skill/' + entry.key.urlName}}" th:text="${entry.key.name}"></a>
 					<span th:text="${entry.value + (entryStat.last ? '' : ',')}"></span>
 					</th:block>
-					</li>
+				</li>
 				<!-- Total slots on the next line -->
-				<li th:if="${set.slotSet.count gt 0}"><span th:text="${set.slotSet.label}"></span></li>
+				<li th:if="${set.slotSet.hasSlots()}"><span th:text="${set.slotSet.label}"></span></li>
+				<!-- List of decorations -->
+				<li th:if="${!set.decorationCounts.isEmpty()}">
+					<th:block th:each="entry : ${set.decorationCounts}">
+					<span th:text="${entry.value + 'x'}"></span>
+					<span th:text="${entry.key.decorationName + (entryStat.last ? '' : ',')}"></span>
+					</th:block>
+				</li>
 			</ul>
 		</td>
 	</th:block>

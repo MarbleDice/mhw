@@ -42,7 +42,7 @@ public class SetBuilderController {
 	@RequestMapping(params = "addSkill")
 	public String addSkill(SetBuilderForm form, BindingResult bindingResult, ModelMap modelMap) {
 		modelMap.put("autofocus", form.getNewSkill());
-		form.getSkillRows().add(new SkillRow(form.getNewSkill()));
+		form.addSkillRow(new SkillRow(form.getNewSkill()));
 		form.setNewSkill(null);
 		return VIEW;
 	}
@@ -70,6 +70,8 @@ public class SetBuilderController {
 			}
 		}
 		setBuilder.setRequiredSlotSet(requiredSlotSet);
+
+		setBuilder.setDecorationCounts(form.getDecorationCounts());
 
 		modelMap.put("result", setBuilder.search());
 

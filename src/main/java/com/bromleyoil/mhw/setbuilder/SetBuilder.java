@@ -3,8 +3,10 @@ package com.bromleyoil.mhw.setbuilder;
 import static com.bromleyoil.mhw.model.EquipmentType.*;
 import static com.bromleyoil.mhw.setbuilder.Superiority.*;
 
+import java.util.EnumMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +17,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.bromleyoil.mhw.model.EquipmentSet;
+import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
 import com.bromleyoil.mhw.model.SlotSet;
 
@@ -27,8 +30,9 @@ public class SetBuilder {
 	@Autowired
 	private CandidateList candidateList;
 
-	private SkillSet requiredSkillSet = new SkillSet();;
+	private SkillSet requiredSkillSet = new SkillSet();
 	private SlotSet requiredSlotSet = new SlotSet();
+	private Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
 	private SearchResult result;
 
 	public SetBuilder() {
@@ -53,20 +57,7 @@ public class SetBuilder {
 					for (int l = 0; l < candidateList.size(WAIST); l++) {
 						for (int m = 0; m < candidateList.size(LEGS); m++) {
 							for (int n = 0; n < candidateList.size(CHARM); n++) {
-								EquipmentSet set = new EquipmentSet();
-								set.add(candidateList.getCandidates(HEAD).get(i));
-								set.add(candidateList.getCandidates(BODY).get(j));
-								set.add(candidateList.getCandidates(HANDS).get(k));
-								set.add(candidateList.getCandidates(WAIST).get(l));
-								set.add(candidateList.getCandidates(LEGS).get(m));
-								set.add(candidateList.getCandidates(CHARM).get(n));
-								// Check if the potential solution meets the required skills and slots
-								Superiority sup = Superiority.combine(
-										Superiority.compare(set.getSkillSet(), requiredSkillSet),
-										Superiority.compare(set.getSlotSet(), requiredSlotSet));
-								if (sup == BETTER || sup == EQUAL) {
-									addSolution(result.getSolutions(), set);
-								}
+								checkSolution(i, j, k, l, m, n);
 								if (result.getSolutions().size() >= 100) {
 									log.info("Aborting search with {} solutions.", result.getSolutions().size());
 									return result;
@@ -79,6 +70,27 @@ public class SetBuilder {
 		}
 		log.info("Found {} solutions", result.getSolutions().size());
 		return result;
+	}
+
+	protected void checkSolution(int i, int j, int k, int l, int m, int n) {
+		EquipmentSet set = new EquipmentSet();
+		set.add(candidateList.getCandidates(HEAD).get(i));
+		set.add(candidateList.getCandidates(BODY).get(j));
+		set.add(candidateList.getCandidates(HANDS).get(k));
+		set.add(candidateList.getCandidates(WAIST).get(l));
+		set.add(candidateList.getCandidates(LEGS).get(m));
+		set.add(candidateList.getCandidates(CHARM).get(n));
+
+		// Compute missing skills and decorate if necessary
+		set.decorate(requiredSkillSet, decorationCounts);
+
+		// Check if the potential solution meets the required skills and slots
+		Superiority sup = Superiority.combine(
+				Superiority.compare(set.getSkillSet(), requiredSkillSet),
+				Superiority.compare(set.getSlotSet(), requiredSlotSet));
+		if (sup == BETTER || sup == EQUAL) {
+			addSolution(result.getSolutions(), set);
+		}
 	}
 
 	protected void addSolution(List<EquipmentSet> solutions, EquipmentSet newSolution) {
@@ -117,5 +129,13 @@ public class SetBuilder {
 
 	public void setRequiredSlotSet(SlotSet requiredSlotSet) {
 		this.requiredSlotSet = requiredSlotSet;
+	}
+
+	public Map<Skill, Integer> getDecorationCounts() {
+		return decorationCounts;
+	}
+
+	public void setDecorationCounts(Map<Skill, Integer> decorationCounts) {
+		this.decorationCounts = decorationCounts;
 	}
 }
