@@ -94,7 +94,7 @@
 			<ul class="unstyled">
 				<!-- Total skills on one line -->
 				<li>
-					<th:block th:each="entry : ${set.skillSet.skillLevels}">
+					<th:block th:each="entry : ${set.skillSet.orderedSkillLevels}">
 					<a th:href="@{${'/skill/' + entry.key.urlName}}" th:text="${entry.key.name}"></a>
 					<span th:text="${entry.value + (entryStat.last ? '' : ',')}"></span>
 					</th:block>

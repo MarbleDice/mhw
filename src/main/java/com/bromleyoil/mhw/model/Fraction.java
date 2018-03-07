@@ -5,28 +5,28 @@ public enum Fraction {
 
 	private static final int DENOMINATOR = 60;
 
-	private int value;
+	private int numerator;
 	private String label;
 
 	private Fraction(int value, String label) {
-		this.value = value;
+		this.numerator = value;
 		this.label = label;
 	}
 
-	public static int getNumerator(int level) {
-		return DENOMINATOR * level;
+	public static int getNumerator(int quotient) {
+		return DENOMINATOR * quotient;
 	}
 
-	public static int getLevel(int numerator) {
+	public static int getQuotient(int numerator) {
 		return numerator / DENOMINATOR;
 	}
 
 	public static String getLabel(int numerator) {
 		int quotient = numerator / DENOMINATOR;
-		return String.format("%s%s", quotient > 0 ? quotient : "", getFractionalLabel(numerator));
+		return String.format("%s%s", quotient > 0 ? quotient : "", getRemainderLabel(numerator));
 	}
 
-	protected static String getFractionalLabel(int numerator) {
+	protected static String getRemainderLabel(int numerator) {
 		int remainder = numerator % DENOMINATOR;
 
 		if (remainder == 0) {
@@ -34,7 +34,7 @@ public enum Fraction {
 		}
 
 		for (Fraction fraction : values()) {
-			if (fraction.value == remainder) {
+			if (fraction.numerator == remainder) {
 				return fraction.label;
 			}
 		}
@@ -42,8 +42,12 @@ public enum Fraction {
 		return String.format(" %d/%d", remainder, DENOMINATOR);
 	}
 
-	public int getValue() {
-		return value;
+	public int getNumerator() {
+		return numerator;
+	}
+
+	public int getQuotient() {
+		return numerator / DENOMINATOR;
 	}
 
 	public String getLabel() {

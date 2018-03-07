@@ -6,12 +6,11 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 public class EquipmentSet {
 
-	private Map<EquipmentType, Equipment> equipmentMap = new TreeMap<>();
+	private Map<EquipmentType, Equipment> equipmentMap = new EnumMap<>(EquipmentType.class);
 	private SkillSet skillSet = new SkillSet();
 	private SlotSet slotSet = new SlotSet();
 	private Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
