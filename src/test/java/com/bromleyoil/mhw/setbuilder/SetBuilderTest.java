@@ -70,18 +70,18 @@ public class SetBuilderTest {
 	}
 
 	@Test
-	public void search_godlyDamageWithDeco_hasSolutions() {
+	public void search_godlyDamageWithDeco_eightSolutions() {
 		SkillSet requiredSkillSet = new SkillSet(
 				Arrays.asList(AGITATOR, ATTACK_BOOST, WEAKNESS_EXPLOIT),
 				Arrays.asList(5, 7, 3));
 		setBuilder.setRequiredSkillSet(requiredSkillSet);
 
 		Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
-		decorationCounts.put(WEAKNESS_EXPLOIT, 3);
+		decorationCounts.put(AGITATOR, 5);
 		setBuilder.setDecorationCounts(decorationCounts);
 
 		SearchResult result = setBuilder.search();
 
-		assertThat("solutions", result.getSolutions().size(), is(2));
+		assertThat("solutions", result.getSolutions().size(), is(8));
 	}
 }
