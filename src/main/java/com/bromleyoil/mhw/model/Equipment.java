@@ -7,6 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 
 public class Equipment {
 
+	private int id;
 	private String name;
 	private String armorName;
 	private EquipmentType type;
@@ -33,6 +34,14 @@ public class Equipment {
 	public String getFullDescription() {
 		return getName() + " | " + skillSet.getSkillLabels().stream().map(x -> x.getKey() + " " + x.getValue())
 				.collect(Collectors.joining(", ")) + (hasSlots() ? " " + slotSet.getAsciiLabel() : "");
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {

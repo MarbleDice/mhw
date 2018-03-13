@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.bromleyoil.mhw.form.SkillFormatter;
 import com.bromleyoil.mhw.model.EquipmentList;
+import com.bromleyoil.mhw.model.EquipmentSet;
 import com.bromleyoil.mhw.model.Skill;
 
 import nz.net.ultraq.thymeleaf.LayoutDialect;
@@ -69,6 +70,16 @@ public class MainController {
 		ModelAndView mav = new ModelAndView("equipment-list");
 
 		mav.addObject("matrix", equipmentList.getMatrix());
+
+		return mav;
+	}
+
+	@RequestMapping("/equipment-set/{encodedSet}")
+	public ModelAndView equipmentSet(@PathVariable String encodedSet) {
+		ModelAndView mav = new ModelAndView("equipment-set");
+
+		EquipmentSet set = equipmentList.decode(encodedSet);
+		mav.addObject("set", set);
 
 		return mav;
 	}

@@ -86,9 +86,11 @@
 	</tr>
 	<tr th:each="set : ${result.solutions}" th:class="${setStat.odd ? 'odd' : 'even'}">
 		<td>
-			<ul class="unstyled">
-				<li th:each="equipment : ${set.equipment}" th:text="${equipment.name}"></li>
-			</ul>
+			<a th:href="@{${'/equipment-set/' + set.base64}}">
+				<ul class="unstyled">
+					<li th:each="equipment : ${set.equipment}" th:text="${equipment.name}"></li>
+				</ul>
+			</a>
 		</td>
 		<td>
 			<ul class="unstyled">

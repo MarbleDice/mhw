@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{template}" th:with="title='Equipment Set'">
+<th:block layout:fragment="content">
+<table class="data">
+	<tr>
+		<th>Equipment</th>
+		<th>Total Skills</th>
+	</tr>
+	<tr class="odd">
+		<td>
+			<ul class="unstyled">
+				<li th:each="equipment : ${set.equipment}" th:text="${equipment.name}"></li>
+			</ul>
+		</td>
+		<td>
+			<ul class="unstyled">
+				<!-- Total skills on one line -->
+				<li>
+					<th:block th:each="entry : ${set.skillSet.orderedSkillLevels}">
+					<a th:href="@{${'/skill/' + entry.key.urlName}}" th:text="${entry.key.name}"></a>
+					<span th:text="${entry.value + (entryStat.last ? '' : ',')}"></span>
+					</th:block>
+				</li>
+				<!-- Total slots on the next line -->
+				<li th:if="${set.slotSet.hasSlots()}"><span th:text="${set.slotSet.label}"></span></li>
+				<!-- List of decorations -->
+				<li th:if="${!set.decorationCounts.isEmpty()}">
+					<th:block th:each="entry : ${set.decorationCounts}">
+					<span th:text="${entry.value + 'x'}"></span>
+					<span th:text="${entry.key.decorationName + (entryStat.last ? '' : ',')}"></span>
+					</th:block>
+				</li>
+			</ul>
+		</td>
+	</th:block>
+</table>
+</th:block>
+</html>

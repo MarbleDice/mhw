@@ -50,6 +50,10 @@ public class DataParser {
 	public static List<Equipment> parseAllEquipment() throws IOException {
 		List<Equipment> items = DataParser.parseEquipment(DataParser.openResource("equipment.tsv"));
 		items.addAll(DataParser.parseCharms(DataParser.openResource("charms.tsv")));
+		// Set IDs
+		for (int i = 0; i < items.size(); i++) {
+			items.get(i).setId(i + 1);
+		}
 		return items;
 	}
 

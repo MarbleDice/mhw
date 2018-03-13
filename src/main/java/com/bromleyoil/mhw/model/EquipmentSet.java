@@ -1,5 +1,6 @@
 package com.bromleyoil.mhw.model;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumMap;
@@ -7,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
+
+import org.springframework.util.Base64Utils;
 
 public class EquipmentSet {
 
@@ -87,8 +90,55 @@ public class EquipmentSet {
 		return String.join("\n", lines);
 	}
 
+	public String getBase64() {
+		List<Integer> ints = new ArrayList<>();
+
+		// Add the ID for each piece of equipment, or 0 if missing
+		for (EquipmentType type : EquipmentType.values()) {
+			ints.add(equipmentMap.get(type) != null ? equipmentMap.get(type).getId() : 0);
+		}
+
+		// Add the ID and count for each decorated skill
+		for (Entry<Skill, Integer> entry : decorationCounts.entrySet()) {
+			ints.add(entry.getKey().ordinal());
+			ints.add(entry.getValue());
+		}
+
+		// Convert the IDs to a list of bytes, padding the equipment to 2 byte values
+		List<Byte> bytes = new ArrayList<>();
+		for (int i = 0; i < ints.size(); i++) {
+			bytes.addAll(padBytes(ints.get(i), i < EquipmentType.values().length ? 2 : 0));
+		}
+
+		// Convert the list of bytes to a primitive array of bytes
+		byte[] byteArray = new byte[bytes.size()];
+		for (int i = 0; i < bytes.size(); i++) {
+			byteArray[i] = bytes.get(i);
+		}
+
+		return Base64Utils.encodeToUrlSafeString(byteArray);
+	}
+
+	protected List<Byte> padBytes(int value, int padLength) {
+		List<Byte> bytes = new ArrayList<>();
+
+		for (byte b : BigInteger.valueOf(value).toByteArray()) {
+			bytes.add(b);
+		}
+
+		while (bytes.size() < padLength) {
+			bytes.add(0, (byte) 0);
+		}
+
+		return bytes;
+	}
+
 	public List<Entry<Skill, Integer>> getDecorationCounts() {
 		return decorationCounts.entrySet().stream().collect(Collectors.toList());
+	}
+
+	public Equipment get(EquipmentType type) {
+		return equipmentMap.get(type);
 	}
 
 	public Collection<Equipment> getEquipment() {
