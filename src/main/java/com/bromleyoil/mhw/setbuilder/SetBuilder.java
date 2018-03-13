@@ -16,6 +16,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.bromleyoil.mhw.comparator.Comparators;
 import com.bromleyoil.mhw.model.EquipmentSet;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
@@ -51,6 +52,17 @@ public class SetBuilder {
 		result.setFilteredCandidateCount(candidateList.getFilteredCandidateCount());
 
 		log.info("Searching {} possibilities", candidateList.getPermutationCount());
+		doSearch();
+
+		log.info("Found {} solutions", result.getSolutions().size());
+		result.getSolutions().sort(Comparators.adapted(EquipmentSet::getSkillSet,
+				Comparators.composite(Comparators.skillwise(requiredSkillSet.getSkills()), Comparators.ALL_SKILLS)));
+
+		log.info("Sort complete");
+		return result;
+	}
+
+	protected void doSearch() {
 		for (int i = 0; i < candidateList.size(HEAD); i++) {
 			for (int j = 0; j < candidateList.size(BODY); j++) {
 				for (int k = 0; k < candidateList.size(HANDS); k++) {
@@ -60,7 +72,7 @@ public class SetBuilder {
 								checkSolution(i, j, k, l, m, n);
 								if (result.getSolutions().size() >= 100) {
 									log.info("Aborting search with {} solutions.", result.getSolutions().size());
-									return result;
+									return;
 								}
 							}
 						}
@@ -68,8 +80,6 @@ public class SetBuilder {
 				}
 			}
 		}
-		log.info("Found {} solutions", result.getSolutions().size());
-		return result;
 	}
 
 	protected void checkSolution(int i, int j, int k, int l, int m, int n) {

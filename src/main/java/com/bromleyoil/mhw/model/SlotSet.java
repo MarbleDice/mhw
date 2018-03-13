@@ -1,11 +1,12 @@
 package com.bromleyoil.mhw.model;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
+
+import com.bromleyoil.mhw.comparator.Comparators;
 
 public class SlotSet {
 
@@ -17,8 +18,6 @@ public class SlotSet {
 	public static final SlotSet TWO_ONE = new SlotSet(2, 1);
 	public static final SlotSet THREE = new SlotSet(3);
 	public static final SlotSet THREE_ONE = new SlotSet(3, 1);
-
-	private static final Comparator<Integer> DESCENDING = (a, b) -> b - a;
 
 	private List<Integer> slots = new ArrayList<>();
 	private List<Integer> filledSlots = new ArrayList<>();
@@ -42,12 +41,12 @@ public class SlotSet {
 			}
 			this.slots.add(slot);
 		}
-		this.slots.sort(DESCENDING);
+		this.slots.sort(Comparators.DESCENDING);
 	}
 
 	public void add(SlotSet slotSet) {
 		slots.addAll(slotSet.slots);
-		slots.sort(DESCENDING);
+		slots.sort(Comparators.DESCENDING);
 	}
 
 	public boolean decorate(Skill skill) {
@@ -56,7 +55,7 @@ public class SlotSet {
 				// Remove by reference (not index)
 				slots.remove(Integer.valueOf(level));
 				filledSlots.add(level);
-				filledSlots.sort(DESCENDING);
+				filledSlots.sort(Comparators.DESCENDING);
 				decorationCounts.compute(skill, (k, v) -> v != null ? v + 1 : 1);
 				return true;
 			}
