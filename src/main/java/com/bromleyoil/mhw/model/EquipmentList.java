@@ -1,8 +1,6 @@
 package com.bromleyoil.mhw.model;
 
 import java.io.IOException;
-import java.math.BigInteger;
-import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,7 +9,6 @@ import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Component;
-import org.springframework.util.Base64Utils;
 
 import com.bromleyoil.mhw.parser.DataParser;
 
@@ -53,33 +50,6 @@ public class EquipmentList {
 
 	public Equipment find(String name) {
 		return items.stream().filter(x -> x.getName().equals(name)).findFirst().orElse(null);
-	}
-
-	public EquipmentSet decode(String encodedString) {
-		byte[] bytes = Base64Utils.decodeFromUrlSafeString(encodedString);
-		EquipmentSet equipmentSet = new EquipmentSet();
-
-		int equipmentLoaded = 0;
-		for (int i = 0; i < bytes.length; i += 2) {
-			if (equipmentLoaded < EquipmentType.values().length) {
-				// Load a 2-byte equipment ID
-				int id = convertToInt(bytes, i, 2);
-				if (id > 0) {
-					equipmentSet.add(items.get(id - 1));
-				}
-
-				equipmentLoaded++;
-			} else {
-				// Load a decoration skill and count
-				equipmentSet.decorate(Skill.values()[convertToInt(bytes, i, 1)], convertToInt(bytes, i + 1, 1));
-			}
-		}
-
-		return equipmentSet;
-	}
-
-	protected static int convertToInt(byte[] bytes, int index, int length) {
-		return new BigInteger(Arrays.copyOfRange(bytes, index, index + length)).intValue();
 	}
 
 	public Map<String, Equipment[]> getMatrix() {

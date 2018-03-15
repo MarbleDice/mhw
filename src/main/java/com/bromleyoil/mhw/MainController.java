@@ -78,7 +78,7 @@ public class MainController {
 	public ModelAndView equipmentSet(@PathVariable String encodedSet) {
 		ModelAndView mav = new ModelAndView("equipment-set");
 
-		EquipmentSet set = equipmentList.decode(encodedSet);
+		EquipmentSet set = UrlCodec.decode(equipmentList, encodedSet);
 		mav.addObject("set", set);
 
 		return mav;
