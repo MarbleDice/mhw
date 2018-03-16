@@ -118,6 +118,10 @@ table.data th, table.data td {
 	padding: 4px 8px;
 }
 
+table.set.data th:first-child {
+	width: 140px;
+}
+
 /* First-row column headers */
 table.data tr:first-child th {
 	background-color: #b1b1b1;

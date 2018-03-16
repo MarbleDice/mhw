@@ -64,9 +64,9 @@
 		<th class="subheader">L1</th>
 	</tr>
 	<tr>
-		<td><input type="text" th:field="*{requiredSlots3}" maxlength="1" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
-		<td><input type="text" th:field="*{requiredSlots2}" maxlength="1" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
-		<td><input type="text" th:field="*{requiredSlots1}" maxlength="1" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
+		<td><input type="text" th:field="*{requiredSlots3}" maxlength="2" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
+		<td><input type="text" th:field="*{requiredSlots2}" maxlength="2" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
+		<td><input type="text" th:field="*{requiredSlots1}" maxlength="2" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
 	</tr>
 </table>
 <div class="actions">
@@ -79,7 +79,7 @@
 <p th:text="|Searched ${result.permutationCount} combinations of ${result.candidateCount} pieces of equipment and
 	found ${result.solutions.size()} solutions.|"><p>
 <p th:text="|Filtered out ${result.filteredCandidateCount} pieces of equipment and ${result.filteredSetCount} inferior sets.|"><p>
-<table th:if="${!result.solutions.isEmpty()}" class="data">
+<table th:if="${!result.solutions.isEmpty()}" class="set data">
 	<tr>
 		<th>Equipment</th>
 		<th>Total Skills</th>
