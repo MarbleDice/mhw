@@ -8,6 +8,8 @@ import java.util.Map.Entry;
 
 import org.springframework.util.Base64Utils;
 
+import com.bromleyoil.mhw.form.SetBuilderForm;
+import com.bromleyoil.mhw.form.SkillRow;
 import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.EquipmentSet;
 import com.bromleyoil.mhw.model.EquipmentType;
@@ -51,7 +53,7 @@ public class UrlCodec {
 
 		for (int i = 0; i < EquipmentType.values().length; i++) {
 			// Load an equipment ID
-			int id = convertToInt(bytes, i * 2, 2);
+			int id = readToInt(bytes, i * 2, 2);
 			if (id > 0) {
 				equipmentSet.add(equipmentList.getItems().get(id - 1));
 			}
@@ -59,12 +61,52 @@ public class UrlCodec {
 
 		for (int i = EquipmentType.values().length * 2; i < bytes.length; i += 4) {
 			// Load a decoration skill and count
-			Skill skill = Skill.values()[convertToInt(bytes, i, 2)];
-			int level = convertToInt(bytes, i + 2, 2);
+			Skill skill = Skill.values()[readToInt(bytes, i, 2)];
+			int level = readToInt(bytes, i + 2, 2);
 			equipmentSet.decorate(skill, level);
 		}
 
 		return equipmentSet;
+	}
+
+	public String encode(SetBuilderForm form) {
+		List<Integer> values = new ArrayList<>();
+
+		values.add(form.getRequiredSlots1());
+		values.add(form.getRequiredSlots2());
+		values.add(form.getRequiredSlots3());
+
+		for (SkillRow row : form.getSkillRows()) {
+			values.add(row.getSkill().ordinal());
+			values.add(row.getLevel() != null ? row.getLevel() : 0);
+			values.add(row.getDecorationCount() != null ? row.getDecorationCount() : 0);
+		}
+
+		byte[] bytes = new byte[3 + form.getSkillRows().size() * 4];
+		for (int i = 0; i < 3; i++) {
+			writeToBytes(bytes, i, values.get(i), 1);
+		}
+
+		int byteIndex = 3;
+		for (int i = 3; i < values.size(); i += 3) {
+			writeToBytes(bytes, byteIndex, values.get(i), 2);
+			writeToBytes(bytes, byteIndex, values.get(i + 1), 1);
+			writeToBytes(bytes, byteIndex, values.get(i + 2), 1);
+			byteIndex += 4;
+		}
+
+		return Base64Utils.encodeToUrlSafeString(bytes);
+	}
+
+	public SetBuilderForm decodeSetBuilderForm(String encodedString) {
+		byte[] bytes = Base64Utils.decodeFromUrlSafeString(encodedString);
+		SetBuilderForm form = new SetBuilderForm();
+
+		form.setRequiredSlots1(readToInt(bytes, 0, 1));
+		form.setRequiredSlots2(readToInt(bytes, 1, 1));
+		form.setRequiredSlots3(readToInt(bytes, 2, 1));
+
+		return form;
 	}
 
 	protected static void writeToBytes(byte[] bytes, int index, int value, int length) {
@@ -83,7 +125,7 @@ public class UrlCodec {
 		}
 	}
 
-	protected static int convertToInt(byte[] bytes, int index, int length) {
+	protected static int readToInt(byte[] bytes, int index, int length) {
 		return new BigInteger(Arrays.copyOfRange(bytes, index, index + length)).intValue();
 	}
 }
