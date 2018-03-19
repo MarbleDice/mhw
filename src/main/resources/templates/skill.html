@@ -20,6 +20,7 @@
 	<p th:text="${'Rarity ' + skill.decorationRarity + ' - ' + skill.decorationName}" th:if="${skill.hasDecoration()}"></p>
 
 	<h3>Charms</h3>
+	<p th:text="${'No charms with ' + skill.name}" th:if="${charms.isEmpty()}"></p>
 	<table th:if="${!charms.isEmpty()}" class="data">
 		<tr>
 			<th>Charm Name</th>
