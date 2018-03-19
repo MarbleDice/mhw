@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
+
 public enum Skill {
 
 	ADRENALINE("Adrenaline", "", 0,
@@ -487,6 +489,7 @@ public enum Skill {
 	private List<String> descriptions;
 	private String decorationName;
 	private int decorationLevel;
+	private String decorationRarity = "?";
 
 	private Skill(String name, String decorationName, int decorationLevel, String... descriptions) {
 		this.skillName = name;
@@ -528,11 +531,18 @@ public enum Skill {
 		return descriptions.get(i);
 	}
 
+	public boolean hasDecoration() {
+		return !StringUtils.isBlank(decorationName);
+	}
 	public String getDecorationName() {
 		return decorationName;
 	}
 
 	public int getDecorationLevel() {
 		return decorationLevel;
+	}
+
+	public String getDecorationRarity() {
+		return decorationRarity;
 	}
 }

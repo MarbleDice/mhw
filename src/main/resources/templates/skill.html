@@ -15,6 +15,27 @@
 		</tr>
 	</table>
 
+	<h3>Decoration</h3>
+	<p th:text="${'No decoration for ' + skill.name}" th:if="${!skill.hasDecoration()}"></p>
+	<p th:text="${'Rarity ' + skill.decorationRarity + ' - ' + skill.decorationName}" th:if="${skill.hasDecoration()}"></p>
+
+	<h3>Charms</h3>
+	<table th:if="${!charms.isEmpty()}" class="data">
+		<tr>
+			<th>Charm Name</th>
+			<th>Skills</th>
+		</tr>
+		<tr th:each="charm : ${charms}" th:class="${charmStat.odd ? 'odd' : 'even'}">
+			<td th:text="${charm.name}"></td>
+			<td>
+				<th:block th:each="entry : ${charm.skillSet.orderedSkillLevels}">
+				<a th:href="@{${'/skill/' + entry.key.urlName}}" th:text="${entry.key.name}"></a>
+				<span th:text="${entry.value + (entryStat.last ? '' : ',')}"></span>
+				</th:block>
+			</td>
+		</tr>
+	</table>
+
 	<h3 th:text="'Equipment with ' + ${skill.name}"></h3>
 	<table th:insert="~{fragments/equipment-table :: standard}"></table>
 

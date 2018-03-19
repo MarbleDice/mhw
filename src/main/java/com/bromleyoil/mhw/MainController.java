@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.bromleyoil.mhw.form.SkillFormatter;
 import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.EquipmentSet;
+import com.bromleyoil.mhw.model.EquipmentType;
 import com.bromleyoil.mhw.model.Skill;
 
 import nz.net.ultraq.thymeleaf.LayoutDialect;
@@ -60,6 +61,7 @@ public class MainController {
 
 		Skill skill = Skill.valueOfName(skillName);
 		mav.addObject("skill", skill);
+		mav.addObject("charms", equipmentList.filter(skill).filter(EquipmentType.CHARM).getItems());
 		mav.addObject("matrix", equipmentList.filter(skill).getMatrix());
 
 		return mav;
