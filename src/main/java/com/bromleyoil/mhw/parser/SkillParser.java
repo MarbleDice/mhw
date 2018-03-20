@@ -61,6 +61,7 @@ public class SkillParser {
 		for (CSVRecord record : CSVFormat.TDF.parse(reader)) {
 			String decorationName = record.get(0);
 			String skillName = record.get(1);
+			int decorationRarity = Integer.parseInt(record.get(2));
 
 			if (StringUtils.isBlank(skillName)) {
 				continue;
@@ -71,6 +72,7 @@ public class SkillParser {
 			if (skill != null) {
 				skill.decorationName = decorationName;
 				skill.decorationLevel = parseDecorationLevel(decorationName);
+				skill.decorationRarity = decorationRarity;
 			} else {
 				throw new IllegalArgumentException("Unknown skill: " + skillName);
 			}
@@ -92,9 +94,9 @@ public class SkillParser {
 		Skill lastSkill = skills.stream().reduce((x, y) -> y).get();
 		for (Skill skill : skills) {
 			// Start the enum initializer block
-			lines.add(String.format("\t%s(\"%s\", \"%s\", %d,",
+			lines.add(String.format("\t%s(\"%s\", \"%s\", %d, %d,",
 					com.bromleyoil.mhw.model.Skill.getEnumName(skill.name), skill.name,
-					skill.decorationName, skill.decorationLevel));
+					skill.decorationName, skill.decorationLevel, skill.decorationRarity));
 
 			// Determine the terminator for the last description of this skill
 			String lastDescriptionTerminator;
@@ -125,5 +127,6 @@ public class SkillParser {
 		private List<String> descriptions = new ArrayList<>();
 		private String decorationName = "";
 		private int decorationLevel;
+		private int decorationRarity;
 	}
 }

@@ -1,97 +1,97 @@
-Antiblast Jewel 1	Blast Resistance
-Antidote Jewel 1	Poison Resistance
-Antipara Jewel 1	Paralysis Resistance
-Artillery Jewel 1	Artillery
-Attack Jewel 1	Attack Boost
-Blast Jewel 1	Blast Attack
-Blastcoat Jewel 3	Blast Functionality
-Blaze Jewel 1	Fire Attack
-Bolt Jewel 1	Thunder Attack
-Bomber Jewel 1	Bombardier
-Botany Jewel 1	Botanist
-Brace Jewel 3	Flinch Free
-Challenger Jewel 2	Agitator
-Charger Jewel 2	Focus
-Crisis Jewel 1	Resuscitate
-Critical Jewel 2	Critical Boost
-Def Lock Jewel 1	Iron Skin
-Defense Jewel 1	Defense Boost
-Destroyer Jewel 2	Partbreaker
-Dragon Jewel 1	Dragon Attack
-Dragon Res Jewel 1	Dragon Resistance
-Dragonseal Jewel 3	Elderseal Boost
-Drain Jewel 1	Stamina Thief
-Draw Jewel 2	Critical Draw
-Earplug Jewel 3	Earplugs
-Elementless Jewel 2	Non-elemental Boost
-Enduring Jewel 1	Item Prolonger
-Enhancer Jewel 2	Power Prolonger
-Evasion Jewel 2	Evade Window
-Expert Jewel 1	Critical Eye
-Fire Res Jewel 1	Fire Resistance
-Flawless Jewel 2	Peak Performance
-Flight Jewel 2	Airborne
-Footing Jewel 2	Tremor Resistance
-Forceshot Jewel 3	Normal Shots
-Fortitude Jewel 1	Fortify
-Friendship Jewel 1	Wide-Range
-Frost Jewel 1	Ice Attack
-Fungiform Jewel 1	Mushroomancer
-Furor Jewel 2	Resentment
-Geology Jewel 1	Geologist
-Gobbler Jewel 1	Speed Eating
-Grinder Jewel 1	Speed Sharpening
-Handicraft Jewel 3	Handicraft
-Heavy Artillery Jewel 1	Heavy Artillery
-Hungerless Jewel 1	Hunger Resistance
-Ice Res Jewel 1	Ice Resistance
-Intimidator Jewel 1	Intimidator
-Ironwall Jewel 1	Guard
-Jumping Jewel 2	Evade Extender
-KO Jewel 2	Slugger
-Magazine Jewel 2	Capacity Boost
-Medicine Jewel 1	Recovery Up
-Meowster Jewel 1	Palico Rally
-Miasma Jewel 1	Effluvia Resistance
-Mighty Bow Jewel 2	Bow Charge Plus
-Mighty Jewel 2	Maximum Might
-Mind's Eye Jewel 2	Mind's Eye/Ballistics
-Mirewalker Jewel 1	Aquatic Expert
-Paracoat Jewel 3	Para Functionality
-Paralyzer Jewel 1	Paralysis Attack
-Pep Jewel 1	Sleep Resistance
-Physique Jewel 2	Constitution
-Pierce Jewel 3	Piercing Shots
-Poisoncoat Jewel 3	Poison Functionality
-Potential Jewel 2	Heroics
-Protection Jewel 1	Divine Blessing
-Recovery Jewel 1	Recovery Speed
-Refresh Jewel 2	Stamina Surge
-Release Jewel 3	Free Elem/Ammo Up
-Resistor Jewel 1	Blight Resistance
-Satiated Jewel 1	Free Meal
-Scent Jewel 1	Scenthound
-Sharp Jewel 2	Protective Polish
-Sheath Jewel 1	Quick Sheath
-Shield Jewel 2	Guard Up
-Sleep Jewel 1	Sleep Attack
-Sleepcoat Jewel 3	Sleep Functionality
-Slider Jewel 2	Affinity Sliding
-Smoke Jewel 1	Sporepuff Expert
-Sonorous Jewel 1	Horn Maestro
-Specimen Jewel 1	Entomologist
-Spread Jewel 3	Spread/Power Shots
-Sprinter Jewel 2	Marathon Runner
-Steadfast Jewel 1	Stun Resistance
-Stonethrower Jewel 1	Slinger Capacity
-Stream Jewel 1	Water Attack
-Suture Jewel 1	Bleeding Resistance
-Tenderizer Jewel 2	Weakness Exploit
-Throttle Jewel 2	Latent Power
-Thunder Res Jewel 1	Thunder Resistance
-Tip Toe Jewel 1	Stealth
-Trueshot Jewel 1	Special Ammo Boost
-Venom Jewel 1	Poison Attack
-Vitality Jewel 1	Health Boost
-Water Res Jewel 1	Water Resistance
-Wind Resist Jewel 2	Windproof
+Antiblast Jewel 1	Blast Resistance	5
+Antidote Jewel 1	Poison Resistance	5
+Antipara Jewel 1	Paralysis Resistance	5
+Artillery Jewel 1	Artillery	8
+Attack Jewel 1	Attack Boost	7
+Blast Jewel 1	Blast Attack	7
+Blastcoat Jewel 3	Blast Functionality	7
+Blaze Jewel 1	Fire Attack	6
+Bolt Jewel 1	Thunder Attack	6
+Bomber Jewel 1	Bombardier	6
+Botany Jewel 1	Botanist	5
+Brace Jewel 3	Flinch Free	6
+Challenger Jewel 2	Agitator	7
+Charger Jewel 2	Focus	8
+Crisis Jewel 1	Resuscitate	5
+Critical Jewel 2	Critical Boost	8
+Def Lock Jewel 1	Iron Skin	5
+Defense Jewel 1	Defense Boost	6
+Destroyer Jewel 2	Partbreaker	6
+Dragon Jewel 1	Dragon Attack	6
+Dragon Res Jewel 1	Dragon Resistance	5
+Dragonseal Jewel 3	Elderseal Boost	7
+Drain Jewel 1	Stamina Thief	6
+Draw Jewel 2	Critical Draw	8
+Earplug Jewel 3	Earplugs	6
+Elementless Jewel 2	Non-elemental Boost	6
+Enduring Jewel 1	Item Prolonger	6
+Enhancer Jewel 2	Power Prolonger	7
+Evasion Jewel 2	Evade Window	6
+Expert Jewel 1	Critical Eye	6
+Fire Res Jewel 1	Fire Resistance	5
+Flawless Jewel 2	Peak Performance	7
+Flight Jewel 2	Airborne	5
+Footing Jewel 2	Tremor Resistance	6
+Forceshot Jewel 3	Normal Shots	7
+Fortitude Jewel 1	Fortify	5
+Friendship Jewel 1	Wide-Range	6
+Frost Jewel 1	Ice Attack	6
+Fungiform Jewel 1	Mushroomancer	8
+Furor Jewel 2	Resentment	7
+Geology Jewel 1	Geologist	5
+Gobbler Jewel 1	Speed Eating	6
+Grinder Jewel 1	Speed Sharpening	6
+Handicraft Jewel 3	Handicraft	8
+Heavy Artillery Jewel 1	Heavy Artillery	5
+Hungerless Jewel 1	Hunger Resistance	5
+Ice Res Jewel 1	Ice Resistance	5
+Intimidator Jewel 1	Intimidator	5
+Ironwall Jewel 1	Guard	7
+Jumping Jewel 2	Evade Extender	6
+KO Jewel 2	Slugger	6
+Magazine Jewel 2	Capacity Boost	7
+Medicine Jewel 1	Recovery Up	6
+Meowster Jewel 1	Palico Rally	5
+Miasma Jewel 1	Effluvia Resistance	5
+Mighty Bow Jewel 2	Bow Charge Plus	8
+Mighty Jewel 2	Maximum Might	7
+Mind's Eye Jewel 2	Mind's Eye/Ballistics	8
+Mirewalker Jewel 1	Aquatic Expert	5
+Paracoat Jewel 3	Para Functionality	7
+Paralyzer Jewel 1	Paralysis Attack	7
+Pep Jewel 1	Sleep Resistance	5
+Physique Jewel 2	Constitution	6
+Pierce Jewel 3	Piercing Shots	8
+Poisoncoat Jewel 3	Poison Functionality	6
+Potential Jewel 2	Heroics	7
+Protection Jewel 1	Divine Blessing	5
+Recovery Jewel 1	Recovery Speed	6
+Refresh Jewel 2	Stamina Surge	7
+Release Jewel 3	Free Elem/Ammo Up	8
+Resistor Jewel 1	Blight Resistance	6
+Satiated Jewel 1	Free Meal	5
+Scent Jewel 1	Scenthound	5
+Sharp Jewel 2	Protective Polish	7
+Sheath Jewel 1	Quick Sheath	6
+Shield Jewel 2	Guard Up	7
+Sleep Jewel 1	Sleep Attack	7
+Sleepcoat Jewel 3	Sleep Functionality	7
+Slider Jewel 2	Affinity Sliding	6
+Smoke Jewel 1	Sporepuff Expert	5
+Sonorous Jewel 1	Horn Maestro	6
+Specimen Jewel 1	Entomologist	5
+Spread Jewel 3	Spread/Power Shots	8
+Sprinter Jewel 2	Marathon Runner	8
+Steadfast Jewel 1	Stun Resistance	6
+Stonethrower Jewel 1	Slinger Capacity	6
+Stream Jewel 1	Water Attack	6
+Suture Jewel 1	Bleeding Resistance	5
+Tenderizer Jewel 2	Weakness Exploit	6
+Throttle Jewel 2	Latent Power	7
+Thunder Res Jewel 1	Thunder Resistance	5
+Tip Toe Jewel 1	Stealth	5
+Trueshot Jewel 1	Special Ammo Boost	7
+Venom Jewel 1	Poison Attack	6
+Vitality Jewel 1	Health Boost	6
+Water Res Jewel 1	Water Resistance	5
+Wind Resist Jewel 2	Windproof	6
