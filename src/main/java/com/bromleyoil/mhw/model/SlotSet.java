@@ -11,13 +11,13 @@ import com.bromleyoil.mhw.comparator.Comparators;
 public class SlotSet {
 
 	public static final SlotSet ZERO = new SlotSet();
-	public static final SlotSet ONE = new SlotSet(1);
-	public static final SlotSet ONE_ONE = new SlotSet(1, 1);
-	public static final SlotSet ONE_ONE_ONE = new SlotSet(1, 1, 1);
-	public static final SlotSet TWO = new SlotSet(2);
-	public static final SlotSet TWO_ONE = new SlotSet(2, 1);
-	public static final SlotSet THREE = new SlotSet(3);
-	public static final SlotSet THREE_ONE = new SlotSet(3, 1);
+	public static final SlotSet ONE = new SlotSet(0, 0, 1);
+	public static final SlotSet ONE_ONE = new SlotSet(0, 0, 2);
+	public static final SlotSet ONE_ONE_ONE = new SlotSet(0, 0, 3);
+	public static final SlotSet TWO = new SlotSet(0, 1, 0);
+	public static final SlotSet TWO_ONE = new SlotSet(0, 1, 1);
+	public static final SlotSet THREE = new SlotSet(1, 0, 0);
+	public static final SlotSet THREE_ONE = new SlotSet(1, 0, 1);
 
 	private List<Integer> slots = new ArrayList<>();
 	private List<Integer> filledSlots = new ArrayList<>();
@@ -26,12 +26,20 @@ public class SlotSet {
 	public SlotSet() {
 	}
 
-	public SlotSet(int... slots) {
-		add(slots);
-	}
-
 	public SlotSet(SlotSet slotSet) {
 		add(slotSet);
+	}
+
+	public SlotSet(Integer numSlots3, Integer numSlots2, Integer numSlots1) {
+		add(1, numSlots1);
+		add(2, numSlots2);
+		add(3, numSlots3);
+	}
+
+	public void add(int slotLevel, Integer slotCount) {
+		for (int i = 0; slotCount != null && i < slotCount; i++) {
+			add(slotLevel);
+		}
 	}
 
 	public void add(int... slots) {
@@ -104,7 +112,8 @@ public class SlotSet {
 	}
 
 	public String getAsciiLabel() {
-		return String.join(" ", slots.stream().map(x -> String.format("[%d]", x)).collect(Collectors.joining(" ")),
+		return String.join(" ",
+				filledSlots.stream().map(x -> String.format("[%d]", x)).collect(Collectors.joining(" ")),
 				slots.stream().map(x -> String.format("(%d)", x)).collect(Collectors.joining(" ")));
 	}
 
@@ -120,8 +129,16 @@ public class SlotSet {
 		return slots.size();
 	}
 
+	public int getOne() {
+		return (int) slots.stream().filter(x -> x == 1).count();
+	}
+
 	public int getOnePlus() {
 		return slots.size();
+	}
+
+	public int getTwo() {
+		return (int) slots.stream().filter(x -> x == 2).count();
 	}
 
 	public int getTwoPlus() {
@@ -129,7 +146,7 @@ public class SlotSet {
 	}
 
 	public int getThree() {
-		return (int) slots.stream().filter(x -> x >= 3).count();
+		return (int) slots.stream().filter(x -> x == 3).count();
 	}
 
 	public static class InvalidSlotException extends IllegalArgumentException {

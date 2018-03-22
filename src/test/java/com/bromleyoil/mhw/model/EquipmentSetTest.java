@@ -46,6 +46,27 @@ public class EquipmentSetTest {
 	}
 
 	@Test
+	public void decorate_withWeaponSlot_requiredIsMet() {
+		Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
+		decorationCounts.put(EARPLUGS, 3);
+
+		set.setWeaponSlotSet(new SlotSet(1, 0, 0));
+		set.decorate(new SkillSet(EARPLUGS, 3), decorationCounts);
+
+		assertThat("decorated level", set.getSkillSet().getLevel(EARPLUGS), is(3));
+	}
+
+	@Test
+	public void decorate_withoutWeaponSlot_requiredNotMet() {
+		Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
+		decorationCounts.put(EARPLUGS, 3);
+
+		set.decorate(new SkillSet(EARPLUGS, 3), decorationCounts);
+
+		assertThat("decorated level", set.getSkillSet().getLevel(EARPLUGS), is(2));
+	}
+
+	@Test
 	public void decorate_limitedDecorations_requiredNotMet() {
 		Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
 		decorationCounts.put(ATTACK_BOOST, 2);

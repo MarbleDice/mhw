@@ -14,6 +14,7 @@ import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.EquipmentSet;
 import com.bromleyoil.mhw.model.EquipmentType;
 import com.bromleyoil.mhw.model.Skill;
+import com.bromleyoil.mhw.model.SlotSet;
 
 /**
  * Encodes and decodes objects to and from a URL-safe Base64 representation.
@@ -32,6 +33,11 @@ public class UrlCodec {
 			ints.add(equipmentSet.get(type) != null ? equipmentSet.get(type).getId() : 0);
 		}
 
+		// Add the number of weapon slots
+		ints.add(equipmentSet.getWeaponSlotSet().getThree());
+		ints.add(equipmentSet.getWeaponSlotSet().getTwo());
+		ints.add(equipmentSet.getWeaponSlotSet().getOne());
+
 		// Add the ID and count for each decorated skill
 		for (Entry<Skill, Integer> entry : equipmentSet.getDecorationCounts()) {
 			ints.add(entry.getKey().ordinal());
@@ -39,7 +45,7 @@ public class UrlCodec {
 		}
 
 		// Convert the IDs to a list of bytes, padding all values to 2 bytes
-		byte[] bytes = new byte[EquipmentType.values().length * 2 + equipmentSet.getDecorationCounts().size() * 4];
+		byte[] bytes = new byte[EquipmentType.values().length * 2 + 6 + equipmentSet.getDecorationCounts().size() * 4];
 		for (int i = 0; i < ints.size(); i++) {
 			writeToBytes(bytes, i * 2, ints.get(i), 2);
 		}
@@ -50,19 +56,26 @@ public class UrlCodec {
 	public static EquipmentSet decode(EquipmentList equipmentList, String encodedString) {
 		byte[] bytes = Base64Utils.decodeFromUrlSafeString(encodedString);
 		EquipmentSet equipmentSet = new EquipmentSet();
+		int index = 0;
 
+		// Load equipment IDs, two bytes each
 		for (int i = 0; i < EquipmentType.values().length; i++) {
-			// Load an equipment ID
-			int id = readToInt(bytes, i * 2, 2);
+			int id = readToInt(bytes, index, 2);
+			index += 2;
 			if (id > 0) {
 				equipmentSet.add(equipmentList.getItems().get(id - 1));
 			}
 		}
 
-		for (int i = EquipmentType.values().length * 2; i < bytes.length; i += 4) {
-			// Load a decoration skill and count
-			Skill skill = Skill.values()[readToInt(bytes, i, 2)];
-			int level = readToInt(bytes, i + 2, 2);
+		// Load the number of weapon slots
+		equipmentSet.setWeaponSlotSet(new SlotSet(readToInt(bytes, index, 2), readToInt(bytes, index + 2, 2),
+				readToInt(bytes, index + 4, 2)));
+		index += 6;
+
+		// Load the decorated skills
+		for (; index < bytes.length; index += 4) {
+			Skill skill = Skill.values()[readToInt(bytes, index, 2)];
+			int level = readToInt(bytes, index + 2, 2);
 			equipmentSet.decorate(skill, level);
 		}
 

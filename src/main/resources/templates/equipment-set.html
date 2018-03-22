@@ -12,6 +12,7 @@
 	<tr class="odd">
 		<td>
 			<ul class="unstyled">
+				<li th:text="${set.weaponLabel}" th:if="${set.hasWeaponSlots()}"></li>
 				<li th:each="equipment : ${set.equipment}" th:text="${equipment.name}"></li>
 			</ul>
 		</td>

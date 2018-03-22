@@ -2,7 +2,6 @@ package com.bromleyoil.mhw.controller;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -61,15 +60,11 @@ public class SetBuilderController {
 		}
 		setBuilder.setRequiredSkillSet(new SkillSet(form.getSkills(), form.getLevels()));
 
-		SlotSet requiredSlotSet = new SlotSet();
-		List<Integer> slotLevels = Arrays.asList(form.getRequiredSlots1(), form.getRequiredSlots2(),
-				form.getRequiredSlots3());
-		for (int level = 0; level < slotLevels.size(); level++) {
-			for (int i = 0; i < Optional.ofNullable(slotLevels.get(level)).orElse(0); i++) {
-				requiredSlotSet.add(level + 1);
-			}
-		}
-		setBuilder.setRequiredSlotSet(requiredSlotSet);
+		setBuilder.setRequiredSlotSet(new SlotSet(form.getRequiredSlots3(), form.getRequiredSlots2(),
+				form.getRequiredSlots1()));
+
+		setBuilder.setWeaponSlotSet(new SlotSet(form.getWeaponSlots3(), form.getWeaponSlots2(),
+				form.getWeaponSlots1()));
 
 		setBuilder.setDecorationCounts(form.getDecorationCounts());
 

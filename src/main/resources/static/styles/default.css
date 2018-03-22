@@ -119,7 +119,7 @@ table.data th, table.data td {
 }
 
 table.set.data th:first-child {
-	width: 140px;
+	width: 160px;
 }
 
 /* First-row column headers */

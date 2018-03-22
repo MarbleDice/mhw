@@ -33,6 +33,7 @@ public class SetBuilder {
 
 	private SkillSet requiredSkillSet = new SkillSet();
 	private SlotSet requiredSlotSet = new SlotSet();
+	private SlotSet weaponSlotSet = new SlotSet();
 	private Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
 	private SearchResult result;
 
@@ -84,6 +85,7 @@ public class SetBuilder {
 
 	protected void checkSolution(int i, int j, int k, int l, int m, int n) {
 		EquipmentSet set = new EquipmentSet();
+		set.setWeaponSlotSet(weaponSlotSet);
 		set.add(candidateList.getCandidates(HEAD).get(i));
 		set.add(candidateList.getCandidates(BODY).get(j));
 		set.add(candidateList.getCandidates(HANDS).get(k));
@@ -137,6 +139,14 @@ public class SetBuilder {
 
 	public void setRequiredSlotSet(SlotSet requiredSlotSet) {
 		this.requiredSlotSet = requiredSlotSet;
+	}
+
+	public SlotSet getWeaponSlotSet() {
+		return weaponSlotSet;
+	}
+
+	public void setWeaponSlotSet(SlotSet weaponSlotSet) {
+		this.weaponSlotSet = weaponSlotSet;
 	}
 
 	public Map<Skill, Integer> getDecorationCounts() {

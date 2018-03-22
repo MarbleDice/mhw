@@ -12,6 +12,9 @@ public class SetBuilderForm {
 	private Skill newSkill;
 
 	private List<SkillRow> skillRows = new ArrayList<>();
+	private Integer weaponSlots3;
+	private Integer weaponSlots2;
+	private Integer weaponSlots1;
 	private Integer requiredSlots3;
 	private Integer requiredSlots2;
 	private Integer requiredSlots1;
@@ -44,10 +47,35 @@ public class SetBuilderForm {
 	public List<Integer> getLevels() {
 		return skillRows.stream().map(x -> x.getLevel() != null ? x.getLevel() : 0).collect(Collectors.toList());
 	}
-		
+
 	public boolean contains(Skill skill) {
 		return skillRows.stream().anyMatch(x -> x.getSkill() == skill);
 	}
+
+	public Integer getWeaponSlots3() {
+		return weaponSlots3;
+	}
+
+	public void setWeaponSlots3(Integer weaponSlots3) {
+		this.weaponSlots3 = weaponSlots3;
+	}
+
+	public Integer getWeaponSlots2() {
+		return weaponSlots2;
+	}
+
+	public void setWeaponSlots2(Integer weaponSlots2) {
+		this.weaponSlots2 = weaponSlots2;
+	}
+
+	public Integer getWeaponSlots1() {
+		return weaponSlots1;
+	}
+
+	public void setWeaponSlots1(Integer weaponSlots1) {
+		this.weaponSlots1 = weaponSlots1;
+	}
+
 	public Integer getRequiredSlots3() {
 		return requiredSlots3;
 	}

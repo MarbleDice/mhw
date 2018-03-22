@@ -15,6 +15,7 @@ public class EquipmentSet {
 	private Map<EquipmentType, Equipment> equipmentMap = new EnumMap<>(EquipmentType.class);
 	private SkillSet skillSet = new SkillSet();
 	private SlotSet slotSet = new SlotSet();
+	private SlotSet weaponSlotSet;
 	private Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
 
 	public void add(Equipment equipment) {
@@ -75,18 +76,26 @@ public class EquipmentSet {
 	}
 
 	public String getShortDescription() {
-		return equipmentMap.values().stream().map(Equipment::getArmorName).collect(Collectors.joining("|"));
+		return getWeaponLabel() + "|" + equipmentMap.values().stream().map(Equipment::getArmorName)
+				.collect(Collectors.joining("|"));
 	}
 
 	public String getLongDescription() {
 		List<String> lines = new ArrayList<>();
 		lines.add("Set:");
+		if (hasWeaponSlots()) {
+			lines.add("\t" + getWeaponLabel());
+		}
 		for (Equipment equipment : equipmentMap.values()) {
 			lines.add("\t" + equipment.getFullDescription());
 		}
 		lines.add("Total: " + skillSet.getSkillLevels().stream().map(x -> x.getKey() + " " + x.getValue())
 				.collect(Collectors.joining(", ")) + (!slotSet.isEmpty() ? " " + slotSet.getAsciiLabel() : ""));
 		return String.join("\n", lines);
+	}
+
+	public String getWeaponLabel() {
+		return hasWeaponSlots() ? "Slotted Weapon " + getWeaponSlotSet().getAsciiLabel() : "Any weapon";
 	}
 
 	public String getBase64() {
@@ -119,5 +128,21 @@ public class EquipmentSet {
 
 	public void setSlotSet(SlotSet slotSet) {
 		this.slotSet = slotSet;
+	}
+
+	public boolean hasWeaponSlots() {
+		return weaponSlotSet != null && weaponSlotSet.hasSlots();
+	}
+
+	public SlotSet getWeaponSlotSet() {
+		if (weaponSlotSet == null) {
+			setWeaponSlotSet(new SlotSet());
+		}
+		return weaponSlotSet;
+	}
+
+	public void setWeaponSlotSet(SlotSet weaponSlotSet) {
+		this.weaponSlotSet = weaponSlotSet;
+		slotSet.add(weaponSlotSet);
 	}
 }
