@@ -28,33 +28,6 @@ public class UrlCodecTest {
 	}
 
 	@Test
-	public void writeToBytes_smallValue_oneByte() {
-		byte[] bytes = new byte[2];
-
-		UrlCodec.writeToBytes(bytes, 0, 127, 1);
-
-		assertThat("byte 0", bytes[0], is((byte) 127));
-		assertThat("byte 1", bytes[1], is((byte) 0));
-	}
-
-	@Test
-	public void writeToBytes_smallValueWithLength_isPadded() {
-		byte[] bytes = new byte[2];
-
-		UrlCodec.writeToBytes(bytes, 0, 59, 2);
-
-		assertThat("byte 0", bytes[0], is((byte) 0));
-		assertThat("byte 1", bytes[1], is((byte) 59));
-	}
-
-	@Test(expected = IllegalArgumentException.class)
-	public void writeToBytes_valueTooLarge_throws() {
-		byte[] bytes = new byte[2];
-
-		UrlCodec.writeToBytes(bytes, 0, 64000, 1);
-	}
-
-	@Test
 	public void girrosSet_noDeco_decodedEqual() {
 		EquipmentSet set = new EquipmentSet();
 		set.add(equipmentList.find("Girros α", HEAD));

@@ -1,9 +1,5 @@
 package com.bromleyoil.mhw;
 
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map.Entry;
 
 import org.springframework.util.Base64Utils;
@@ -26,56 +22,48 @@ public class UrlCodec {
 	}
 
 	public static String encode(EquipmentSet equipmentSet) {
-		List<Integer> ints = new ArrayList<>();
+		ByteBuffer buffer = new ByteBuffer(EquipmentType.values().length * 2 + 3
+				+ equipmentSet.getDecorationCounts().size() * 3);
 
 		// Add the ID for each piece of equipment, or 0 if missing
 		for (EquipmentType type : EquipmentType.values()) {
-			ints.add(equipmentSet.get(type) != null ? equipmentSet.get(type).getId() : 0);
+			int id = equipmentSet.get(type) != null ? equipmentSet.get(type).getId() : 0;
+			buffer.write(id, 2);
 		}
 
 		// Add the number of weapon slots
-		ints.add(equipmentSet.getWeaponSlotSet().getThree());
-		ints.add(equipmentSet.getWeaponSlotSet().getTwo());
-		ints.add(equipmentSet.getWeaponSlotSet().getOne());
+		buffer.write(equipmentSet.getWeaponSlotSet().getThree(), 1);
+		buffer.write(equipmentSet.getWeaponSlotSet().getTwo(), 1);
+		buffer.write(equipmentSet.getWeaponSlotSet().getOne(), 1);
 
 		// Add the ID and count for each decorated skill
 		for (Entry<Skill, Integer> entry : equipmentSet.getDecorationCounts()) {
-			ints.add(entry.getKey().ordinal());
-			ints.add(entry.getValue());
+			buffer.write(entry.getKey().ordinal(), 2);
+			buffer.write(entry.getValue(), 1);
 		}
 
-		// Convert the IDs to a list of bytes, padding all values to 2 bytes
-		byte[] bytes = new byte[EquipmentType.values().length * 2 + 6 + equipmentSet.getDecorationCounts().size() * 4];
-		for (int i = 0; i < ints.size(); i++) {
-			writeToBytes(bytes, i * 2, ints.get(i), 2);
-		}
-
-		return Base64Utils.encodeToUrlSafeString(bytes);
+		return Base64Utils.encodeToUrlSafeString(buffer.getBytes());
 	}
 
 	public static EquipmentSet decode(EquipmentList equipmentList, String encodedString) {
-		byte[] bytes = Base64Utils.decodeFromUrlSafeString(encodedString);
+		ByteBuffer buffer = new ByteBuffer(Base64Utils.decodeFromUrlSafeString(encodedString));
 		EquipmentSet equipmentSet = new EquipmentSet();
-		int index = 0;
 
 		// Load equipment IDs, two bytes each
 		for (int i = 0; i < EquipmentType.values().length; i++) {
-			int id = readToInt(bytes, index, 2);
-			index += 2;
+			int id = buffer.readInt(2);
 			if (id > 0) {
 				equipmentSet.add(equipmentList.getItems().get(id - 1));
 			}
 		}
 
 		// Load the number of weapon slots
-		equipmentSet.setWeaponSlotSet(new SlotSet(readToInt(bytes, index, 2), readToInt(bytes, index + 2, 2),
-				readToInt(bytes, index + 4, 2)));
-		index += 6;
+		equipmentSet.setWeaponSlotSet(new SlotSet(buffer.readInt(1), buffer.readInt(1), buffer.readInt(1)));
 
 		// Load the decorated skills
-		for (; index < bytes.length; index += 4) {
-			Skill skill = Skill.values()[readToInt(bytes, index, 2)];
-			int level = readToInt(bytes, index + 2, 2);
+		while (buffer.hasBytes()) {
+			Skill skill = Skill.values()[buffer.readInt(2)];
+			int level = buffer.readInt(1);
 			equipmentSet.decorate(skill, level);
 		}
 
@@ -83,62 +71,35 @@ public class UrlCodec {
 	}
 
 	public String encode(SetBuilderForm form) {
-		List<Integer> values = new ArrayList<>();
+		ByteBuffer buffer = new ByteBuffer(3 + form.getSkillRows().size() * 4);
 
-		values.add(form.getRequiredSlots1());
-		values.add(form.getRequiredSlots2());
-		values.add(form.getRequiredSlots3());
+		buffer.write(form.getWeaponSlots3(), 1);
+		buffer.write(form.getWeaponSlots2(), 1);
+		buffer.write(form.getWeaponSlots1(), 1);
+		buffer.write(form.getRequiredSlots3(), 1);
+		buffer.write(form.getRequiredSlots2(), 1);
+		buffer.write(form.getRequiredSlots1(), 1);
 
 		for (SkillRow row : form.getSkillRows()) {
-			values.add(row.getSkill().ordinal());
-			values.add(row.getLevel() != null ? row.getLevel() : 0);
-			values.add(row.getDecorationCount() != null ? row.getDecorationCount() : 0);
+			buffer.write(row.getSkill().ordinal(), 2);
+			buffer.write(row.getLevel() != null ? row.getLevel() : 0, 1);
+			buffer.write(row.getDecorationCount() != null ? row.getDecorationCount() : 0, 1);
 		}
 
-		byte[] bytes = new byte[3 + form.getSkillRows().size() * 4];
-		for (int i = 0; i < 3; i++) {
-			writeToBytes(bytes, i, values.get(i), 1);
-		}
-
-		int byteIndex = 3;
-		for (int i = 3; i < values.size(); i += 3) {
-			writeToBytes(bytes, byteIndex, values.get(i), 2);
-			writeToBytes(bytes, byteIndex, values.get(i + 1), 1);
-			writeToBytes(bytes, byteIndex, values.get(i + 2), 1);
-			byteIndex += 4;
-		}
-
-		return Base64Utils.encodeToUrlSafeString(bytes);
+		return Base64Utils.encodeToUrlSafeString(buffer.getBytes());
 	}
 
 	public SetBuilderForm decodeSetBuilderForm(String encodedString) {
-		byte[] bytes = Base64Utils.decodeFromUrlSafeString(encodedString);
+		ByteBuffer buffer = new ByteBuffer(Base64Utils.decodeFromUrlSafeString(encodedString));
 		SetBuilderForm form = new SetBuilderForm();
 
-		form.setRequiredSlots1(readToInt(bytes, 0, 1));
-		form.setRequiredSlots2(readToInt(bytes, 1, 1));
-		form.setRequiredSlots3(readToInt(bytes, 2, 1));
+		form.setWeaponSlots3(buffer.readInt(1));
+		form.setWeaponSlots2(buffer.readInt(1));
+		form.setWeaponSlots1(buffer.readInt(1));
+		form.setRequiredSlots3(buffer.readInt(1));
+		form.setRequiredSlots2(buffer.readInt(1));
+		form.setRequiredSlots1(buffer.readInt(1));
 
 		return form;
-	}
-
-	protected static void writeToBytes(byte[] bytes, int index, int value, int length) {
-		byte[] valueBytes = BigInteger.valueOf(value).toByteArray();
-
-		if (valueBytes.length > length) {
-			throw new IllegalArgumentException("value length is greater than allowed length");
-		}
-
-		for (int i = 0; i < length - valueBytes.length; i++) {
-			bytes[index + i] = 0;
-		}
-
-		for (int i = 0; i < valueBytes.length; i++) {
-			bytes[index + i + length - valueBytes.length] = valueBytes[i];
-		}
-	}
-
-	protected static int readToInt(byte[] bytes, int index, int length) {
-		return new BigInteger(Arrays.copyOfRange(bytes, index, index + length)).intValue();
 	}
 }
