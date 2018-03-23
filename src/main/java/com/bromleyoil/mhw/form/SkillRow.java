@@ -15,6 +15,12 @@ public class SkillRow {
 		this.skill = skill;
 	}
 
+	public SkillRow(Skill skill, int level, int decorationCount) {
+		this.skill = skill;
+		this.level = level;
+		this.decorationCount = decorationCount;
+	}
+
 	public Skill getSkill() {
 		return skill;
 	}

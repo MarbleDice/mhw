@@ -100,6 +100,10 @@ public class UrlCodec {
 		form.setRequiredSlots2(buffer.readInt(1));
 		form.setRequiredSlots1(buffer.readInt(1));
 
+		while (buffer.hasBytes()) {
+			form.addSkillRow(new SkillRow(Skill.values()[buffer.readInt(2)], buffer.readInt(1), buffer.readInt(1)));
+		}
+
 		return form;
 	}
 }
