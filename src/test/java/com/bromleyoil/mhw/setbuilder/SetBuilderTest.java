@@ -34,7 +34,7 @@ public class SetBuilderTest {
 	}
 
 	@Test
-	public void search_greatSword_twoSolutions() {
+	public void search_greatSword_hasSolutions() {
 		SkillSet requiredSkillSet = new SkillSet(
 				Arrays.asList(EARPLUGS, FOCUS, WEAKNESS_EXPLOIT, AGITATOR),
 				Arrays.asList(5, 3, 2, 2));
@@ -42,11 +42,11 @@ public class SetBuilderTest {
 
 		SearchResult result = setBuilder.search();
 
-		assertThat("solutions", result.getSolutions().size(), is(2));
+		assertThat("solutions", result.getSolutions().size(), is(4));
 	}
 
 	@Test
-	public void search_insectGlaive_tenSolutions() {
+	public void search_insectGlaive_hasSolutions() {
 		SkillSet requiredSkillSet = new SkillSet(
 				Arrays.asList(POWER_PROLONGER, AGITATOR, WEAKNESS_EXPLOIT),
 				Arrays.asList(3, 4, 2));
@@ -54,7 +54,7 @@ public class SetBuilderTest {
 
 		SearchResult result = setBuilder.search();
 
-		assertThat("solutions", result.getSolutions().size(), is(4));
+		assertThat("solutions", result.getSolutions().size(), is(26));
 	}
 
 	@Test
@@ -70,7 +70,7 @@ public class SetBuilderTest {
 	}
 
 	@Test
-	public void search_godlyDamageWithDeco_eightSolutions() {
+	public void search_godlyDamageWithDeco_hasSolutions() {
 		SkillSet requiredSkillSet = new SkillSet(
 				Arrays.asList(AGITATOR, ATTACK_BOOST, WEAKNESS_EXPLOIT),
 				Arrays.asList(5, 7, 3));
@@ -82,6 +82,6 @@ public class SetBuilderTest {
 
 		SearchResult result = setBuilder.search();
 
-		assertThat("solutions", result.getSolutions().size(), is(8));
+		assertThat("solutions", result.getSolutions().size(), is(10));
 	}
 }
