@@ -17,7 +17,7 @@ public class SkillParserTest {
 	public void printEnumInitializers() throws IOException {
 		List<String> lines = SkillParser.getEnumInitializerLines();
 
-		assertThat("num lines", lines.size(), is(467));
+		assertThat("num lines", lines.size(), is(469));
 
 		lines.clear();
 		for (String line : lines) {
