@@ -145,6 +145,8 @@ public enum Skill {
 		"Nullifies damage from effluvia and reduces damage from acids."),
 	ELDERSEAL_BOOST("Elderseal Boost", "Dragonseal Jewel 3", 3, 7,
 		"Boosts Elderseal one level."),
+	ELEMENTAL_AIRBORNE("Elemental Airborne", "", 0, 0,
+			"TODO."),
 	ENTOMOLOGIST("Entomologist", "Specimen Jewel 1", 1, 5,
 		"Increases the chances of a corpse being left behind.",
 		"Greatly increases the chances of a corpse being left behind.",
