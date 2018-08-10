@@ -54,7 +54,7 @@ public class SetBuilderTest {
 
 		SearchResult result = setBuilder.search();
 
-		assertThat("solutions", result.getSolutions().size(), is(60));
+		assertThat("solutions", result.getSolutions().size(), is(62));
 	}
 
 	@Test

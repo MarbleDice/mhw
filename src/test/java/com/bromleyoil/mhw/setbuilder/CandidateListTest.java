@@ -43,7 +43,7 @@ public class CandidateListTest {
 		assertThat("body candidate count", candidateList.getCandidates(BODY).size(), is(3));
 		assertThat("hands candidate count", candidateList.getCandidates(HANDS).size(), is(2));
 		assertThat("waist candidate count", candidateList.getCandidates(WAIST).size(), is(4));
-		assertThat("legs candidate count", candidateList.getCandidates(LEGS).size(), is(2));
+		assertThat("legs candidate count", candidateList.getCandidates(LEGS).size(), is(3));
 		assertThat("charm candidate count", candidateList.getCandidates(CHARM).size(), is(0));
 	}
 
@@ -56,10 +56,10 @@ public class CandidateListTest {
 		log.debug(candidateList.toString());
 
 		assertThat("head candidate count", candidateList.getCandidates(HEAD).size(), is(8));
-		assertThat("body candidate count", candidateList.getCandidates(BODY).size(), is(5));
+		assertThat("body candidate count", candidateList.getCandidates(BODY).size(), is(6));
 		assertThat("hands candidate count", candidateList.getCandidates(HANDS).size(), is(7));
 		assertThat("waist candidate count", candidateList.getCandidates(WAIST).size(), is(7));
-		assertThat("legs candidate count", candidateList.getCandidates(LEGS).size(), is(6));
+		assertThat("legs candidate count", candidateList.getCandidates(LEGS).size(), is(7));
 		assertThat("charm candidate count", candidateList.getCandidates(CHARM).size(), is(3));
 	}
 }
