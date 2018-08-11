@@ -54,7 +54,7 @@ public class SetBuilderTest {
 
 		SearchResult result = setBuilder.search();
 
-		assertThat("solutions", result.getSolutions().size(), is(62));
+		assertThat("solutions", result.getSolutions().size(), is(66));
 	}
 
 	@Test
@@ -82,6 +82,6 @@ public class SetBuilderTest {
 
 		SearchResult result = setBuilder.search();
 
-		assertThat("solutions", result.getSolutions().size(), is(19));
+		assertThat("solutions", result.getSolutions().size(), is(25));
 	}
 }
