@@ -22,12 +22,13 @@ public enum Superiority {
 	public static Superiority compare(SlotSet a, SlotSet b) {
 		int onePlus = Integer.compare(a.getOnePlus(), b.getOnePlus());
 		int twoPlus = Integer.compare(a.getTwoPlus(), b.getTwoPlus());
-		int three = Integer.compare(a.getThree(), b.getThree());
-		if (onePlus == 0 && twoPlus == 0 && three == 0) {
+		int threePlus = Integer.compare(a.getThreePlus(), b.getThreePlus());
+		int four = Integer.compare(a.getFour(), b.getFour());
+		if (onePlus == 0 && twoPlus == 0 && threePlus == 0 && four == 0) {
 			return EQUAL;
-		} else if (onePlus >= 0 && twoPlus >= 0 && three >= 0) {
+		} else if (onePlus >= 0 && twoPlus >= 0 && threePlus >= 0 && four >= 0) {
 			return BETTER;
-		} else if (onePlus <= 0 && twoPlus <= 0 && three <= 0) {
+		} else if (onePlus <= 0 && twoPlus <= 0 && threePlus <= 0 && four <= 0) {
 			return WORSE;
 		}
 		return INCOMPARABLE;
@@ -106,7 +107,7 @@ public enum Superiority {
 	}
 
 	/**
-	 * Checks if the slot of the first slot set are equal to or better than the slots of the second one.
+	 * Checks if the slots of the first slot set are equal to or better than the slots of the second one.
 	 * 
 	 * @param a
 	 * @param b
@@ -114,7 +115,8 @@ public enum Superiority {
 	 */
 	public static boolean equalOrBetter(SlotSet a, SlotSet b) {
 		// Short-circuit if a is worse than b
-		return a.getThree() >= b.getThree() && a.getTwoPlus() >= b.getTwoPlus() && a.getOnePlus() >= b.getOnePlus();
+		return a.getFour() >= b.getFour() && a.getThreePlus() >= b.getThreePlus() && a.getTwoPlus() >= b.getTwoPlus()
+				&& a.getOnePlus() >= b.getOnePlus();
 	}
 
 	/**

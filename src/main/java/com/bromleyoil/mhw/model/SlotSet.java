@@ -10,6 +10,8 @@ import com.bromleyoil.mhw.comparator.Comparators;
 
 public class SlotSet {
 
+	private static final int MAX_SLOT_LEVEL = 4;
+
 	public static final SlotSet ZERO = new SlotSet();
 	public static final SlotSet ONE = new SlotSet(0, 0, 1);
 	public static final SlotSet ONE_ONE = new SlotSet(0, 0, 2);
@@ -44,10 +46,7 @@ public class SlotSet {
 
 	public void add(int... slots) {
 		for (int slot : slots) {
-			// TODO treat as level 3 for now
-			slot = slot == 4 ? 3 : slot;
-
-			if (slot < 1 || slot > 3) {
+			if (slot < 1 || slot > MAX_SLOT_LEVEL) {
 				throw new InvalidSlotException();
 			}
 			this.slots.add(slot);
@@ -61,7 +60,7 @@ public class SlotSet {
 	}
 
 	public boolean decorate(Skill skill) {
-		for (int level = skill.getDecorationLevel(); level <= 3; level++) {
+		for (int level = skill.getDecorationLevel(); level <= MAX_SLOT_LEVEL; level++) {
 			if (slots.contains(level)) {
 				// Remove by reference (not index)
 				slots.remove(Integer.valueOf(level));
@@ -79,7 +78,7 @@ public class SlotSet {
 	}
 
 	public boolean hasOpenSlot(int level) {
-		for (int l = level; l <= 3; l++) {
+		for (int l = level; l <= MAX_SLOT_LEVEL; l++) {
 			if (slots.contains(l)) {
 				return true;
 			}
@@ -96,8 +95,10 @@ public class SlotSet {
 			return "①";
 		} else if (slotLevel == 2) {
 			return "②";
+		} else if (slotLevel == 3) {
+			return "③";
 		}
-		return "③";
+		return "④";
 	}
 
 	public static String getFilledSlotLabel(Integer slotLevel) {
@@ -105,8 +106,10 @@ public class SlotSet {
 			return "❶";
 		} else if (slotLevel == 2) {
 			return "❷";
+		} else if (slotLevel == 3) {
+			return "❸";
 		}
-		return "❸";
+		return "❹";
 	}
 
 	public String getLabel() {
@@ -152,12 +155,20 @@ public class SlotSet {
 		return (int) slots.stream().filter(x -> x == 3).count();
 	}
 
+	public int getThreePlus() {
+		return (int) slots.stream().filter(x -> x >= 3).count();
+	}
+
+	public int getFour() {
+		return (int) slots.stream().filter(x -> x == 4).count();
+	}
+
 	public static class InvalidSlotException extends IllegalArgumentException {
 
 		private static final long serialVersionUID = 1L;
 
 		public InvalidSlotException() {
-			super("Slot must be between 1 and 3");
+			super("Slot must be between 1 and 4");
 		}
 	}
 }
