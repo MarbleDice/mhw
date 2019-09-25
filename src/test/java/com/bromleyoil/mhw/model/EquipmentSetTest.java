@@ -29,10 +29,10 @@ public class EquipmentSetTest {
 
 		set = new EquipmentSet();
 		set.add(equipmentList.find("Damascus β", HEAD));
-		set.add(equipmentList.find("Damascus β", BODY));
-		set.add(equipmentList.find("Damascus β", HANDS));
+		set.add(equipmentList.find("Damascus β", CHEST));
+		set.add(equipmentList.find("Damascus β", ARM));
 		set.add(equipmentList.find("Damascus β", WAIST));
-		set.add(equipmentList.find("Damascus β", LEGS));
+		set.add(equipmentList.find("Damascus β", LEG));
 	}
 
 	@Test

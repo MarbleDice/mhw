@@ -1,7 +1,7 @@
 package com.bromleyoil.mhw.model;
 
 public enum EquipmentType {
-	HEAD("Head"), BODY("Body"), HANDS("Hands"), WAIST("Waist"), LEGS("Legs"), CHARM("Charm");
+	HEAD("Head"), CHEST("Chest"), ARM("Arm"), WAIST("Waist"), LEG("Leg"), CHARM("Charm");
 
 	private String description;
 

@@ -21,7 +21,7 @@ public class DataParserTest {
 
 	@Test
 	public void createEquipment_withSlots_parsed() {
-		Equipment equipment = DataParser.createEquip(mockRecord("test beta"), EquipmentType.HEAD, "Handicraft 2 (2)");
+		Equipment equipment = DataParser.createOldEquip(mockRecord("test beta"), EquipmentType.HEAD, "Handicraft 2 (2)");
 		assertThat("num slots", equipment.getSlotSet().getCount(), is(1));
 	}
 

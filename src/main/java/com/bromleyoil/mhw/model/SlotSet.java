@@ -44,6 +44,9 @@ public class SlotSet {
 
 	public void add(int... slots) {
 		for (int slot : slots) {
+			// TODO treat as level 3 for now
+			slot = slot == 4 ? 3 : slot;
+
 			if (slot < 1 || slot > 3) {
 				throw new InvalidSlotException();
 			}

@@ -1,7 +1,7 @@
 package com.bromleyoil.mhw.model;
 
 public enum Fraction {
-	SET4(15, "¼"), SET3(20, "⅓"), SET2(30, "½");
+	SET5(12, "⅕"), SET4(15, "¼"), SET3(20, "⅓"), SET2(30, "½");
 
 	private static final int DENOMINATOR = 60;
 

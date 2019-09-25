@@ -31,10 +31,10 @@ public class UrlCodecTest {
 	public void girrosSet_noDeco_decodedEqual() {
 		EquipmentSet set = new EquipmentSet();
 		set.add(equipmentList.find("Girros α", HEAD));
-		set.add(equipmentList.find("Girros α", BODY));
-		set.add(equipmentList.find("Girros α", HANDS));
+		set.add(equipmentList.find("Girros α", CHEST));
+		set.add(equipmentList.find("Girros α", ARM));
 		set.add(equipmentList.find("Girros α", WAIST));
-		set.add(equipmentList.find("Girros α", LEGS));
+		set.add(equipmentList.find("Girros α", LEG));
 		set.add(equipmentList.find("Attack Charm I"));
 
 		EquipmentSet decodedSet = UrlCodec.decode(equipmentList, set.getBase64());
@@ -46,10 +46,10 @@ public class UrlCodecTest {
 	public void nergiSet_withDeco_decodedEqual() {
 		EquipmentSet set = new EquipmentSet();
 		set.add(equipmentList.find("Nergigante α", HEAD));
-		set.add(equipmentList.find("Nergigante β", BODY));
-		set.add(equipmentList.find("Nergigante α", HANDS));
+		set.add(equipmentList.find("Nergigante β", CHEST));
+		set.add(equipmentList.find("Nergigante α", ARM));
 		set.add(equipmentList.find("Nergigante α", WAIST));
-		set.add(equipmentList.find("Nergigante α", LEGS));
+		set.add(equipmentList.find("Nergigante α", LEG));
 		set.add(equipmentList.find("Challenger Charm II"));
 		set.decorate(ATTACK_BOOST, 3);
 
@@ -62,10 +62,10 @@ public class UrlCodecTest {
 	public void allDamage_withTwoDeco_decodedEqual() {
 		EquipmentSet set = new EquipmentSet();
 		set.add(equipmentList.find("Dragonking α", HEAD));
-		set.add(equipmentList.find("Dober β", BODY));
-		set.add(equipmentList.find("Nergigante α", HANDS));
+		set.add(equipmentList.find("Dober β", CHEST));
+		set.add(equipmentList.find("Nergigante α", ARM));
 		set.add(equipmentList.find("Vaal Hazak β", WAIST));
-		set.add(equipmentList.find("Dober β", LEGS));
+		set.add(equipmentList.find("Dober β", LEG));
 		set.add(equipmentList.find("Unscathed Charm II"));
 		set.decorate(ATTACK_BOOST, 1);
 		set.decorate(WEAKNESS_EXPLOIT, 1);

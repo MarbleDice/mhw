@@ -65,10 +65,10 @@ public class SetBuilder {
 
 	protected void doSearch() {
 		for (int i = 0; i < candidateList.size(HEAD); i++) {
-			for (int j = 0; j < candidateList.size(BODY); j++) {
-				for (int k = 0; k < candidateList.size(HANDS); k++) {
+			for (int j = 0; j < candidateList.size(CHEST); j++) {
+				for (int k = 0; k < candidateList.size(ARM); k++) {
 					for (int l = 0; l < candidateList.size(WAIST); l++) {
-						for (int m = 0; m < candidateList.size(LEGS); m++) {
+						for (int m = 0; m < candidateList.size(LEG); m++) {
 							for (int n = 0; n < candidateList.size(CHARM); n++) {
 								checkSolution(i, j, k, l, m, n);
 								if (result.getSolutions().size() >= 100) {
@@ -87,10 +87,10 @@ public class SetBuilder {
 		EquipmentSet set = new EquipmentSet();
 		set.setWeaponSlotSet(weaponSlotSet);
 		set.add(candidateList.getCandidates(HEAD).get(i));
-		set.add(candidateList.getCandidates(BODY).get(j));
-		set.add(candidateList.getCandidates(HANDS).get(k));
+		set.add(candidateList.getCandidates(CHEST).get(j));
+		set.add(candidateList.getCandidates(ARM).get(k));
 		set.add(candidateList.getCandidates(WAIST).get(l));
-		set.add(candidateList.getCandidates(LEGS).get(m));
+		set.add(candidateList.getCandidates(LEG).get(m));
 		set.add(candidateList.getCandidates(CHARM).get(n));
 
 		// Compute missing skills and decorate if necessary

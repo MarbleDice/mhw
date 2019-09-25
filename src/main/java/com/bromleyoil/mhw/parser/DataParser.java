@@ -7,6 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,6 +22,19 @@ import com.bromleyoil.mhw.model.Skill;
 
 public class DataParser {
 
+	// Iceborne parser
+	protected static final String SET_NAME = "Set Name";
+	protected static final String TYPE = "Type";
+	protected static final String ITEM_NAME = "Item Name";
+	protected static final String SKILLS = "Skills";
+	protected static final String SLOTS = "Slots";
+	protected static final String SET_BONUS_NAME = "Set Bonus Name";
+	protected static final String SET_BONUS_2 = "Set Bonus 2";
+	protected static final String SET_BONUS_3 = "Set Bonus 3";
+	protected static final String SET_BONUS_4 = "Set Bonus 4";
+	protected static final String SET_BONUS_5 = "Set Bonus 5";
+
+	// Old parser
 	protected static final String NAME = "Name";
 	protected static final String HEAD = "Head";
 	protected static final String BODY = "Body";
@@ -31,6 +45,7 @@ public class DataParser {
 	protected static final String SET3 = "Set3";
 	protected static final String SET4 = "Set4";
 
+	// Charm parsing
 	protected static final String SKILL1 = "Skill1";
 	protected static final String SKILL2 = "Skill2";
 	protected static final String MAX = "Max";
@@ -48,7 +63,7 @@ public class DataParser {
 	}
 
 	public static List<Equipment> parseAllEquipment() throws IOException {
-		List<Equipment> items = DataParser.parseEquipment(DataParser.openResource("equipment.tsv"));
+		List<Equipment> items = DataParser.parseEquipment(DataParser.openResource("master-rank.tsv"));
 		items.addAll(DataParser.parseCharms(DataParser.openResource("charms.tsv")));
 		// Set IDs
 		for (int i = 0; i < items.size(); i++) {
@@ -60,26 +75,69 @@ public class DataParser {
 	protected static List<Equipment> parseEquipment(Reader reader) throws IOException {
 		List<Equipment> equipment = new ArrayList<>();
 		for (CSVRecord record : CSVFormat.TDF.withFirstRecordAsHeader().parse(reader)) {
+			equipment.add(createEquip(record));
+		}
+		return equipment;
+	}
+
+	protected static Equipment createEquip(CSVRecord record) {
+		Equipment equipment = new Equipment();
+
+		// Name
+		equipment.setArmorName(record.get(SET_NAME));
+		equipment.setType(EquipmentType.valueOf(record.get(TYPE).toUpperCase()));
+
+		// Skills
+		addSkills(equipment, record.get(SKILLS));
+
+		// Slots
+		Optional.ofNullable(record.get(SLOTS)).orElse("").codePoints()
+				.mapToObj(c -> Integer.valueOf(String.valueOf((char) c)))
+				.forEach(equipment::addSlot);
+
+		// Set bonus skills
+		if (!StringUtils.isBlank(record.get(SET_BONUS_2))) {
+			equipment.addSkill(Skill.valueOfName(record.get(SET_BONUS_2)), Fraction.SET2);
+		}
+
+		if (!StringUtils.isBlank(record.get(SET_BONUS_3))) {
+			equipment.addSkill(Skill.valueOfName(record.get(SET_BONUS_3)), Fraction.SET3);
+		}
+
+		if (!StringUtils.isBlank(record.get(SET_BONUS_4))) {
+			equipment.addSkill(Skill.valueOfName(record.get(SET_BONUS_4)), Fraction.SET4);
+		}
+
+		if (!StringUtils.isBlank(record.get(SET_BONUS_5))) {
+			equipment.addSkill(Skill.valueOfName(record.get(SET_BONUS_5)), Fraction.SET5);
+		}
+
+		return equipment;
+	}
+
+	protected static List<Equipment> parseOldEquipment(Reader reader) throws IOException {
+		List<Equipment> equipment = new ArrayList<>();
+		for (CSVRecord record : CSVFormat.TDF.withFirstRecordAsHeader().parse(reader)) {
 			if (!StringUtils.isBlank(record.get(HEAD))) {
-				equipment.add(createEquip(record, EquipmentType.HEAD, record.get(HEAD)));
+				equipment.add(createOldEquip(record, EquipmentType.HEAD, record.get(HEAD)));
 			}
 			if (!StringUtils.isBlank(record.get(BODY))) {
-				equipment.add(createEquip(record, EquipmentType.BODY, record.get(BODY)));
+				equipment.add(createOldEquip(record, EquipmentType.CHEST, record.get(BODY)));
 			}
 			if (!StringUtils.isBlank(record.get(HANDS))) {
-				equipment.add(createEquip(record, EquipmentType.HANDS, record.get(HANDS)));
+				equipment.add(createOldEquip(record, EquipmentType.ARM, record.get(HANDS)));
 			}
 			if (!StringUtils.isBlank(record.get(WAIST))) {
-				equipment.add(createEquip(record, EquipmentType.WAIST, record.get(WAIST)));
+				equipment.add(createOldEquip(record, EquipmentType.WAIST, record.get(WAIST)));
 			}
 			if (!StringUtils.isBlank(record.get(LEGS))) {
-				equipment.add(createEquip(record, EquipmentType.LEGS, record.get(LEGS)));
+				equipment.add(createOldEquip(record, EquipmentType.LEG, record.get(LEGS)));
 			}
 		}
 		return equipment;
 	}
 
-	protected static Equipment createEquip(CSVRecord record, EquipmentType type, String description) {
+	protected static Equipment createOldEquip(CSVRecord record, EquipmentType type, String description) {
 		Equipment equipment = new Equipment();
 
 		// Name
