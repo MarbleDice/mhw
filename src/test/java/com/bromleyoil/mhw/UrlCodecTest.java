@@ -30,11 +30,11 @@ public class UrlCodecTest {
 	@Test
 	public void girrosSet_noDeco_decodedEqual() {
 		EquipmentSet set = new EquipmentSet();
-		set.add(equipmentList.find("Girros α", HEAD));
-		set.add(equipmentList.find("Girros α", CHEST));
-		set.add(equipmentList.find("Girros α", ARM));
-		set.add(equipmentList.find("Girros α", WAIST));
-		set.add(equipmentList.find("Girros α", LEG));
+		set.add(equipmentList.find("Girros α +", HEAD));
+		set.add(equipmentList.find("Girros α +", CHEST));
+		set.add(equipmentList.find("Girros α +", ARM));
+		set.add(equipmentList.find("Girros α +", WAIST));
+		set.add(equipmentList.find("Girros α +", LEG));
 		set.add(equipmentList.find("Attack Charm I"));
 
 		EquipmentSet decodedSet = UrlCodec.decode(equipmentList, set.getBase64());
@@ -45,34 +45,17 @@ public class UrlCodecTest {
 	@Test
 	public void nergiSet_withDeco_decodedEqual() {
 		EquipmentSet set = new EquipmentSet();
-		set.add(equipmentList.find("Nergigante α", HEAD));
-		set.add(equipmentList.find("Nergigante β", CHEST));
-		set.add(equipmentList.find("Nergigante α", ARM));
-		set.add(equipmentList.find("Nergigante α", WAIST));
-		set.add(equipmentList.find("Nergigante α", LEG));
+		set.add(equipmentList.find("Alloy β +", HEAD));
+		set.add(equipmentList.find("Alloy β +", CHEST));
+		set.add(equipmentList.find("Alloy β +", ARM));
+		set.add(equipmentList.find("Alloy β +", WAIST));
+		set.add(equipmentList.find("Alloy β +", LEG));
 		set.add(equipmentList.find("Challenger Charm II"));
-		set.decorate(ATTACK_BOOST, 3);
+		set.decorate(ATTACK_BOOST, 4);
+		set.decorate(WEAKNESS_EXPLOIT, 3);
 
 		EquipmentSet decodedSet = UrlCodec.decode(equipmentList, set.getBase64());
 
 		assertThat("equal", compare(set, decodedSet), is(EQUAL));
 	}
-
-	@Test
-	public void allDamage_withTwoDeco_decodedEqual() {
-		EquipmentSet set = new EquipmentSet();
-		set.add(equipmentList.find("Dragonking α", HEAD));
-		set.add(equipmentList.find("Dober β", CHEST));
-		set.add(equipmentList.find("Nergigante α", ARM));
-		set.add(equipmentList.find("Vaal Hazak β", WAIST));
-		set.add(equipmentList.find("Dober β", LEG));
-		set.add(equipmentList.find("Unscathed Charm II"));
-		set.decorate(ATTACK_BOOST, 1);
-		set.decorate(WEAKNESS_EXPLOIT, 1);
-
-		EquipmentSet decodedSet = UrlCodec.decode(equipmentList, set.getBase64());
-
-		assertThat("equal", compare(set, decodedSet), is(EQUAL));
-	}
-
 }

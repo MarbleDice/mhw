@@ -28,11 +28,11 @@ public class EquipmentSetTest {
 		equipmentList = new EquipmentList(DataParser.parseAllEquipment());
 
 		set = new EquipmentSet();
-		set.add(equipmentList.find("Damascus β", HEAD));
-		set.add(equipmentList.find("Damascus β", CHEST));
-		set.add(equipmentList.find("Damascus β", ARM));
-		set.add(equipmentList.find("Damascus β", WAIST));
-		set.add(equipmentList.find("Damascus β", LEG));
+		set.add(equipmentList.find("Alloy α +", HEAD));
+		set.add(equipmentList.find("Alloy α +", CHEST));
+		set.add(equipmentList.find("Alloy α +", ARM));
+		set.add(equipmentList.find("Alloy α +", WAIST));
+		set.add(equipmentList.find("Alloy α +", LEG));
 	}
 
 	@Test
@@ -48,22 +48,22 @@ public class EquipmentSetTest {
 	@Test
 	public void decorate_withWeaponSlot_requiredIsMet() {
 		Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
-		decorationCounts.put(EARPLUGS, 3);
+		decorationCounts.put(EARPLUGS, 5);
 
 		set.setWeaponSlotSet(new SlotSet(1, 0, 0));
-		set.decorate(new SkillSet(EARPLUGS, 3), decorationCounts);
+		set.decorate(new SkillSet(EARPLUGS, 5), decorationCounts);
 
-		assertThat("decorated level", set.getSkillSet().getLevel(EARPLUGS), is(3));
+		assertThat("decorated level", set.getSkillSet().getLevel(EARPLUGS), is(5));
 	}
 
 	@Test
 	public void decorate_withoutWeaponSlot_requiredNotMet() {
 		Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
-		decorationCounts.put(EARPLUGS, 3);
+		decorationCounts.put(EARPLUGS, 5);
 
-		set.decorate(new SkillSet(EARPLUGS, 3), decorationCounts);
+		set.decorate(new SkillSet(EARPLUGS, 5), decorationCounts);
 
-		assertThat("decorated level", set.getSkillSet().getLevel(EARPLUGS), is(2));
+		assertThat("decorated level", set.getSkillSet().getLevel(EARPLUGS), lessThan(5));
 	}
 
 	@Test
