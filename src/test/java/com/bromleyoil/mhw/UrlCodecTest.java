@@ -35,7 +35,7 @@ public class UrlCodecTest {
 		set.add(equipmentList.find("Girros α +", ARM));
 		set.add(equipmentList.find("Girros α +", WAIST));
 		set.add(equipmentList.find("Girros α +", LEG));
-		set.add(equipmentList.find("Attack Charm I"));
+		set.add(equipmentList.find("Attack Charm III"));
 
 		EquipmentSet decodedSet = UrlCodec.decode(equipmentList, set.getBase64());
 

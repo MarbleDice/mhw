@@ -1,97 +1,104 @@
-Name	Skill1	Skill2	Max
-Challenger Charm	Agitator		2
-Attack Charm	Attack Boost		3
-Unscathed Charm	Peak Performance		2
-Handicraft Charm	Handicraft		3
-Critical Charm	Critical Boost		1
-Master's Charm	Critical Eye		3
-Power Charm	Latent Power		2
-Mighty Charm	Maximum Might		2
-Exploiter Charm	Weakness Exploit		2
-Mirewalker Charm	Aquatic/Polar Mobility		3
-Artillery Charm	Artillery		3
-Hunter's Life Charm	BBQ Master	Master Fisher	1
-Demolotion Charm	Blast Attack		3
-Blast Coating Charm	Blast Functionality		1
-Blast Charm	Blast Resistance		3
-Bleed Charm	Bleeding Resistance		3
-Blight Charm	Blight Resistance		3
-Bombardier Charm	Bombardier		3
-Botany Charm	Botanist		3
-Capacity Charm	Capacity Boost		1
-Fitness Charm	Constitution		3
-Draw Charm	Critical Draw		2
-Defense Charm	Defense Boost		3
-Blessing Charm	Divine Blessing		3
-Wyrmsbane Charm	Dragon Attack		3
-Dragon Charm	Dragon Resistance		3
-Trickshot Charm	Dungmaster	Blindsider	1
-Earplugs Charm	Earplugs		3
-Miasma Charm	Effluvia Resistance		3
-Insect Charm 	Entomologist		3
-Leaping Charm	Evade Extender		2
-Evasion Charm	Evade Window		3
-Blaze Charm	Fire Attack		3
-Fire Charm	Fire Resistance		3
-Impace Charm 	Flinch Free		2
-Focus Charm	Focus		2
-Geomancy Charm	Forager's Luck	Detector	1
-Fortification Charm	Fortify		1
-Awakening Charm	Free Elem/Ammo Up		2
-Light Eater's Charm	Free Meal		1
-Geology Charm 	Geologist		3
-Ironside Charm	Guard		3
-Health Charm	Health Boost		3
-Clearmind Charm	Heat Guard	Effluvial Expert	1
-Heavy Artillery Charm	Heavy Artillery		2
-Grit Charm	Heroics		2
-Performer's Charm	Horn Maestro		1
-Hungerless Charm	Hunger Resistance		3
-Frost Charm	Ice Attack		3
-Ice Charm	Ice Resistance		3
-Intimidator Charm	Intimidator		3
-Guard Charm	Iron Skin		3
-Extension Charm	Item Prolonger		3
-Marathon Charm	Marathon Runner		2
-Gatherer's Charm	Master Gatherer	Carving Pro	1
-Rider's Charm	Master Mounter	Jump Master	1
-Mud Puppy Charm	Muck Resistance	Leap of Faith	1
-Mushroom Charm	Mushroomancer		2
-Normal Shots Charm	Normal Shots		1
-Rally Charm	Palico Rally		3
-Para Coating Charm	Para Functionality		1
-Immobilize Charm	Paralysis Attack		3
-Paralysis Charm	Paralysis Resistance		3
-Breaker Charm	Partbreaker		2
-Venom Charm	Poison Attack		3
-Poison Coating Charm	Poison Functionality		1
-Poison Charm	Poison Resistance		3
-Invigorate Charm	Power Prolonger		2
-Procurer's Charm	Pro Transporter	Honey Hunter	1
-Sheath Charm	Quick Sheath		3
-Speed Heal Charm	Recovery Speed		3
-Recovery Charm	Recovery Up		3
-Fury Charm	Resentment		2
-Tracker Charm	Scenthound		1
-Surveyor's Charm	Scoutfly Range Up	Scholar	1
-Tranq Charm	Sleep Attack		3
-Sleep Coating Charm	Sleep Functionality		1
-Sleep Charm	Sleep Resistance		3
-Slinger Charm	Slinger Capacity		3
-KO Charm	Slugger		3
-Trickshot Charm	Special Ammo Boost		2
-Glutton's Charm	Speed Eating		3
-Whetstone Charm	Speed Sharpening		3
-Smoke Charm	Sporepuff Expert		3
-Surge Charm	Stamina Surge		2
-Enervate Charm	Stamina Thief		3
-Stealth Charm	Stealth		3
-Stun Charm 	Stun Resistance		3
-Shock Charm	Thunder Attack		3
-Thunder Charm	Thunder Resistance		3
-Maintenance Charm	Tool Specialist		3
-Tremor Charm	Tremor Resistance		2
-Flood Charm 	Water Attack		3
-Water Charm	Water Resistance		3
-Friendship Charm 	Wide-Range		3
-Windproof Charm	Windproof		3
+ID	Order	Name	Skill1	Skill2	Level	Max
+	1	Poison Charm III	Poison Resistance		3	3
+	2	Attack Charm III	Attack Boost		3	4
+	3	Defense Charm III	Defense Boost		3	5
+	4	Paralysis Charm III	Paralysis Resistance		3	3
+	5	Sleep Charm III	Sleep Resistance		3	3
+	6	Stun Charm III	Stun Resistance		3	3
+	7	Windproof Charm III	Windproof		3	4
+	8	Health Charm III	Health Boost		3	3
+	9	Recovery Charm III	Recovery Up		3	3
+	10	Fire Charm III	Fire Resistance		3	3
+	11	Water Charm III	Water Resistance		3	3
+	12	Thunder Charm III	Thunder Resistance		3	3
+	13	Blaze Charm III	Fire Attack		3	5
+	14	Flood Charm III	Water Attack		3	5
+	15	Shock Charm III	Thunder Attack		3	5
+	16	Venom Charm III	Poison Attack		3	4
+	17	Immobilize Charm III	Paralysis Attack		3	4
+	18	Tranq Charm III	Sleep Attack		3	4
+	19	KO Charm III	Slugger		3	3
+	20	Enervate Charm III	Stamina Thief		3	3
+	21	Artillery Charm III	Artillery		3	3
+	22	Hungerless Charm III	Hunger Resistance		3	3
+	23	Ironside Charm III	Guard		3	5
+	24	Friendship Charm III	Wide-Range		3	5
+	25	Extension Charm III	Item Prolonger		3	3
+	26	Glutton's Charm III	Speed Eating		3	3
+	27	Blessing Charm III	Divine Blessing		3	3
+	28	Rally Charm III	Palico Rally		3	5
+	29	Botany Charm III	Botanist		3	4
+	30	Geology Charm III	Geologist		3	3
+	31	Slinger Charm III	Slinger Capacity		3	3
+	32	Stealth Charm III	Stealth		3	3
+	33	Survival Charm III	Survival Expert		3	3
+	34	Mirewalker Charm III	Aquatic/Polar Mobility		3	3
+	35	Insect Charm III	Entomologist		3	3
+	36	Intimidator Charm III	Intimidator		3	3
+	37	Heavy Artillery Charm II	Heavy Artillery		2	2
+	38	Light Eater's Charm	Free Meal		1	1
+	39	Tracker Charm	Scenthound		1	1
+	40	Fortification Charm	Fortify		1	1
+	41	Performer's Charm	Horn Maestro		1	1
+	42	Capacity Charm	Capacity Boost		1	1
+	43	Bleed Charm III	Bleeding Resistance		3	3
+	44	Speed Heal Charm III	Recovery Speed		3	3
+	45	Ice Charm III	Ice Resistance		3	3
+	46	Blight Charm III	Blight Resistance		3	3
+	47	Frost Charm III	Ice Attack		3	5
+	48	Master's Charm III	Critical Eye		3	4
+	49	Evasion Charm III	Evade Window		3	4
+	50	Sheath Charm III	Quick Sheath		3	3
+	51	Whetstone Charm III	Speed Sharpening		3	3
+	52	Blast Charm III	Blast Resistance		3	3
+	53	Dragon Charm III	Dragon Resistance		3	3
+	54	Wyrmsbane Charm III	Dragon Attack		3	5
+	55	Demolition Charm III	Blast Attack		3	4
+	56	Draw Charm II	Critical Draw		2	2
+	57	Special Shot Charm II	Special Ammo Boost		2	2
+	58	Marathon Charm II	Marathon Runner		2	3
+	59	Fitness Charm III	Constitution		3	4
+	60	Surge Charm II	Stamina Surge		2	3
+	61	Leaping Charm II	Evade Extender		2	3
+	62	Bombardier Charm III	Bombardier		3	3
+	63	Mushroom Charm II	Mushroomancer		2	3
+	64	Awakening Charm II	Free Elem/Ammo Up		2	3
+	65	Handicraft Charm III	Handicraft		3	4
+	66	Mud Puppy Charm	Muck Resistance	Leap of Faith	1	1
+	67	Trickshot Charm	Dungmaster	Blindsider	1	1
+	68	Hunter's Life Charm	BBQ Master	Master Fisher	1	1
+	69	Procurer's Charm	Pro Transporter	Honey Hunter	1	1
+	70	Gatherer's Charm	Master Gatherer	Carving Pro	1	1
+	71	Guard Charm III	Iron Skin		3	3
+	72	Earplus Charm III	Earplugs		3	4
+	73	Tremor Charm II	Tremor Resistance		2	3
+	74	Exploiter Charm II	Weakness Exploit		2	2
+	75	Focus Charm II	Focus		2	3
+	76	Breaker Charm II	Partbreaker		2	3
+	77	Fury Charm II	Resentment		2	4
+	78	Grit Charm II	Heroics		2	4
+	79	Maintenance Charm III	Tool Specialist		3	3
+	80	Power Charm II	Latent Power		2	4
+	81	Challenger Charm II	Agitator		2	4
+	82	Unscathed Charm II	Peak Performance		2	2
+	83	Mighty Charm II	Maximum Might		2	2
+	84	Impact Charm II	Flinch Free		2	3
+	85	Miasma Charm III	Effluvia Resistance		3	3
+	86	Normal Shots Charm	Normal Shots		1	2
+	87	Clearmind Charm	Heat Guard	Effluvial Expert	1	1
+	88	Rider's Charm	Master Mounter	Jump Master	1	1
+	89	Surveyor's Charm	Scoutfly Range Up	Scholar	1	1
+	90	Critical Charm I	Critical Boost		1	2
+	91	Invigorate Charm II	Power Prolonger		2	3
+	92	Penetration Charm	Piercing Shots		1	2
+	93	Dispersal Charm	Spread/Power Shots		1	2
+	94	Poison Coating Charm	Poison Functionality		1	1
+	95	Para Coating Charm	Para Functionality		1	1
+	96	Sleep Coating Charm	Sleep Functionality		1	1
+	97	Blast Coating Charm	Blast Functionality		1	1
+	98	Geomancy Charm	Forager's Luck	Detector	1	1
+	99	Gale Charm	Affinity Sliding	Airborne	1	1
+	100	Wyrmslayer Charm	Elderseal Boost	Dragon Attack	1	1
+	101	Bulwark Charm	Guard Up	Resuscitate	1	1
+	102	Guardian Charm I	Offensive Guard		1	3
+	103	Phoenix Charm I	Coalescence		1	2

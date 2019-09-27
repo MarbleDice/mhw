@@ -36,7 +36,7 @@ public class DataParserTest {
 	public void parseCharms_fullFile_parsed() throws IOException {
 		List<Equipment> charms = DataParser.parseCharms(DataParser.openResource("charms.tsv"));
 
-		assertThat("num charms", charms.size(), is(228));
+		assertThat("num charms", charms.size(), greaterThan(100));
 	}
 
 	public CSVRecord mockRecord(String name, String... setBonuses) {

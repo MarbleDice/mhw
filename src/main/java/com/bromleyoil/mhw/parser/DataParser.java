@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
@@ -48,7 +47,7 @@ public class DataParser {
 	// Charm parsing
 	protected static final String SKILL1 = "Skill1";
 	protected static final String SKILL2 = "Skill2";
-	protected static final String MAX = "Max";
+	protected static final String LEVEL = "Level";
 
 	protected static final Pattern descriptionPattern = Pattern.compile("\\s*([a-zA-Z0-9'/, -]+)\\s*(\\(.+\\))?\\s*");
 	protected static final Pattern skillPattern = Pattern.compile("\\s*(.+)\\s+(\\d+)\\s*");
@@ -177,23 +176,21 @@ public class DataParser {
 	protected static List<Equipment> parseCharms(Reader reader) throws IOException {
 		List<Equipment> charms = new ArrayList<>();
 		for (CSVRecord record : CSVFormat.TDF.withFirstRecordAsHeader().parse(reader)) {
-			int maxLevel = Integer.parseInt(record.get(MAX));
-			for (int level = 1; level <= maxLevel; level++) {
-				Equipment charm = new Equipment();
-				String suffix = String.join("", Collections.nCopies(level, "I"));
-				charm.setName(record.get(NAME) + (maxLevel == 1 ? "" : " " + suffix));
-				charm.setArmorName(charm.getName());
-				charm.setType(EquipmentType.CHARM);
+			int level = Integer.parseInt(record.get(LEVEL));
+			Equipment charm = new Equipment();
 
-				Skill skill;
-				skill = Skill.valueOfName(record.get(SKILL1));
+			charm.setName(record.get(NAME));
+			charm.setArmorName(charm.getName());
+			charm.setType(EquipmentType.CHARM);
+
+			Skill skill = Skill.valueOfName(record.get(SKILL1));
+			charm.addSkill(skill, level);
+			if (!StringUtils.isBlank(record.get(SKILL2))) {
+				skill = Skill.valueOfName(record.get(SKILL2));
 				charm.addSkill(skill, level);
-				if (!StringUtils.isBlank(record.get(SKILL2))) {
-					skill = Skill.valueOfName(record.get(SKILL2));
-					charm.addSkill(skill, level);
-				}
-				charms.add(charm);
 			}
+
+			charms.add(charm);
 		}
 		return charms;
 	}
