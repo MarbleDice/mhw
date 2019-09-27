@@ -197,6 +197,8 @@ public enum Skill {
 		"Draws out 100% of hidden element and expands clip size for some ammo."),
 	FREE_MEAL("Free Meal", "Satiated Jewel 1", 1, 5,
 		"Activates 25% of the time."),
+	FROSTCRAFT("Frostcraft", "", 0, 0,
+		"An aura of frost builds when your weapon is sheathed, raising attack. Wanes each melee hit or shot fired."),
 	FREE_MEAL_SECRET("Free Meal Secret", "", 0, 0,
 		"Raises the maximum level of the Free Meal skill."),
 	GEOLOGIST("Geologist", "Geology Jewel 1", 1, 5,

@@ -1,466 +1,496 @@
-Set Name	Type	Item Name	Skills	Slots	Set Bonus Name	Set Bonus 2	Set Bonus 3	Set Bonus 4	Set Bonus 5
-Bone α +	Head		Health Boost 2, Partbreaker 1	3					
-Bone α +	Chest		Attack Boost 2, Health Boost 1	2					
-Bone α +	Arm		Slugger 2, Attack Boost 1	2					
-Bone α +	Waist		Horn Maestro 1, Partbreaker 1	3					
-Bone α +	Leg		Slugger 1, Horn Maestro 1	3					
-Bone β +	Head		Health Boost 1, Partbreaker 1	4					
-Bone β +	Chest		Attack Boost 1	41					
-Bone β +	Arm		Slugger 1	41					
-Bone β +	Waist		Horn Maestro 1	41					
-Bone β +	Leg		Slugger 1	4					
-Alloy α +	Head		Windproof 2, Defense Boost 1	2					
-Alloy α +	Chest		Water Resistance 2, Defense Boost 1	3					
-Alloy α +	Arm		Defense Boost 2, Speed Sharpening 1	3					
-Alloy α +	Waist		Poison Resistance 2, Windproof 1	3					
-Alloy α +	Leg		Speed Sharpening 2, Windproof 1	3					
-Alloy β +	Head		Windproof 1	41					
-Alloy β +	Chest		Water Resistance 1	41					
-Alloy β +	Arm		Defense Boost 1	41					
-Alloy β +	Waist		Poison Resistance 1, Windproof 1	4					
-Alloy β +	Leg		Speed Sharpening 1, Windproof 1	4					
-Vespoid α +	Head		Quick Sheath 1, Paralysis Attack 1	3					
-Vespoid α +	Chest		Windproof 2	21					
-Vespoid α +	Arm		Paralysis Attack 2, Quick Sheath 1	3					
-Vespoid α +	Waist		Paralysis Resistance 2, Quick Sheath 1	3					
-Vespoid α +	Leg		Critical Draw 1, Paralysis Resistance 1	3					
-Vespoid β +	Head		Quick Sheath 1	41					
-Vespoid β +	Chest		Windproof 1	41					
-Vespoid β +	Arm		Paralysis Attack 1	41					
-Vespoid β +	Waist		Paralysis Resistance 1	41					
-Vespoid β +	Leg		Critical Draw 1	41					
-Hornetaur α +	Head		Weakness Exploit 1, Dragon Attack 2	2					
-Hornetaur α +	Chest		Effluvial Expert 1, Hunger Resistance 2	21					
-Hornetaur α +	Arm		Free Meal 1, Handicraft 1	3					
-Hornetaur α +	Waist		Weakness Exploit 1, Hunger Resistance 1	2					
-Hornetaur α +	Leg		Handicraft 1, Dragon Attack 1	21					
-Hornetaur β +	Head		Weakness Exploit 1, Dragon Attack 1	4					
-Hornetaur β +	Chest		Effluvial Expert 1	421					
-Hornetaur β +	Arm		Free Meal 1	42					
-Hornetaur β +	Waist		Weakness Exploit 1	41					
-Hornetaur β +	Leg		Handicraft 1	41					
-Kestodon α +	Arm		Affinity Sliding 1, Focus 2	11					
-Kestodon β +	Arm		Affinity Sliding 1, Focus 1	41					
-Gajau α +	Leg		Aquatic/Polar Mobility 2, Water Attack 2	21					
-Gajau β +	Leg		Aquatic/Polar Mobility 1, Water Attack 1	41					
-Shamos α +	Head		Detector 1, Geologist 2	21					
-Shamos β +	Head		Detector 1, Geologist 1	42					
-Gastodon α +	Head		Flinch Free 2, Blast Resistance 1	1					
-Gastodon β +	Head		Flinch Free 1, Blast Resistance 1	41					
-Barnos α +	Chest		Heat Guard 1, Iron Skin 2	22					
-Barnos β +	Chest		Heat Guard 1, Iron Skin 1	42					
-Wulg α +	Head		Ice Resistance 2, Master Mounter 1	21					
-Wulg β +	Head		Ice Resistance 1, Master Mounter 1	41					
-Cortos α +	Chest		Hunger Resistance 2, Jump Master 1	11					
-Cortos β +	Chest		Hunger Resistance 1, Jump Master 1	4					
-Jagras α +	Head		Speed Eating 2, Attack Boost 2	2					
-Jagras α +	Chest		Evade Extender 1, Attack Boost 2	3					
-Jagras α +	Arm		Evade Extender 2, Recovery Up 1	2					
-Jagras α +	Waist		Recovery Up 1, Speed Eating 1	21					
-Jagras α +	Leg		Free Meal 1, Recovery Up 1	21					
-Jagras β +	Head		Speed Eating 1, Attack Boost 1	41					
-Jagras β +	Chest		Evade Extender 1, Attack Boost 1	4					
-Jagras β +	Arm		Evade Extender 1, Recovery Up 1	4					
-Jagras β +	Waist		Recovery Up 1	41					
-Jagras β +	Leg		Free Meal 1	41					
-Tzitzi α +	Head		Free Elem/Ammo Up 1, Stun Resistance 1	21					
-Tzitzi α +	Chest		Constitution 2, Water Attack 2	11					
-Tzitzi α +	Arm		Stun Resistance 2, Wide-Range 2	2					
-Tzitzi α +	Waist		Wide-Range 2, Water Attack 2	2					
-Tzitzi α +	Leg		Sleep Resistance 2, Wide-Range 1	3					
-Tzitzi β +	Head		Free Elem/Ammo Up 1	41					
-Tzitzi β +	Chest		Constitution 1, Water Attack 1	41					
-Tzitzi β +	Arm		Stun Resistance 2, Wide-Range 1	4					
-Tzitzi β +	Waist		Wide-Range 2	41					
-Tzitzi β +	Leg		Sleep Resistance 1, Wide-Range 1	4					
-Girros α +	Head		Horn Maestro 2, Paralysis Resistance 1	2					
-Girros α +	Chest		Paralysis Resistance 2, Free Elem/Ammo Up 1	2					
-Girros α +	Arm		Free Elem/Ammo Up 1, Effluvia Resistance 2	1					
-Girros α +	Waist		Effluvial Expert 1, Paralysis Attack 2	3					
-Girros α +	Leg		Paralysis Attack 2, Free Elem/Ammo Up 1	1					
-Girros β +	Head		Horn Maestro 2	4					
-Girros β +	Chest		Paralysis Resistance 2	42					
-Girros β +	Arm		Free Elem/Ammo Up 1, Effluvia Resistance 1	4					
-Girros β +	Waist		Effluvial Expert 1	42					
-Girros β +	Leg		Paralysis Attack 2	4					
-Dodogama α +	Head		Blast Resistance 2, Bombardier 1	3					
-Dodogama α +	Chest		Blast Attack 2, Artillery 1	2					
-Dodogama α +	Arm		Bombardier 2, Blast Attack 1	2					
-Dodogama α +	Waist		Artillery 2, Blast Resistance 1	21					
-Dodogama α +	Leg		Capacity Boost 1, Blast Attack 1	21					
-Dodogama β +	Head		Blast Resistance 2	4					
-Dodogama β +	Chest		Blast Attack 2	4					
-Dodogama β +	Arm		Bombardier 1, Blast Attack 1	4					
-Dodogama β +	Waist		Artillery 2	41					
-Dodogama β +	Leg		Capacity Boost 1	41					
-Kulu α +	Head		Slinger Capacity 2, Critical Boost 1	1					
-Kulu α +	Chest		Stamina Surge 1, Critical Eye 2	2					
-Kulu α +	Arm		Critical Boost 1, Pro Transporter 1	11					
-Kulu α +	Waist		Item Prolonger 2, Critical Eye 1	3					
-Kulu α +	Leg		Critical Eye 2, Item Prolonger 1	2					
-Kulu β +	Head		Slinger Capacity 2	4					
-Kulu β +	Chest		Stamina Surge 1, Critical Eye 1	4					
-Kulu β +	Arm		Critical Boost 1	4					
-Kulu β +	Waist		Item Prolonger 2	41					
-Kulu β +	Leg		Critical Eye 1, Item Prolonger 1	4					
-Pukei α +	Head		Survival Expert 2, Poison Resistance 1	22					
-Pukei α +	Chest		Item Prolonger 2, Peak Performance 1	2					
-Pukei α +	Arm		Peak Performance 2, Survival Expert 1	1					
-Pukei α +	Waist		Poison Attack 2, Item Prolonger 1	3					
-Pukei α +	Leg		Poison Resistance 2, Poison Attack 2	3					
-Pukei β +	Head		Survival Expert 2	411					
-Pukei β +	Chest		Item Prolonger 1, Peak Performance 1	4					
-Pukei β +	Arm		Peak Performance 1, Survival Expert 1	4					
-Pukei β +	Waist		Poison Attack 1, Item Prolonger 1	41					
-Pukei β +	Leg		Poison Resistance 2	42					
-Coral Pukei α +	Head		Critical Draw 2, Item Prolonger 1	1					
-Coral Pukei α +	Chest		Power Prolonger 1, Critical Draw 1	2					
-Coral Pukei α +	Arm		Partbreaker 1, Power Prolonger 1	1					
-Coral Pukei α +	Waist		Water Attack 2, Partbreaker 1	2					
-Coral Pukei α +	Leg		Item Prolonger 2, Water Attack 2	1					
-Coral Pukei β +	Head		Critical Draw 1, Item Prolonger 1	4					
-Coral Pukei β +	Chest		Power Prolonger 1	41					
-Coral Pukei β +	Arm		Partbreaker 1	41					
-Coral Pukei β +	Waist		Water Attack 1, Partbreaker 1	4					
-Coral Pukei β +	Leg		Item Prolonger 2	41					
-Barroth α +	Head		Guard 2, Marathon Runner 1	2					
-Barroth α +	Chest		Stamina Thief 2, Agitator 1	11					
-Barroth α +	Arm		Marathon Runner 1, Guard 1	31					
-Barroth α +	Waist		Agitator 2, Guard 1	1					
-Barroth α +	Leg		Stun Resistance 2, Marathon Runner 1	31					
-Barroth β +	Head		Guard 2	41					
-Barroth β +	Chest		Stamina Thief 2	41					
-Barroth β +	Arm		Marathon Runner 1	42					
-Barroth β +	Waist		Agitator 2	4					
-Barroth β +	Leg		Stun Resistance 2	421					
-Jyura α +	Head		Latent Power 2, Focus 1	11					
-Jyura α +	Chest		Latent Power 1, Water Attack 2	2					
-Jyura α +	Arm		Water Attack 2, Ice Resistance 1	21					
-Jyura α +	Waist		Ice Resistance 2, Latent Power 1	3					
-Jyura α +	Leg		Focus 2, Water Attack 1	2					
-Jyura β +	Head		Latent Power 1, Focus 1	41					
-Jyura β +	Chest		Latent Power 1, Water Attack 1	4					
-Jyura β +	Arm		Water Attack 2	42					
-Jyura β +	Waist		Ice Resistance 2	41					
-Jyura β +	Leg		Focus 1, Water Attack 1	41					
-Beo α +	Head		Aquatic/Polar Mobility 2, Earplugs 1	2					
-Beo α +	Chest		Stamina Surge 1, Ice Attack 2	3					
-Beo α +	Arm		Ice Attack 2, Health Boost 1	3					
-Beo α +	Waist		Health Boost 2, Earplugs 2	2					
-Beo α +	Leg		Earplugs 2, Ice Attack 1	2					
-Beo β +	Head		Aquatic/Polar Mobility 2	41					
-Beo β +	Chest		Stamina Surge 1	42					
-Beo β +	Arm		Ice Attack 2	4					
-Beo β +	Waist		Health Boost 2, Earplugs 1	41					
-Beo β +	Leg		Earplugs 2	4					
-Kadachi α +	Head		Constitution 2, Evade Extender 1	2					
-Kadachi α +	Chest		Jump Master 1, Constitution 1	21					
-Kadachi α +	Arm		Evade Extender 2, Thunder Attack 2	2					
-Kadachi α +	Waist		Thunder Attack 2, Thunder Resistance 1	31					
-Kadachi α +	Leg		Thunder Resistance 2, Constitution 1	31					
-Kadachi β +	Head		Constitution 1, Evade Extender 1	41					
-Kadachi β +	Chest		Jump Master 1	42					
-Kadachi β +	Arm		Evade Extender 1, Thunder Attack 2	42					
-Kadachi β +	Waist		Thunder Attack 2	41					
-Kadachi β +	Leg		Thunder Resistance 2	411					
-Viper Kadachi α +	Head		Evade Extender 2, Paralysis Attack 1	1					
-Viper Kadachi α +	Chest		Quick Sheath 1, Evade Extender 1	11					
-Viper Kadachi α +	Arm		Poison Attack 2, Evade Window 1	2					
-Viper Kadachi α +	Waist		Constitution 1, Quick Sheath 1	2					
-Viper Kadachi α +	Leg		Evade Window 1, Constitution 1	2					
-Viper Kadachi β +	Head		Evade Extender 1, Paralysis Attack 1	4					
-Viper Kadachi β +	Chest		Quick Sheath 1	41					
-Viper Kadachi β +	Arm		Poison Attack 1, Evade Window 1	4					
-Viper Kadachi β +	Waist		Constitution 1	41					
-Viper Kadachi β +	Leg		Evade Window 1	41					
-High Metal α +	Head		Ice Resistance 2, Earplugs 2	2					
-High Metal α +	Chest		Earplugs 2, Ice Attack 1	2					
-High Metal α +	Arm		Defense Boost 2, Ice Attack 2	21					
-High Metal α +	Waist		Capacity Boost 1, Defense Boost 2	22					
-High Metal α +	Leg		Heavy Artillery 2, Ice Resistance 1	221					
-High Metal β +	Head		Ice Resistance 2, Earplugs 1	41					
-High Metal β +	Chest		Earplugs 1, Ice Attack 1	41					
-High Metal β +	Arm		Defense Boost 2, Ice Attack 1	41					
-High Metal β +	Waist		Capacity Boost 1, Defense Boost 1	42					
-High Metal β +	Leg		Heavy Artillery 1, Ice Resistance 1	42					
-Banbaro α +	Head		Resentment 2, Mushroomancer 1	2					
-Banbaro α +	Chest		Speed Eating 1, Offensive Guard 1	3					
-Banbaro α +	Arm		Offensive Guard 1, Health Boost 2	2					
-Banbaro α +	Waist		Mushroomancer 1, Offensive Guard 1	3					
-Banbaro α +	Leg		Mushroomancer 1, Speed Eating 1	3					
-Banbaro β +	Head		Resentment 2	41					
-Banbaro β +	Chest		Speed Eating 1	41					
-Banbaro β +	Arm		Offensive Guard 1, Health Boost 1	4					
-Banbaro β +	Waist		Mushroomancer 1	41					
-Banbaro β +	Leg		Mushroomancer 1	41					
-Anja α +	Head		Fire Attack 2, Fire Resistance 1	3	Anjanath Dominance	Stamina Cap Up			
-Anja α +	Chest		Marathon Runner 2, Special Ammo Boost 1	11	Anjanath Dominance	Stamina Cap Up			
-Anja α +	Arm		Special Ammo Boost 1, Fire Attack 2	2	Anjanath Dominance	Stamina Cap Up			
-Anja α +	Waist		Fire Resistance 2, Artillery 1	31	Anjanath Dominance	Stamina Cap Up			
-Anja α +	Leg		Artillery 2, Marathon Runner 1	2	Anjanath Dominance	Stamina Cap Up			
-Anja β +	Head		Fire Attack 2	4	Anjanath Dominance	Stamina Cap Up			
-Anja β +	Chest		Marathon Runner 1, Special Ammo Boost 1	41	Anjanath Dominance	Stamina Cap Up			
-Anja β +	Arm		Special Ammo Boost 1, Fire Attack 1	4	Anjanath Dominance	Stamina Cap Up			
-Anja β +	Waist		Fire Resistance 2	42	Anjanath Dominance	Stamina Cap Up			
-Anja β +	Leg		Artillery 2	41	Anjanath Dominance	Stamina Cap Up			
-Fulgur Anja α +	Head		Weakness Exploit 1, Resuscitate 1	21	Anjanath Dominance	Stamina Cap Up			
-Fulgur Anja α +	Chest		Flinch Free 1, Stun Resistance 2	3	Anjanath Dominance	Stamina Cap Up			
-Fulgur Anja α +	Arm		Item Prolonger 2, Thunder Attack 2	2	Anjanath Dominance	Stamina Cap Up			
-Fulgur Anja α +	Waist		Weakness Exploit 2, Item Prolonger 1	1	Anjanath Dominance	Stamina Cap Up			
-Fulgur Anja α +	Leg		Thunder Attack 2, Special Ammo Boost 1	21	Anjanath Dominance	Stamina Cap Up			
-Fulgur Anja β +	Head		Weakness Exploit 1	42	Anjanath Dominance	Stamina Cap Up			
-Fulgur Anja β +	Chest		Flinch Free 1, Stun Resistance 1	4	Anjanath Dominance	Stamina Cap Up			
-Fulgur Anja β +	Arm		Item Prolonger 2	42	Anjanath Dominance	Stamina Cap Up			
-Fulgur Anja β +	Waist		Weakness Exploit 1, Item Prolonger 1	41	Anjanath Dominance	Stamina Cap Up			
-Fulgur Anja β +	Leg		Thunder Attack 2	41	Anjanath Dominance	Stamina Cap Up			
-Rathian α +	Head		Health Boost 2, Poison Attack 1	3	Rathian Essence	Poison Duration Up			
-Rathian α +	Chest		Botanist 2, Recovery Up 1	22	Rathian Essence	Poison Duration Up			
-Rathian α +	Arm		Poison Attack 2, Botanist 1	3	Rathian Essence	Poison Duration Up			
-Rathian α +	Waist		Poison Resistance 2, Health Boost 1	32	Rathian Essence	Poison Duration Up			
-Rathian α +	Leg		Recovery Up 2, Poison Resistance 1	3	Rathian Essence	Poison Duration Up			
-Rathian β +	Head		Health Boost 1, Poison Attack 1	4	Rathian Essence	Poison Duration Up			
-Rathian β +	Chest		Botanist 1, Recovery Up 1	42	Rathian Essence	Poison Duration Up			
-Rathian β +	Arm		Poison Attack 2	4	Rathian Essence	Poison Duration Up			
-Rathian β +	Waist		Poison Resistance 1, Health Boost 1	42	Rathian Essence	Poison Duration Up			
-Rathian β +	Leg		Recovery Up 2	4	Rathian Essence	Poison Duration Up			
-Rath Heart α +	Head		Evade Extender 2, Cliffhanger 1	3	Rathian Essence	Poison Duration Up			
-Rath Heart α +	Chest		Tool Specialist 2, Handicraft 1	2	Rathian Essence	Poison Duration Up			
-Rath Heart α +	Arm		Windproof 2, Handicraft 1	2	Rathian Essence	Poison Duration Up			
-Rath Heart α +	Waist		Handicraft 1, Poison Resistance 2	3	Rathian Essence	Poison Duration Up			
-Rath Heart α +	Leg		Tool Specialist 1, Windproof 1	21	Rathian Essence	Poison Duration Up			
-Rath Heart β +	Head		Evade Extender 2	41	Rathian Essence	Poison Duration Up			
-Rath Heart β +	Chest		Tool Specialist 2	411	Rathian Essence	Poison Duration Up			
-Rath Heart β +	Arm		Windproof 2	42	Rathian Essence	Poison Duration Up			
-Rath Heart β +	Waist		Handicraft 1, Poison Resistance 1	4	Rathian Essence	Poison Duration Up			
-Rath Heart β +	Leg		Tool Specialist 1	42	Rathian Essence	Poison Duration Up			
-Lumu α +	Head		Stamina Surge 2, Windproof 1	3					
-Lumu α +	Chest		Master Mounter 1, Artillery 1	31					
-Lumu α +	Arm		Artillery 2, Windproof 1	22					
-Lumu α +	Waist		Divine Blessing 2, Windproof 1	22					
-Lumu α +	Leg		Windproof 2, Stamina Surge 1	3					
-Lumu β +	Head		Stamina Surge 2	41					
-Lumu β +	Chest		Master Mounter 1	41					
-Lumu β +	Arm		Artillery 1, Windproof 1	41					
-Lumu β +	Waist		Divine Blessing 1, Windproof 1	41					
-Lumu β +	Leg		Windproof 2	41					
-Lumu Phantasm α +	Head		Weakness Exploit 1, Wide-Range 1	11					
-Lumu Phantasm α +	Chest		Wide-Range 2, Maximum Might 1	2					
-Lumu Phantasm α +	Arm		Maximum Might 1, Sleep Attack 1	2					
-Lumu Phantasm α +	Waist		Sleep Attack 2, Wide-Range 1	2					
-Lumu Phantasm α +	Leg		Sleep Resistance 2, Wide-Range 1	3					
-Lumu Phantasm β +	Head		Weakness Exploit 1	4					
-Lumu Phantasm β +	Chest		Wide-Range 2	41					
-Lumu Phantasm β +	Arm		Maximum Might 1	4					
-Lumu Phantasm β +	Waist		Sleep Attack 2	4					
-Lumu Phantasm β +	Leg		Sleep Resistance 2	41					
-Baan α +	Head		Tremor Resistance 2, Slugger 1	11					
-Baan α +	Chest		Sleep Attack 1, Bleeding Resistance 1	3					
-Baan α +	Arm		Sleep Attack 2, Guard 1	2					
-Baan α +	Waist		Guard 2, Sleep Resistance 2	1					
-Baan α +	Leg		Bleeding Resistance 2, Guard 1	2					
-Baan β +	Head		Tremor Resistance 2	4					
-Baan β +	Chest		Sleep Attack 1	4					
-Baan β +	Arm		Sleep Attack 1, Guard 1	4					
-Baan β +	Waist		Guard 2	4					
-Baan β +	Leg		Bleeding Resistance 2	41					
-Artian α +	Head		Slinger Capacity 2, Free Elem/Ammo Up 1	2	Ancient Divinity	Critical Status			
-Artian α +	Chest		Critical Eye 3, Peak Performance 1	1	Ancient Divinity	Critical Status			
-Artian α +	Arm		Free Elem/Ammo Up 2, Tool Specialist 1	11	Ancient Divinity	Critical Status			
-Artian α +	Waist		Tool Specialist 2, Critical Eye 1	11	Ancient Divinity	Critical Status			
-Artian α +	Leg		Peak Performance 2, Slinger Capacity 1	11	Ancient Divinity	Critical Status			
-Artian β +	Head		Slinger Capacity 1, Free Elem/Ammo Up 1	41	Ancient Divinity	Critical Status			
-Artian β +	Chest		Critical Eye 2, Peak Performance 1	4	Ancient Divinity	Critical Status			
-Artian β +	Arm		Free Elem/Ammo Up 2	4	Ancient Divinity	Critical Status			
-Artian β +	Waist		Tool Specialist 1, Critical Eye 1	41	Ancient Divinity	Critical Status			
-Artian β +	Leg		Peak Performance 2	4	Ancient Divinity	Critical Status			
-Clockwork α +	Head		Agitator 2, Partbreaker 1	11	Commission Alchemy		Bombardier Secret		
-Clockwork α +	Chest		Agitator 2, Special Ammo Boost 1	11	Commission Alchemy		Bombardier Secret		
-Clockwork α +	Arm		Bombardier 3, Tremor Resistance 1	2	Commission Alchemy		Bombardier Secret		
-Clockwork α +	Waist		Partbreaker 2, Sleep Functionality 1	2	Commission Alchemy		Bombardier Secret		
-Clockwork α +	Leg		Critical Boost 1, Bombardier 2	11	Commission Alchemy		Bombardier Secret		
-Clockwork β +	Head		Agitator 1, Partbreaker 1	41	Commission Alchemy		Bombardier Secret		
-Clockwork β +	Chest		Agitator 2	41	Commission Alchemy		Bombardier Secret		
-Clockwork β +	Arm		Bombardier 3, Tremor Resistance 1	4	Commission Alchemy		Bombardier Secret		
-Clockwork β +	Waist		Partbreaker 2	41	Commission Alchemy		Bombardier Secret		
-Clockwork β +	Leg		Critical Boost 1, Bombardier 1	4	Commission Alchemy		Bombardier Secret		
-Ingot α +	Head		Thunder Attack 2, Windproof 1	2					
-Ingot α +	Chest		Thunder Resistance 2, Free Elem/Ammo Up 1	3					
-Ingot α +	Arm		Health Boost 2, Thunder Attack 2	21					
-Ingot α +	Waist		Windproof 2, Free Elem/Ammo Up 1	2					
-Ingot α +	Leg		Defense Boost 2, Free Elem/Ammo Up 1	2					
-Ingot β +	Head		Thunder Attack 2	42					
-Ingot β +	Chest		Thunder Resistance 1, Free Elem/Ammo Up 1	4					
-Ingot β +	Arm		Health Boost 2, Thunder Attack 1	4					
-Ingot β +	Waist		Windproof 1, Free Elem/Ammo Up 1	41					
-Ingot β +	Leg		Defense Boost 1, Free Elem/Ammo Up 1	4					
-Barioth α +	Head		Evade Extender 2, Power Prolonger 1	11	Barioth Hidden Art	Punishing Draw			
-Barioth α +	Chest		Power Prolonger 1, Constitution 1	3	Barioth Hidden Art	Punishing Draw			
-Barioth α +	Arm		Recovery Up 2, Constitution 2	2	Barioth Hidden Art	Punishing Draw			
-Barioth α +	Waist		Quick Sheath 1, Recovery Up 1	3	Barioth Hidden Art	Punishing Draw			
-Barioth α +	Leg		Constitution 2, Quick Sheath 1	11	Barioth Hidden Art	Punishing Draw			
-Barioth β +	Head		Evade Extender 1, Power Prolonger 1	41	Barioth Hidden Art	Punishing Draw			
-Barioth β +	Chest		Power Prolonger 1	41	Barioth Hidden Art	Punishing Draw			
-Barioth β +	Arm		Recovery Up 2, Constitution 1	4	Barioth Hidden Art	Punishing Draw			
-Barioth β +	Waist		Quick Sheath 1	4	Barioth Hidden Art	Punishing Draw			
-Barioth β +	Leg		Constitution 1, Quick Sheath 1	41	Barioth Hidden Art	Punishing Draw			
-Rathalos α +	Head		Attack Boost 2, Fire Attack 2	2	Rathalos Essence		Mind's Eye/Ballistics		
-Rathalos α +	Chest		Weakness Exploit 2, Fire Attack 1	11	Rathalos Essence		Mind's Eye/Ballistics		
-Rathalos α +	Arm		Jump Master 1, Weakness Exploit 1	3	Rathalos Essence		Mind's Eye/Ballistics		
-Rathalos α +	Waist		Fire Attack 2, Focus 2	2	Rathalos Essence		Mind's Eye/Ballistics		
-Rathalos α +	Leg		Slinger Capacity 2, Attack Boost 2	3	Rathalos Essence		Mind's Eye/Ballistics		
-Rathalos β +	Head		Attack Boost 2	41	Rathalos Essence		Mind's Eye/Ballistics		
-Rathalos β +	Chest		Weakness Exploit 2	4	Rathalos Essence		Mind's Eye/Ballistics		
-Rathalos β +	Arm		Jump Master 1	43	Rathalos Essence		Mind's Eye/Ballistics		
-Rathalos β +	Waist		Fire Attack 2	42	Rathalos Essence		Mind's Eye/Ballistics		
-Rathalos β +	Leg		Slinger Capacity 2, Attack Boost 1	4	Rathalos Essence		Mind's Eye/Ballistics		
-Rath Soul α +	Head		Critical Boost 1, Cliffhanger 1	11	Rathalos Essence		Mind's Eye/Ballistics		
-Rath Soul α +	Chest		Free Elem/Ammo Up 1, Partbreaker 1	2	Rathalos Essence		Mind's Eye/Ballistics		
-Rath Soul α +	Arm		Partbreaker 2, Windproof 1	2	Rathalos Essence		Mind's Eye/Ballistics		
-Rath Soul α +	Waist		Windproof 2, Piercing Shots 1	3	Rathalos Essence		Mind's Eye/Ballistics		
-Rath Soul α +	Leg		Critical Boost 1, Windproof 2	1	Rathalos Essence		Mind's Eye/Ballistics		
-Rath Soul β +	Head		Critical Boost 1	4	Rathalos Essence		Mind's Eye/Ballistics		
-Rath Soul β +	Chest		Free Elem/Ammo Up 1	41	Rathalos Essence		Mind's Eye/Ballistics		
-Rath Soul β +	Arm		Partbreaker 1, Windproof 1	41	Rathalos Essence		Mind's Eye/Ballistics		
-Rath Soul β +	Waist		Windproof 2	42	Rathalos Essence		Mind's Eye/Ballistics		
-Rath Soul β +	Leg		Critical Boost 1, Windproof 1	4	Rathalos Essence		Mind's Eye/Ballistics		
-Diablos α +	Head		Critical Draw 2, Slugger 1	2	Diablos Ambition		Slugger Secret		
-Diablos α +	Chest		Slugger 2, Heroics 2	2	Diablos Ambition		Slugger Secret		
-Diablos α +	Arm		Heroics 3, Tremor Resistance 1	2	Diablos Ambition		Slugger Secret		
-Diablos α +	Waist		Marathon Runner 2, Critical Draw 1	2	Diablos Ambition		Slugger Secret		
-Diablos α +	Leg		Tremor Resistance 2, Slugger 2	11	Diablos Ambition		Slugger Secret		
-Diablos β +	Head		Critical Draw 2	4	Diablos Ambition		Slugger Secret		
-Diablos β +	Chest		Slugger 2, Heroics 1	41	Diablos Ambition		Slugger Secret		
-Diablos β +	Arm		Heroics 2, Tremor Resistance 1	41	Diablos Ambition		Slugger Secret		
-Diablos β +	Waist		Marathon Runner 2	41	Diablos Ambition		Slugger Secret		
-Diablos β +	Leg		Tremor Resistance 2, Slugger 1	41	Diablos Ambition		Slugger Secret		
-Diablos Nero α +	Head		Partbreaker 2, Resentment 1	11	Diablos Ambition		Slugger Secret		
-Diablos Nero α +	Chest		Resentment 2, Marathon Runner 1	2	Diablos Ambition		Slugger Secret		
-Diablos Nero α +	Arm		Slugger 2, Marathon Runner 1	11	Diablos Ambition		Slugger Secret		
-Diablos Nero α +	Waist		Slugger 2, Partbreaker 1	2	Diablos Ambition		Slugger Secret		
-Diablos Nero α +	Leg		Resentment 2, Slugger 1	1	Diablos Ambition		Slugger Secret		
-Diablos Nero β +	Head		Partbreaker 2	41	Diablos Ambition		Slugger Secret		
-Diablos Nero β +	Chest		Resentment 1, Marathon Runner 1	41	Diablos Ambition		Slugger Secret		
-Diablos Nero β +	Arm		Slugger 1, Marathon Runner 1	42	Diablos Ambition		Slugger Secret		
-Diablos Nero β +	Waist		Slugger 2	41	Diablos Ambition		Slugger Secret		
-Diablos Nero β +	Leg		Resentment 2	4	Diablos Ambition		Slugger Secret		
-Legiana α +	Head		Divine Blessing 2, Ice Attack 2	2	Legiana Ambition		Bow Charge Plus		
-Legiana α +	Chest		Evade Window 2, Divine Blessing 2	1	Legiana Ambition		Bow Charge Plus		
-Legiana α +	Arm		Airborne 1, Evade Window 2	3	Legiana Ambition		Bow Charge Plus		
-Legiana α +	Waist		Ice Attack 2, Windproof 2	2	Legiana Ambition		Bow Charge Plus		
-Legiana α +	Leg		Ice Resistance 2, Critical Draw 1	3	Legiana Ambition		Bow Charge Plus		
-Legiana β +	Head		Divine Blessing 2	41	Legiana Ambition		Bow Charge Plus		
-Legiana β +	Chest		Evade Window 2, Divine Blessing 1	4	Legiana Ambition		Bow Charge Plus		
-Legiana β +	Arm		Airborne 1, Evade Window 1	42	Legiana Ambition		Bow Charge Plus		
-Legiana β +	Waist		Ice Attack 2, Windproof 1	41	Legiana Ambition		Bow Charge Plus		
-Legiana β +	Leg		Ice Resistance 2	42	Legiana Ambition		Bow Charge Plus		
-Shrieking Legia α +	Head		Hunger Resistance 2, Evade Extender 1	111	Legiana Ambition		Bow Charge Plus		
-Shrieking Legia α +	Chest		Focus 2, Marathon Runner 1	11	Legiana Ambition		Bow Charge Plus		
-Shrieking Legia α +	Arm		Critical Draw 2, Hunger Resistance 1	11	Legiana Ambition		Bow Charge Plus		
-Shrieking Legia α +	Waist		Evade Extender 2, Focus 1	11	Legiana Ambition		Bow Charge Plus		
-Shrieking Legia α +	Leg		Marathon Runner 2, Spread/Power Shots 1	11	Legiana Ambition		Bow Charge Plus		
-Shrieking Legia β +	Head		Hunger Resistance 2	41	Legiana Ambition		Bow Charge Plus		
-Shrieking Legia β +	Chest		Focus 2	4	Legiana Ambition		Bow Charge Plus		
-Shrieking Legia β +	Arm		Critical Draw 2	4	Legiana Ambition		Bow Charge Plus		
-Shrieking Legia β +	Waist		Evade Extender 2	4	Legiana Ambition		Bow Charge Plus		
-Shrieking Legia β +	Leg		Marathon Runner 2	42	Legiana Ambition		Bow Charge Plus		
-Odogaron α +	Head		Bleeding Resistance 2, Critical Eye 2	2	Odogaron Essence		Protective Polish		
-Odogaron α +	Chest		Speed Sharpening 2, Bleeding Resistance 1	3	Odogaron Essence		Protective Polish		
-Odogaron α +	Arm		Constitution 2, Critical Eye 1	1	Odogaron Essence		Protective Polish		
-Odogaron α +	Waist		Critical Eye 3, Speed Sharpening 1	2	Odogaron Essence		Protective Polish		
-Odogaron α +	Leg		Quick Sheath 2, Critical Eye 1	1	Odogaron Essence		Protective Polish		
-Odogaron β +	Head		Bleeding Resistance 2, Critical Eye 1	4	Odogaron Essence		Protective Polish		
-Odogaron β +	Chest		Speed Sharpening 2	41	Odogaron Essence		Protective Polish		
-Odogaron β +	Arm		Constitution 1, Critical Eye 1	4	Odogaron Essence		Protective Polish		
-Odogaron β +	Waist		Critical Eye 2	42	Odogaron Essence		Protective Polish		
-Odogaron β +	Leg		Quick Sheath 1, Critical Eye 1	4	Odogaron Essence		Protective Polish		
-Death Garon α +	Head		Latent Power 2, Tool Specialist 1	3	Odogaron Essence		Protective Polish		
-Death Garon α +	Chest		Critical Eye 3, Dragon Resistance 2	2	Odogaron Essence		Protective Polish		
-Death Garon α +	Arm		Power Prolonger 1, Dragon Attack 2	21	Odogaron Essence		Protective Polish		
-Death Garon α +	Waist		Dragon Attack 2, Latent Power 1	21	Odogaron Essence		Protective Polish		
-Death Garon α +	Leg		Tool Specialist 2, Power Prolonger 1	11	Odogaron Essence		Protective Polish		
-Death Garon β +	Head		Latent Power 2	42	Odogaron Essence		Protective Polish		
-Death Garon β +	Chest		Critical Eye 2, Dragon Resistance 1	41	Odogaron Essence		Protective Polish		
-Death Garon β +	Arm		Power Prolonger 1, Dragon Attack 1	41	Odogaron Essence		Protective Polish		
-Death Garon β +	Waist		Dragon Attack 2	42	Odogaron Essence		Protective Polish		
-Death Garon β +	Leg		Tool Specialist 2	411	Odogaron Essence		Protective Polish		
-Lavasioth α +	Head		Fire Attack 2, Quick Sheath 1	11					
-Lavasioth α +	Chest		Fire Attack 3, Heat Guard 1	11					
-Lavasioth α +	Arm		Peak Performance 2, Recovery Up 1	1					
-Lavasioth α +	Waist		Quick Sheath 2, Recovery Up 2	1					
-Lavasioth α +	Leg		Spread/Power Shots 1, Fire Attack 2	2					
-Lavasioth β +	Head		Fire Attack 1, Quick Sheath 1	41					
-Lavasioth β +	Chest		Fire Attack 2, Heat Guard 1	41					
-Lavasioth β +	Arm		Peak Performance 1, Recovery Up 1	4					
-Lavasioth β +	Waist		Quick Sheath 2, Recovery Up 1	4					
-Lavasioth β +	Leg		Spread/Power Shots 1, Fire Attack 1	41					
-Uragaan α +	Head		Blast Resistance 2, Flinch Free 1	21	Uragaan Ambition	Guard Up			
-Uragaan α +	Chest		Partbreaker 2, Blast Resistance 1	3	Uragaan Ambition	Guard Up			
-Uragaan α +	Arm		Guard 2, Iron Skin 2	2	Uragaan Ambition	Guard Up			
-Uragaan α +	Waist		Partbreaker 1, Guard 1	21	Uragaan Ambition	Guard Up			
-Uragaan α +	Leg		Guard 2, Offensive Guard 1	1	Uragaan Ambition	Guard Up			
-Uragaan β +	Head		Blast Resistance 2	43	Uragaan Ambition	Guard Up			
-Uragaan β +	Chest		Partbreaker 2	4	Uragaan Ambition	Guard Up			
-Uragaan β +	Arm		Guard 2, Iron Skin 1	4	Uragaan Ambition	Guard Up			
-Uragaan β +	Waist		Partbreaker 1	42	Uragaan Ambition	Guard Up			
-Uragaan β +	Leg		Guard 2	41	Uragaan Ambition	Guard Up			
-Nargacuga α +	Head		Peak Performance 2, Piercing Shots 1	11	Nargacuga Essence		True Razor Sharp/Spare Shot		
-Nargacuga α +	Chest		Evade Window 2, Speed Crawler 1	2	Nargacuga Essence		True Razor Sharp/Spare Shot		
-Nargacuga α +	Arm		Stamina Surge 2, Stealth 2	1	Nargacuga Essence		True Razor Sharp/Spare Shot		
-Nargacuga α +	Waist		Evade Window 2, Stamina Surge 1	1	Nargacuga Essence		True Razor Sharp/Spare Shot		
-Nargacuga α +	Leg		Evade Window 1, Peak Performance 1	11	Nargacuga Essence		True Razor Sharp/Spare Shot		
-Nargacuga β +	Head		Peak Performance 1, Piercing Shots 1	41	Nargacuga Essence		True Razor Sharp/Spare Shot		
-Nargacuga β +	Chest		Evade Window 2	4	Nargacuga Essence		True Razor Sharp/Spare Shot		
-Nargacuga β +	Arm		Stamina Surge 2	4	Nargacuga Essence		True Razor Sharp/Spare Shot		
-Nargacuga β +	Waist		Evade Window 1, Stamina Surge 1	4	Nargacuga Essence		True Razor Sharp/Spare Shot		
-Nargacuga β +	Leg		Evade Window 1	41	Nargacuga Essence		True Razor Sharp/Spare Shot		
-Glavenus α +	Head		Focus 2, Handicraft 1	1	Glavenus Essence		Maximum Might Secret		
-Glavenus α +	Chest		Power Prolonger 2, Maximum Might 1	1	Glavenus Essence		Maximum Might Secret		
-Glavenus α +	Arm		Maximum Might 2, Focus 1	1	Glavenus Essence		Maximum Might Secret		
-Glavenus α +	Waist		Maximum Might 2, Normal Shots 1	11	Glavenus Essence		Maximum Might Secret		
-Glavenus α +	Leg		Handicraft 2, Heat Guard 1	2	Glavenus Essence		Maximum Might Secret		
-Glavenus β +	Head		Focus 1, Handicraft 1	4	Glavenus Essence		Maximum Might Secret		
-Glavenus β +	Chest		Power Prolonger 1, Maximum Might 1	4	Glavenus Essence		Maximum Might Secret		
-Glavenus β +	Arm		Maximum Might 1, Focus 1	4	Glavenus Essence		Maximum Might Secret		
-Glavenus β +	Waist		Maximum Might 2	4	Glavenus Essence		Maximum Might Secret		
-Glavenus β +	Leg		Handicraft 2	4	Glavenus Essence		Maximum Might Secret		
-Acidic Glavenus α +	Head		Maximum Might 2, Effluvia Resistance 2	1	Glavenus Essence		Maximum Might Secret		
-Acidic Glavenus α +	Chest		Handicraft 2, Stamina Surge 1	1	Glavenus Essence		Maximum Might Secret		
-Acidic Glavenus α +	Arm		Stun Resistance 2, Handicraft 1	21	Glavenus Essence		Maximum Might Secret		
-Acidic Glavenus α +	Waist		Handicraft 2, Iron Skin 2	2	Glavenus Essence		Maximum Might Secret		
-Acidic Glavenus α +	Leg		Maximum Might 2, Stamina Surge 1	1	Glavenus Essence		Maximum Might Secret		
-Acidic Glavenus β +	Head		Maximum Might 1, Effluvia Resistance 2	4	Glavenus Essence		Maximum Might Secret		
-Acidic Glavenus β +	Chest		Handicraft 1, Stamina Surge 1	41	Glavenus Essence		Maximum Might Secret		
-Acidic Glavenus β +	Arm		Stun Resistance 2	421	Glavenus Essence		Maximum Might Secret		
-Acidic Glavenus β +	Waist		Handicraft 2	4	Glavenus Essence		Maximum Might Secret		
-Acidic Glavenus β +	Leg		Maximum Might 1	42	Glavenus Essence		Maximum Might Secret		
-Brachydios α +	Head		Agitator 2, Capacity Boost 1	3	Brachydios Essence		Agitator Secret		
-Brachydios α +	Chest		Stamina Thief 2, Agitator 1	1	Brachydios Essence		Agitator Secret		
-Brachydios α +	Arm		Agitator 2, Blast Resistance 2	2	Brachydios Essence		Agitator Secret		
-Brachydios α +	Waist		Blast Attack 2, Stamina Thief 1	3	Brachydios Essence		Agitator Secret		
-Brachydios α +	Leg		Agitator 2, Artillery 2	2	Brachydios Essence		Agitator Secret		
-Brachydios β +	Head		Agitator 2	41	Brachydios Essence		Agitator Secret		
-Brachydios β +	Chest		Stamina Thief 1, Agitator 1	4	Brachydios Essence		Agitator Secret		
-Brachydios β +	Arm		Agitator 2, Blast Resistance 1	4	Brachydios Essence		Agitator Secret		
-Brachydios β +	Waist		Blast Attack 2	42	Brachydios Essence		Agitator Secret		
-Brachydios β +	Leg		Agitator 2, Artillery 1	4	Brachydios Essence		Agitator Secret		
-Tigrex α +	Head		Attack Boost 2, Earplugs 2	1	Tigrex Essence		Free Meal Secret		
-Tigrex α +	Chest		Earplugs 2, Free Meal 1	2	Tigrex Essence		Free Meal Secret		
-Tigrex α +	Arm		Speed Eating 2, Attack Boost 2	1	Tigrex Essence		Free Meal Secret		
-Tigrex α +	Waist		Earplugs 1, Free Meal 1	31	Tigrex Essence		Free Meal Secret		
-Tigrex α +	Leg		Speed Eating 1, Free Meal 1	31	Tigrex Essence		Free Meal Secret		
-Tigrex β +	Head		Attack Boost 2, Earplugs 1	4	Tigrex Essence		Free Meal Secret		
-Tigrex β +	Chest		Earplugs 2	41	Tigrex Essence		Free Meal Secret		
-Tigrex β +	Arm		Speed Eating 2, Attack Boost 1	4	Tigrex Essence		Free Meal Secret		
-Tigrex β +	Waist		Earplugs 1	421	Tigrex Essence		Free Meal Secret		
-Tigrex β +	Leg		Speed Eating 1	42	Tigrex Essence		Free Meal Secret		
-Black Belt α +	Head		Marathon Runner 2, Mushroomancer 1	3	Instructor's Guidance	Capture Master			
-Black Belt α +	Chest		Mushroomancer 2, Wide-Range 1	111	Instructor's Guidance	Capture Master			
-Black Belt α +	Arm		Wide-Range 2, Horn Maestro 2	3	Instructor's Guidance	Capture Master			
-Black Belt α +	Waist		Recovery Up 2, Marathon Runner 1	3	Instructor's Guidance	Capture Master			
-Black Belt α +	Leg		Wide-Range 2, Recovery Up 1	22	Instructor's Guidance	Capture Master			
-Black Belt β +	Head		Marathon Runner 2	42	Instructor's Guidance	Capture Master			
-Black Belt β +	Chest		Mushroomancer 2	411	Instructor's Guidance	Capture Master			
-Black Belt β +	Arm		Wide-Range 2	41	Instructor's Guidance	Capture Master			
-Black Belt β +	Waist		Recovery Up 2	41	Instructor's Guidance	Capture Master			
-Black Belt β +	Leg		Wide-Range 2	42	Instructor's Guidance	Capture Master			
-Pearlspring α +	Head		Recovery Up 2	21					
+ID	Order	Set Name	Type	Item Name	Skills	Slots	Set Bonus Name	Set Bonus 2	Set Bonus 3	Set Bonus 4	Set Bonus 5
+	1	Bone α +	Head		Health Boost 2, Partbreaker 1	3					
+	2	Bone α +	Chest		Attack Boost 2, Health Boost 1	2					
+	3	Bone α +	Arm		Slugger 2, Attack Boost 1	2					
+	4	Bone α +	Waist		Horn Maestro 1, Partbreaker 1	3					
+	5	Bone α +	Leg		Slugger 1, Horn Maestro 1	3					
+	6	Bone β +	Head		Health Boost 1, Partbreaker 1	4					
+	7	Bone β +	Chest		Attack Boost 1	41					
+	8	Bone β +	Arm		Slugger 1	41					
+	9	Bone β +	Waist		Horn Maestro 1	41					
+	10	Bone β +	Leg		Slugger 1	4					
+	11	Alloy α +	Head		Windproof 2, Defense Boost 1	2					
+	12	Alloy α +	Chest		Water Resistance 2, Defense Boost 1	3					
+	13	Alloy α +	Arm		Defense Boost 2, Speed Sharpening 1	3					
+	14	Alloy α +	Waist		Poison Resistance 2, Windproof 1	3					
+	15	Alloy α +	Leg		Speed Sharpening 2, Windproof 1	3					
+	16	Alloy β +	Head		Windproof 1	41					
+	17	Alloy β +	Chest		Water Resistance 1	41					
+	18	Alloy β +	Arm		Defense Boost 1	41					
+	19	Alloy β +	Waist		Poison Resistance 1, Windproof 1	4					
+	20	Alloy β +	Leg		Speed Sharpening 1, Windproof 1	4					
+	21	Vespoid α +	Head		Quick Sheath 1, Paralysis Attack 1	3					
+	22	Vespoid α +	Chest		Windproof 2	21					
+	23	Vespoid α +	Arm		Paralysis Attack 2, Quick Sheath 1	3					
+	24	Vespoid α +	Waist		Paralysis Resistance 2, Quick Sheath 1	3					
+	25	Vespoid α +	Leg		Critical Draw 1, Paralysis Resistance 1	3					
+	26	Vespoid β +	Head		Quick Sheath 1	41					
+	27	Vespoid β +	Chest		Windproof 1	41					
+	28	Vespoid β +	Arm		Paralysis Attack 1	41					
+	29	Vespoid β +	Waist		Paralysis Resistance 1	41					
+	30	Vespoid β +	Leg		Critical Draw 1	41					
+	31	Hornetaur α +	Head		Weakness Exploit 1, Dragon Attack 2	2					
+	32	Hornetaur α +	Chest		Effluvial Expert 1, Hunger Resistance 2	21					
+	33	Hornetaur α +	Arm		Free Meal 1, Handicraft 1	3					
+	34	Hornetaur α +	Waist		Weakness Exploit 1, Hunger Resistance 1	2					
+	35	Hornetaur α +	Leg		Handicraft 1, Dragon Attack 1	21					
+	36	Hornetaur β +	Head		Weakness Exploit 1, Dragon Attack 1	4					
+	37	Hornetaur β +	Chest		Effluvial Expert 1	421					
+	38	Hornetaur β +	Arm		Free Meal 1	42					
+	39	Hornetaur β +	Waist		Weakness Exploit 1	41					
+	40	Hornetaur β +	Leg		Handicraft 1	41					
+	41	Kestodon α +	Arm		Affinity Sliding 1, Focus 2	11					
+	42	Kestodon β +	Arm		Affinity Sliding 1, Focus 1	41					
+	43	Gajau α +	Leg		Aquatic/Polar Mobility 2, Water Attack 2	21					
+	44	Gajau β +	Leg		Aquatic/Polar Mobility 1, Water Attack 1	41					
+	45	Shamos α +	Head		Detector 1, Geologist 2	21					
+	46	Shamos β +	Head		Detector 1, Geologist 1	42					
+	47	Gastodon α +	Head		Flinch Free 2, Blast Resistance 1	1					
+	48	Gastodon β +	Head		Flinch Free 1, Blast Resistance 1	41					
+	49	Barnos α +	Chest		Heat Guard 1, Iron Skin 2	22					
+	50	Barnos β +	Chest		Heat Guard 1, Iron Skin 1	42					
+	51	Wulg α +	Head		Ice Resistance 2, Master Mounter 1	21					
+	52	Wulg β +	Head		Ice Resistance 1, Master Mounter 1	41					
+	53	Cortos α +	Chest		Hunger Resistance 2, Jump Master 1	11					
+	54	Cortos β +	Chest		Hunger Resistance 1, Jump Master 1	4					
+	55	Jagras α +	Head		Speed Eating 2, Attack Boost 2	2					
+	56	Jagras α +	Chest		Evade Extender 1, Attack Boost 2	3					
+	57	Jagras α +	Arm		Evade Extender 2, Recovery Up 1	2					
+	58	Jagras α +	Waist		Recovery Up 1, Speed Eating 1	21					
+	59	Jagras α +	Leg		Free Meal 1, Recovery Up 1	21					
+	60	Jagras β +	Head		Speed Eating 1, Attack Boost 1	41					
+	61	Jagras β +	Chest		Evade Extender 1, Attack Boost 1	4					
+	62	Jagras β +	Arm		Evade Extender 1, Recovery Up 1	4					
+	63	Jagras β +	Waist		Recovery Up 1	41					
+	64	Jagras β +	Leg		Free Meal 1	41					
+	65	Tzitzi α +	Head		Free Elem/Ammo Up 1, Stun Resistance 1	21					
+	66	Tzitzi α +	Chest		Constitution 2, Water Attack 2	11					
+	67	Tzitzi α +	Arm		Stun Resistance 2, Wide-Range 2	2					
+	68	Tzitzi α +	Waist		Wide-Range 2, Water Attack 2	2					
+	69	Tzitzi α +	Leg		Sleep Resistance 2, Wide-Range 1	3					
+	70	Tzitzi β +	Head		Free Elem/Ammo Up 1	41					
+	71	Tzitzi β +	Chest		Constitution 1, Water Attack 1	41					
+	72	Tzitzi β +	Arm		Stun Resistance 2, Wide-Range 1	4					
+	73	Tzitzi β +	Waist		Wide-Range 2	41					
+	74	Tzitzi β +	Leg		Sleep Resistance 1, Wide-Range 1	4					
+	75	Girros α +	Head		Horn Maestro 2, Paralysis Resistance 1	2					
+	76	Girros α +	Chest		Paralysis Resistance 2, Free Elem/Ammo Up 1	2					
+	77	Girros α +	Arm		Free Elem/Ammo Up 1, Effluvia Resistance 2	1					
+	78	Girros α +	Waist		Effluvial Expert 1, Paralysis Attack 2	3					
+	79	Girros α +	Leg		Paralysis Attack 2, Free Elem/Ammo Up 1	1					
+	80	Girros β +	Head		Horn Maestro 2	4					
+	81	Girros β +	Chest		Paralysis Resistance 2	42					
+	82	Girros β +	Arm		Free Elem/Ammo Up 1, Effluvia Resistance 1	4					
+	83	Girros β +	Waist		Effluvial Expert 1	42					
+	84	Girros β +	Leg		Paralysis Attack 2	4					
+	85	Dodogama α +	Head		Blast Resistance 2, Bombardier 1	3					
+	86	Dodogama α +	Chest		Blast Attack 2, Artillery 1	2					
+	87	Dodogama α +	Arm		Bombardier 2, Blast Attack 1	2					
+	88	Dodogama α +	Waist		Artillery 2, Blast Resistance 1	21					
+	89	Dodogama α +	Leg		Capacity Boost 1, Blast Attack 1	21					
+	90	Dodogama β +	Head		Blast Resistance 2	4					
+	91	Dodogama β +	Chest		Blast Attack 2	4					
+	92	Dodogama β +	Arm		Bombardier 1, Blast Attack 1	4					
+	93	Dodogama β +	Waist		Artillery 2	41					
+	94	Dodogama β +	Leg		Capacity Boost 1	41					
+	95	Kulu α +	Head		Slinger Capacity 2, Critical Boost 1	1					
+	96	Kulu α +	Chest		Stamina Surge 1, Critical Eye 2	2					
+	97	Kulu α +	Arm		Critical Boost 1, Pro Transporter 1	11					
+	98	Kulu α +	Waist		Item Prolonger 2, Critical Eye 1	3					
+	99	Kulu α +	Leg		Critical Eye 2, Item Prolonger 1	2					
+	100	Kulu β +	Head		Slinger Capacity 2	4					
+	101	Kulu β +	Chest		Stamina Surge 1, Critical Eye 1	4					
+	102	Kulu β +	Arm		Critical Boost 1	4					
+	103	Kulu β +	Waist		Item Prolonger 2	41					
+	104	Kulu β +	Leg		Critical Eye 1, Item Prolonger 1	4					
+	105	Pukei α +	Head		Survival Expert 2, Poison Resistance 1	22					
+	106	Pukei α +	Chest		Item Prolonger 2, Peak Performance 1	2					
+	107	Pukei α +	Arm		Peak Performance 2, Survival Expert 1	1					
+	108	Pukei α +	Waist		Poison Attack 2, Item Prolonger 1	3					
+	109	Pukei α +	Leg		Poison Resistance 2, Poison Attack 2	3					
+	110	Pukei β +	Head		Survival Expert 2	411					
+	111	Pukei β +	Chest		Item Prolonger 1, Peak Performance 1	4					
+	112	Pukei β +	Arm		Peak Performance 1, Survival Expert 1	4					
+	113	Pukei β +	Waist		Poison Attack 1, Item Prolonger 1	41					
+	114	Pukei β +	Leg		Poison Resistance 2	42					
+	115	Coral Pukei α +	Head		Critical Draw 2, Item Prolonger 1	1					
+	116	Coral Pukei α +	Chest		Power Prolonger 1, Critical Draw 1	2					
+	117	Coral Pukei α +	Arm		Partbreaker 1, Power Prolonger 1	1					
+	118	Coral Pukei α +	Waist		Water Attack 2, Partbreaker 1	2					
+	119	Coral Pukei α +	Leg		Item Prolonger 2, Water Attack 2	1					
+	120	Coral Pukei β +	Head		Critical Draw 1, Item Prolonger 1	4					
+	121	Coral Pukei β +	Chest		Power Prolonger 1	41					
+	122	Coral Pukei β +	Arm		Partbreaker 1	41					
+	123	Coral Pukei β +	Waist		Water Attack 1, Partbreaker 1	4					
+	124	Coral Pukei β +	Leg		Item Prolonger 2	41					
+	125	Barroth α +	Head		Guard 2, Marathon Runner 1	2					
+	126	Barroth α +	Chest		Stamina Thief 2, Agitator 1	11					
+	127	Barroth α +	Arm		Marathon Runner 1, Guard 1	31					
+	128	Barroth α +	Waist		Agitator 2, Guard 1	1					
+	129	Barroth α +	Leg		Stun Resistance 2, Marathon Runner 1	31					
+	130	Barroth β +	Head		Guard 2	41					
+	131	Barroth β +	Chest		Stamina Thief 2	41					
+	132	Barroth β +	Arm		Marathon Runner 1	42					
+	133	Barroth β +	Waist		Agitator 2	4					
+	134	Barroth β +	Leg		Stun Resistance 2	421					
+	135	Jyura α +	Head		Latent Power 2, Focus 1	11					
+	136	Jyura α +	Chest		Latent Power 1, Water Attack 2	2					
+	137	Jyura α +	Arm		Water Attack 2, Ice Resistance 1	21					
+	138	Jyura α +	Waist		Ice Resistance 2, Latent Power 1	3					
+	139	Jyura α +	Leg		Focus 2, Water Attack 1	2					
+	140	Jyura β +	Head		Latent Power 1, Focus 1	41					
+	141	Jyura β +	Chest		Latent Power 1, Water Attack 1	4					
+	142	Jyura β +	Arm		Water Attack 2	42					
+	143	Jyura β +	Waist		Ice Resistance 2	41					
+	144	Jyura β +	Leg		Focus 1, Water Attack 1	41					
+	145	Beo α +	Head		Aquatic/Polar Mobility 2, Earplugs 1	2					
+	146	Beo α +	Chest		Stamina Surge 1, Ice Attack 2	3					
+	147	Beo α +	Arm		Ice Attack 2, Health Boost 1	3					
+	148	Beo α +	Waist		Health Boost 2, Earplugs 2	2					
+	149	Beo α +	Leg		Earplugs 2, Ice Attack 1	2					
+	150	Beo β +	Head		Aquatic/Polar Mobility 2	41					
+	151	Beo β +	Chest		Stamina Surge 1	42					
+	152	Beo β +	Arm		Ice Attack 2	4					
+	153	Beo β +	Waist		Health Boost 2, Earplugs 1	41					
+	154	Beo β +	Leg		Earplugs 2	4					
+	155	Kadachi α +	Head		Constitution 2, Evade Extender 1	2					
+	156	Kadachi α +	Chest		Jump Master 1, Constitution 1	21					
+	157	Kadachi α +	Arm		Evade Extender 2, Thunder Attack 2	2					
+	158	Kadachi α +	Waist		Thunder Attack 2, Thunder Resistance 1	31					
+	159	Kadachi α +	Leg		Thunder Resistance 2, Constitution 1	31					
+	160	Kadachi β +	Head		Constitution 1, Evade Extender 1	41					
+	161	Kadachi β +	Chest		Jump Master 1	42					
+	162	Kadachi β +	Arm		Evade Extender 1, Thunder Attack 2	42					
+	163	Kadachi β +	Waist		Thunder Attack 2	41					
+	164	Kadachi β +	Leg		Thunder Resistance 2	411					
+	165	Viper Kadachi α +	Head		Evade Extender 2, Paralysis Attack 1	1					
+	166	Viper Kadachi α +	Chest		Quick Sheath 1, Evade Extender 1	11					
+	167	Viper Kadachi α +	Arm		Poison Attack 2, Evade Window 1	2					
+	168	Viper Kadachi α +	Waist		Constitution 1, Quick Sheath 1	2					
+	169	Viper Kadachi α +	Leg		Evade Window 1, Constitution 1	2					
+	170	Viper Kadachi β +	Head		Evade Extender 1, Paralysis Attack 1	4					
+	171	Viper Kadachi β +	Chest		Quick Sheath 1	41					
+	172	Viper Kadachi β +	Arm		Poison Attack 1, Evade Window 1	4					
+	173	Viper Kadachi β +	Waist		Constitution 1	41					
+	174	Viper Kadachi β +	Leg		Evade Window 1	41					
+	175	High Metal α +	Head		Ice Resistance 2, Earplugs 2	2					
+	176	High Metal α +	Chest		Earplugs 2, Ice Attack 1	2					
+	177	High Metal α +	Arm		Defense Boost 2, Ice Attack 2	21					
+	178	High Metal α +	Waist		Capacity Boost 1, Defense Boost 2	22					
+	179	High Metal α +	Leg		Heavy Artillery 2, Ice Resistance 1	221					
+	180	High Metal β +	Head		Ice Resistance 2, Earplugs 1	41					
+	181	High Metal β +	Chest		Earplugs 1, Ice Attack 1	41					
+	182	High Metal β +	Arm		Defense Boost 2, Ice Attack 1	41					
+	183	High Metal β +	Waist		Capacity Boost 1, Defense Boost 1	42					
+	184	High Metal β +	Leg		Heavy Artillery 1, Ice Resistance 1	42					
+	185	Banbaro α +	Head		Resentment 2, Mushroomancer 1	2					
+	186	Banbaro α +	Chest		Speed Eating 1, Offensive Guard 1	3					
+	187	Banbaro α +	Arm		Offensive Guard 1, Health Boost 2	2					
+	188	Banbaro α +	Waist		Mushroomancer 1, Offensive Guard 1	3					
+	189	Banbaro α +	Leg		Mushroomancer 1, Speed Eating 1	3					
+	190	Banbaro β +	Head		Resentment 2	41					
+	191	Banbaro β +	Chest		Speed Eating 1	41					
+	192	Banbaro β +	Arm		Offensive Guard 1, Health Boost 1	4					
+	193	Banbaro β +	Waist		Mushroomancer 1	41					
+	194	Banbaro β +	Leg		Mushroomancer 1	41					
+	195	Anja α +	Head		Fire Attack 2, Fire Resistance 1	3	Anjanath Dominance	Stamina Cap Up			
+	196	Anja α +	Chest		Marathon Runner 2, Special Ammo Boost 1	11	Anjanath Dominance	Stamina Cap Up			
+	197	Anja α +	Arm		Special Ammo Boost 1, Fire Attack 2	2	Anjanath Dominance	Stamina Cap Up			
+	198	Anja α +	Waist		Fire Resistance 2, Artillery 1	31	Anjanath Dominance	Stamina Cap Up			
+	199	Anja α +	Leg		Artillery 2, Marathon Runner 1	2	Anjanath Dominance	Stamina Cap Up			
+	200	Anja β +	Head		Fire Attack 2	4	Anjanath Dominance	Stamina Cap Up			
+	201	Anja β +	Chest		Marathon Runner 1, Special Ammo Boost 1	41	Anjanath Dominance	Stamina Cap Up			
+	202	Anja β +	Arm		Special Ammo Boost 1, Fire Attack 1	4	Anjanath Dominance	Stamina Cap Up			
+	203	Anja β +	Waist		Fire Resistance 2	42	Anjanath Dominance	Stamina Cap Up			
+	204	Anja β +	Leg		Artillery 2	41	Anjanath Dominance	Stamina Cap Up			
+	205	Fulgur Anja α +	Head		Weakness Exploit 1, Resuscitate 1	21	Anjanath Dominance	Stamina Cap Up			
+	206	Fulgur Anja α +	Chest		Flinch Free 1, Stun Resistance 2	3	Anjanath Dominance	Stamina Cap Up			
+	207	Fulgur Anja α +	Arm		Item Prolonger 2, Thunder Attack 2	2	Anjanath Dominance	Stamina Cap Up			
+	208	Fulgur Anja α +	Waist		Weakness Exploit 2, Item Prolonger 1	1	Anjanath Dominance	Stamina Cap Up			
+	209	Fulgur Anja α +	Leg		Thunder Attack 2, Special Ammo Boost 1	21	Anjanath Dominance	Stamina Cap Up			
+	210	Fulgur Anja β +	Head		Weakness Exploit 1	42	Anjanath Dominance	Stamina Cap Up			
+	211	Fulgur Anja β +	Chest		Flinch Free 1, Stun Resistance 1	4	Anjanath Dominance	Stamina Cap Up			
+	212	Fulgur Anja β +	Arm		Item Prolonger 2	42	Anjanath Dominance	Stamina Cap Up			
+	213	Fulgur Anja β +	Waist		Weakness Exploit 1, Item Prolonger 1	41	Anjanath Dominance	Stamina Cap Up			
+	214	Fulgur Anja β +	Leg		Thunder Attack 2	41	Anjanath Dominance	Stamina Cap Up			
+	215	Rathian α +	Head		Health Boost 2, Poison Attack 1	3	Rathian Essence	Poison Duration Up			
+	216	Rathian α +	Chest		Botanist 2, Recovery Up 1	22	Rathian Essence	Poison Duration Up			
+	217	Rathian α +	Arm		Poison Attack 2, Botanist 1	3	Rathian Essence	Poison Duration Up			
+	218	Rathian α +	Waist		Poison Resistance 2, Health Boost 1	32	Rathian Essence	Poison Duration Up			
+	219	Rathian α +	Leg		Recovery Up 2, Poison Resistance 1	3	Rathian Essence	Poison Duration Up			
+	220	Rathian β +	Head		Health Boost 1, Poison Attack 1	4	Rathian Essence	Poison Duration Up			
+	221	Rathian β +	Chest		Botanist 1, Recovery Up 1	42	Rathian Essence	Poison Duration Up			
+	222	Rathian β +	Arm		Poison Attack 2	4	Rathian Essence	Poison Duration Up			
+	223	Rathian β +	Waist		Poison Resistance 1, Health Boost 1	42	Rathian Essence	Poison Duration Up			
+	224	Rathian β +	Leg		Recovery Up 2	4	Rathian Essence	Poison Duration Up			
+	225	Rath Heart α +	Head		Evade Extender 2, Cliffhanger 1	3	Rathian Essence	Poison Duration Up			
+	226	Rath Heart α +	Chest		Tool Specialist 2, Handicraft 1	2	Rathian Essence	Poison Duration Up			
+	227	Rath Heart α +	Arm		Windproof 2, Handicraft 1	2	Rathian Essence	Poison Duration Up			
+	228	Rath Heart α +	Waist		Handicraft 1, Poison Resistance 2	3	Rathian Essence	Poison Duration Up			
+	229	Rath Heart α +	Leg		Tool Specialist 1, Windproof 1	21	Rathian Essence	Poison Duration Up			
+	230	Rath Heart β +	Head		Evade Extender 2	41	Rathian Essence	Poison Duration Up			
+	231	Rath Heart β +	Chest		Tool Specialist 2	411	Rathian Essence	Poison Duration Up			
+	232	Rath Heart β +	Arm		Windproof 2	42	Rathian Essence	Poison Duration Up			
+	233	Rath Heart β +	Waist		Handicraft 1, Poison Resistance 1	4	Rathian Essence	Poison Duration Up			
+	234	Rath Heart β +	Leg		Tool Specialist 1	42	Rathian Essence	Poison Duration Up			
+	235	Lumu α +	Head		Stamina Surge 2, Windproof 1	3					
+	236	Lumu α +	Chest		Master Mounter 1, Artillery 1	31					
+	237	Lumu α +	Arm		Artillery 2, Windproof 1	22					
+	238	Lumu α +	Waist		Divine Blessing 2, Windproof 1	22					
+	239	Lumu α +	Leg		Windproof 2, Stamina Surge 1	3					
+	240	Lumu β +	Head		Stamina Surge 2	41					
+	241	Lumu β +	Chest		Master Mounter 1	41					
+	242	Lumu β +	Arm		Artillery 1, Windproof 1	41					
+	243	Lumu β +	Waist		Divine Blessing 1, Windproof 1	41					
+	244	Lumu β +	Leg		Windproof 2	41					
+	245	Lumu Phantasm α +	Head		Weakness Exploit 1, Wide-Range 1	11					
+	246	Lumu Phantasm α +	Chest		Wide-Range 2, Maximum Might 1	2					
+	247	Lumu Phantasm α +	Arm		Maximum Might 1, Sleep Attack 1	2					
+	248	Lumu Phantasm α +	Waist		Sleep Attack 2, Wide-Range 1	2					
+	249	Lumu Phantasm α +	Leg		Sleep Resistance 2, Wide-Range 1	3					
+	250	Lumu Phantasm β +	Head		Weakness Exploit 1	4					
+	251	Lumu Phantasm β +	Chest		Wide-Range 2	41					
+	252	Lumu Phantasm β +	Arm		Maximum Might 1	4					
+	253	Lumu Phantasm β +	Waist		Sleep Attack 2	4					
+	254	Lumu Phantasm β +	Leg		Sleep Resistance 2	41					
+	255	Baan α +	Head		Tremor Resistance 2, Slugger 1	11					
+	256	Baan α +	Chest		Sleep Attack 1, Bleeding Resistance 1	3					
+	257	Baan α +	Arm		Sleep Attack 2, Guard 1	2					
+	258	Baan α +	Waist		Guard 2, Sleep Resistance 2	1					
+	259	Baan α +	Leg		Bleeding Resistance 2, Guard 1	2					
+	260	Baan β +	Head		Tremor Resistance 2	4					
+	261	Baan β +	Chest		Sleep Attack 1	4					
+	262	Baan β +	Arm		Sleep Attack 1, Guard 1	4					
+	263	Baan β +	Waist		Guard 2	4					
+	264	Baan β +	Leg		Bleeding Resistance 2	41					
+	265	Artian α +	Head		Slinger Capacity 2, Free Elem/Ammo Up 1	2	Ancient Divinity	Critical Status			
+	266	Artian α +	Chest		Critical Eye 3, Peak Performance 1	1	Ancient Divinity	Critical Status			
+	267	Artian α +	Arm		Free Elem/Ammo Up 2, Tool Specialist 1	11	Ancient Divinity	Critical Status			
+	268	Artian α +	Waist		Tool Specialist 2, Critical Eye 1	11	Ancient Divinity	Critical Status			
+	269	Artian α +	Leg		Peak Performance 2, Slinger Capacity 1	11	Ancient Divinity	Critical Status			
+	270	Artian β +	Head		Slinger Capacity 1, Free Elem/Ammo Up 1	41	Ancient Divinity	Critical Status			
+	271	Artian β +	Chest		Critical Eye 2, Peak Performance 1	4	Ancient Divinity	Critical Status			
+	272	Artian β +	Arm		Free Elem/Ammo Up 2	4	Ancient Divinity	Critical Status			
+	273	Artian β +	Waist		Tool Specialist 1, Critical Eye 1	41	Ancient Divinity	Critical Status			
+	274	Artian β +	Leg		Peak Performance 2	4	Ancient Divinity	Critical Status			
+	275	Clockwork α +	Head		Agitator 2, Partbreaker 1	11	Commission Alchemy		Bombardier Secret		
+	276	Clockwork α +	Chest		Agitator 2, Special Ammo Boost 1	11	Commission Alchemy		Bombardier Secret		
+	277	Clockwork α +	Arm		Bombardier 3, Tremor Resistance 1	2	Commission Alchemy		Bombardier Secret		
+	278	Clockwork α +	Waist		Partbreaker 2, Sleep Functionality 1	2	Commission Alchemy		Bombardier Secret		
+	279	Clockwork α +	Leg		Critical Boost 1, Bombardier 2	11	Commission Alchemy		Bombardier Secret		
+	280	Clockwork β +	Head		Agitator 1, Partbreaker 1	41	Commission Alchemy		Bombardier Secret		
+	281	Clockwork β +	Chest		Agitator 2	41	Commission Alchemy		Bombardier Secret		
+	282	Clockwork β +	Arm		Bombardier 3, Tremor Resistance 1	4	Commission Alchemy		Bombardier Secret		
+	283	Clockwork β +	Waist		Partbreaker 2	41	Commission Alchemy		Bombardier Secret		
+	284	Clockwork β +	Leg		Critical Boost 1, Bombardier 1	4	Commission Alchemy		Bombardier Secret		
+	285	Ingot α +	Head		Thunder Attack 2, Windproof 1	2					
+	286	Ingot α +	Chest		Thunder Resistance 2, Free Elem/Ammo Up 1	3					
+	287	Ingot α +	Arm		Health Boost 2, Thunder Attack 2	21					
+	288	Ingot α +	Waist		Windproof 2, Free Elem/Ammo Up 1	2					
+	289	Ingot α +	Leg		Defense Boost 2, Free Elem/Ammo Up 1	2					
+	290	Ingot β +	Head		Thunder Attack 2	42					
+	291	Ingot β +	Chest		Thunder Resistance 1, Free Elem/Ammo Up 1	4					
+	292	Ingot β +	Arm		Health Boost 2, Thunder Attack 1	4					
+	293	Ingot β +	Waist		Windproof 1, Free Elem/Ammo Up 1	41					
+	294	Ingot β +	Leg		Defense Boost 1, Free Elem/Ammo Up 1	4					
+	295	Barioth α +	Head		Evade Extender 2, Power Prolonger 1	11	Barioth Hidden Art	Punishing Draw			
+	296	Barioth α +	Chest		Power Prolonger 1, Constitution 1	3	Barioth Hidden Art	Punishing Draw			
+	297	Barioth α +	Arm		Recovery Up 2, Constitution 2	2	Barioth Hidden Art	Punishing Draw			
+	298	Barioth α +	Waist		Quick Sheath 1, Recovery Up 1	3	Barioth Hidden Art	Punishing Draw			
+	299	Barioth α +	Leg		Constitution 2, Quick Sheath 1	11	Barioth Hidden Art	Punishing Draw			
+	300	Barioth β +	Head		Evade Extender 1, Power Prolonger 1	41	Barioth Hidden Art	Punishing Draw			
+	301	Barioth β +	Chest		Power Prolonger 1	41	Barioth Hidden Art	Punishing Draw			
+	302	Barioth β +	Arm		Recovery Up 2, Constitution 1	4	Barioth Hidden Art	Punishing Draw			
+	303	Barioth β +	Waist		Quick Sheath 1	4	Barioth Hidden Art	Punishing Draw			
+	304	Barioth β +	Leg		Constitution 1, Quick Sheath 1	41	Barioth Hidden Art	Punishing Draw			
+	305	Rathalos α +	Head		Attack Boost 2, Fire Attack 2	2	Rathalos Essence		Mind's Eye/Ballistics		
+	306	Rathalos α +	Chest		Weakness Exploit 2, Fire Attack 1	11	Rathalos Essence		Mind's Eye/Ballistics		
+	307	Rathalos α +	Arm		Jump Master 1, Weakness Exploit 1	3	Rathalos Essence		Mind's Eye/Ballistics		
+	308	Rathalos α +	Waist		Fire Attack 2, Focus 2	2	Rathalos Essence		Mind's Eye/Ballistics		
+	309	Rathalos α +	Leg		Slinger Capacity 2, Attack Boost 2	3	Rathalos Essence		Mind's Eye/Ballistics		
+	310	Rathalos β +	Head		Attack Boost 2	41	Rathalos Essence		Mind's Eye/Ballistics		
+	311	Rathalos β +	Chest		Weakness Exploit 2	4	Rathalos Essence		Mind's Eye/Ballistics		
+	312	Rathalos β +	Arm		Jump Master 1	43	Rathalos Essence		Mind's Eye/Ballistics		
+	313	Rathalos β +	Waist		Fire Attack 2	42	Rathalos Essence		Mind's Eye/Ballistics		
+	314	Rathalos β +	Leg		Slinger Capacity 2, Attack Boost 1	4	Rathalos Essence		Mind's Eye/Ballistics		
+	315	Rath Soul α +	Head		Critical Boost 1, Cliffhanger 1	11	Rathalos Essence		Mind's Eye/Ballistics		
+	316	Rath Soul α +	Chest		Free Elem/Ammo Up 1, Partbreaker 1	2	Rathalos Essence		Mind's Eye/Ballistics		
+	317	Rath Soul α +	Arm		Partbreaker 2, Windproof 1	2	Rathalos Essence		Mind's Eye/Ballistics		
+	318	Rath Soul α +	Waist		Windproof 2, Piercing Shots 1	3	Rathalos Essence		Mind's Eye/Ballistics		
+	319	Rath Soul α +	Leg		Critical Boost 1, Windproof 2	1	Rathalos Essence		Mind's Eye/Ballistics		
+	320	Rath Soul β +	Head		Critical Boost 1	4	Rathalos Essence		Mind's Eye/Ballistics		
+	321	Rath Soul β +	Chest		Free Elem/Ammo Up 1	41	Rathalos Essence		Mind's Eye/Ballistics		
+	322	Rath Soul β +	Arm		Partbreaker 1, Windproof 1	41	Rathalos Essence		Mind's Eye/Ballistics		
+	323	Rath Soul β +	Waist		Windproof 2	42	Rathalos Essence		Mind's Eye/Ballistics		
+	324	Rath Soul β +	Leg		Critical Boost 1, Windproof 1	4	Rathalos Essence		Mind's Eye/Ballistics		
+	325	Diablos α +	Head		Critical Draw 2, Slugger 1	2	Diablos Ambition		Slugger Secret		
+	326	Diablos α +	Chest		Slugger 2, Heroics 2	2	Diablos Ambition		Slugger Secret		
+	327	Diablos α +	Arm		Heroics 3, Tremor Resistance 1	2	Diablos Ambition		Slugger Secret		
+	328	Diablos α +	Waist		Marathon Runner 2, Critical Draw 1	2	Diablos Ambition		Slugger Secret		
+	329	Diablos α +	Leg		Tremor Resistance 2, Slugger 2	11	Diablos Ambition		Slugger Secret		
+	330	Diablos β +	Head		Critical Draw 2	4	Diablos Ambition		Slugger Secret		
+	331	Diablos β +	Chest		Slugger 2, Heroics 1	41	Diablos Ambition		Slugger Secret		
+	332	Diablos β +	Arm		Heroics 2, Tremor Resistance 1	41	Diablos Ambition		Slugger Secret		
+	333	Diablos β +	Waist		Marathon Runner 2	41	Diablos Ambition		Slugger Secret		
+	334	Diablos β +	Leg		Tremor Resistance 2, Slugger 1	41	Diablos Ambition		Slugger Secret		
+	335	Diablos Nero α +	Head		Partbreaker 2, Resentment 1	11	Diablos Ambition		Slugger Secret		
+	336	Diablos Nero α +	Chest		Resentment 2, Marathon Runner 1	2	Diablos Ambition		Slugger Secret		
+	337	Diablos Nero α +	Arm		Slugger 2, Marathon Runner 1	11	Diablos Ambition		Slugger Secret		
+	338	Diablos Nero α +	Waist		Slugger 2, Partbreaker 1	2	Diablos Ambition		Slugger Secret		
+	339	Diablos Nero α +	Leg		Resentment 2, Slugger 1	1	Diablos Ambition		Slugger Secret		
+	340	Diablos Nero β +	Head		Partbreaker 2	41	Diablos Ambition		Slugger Secret		
+	341	Diablos Nero β +	Chest		Resentment 1, Marathon Runner 1	41	Diablos Ambition		Slugger Secret		
+	342	Diablos Nero β +	Arm		Slugger 1, Marathon Runner 1	42	Diablos Ambition		Slugger Secret		
+	343	Diablos Nero β +	Waist		Slugger 2	41	Diablos Ambition		Slugger Secret		
+	344	Diablos Nero β +	Leg		Resentment 2	4	Diablos Ambition		Slugger Secret		
+	345	Legiana α +	Head		Divine Blessing 2, Ice Attack 2	2	Legiana Ambition		Bow Charge Plus		
+	346	Legiana α +	Chest		Evade Window 2, Divine Blessing 2	1	Legiana Ambition		Bow Charge Plus		
+	347	Legiana α +	Arm		Airborne 1, Evade Window 2	3	Legiana Ambition		Bow Charge Plus		
+	348	Legiana α +	Waist		Ice Attack 2, Windproof 2	2	Legiana Ambition		Bow Charge Plus		
+	349	Legiana α +	Leg		Ice Resistance 2, Critical Draw 1	3	Legiana Ambition		Bow Charge Plus		
+	350	Legiana β +	Head		Divine Blessing 2	41	Legiana Ambition		Bow Charge Plus		
+	351	Legiana β +	Chest		Evade Window 2, Divine Blessing 1	4	Legiana Ambition		Bow Charge Plus		
+	352	Legiana β +	Arm		Airborne 1, Evade Window 1	42	Legiana Ambition		Bow Charge Plus		
+	353	Legiana β +	Waist		Ice Attack 2, Windproof 1	41	Legiana Ambition		Bow Charge Plus		
+	354	Legiana β +	Leg		Ice Resistance 2	42	Legiana Ambition		Bow Charge Plus		
+	355	Shrieking Legia α +	Head		Hunger Resistance 2, Evade Extender 1	111	Legiana Ambition		Bow Charge Plus		
+	356	Shrieking Legia α +	Chest		Focus 2, Marathon Runner 1	11	Legiana Ambition		Bow Charge Plus		
+	357	Shrieking Legia α +	Arm		Critical Draw 2, Hunger Resistance 1	11	Legiana Ambition		Bow Charge Plus		
+	358	Shrieking Legia α +	Waist		Evade Extender 2, Focus 1	11	Legiana Ambition		Bow Charge Plus		
+	359	Shrieking Legia α +	Leg		Marathon Runner 2, Spread/Power Shots 1	11	Legiana Ambition		Bow Charge Plus		
+	360	Shrieking Legia β +	Head		Hunger Resistance 2	41	Legiana Ambition		Bow Charge Plus		
+	361	Shrieking Legia β +	Chest		Focus 2	4	Legiana Ambition		Bow Charge Plus		
+	362	Shrieking Legia β +	Arm		Critical Draw 2	4	Legiana Ambition		Bow Charge Plus		
+	363	Shrieking Legia β +	Waist		Evade Extender 2	4	Legiana Ambition		Bow Charge Plus		
+	364	Shrieking Legia β +	Leg		Marathon Runner 2	42	Legiana Ambition		Bow Charge Plus		
+	365	Odogaron α +	Head		Bleeding Resistance 2, Critical Eye 2	2	Odogaron Essence		Protective Polish		
+	366	Odogaron α +	Chest		Speed Sharpening 2, Bleeding Resistance 1	3	Odogaron Essence		Protective Polish		
+	367	Odogaron α +	Arm		Constitution 2, Critical Eye 1	1	Odogaron Essence		Protective Polish		
+	368	Odogaron α +	Waist		Critical Eye 3, Speed Sharpening 1	2	Odogaron Essence		Protective Polish		
+	369	Odogaron α +	Leg		Quick Sheath 2, Critical Eye 1	1	Odogaron Essence		Protective Polish		
+	370	Odogaron β +	Head		Bleeding Resistance 2, Critical Eye 1	4	Odogaron Essence		Protective Polish		
+	371	Odogaron β +	Chest		Speed Sharpening 2	41	Odogaron Essence		Protective Polish		
+	372	Odogaron β +	Arm		Constitution 1, Critical Eye 1	4	Odogaron Essence		Protective Polish		
+	373	Odogaron β +	Waist		Critical Eye 2	42	Odogaron Essence		Protective Polish		
+	374	Odogaron β +	Leg		Quick Sheath 1, Critical Eye 1	4	Odogaron Essence		Protective Polish		
+	375	Death Garon α +	Head		Latent Power 2, Tool Specialist 1	3	Odogaron Essence		Protective Polish		
+	376	Death Garon α +	Chest		Critical Eye 3, Dragon Resistance 2	2	Odogaron Essence		Protective Polish		
+	377	Death Garon α +	Arm		Power Prolonger 1, Dragon Attack 2	21	Odogaron Essence		Protective Polish		
+	378	Death Garon α +	Waist		Dragon Attack 2, Latent Power 1	21	Odogaron Essence		Protective Polish		
+	379	Death Garon α +	Leg		Tool Specialist 2, Power Prolonger 1	11	Odogaron Essence		Protective Polish		
+	380	Death Garon β +	Head		Latent Power 2	42	Odogaron Essence		Protective Polish		
+	381	Death Garon β +	Chest		Critical Eye 2, Dragon Resistance 1	41	Odogaron Essence		Protective Polish		
+	382	Death Garon β +	Arm		Power Prolonger 1, Dragon Attack 1	41	Odogaron Essence		Protective Polish		
+	383	Death Garon β +	Waist		Dragon Attack 2	42	Odogaron Essence		Protective Polish		
+	384	Death Garon β +	Leg		Tool Specialist 2	411	Odogaron Essence		Protective Polish		
+	385	Lavasioth α +	Head		Fire Attack 2, Quick Sheath 1	11					
+	386	Lavasioth α +	Chest		Fire Attack 3, Heat Guard 1	11					
+	387	Lavasioth α +	Arm		Peak Performance 2, Recovery Up 1	1					
+	388	Lavasioth α +	Waist		Quick Sheath 2, Recovery Up 2	1					
+	389	Lavasioth α +	Leg		Spread/Power Shots 1, Fire Attack 2	2					
+	390	Lavasioth β +	Head		Fire Attack 1, Quick Sheath 1	41					
+	391	Lavasioth β +	Chest		Fire Attack 2, Heat Guard 1	41					
+	392	Lavasioth β +	Arm		Peak Performance 1, Recovery Up 1	4					
+	393	Lavasioth β +	Waist		Quick Sheath 2, Recovery Up 1	4					
+	394	Lavasioth β +	Leg		Spread/Power Shots 1, Fire Attack 1	41					
+	395	Uragaan α +	Head		Blast Resistance 2, Flinch Free 1	21	Uragaan Ambition	Guard Up			
+	396	Uragaan α +	Chest		Partbreaker 2, Blast Resistance 1	3	Uragaan Ambition	Guard Up			
+	397	Uragaan α +	Arm		Guard 2, Iron Skin 2	2	Uragaan Ambition	Guard Up			
+	398	Uragaan α +	Waist		Partbreaker 1, Guard 1	21	Uragaan Ambition	Guard Up			
+	399	Uragaan α +	Leg		Guard 2, Offensive Guard 1	1	Uragaan Ambition	Guard Up			
+	400	Uragaan β +	Head		Blast Resistance 2	43	Uragaan Ambition	Guard Up			
+	401	Uragaan β +	Chest		Partbreaker 2	4	Uragaan Ambition	Guard Up			
+	402	Uragaan β +	Arm		Guard 2, Iron Skin 1	4	Uragaan Ambition	Guard Up			
+	403	Uragaan β +	Waist		Partbreaker 1	42	Uragaan Ambition	Guard Up			
+	404	Uragaan β +	Leg		Guard 2	41	Uragaan Ambition	Guard Up			
+	405	Nargacuga α +	Head		Peak Performance 2, Piercing Shots 1	11	Nargacuga Essence		True Razor Sharp/Spare Shot		
+	406	Nargacuga α +	Chest		Evade Window 2, Speed Crawler 1	2	Nargacuga Essence		True Razor Sharp/Spare Shot		
+	407	Nargacuga α +	Arm		Stamina Surge 2, Stealth 2	1	Nargacuga Essence		True Razor Sharp/Spare Shot		
+	408	Nargacuga α +	Waist		Evade Window 2, Stamina Surge 1	1	Nargacuga Essence		True Razor Sharp/Spare Shot		
+	409	Nargacuga α +	Leg		Evade Window 1, Peak Performance 1	11	Nargacuga Essence		True Razor Sharp/Spare Shot		
+	410	Nargacuga β +	Head		Peak Performance 1, Piercing Shots 1	41	Nargacuga Essence		True Razor Sharp/Spare Shot		
+	411	Nargacuga β +	Chest		Evade Window 2	4	Nargacuga Essence		True Razor Sharp/Spare Shot		
+	412	Nargacuga β +	Arm		Stamina Surge 2	4	Nargacuga Essence		True Razor Sharp/Spare Shot		
+	413	Nargacuga β +	Waist		Evade Window 1, Stamina Surge 1	4	Nargacuga Essence		True Razor Sharp/Spare Shot		
+	414	Nargacuga β +	Leg		Evade Window 1	41	Nargacuga Essence		True Razor Sharp/Spare Shot		
+	415	Glavenus α +	Head		Focus 2, Handicraft 1	1	Glavenus Essence		Maximum Might Secret		
+	416	Glavenus α +	Chest		Power Prolonger 2, Maximum Might 1	1	Glavenus Essence		Maximum Might Secret		
+	417	Glavenus α +	Arm		Maximum Might 2, Focus 1	1	Glavenus Essence		Maximum Might Secret		
+	418	Glavenus α +	Waist		Maximum Might 2, Normal Shots 1	11	Glavenus Essence		Maximum Might Secret		
+	419	Glavenus α +	Leg		Handicraft 2, Heat Guard 1	2	Glavenus Essence		Maximum Might Secret		
+	420	Glavenus β +	Head		Focus 1, Handicraft 1	4	Glavenus Essence		Maximum Might Secret		
+	421	Glavenus β +	Chest		Power Prolonger 1, Maximum Might 1	4	Glavenus Essence		Maximum Might Secret		
+	422	Glavenus β +	Arm		Maximum Might 1, Focus 1	4	Glavenus Essence		Maximum Might Secret		
+	423	Glavenus β +	Waist		Maximum Might 2	4	Glavenus Essence		Maximum Might Secret		
+	424	Glavenus β +	Leg		Handicraft 2	4	Glavenus Essence		Maximum Might Secret		
+	425	Acidic Glavenus α +	Head		Maximum Might 2, Effluvia Resistance 2	1	Glavenus Essence		Maximum Might Secret		
+	426	Acidic Glavenus α +	Chest		Handicraft 2, Stamina Surge 1	1	Glavenus Essence		Maximum Might Secret		
+	427	Acidic Glavenus α +	Arm		Stun Resistance 2, Handicraft 1	21	Glavenus Essence		Maximum Might Secret		
+	428	Acidic Glavenus α +	Waist		Handicraft 2, Iron Skin 2	2	Glavenus Essence		Maximum Might Secret		
+	429	Acidic Glavenus α +	Leg		Maximum Might 2, Stamina Surge 1	1	Glavenus Essence		Maximum Might Secret		
+	430	Acidic Glavenus β +	Head		Maximum Might 1, Effluvia Resistance 2	4	Glavenus Essence		Maximum Might Secret		
+	431	Acidic Glavenus β +	Chest		Handicraft 1, Stamina Surge 1	41	Glavenus Essence		Maximum Might Secret		
+	432	Acidic Glavenus β +	Arm		Stun Resistance 2	421	Glavenus Essence		Maximum Might Secret		
+	433	Acidic Glavenus β +	Waist		Handicraft 2	4	Glavenus Essence		Maximum Might Secret		
+	434	Acidic Glavenus β +	Leg		Maximum Might 1	42	Glavenus Essence		Maximum Might Secret		
+	435	Brachydios α +	Head		Agitator 2, Capacity Boost 1	3	Brachydios Essence		Agitator Secret		
+	436	Brachydios α +	Chest		Stamina Thief 2, Agitator 1	1	Brachydios Essence		Agitator Secret		
+	437	Brachydios α +	Arm		Agitator 2, Blast Resistance 2	2	Brachydios Essence		Agitator Secret		
+	438	Brachydios α +	Waist		Blast Attack 2, Stamina Thief 1	3	Brachydios Essence		Agitator Secret		
+	439	Brachydios α +	Leg		Agitator 2, Artillery 2	2	Brachydios Essence		Agitator Secret		
+	440	Brachydios β +	Head		Agitator 2	41	Brachydios Essence		Agitator Secret		
+	441	Brachydios β +	Chest		Stamina Thief 1, Agitator 1	4	Brachydios Essence		Agitator Secret		
+	442	Brachydios β +	Arm		Agitator 2, Blast Resistance 1	4	Brachydios Essence		Agitator Secret		
+	443	Brachydios β +	Waist		Blast Attack 2	42	Brachydios Essence		Agitator Secret		
+	444	Brachydios β +	Leg		Agitator 2, Artillery 1	4	Brachydios Essence		Agitator Secret		
+	445	Tigrex α +	Head		Attack Boost 2, Earplugs 2	1	Tigrex Essence		Free Meal Secret		
+	446	Tigrex α +	Chest		Earplugs 2, Free Meal 1	2	Tigrex Essence		Free Meal Secret		
+	447	Tigrex α +	Arm		Speed Eating 2, Attack Boost 2	1	Tigrex Essence		Free Meal Secret		
+	448	Tigrex α +	Waist		Earplugs 1, Free Meal 1	31	Tigrex Essence		Free Meal Secret		
+	449	Tigrex α +	Leg		Speed Eating 1, Free Meal 1	31	Tigrex Essence		Free Meal Secret		
+	450	Tigrex β +	Head		Attack Boost 2, Earplugs 1	4	Tigrex Essence		Free Meal Secret		
+	451	Tigrex β +	Chest		Earplugs 2	41	Tigrex Essence		Free Meal Secret		
+	452	Tigrex β +	Arm		Speed Eating 2, Attack Boost 1	4	Tigrex Essence		Free Meal Secret		
+	453	Tigrex β +	Waist		Earplugs 1	421	Tigrex Essence		Free Meal Secret		
+	454	Tigrex β +	Leg		Speed Eating 1	42	Tigrex Essence		Free Meal Secret		
+	455	Black Belt α +	Head		Marathon Runner 2, Mushroomancer 1	3	Instructor's Guidance	Capture Master			
+	456	Black Belt α +	Chest		Mushroomancer 2, Wide-Range 1	111	Instructor's Guidance	Capture Master			
+	457	Black Belt α +	Arm		Wide-Range 2, Horn Maestro 2	3	Instructor's Guidance	Capture Master			
+	458	Black Belt α +	Waist		Recovery Up 2, Marathon Runner 1	3	Instructor's Guidance	Capture Master			
+	459	Black Belt α +	Leg		Wide-Range 2, Recovery Up 1	22	Instructor's Guidance	Capture Master			
+	460	Black Belt β +	Head		Marathon Runner 2	42	Instructor's Guidance	Capture Master			
+	461	Black Belt β +	Chest		Mushroomancer 2	411	Instructor's Guidance	Capture Master			
+	462	Black Belt β +	Arm		Wide-Range 2	41	Instructor's Guidance	Capture Master			
+	463	Black Belt β +	Waist		Recovery Up 2	41	Instructor's Guidance	Capture Master			
+	464	Black Belt β +	Leg		Wide-Range 2	42	Instructor's Guidance	Capture Master			
+	465	Dober α +	Head		Free Elem/Ammo Up 2, Stamina Surge 1	1					
+	466	Dober α +	Chest		Attack Boost 2, Effluvia Resistance 1	111					
+	467	Dober α +	Arm		Stamina Surge 2, Mushroomancer 1	21					
+	468	Dober α +	Waist		Attack Boost 2, Stun Resistance 2	21					
+	469	Dober α +	Leg		Attack Boost 2, Mushroomancer 2	2					
+	470	Dober β +	Head		Free Elem/Ammo Up 2	4					
+	471	Dober β +	Chest		Attack Boost 1, Effluvia Resistance 1	411					
+	472	Dober β +	Arm		Stamina Surge 1, Mushroomancer 1	41					
+	473	Dober β +	Waist		Attack Boost 1, Stun Resistance 1	42					
+	474	Dober β +	Leg		Attack Boost 1, Mushroomancer 1	42					
+	475	Damascus α +	Head		Defense Boost 3, Speed Sharpening 2	3					
+	476	Damascus α +	Chest		Focus 2, Defense Boost 2	31					
+	477	Damascus α +	Arm		Handicraft 2, Speed Sharpening 1	21					
+	478	Damascus α +	Waist		Focus 1, Guard 1	32					
+	479	Damascus α +	Leg		Defense Boost 2, Guard 2	21					
+	480	Damascus β +	Head		Defense Boost 3	411					
+	481	Damascus β +	Chest		Focus 2	421					
+	482	Damascus β +	Arm		Handicraft 2	41					
+	483	Damascus β +	Waist		Focus 1	421					
+	484	Damascus β +	Leg		Defense Boost 2, Guard 1	42					
+	485	Velkhana α +	Head		Divine Blessing 2, Coalescence 1	32	Velkhana Divinity	Critical Element		Frostcraft	
+	486	Velkhana α +	Chest		Quick Sheath 2, Critical Draw 1	1	Velkhana Divinity	Critical Element		Frostcraft	
+	487	Velkhana α +	Arm		Quick Sheath 1, Flinch Free 2	1	Velkhana Divinity	Critical Element		Frostcraft	
+	488	Velkhana α +	Waist		Flinch Free 1, Coalescence 1	21	Velkhana Divinity	Critical Element		Frostcraft	
+	489	Velkhana α +	Leg		Critical Draw 2, Coalescence 1	11	Velkhana Divinity	Critical Element		Frostcraft	
+	490	Velkhana β +	Head		Divine Blessing 2	42	Velkhana Divinity	Critical Element		Frostcraft	
+	491	Velkhana β +	Chest		Quick Sheath 2	41	Velkhana Divinity	Critical Element		Frostcraft	
+	492	Velkhana β +	Arm		Quick Sheath 1, Flinch Free 1	4	Velkhana Divinity	Critical Element		Frostcraft	
+	493	Velkhana β +	Waist		Flinch Free 1	41	Velkhana Divinity	Critical Element		Frostcraft	
+	494	Velkhana β +	Leg		Critical Draw 2	41	Velkhana Divinity	Critical Element		Frostcraft	
+	495	Pearlspring α +	Head		Recovery Up 2	21					
