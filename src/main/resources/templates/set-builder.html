@@ -56,22 +56,25 @@
 </table>
 <table class="form">
 	<tr>
-		<th colspan="4">Slots</th>
+		<th colspan="5">Slots</th>
 	</tr>
 	<tr>
 		<th class="subheader"></th>
+		<th class="subheader">L4</th>
 		<th class="subheader">L3</th>
 		<th class="subheader">L2</th>
 		<th class="subheader">L1</th>
 	</tr>
 	<tr>
 		<td>Weapon slots</td>
+		<td><input type="text" th:field="*{weaponSlots4}" maxlength="2" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
 		<td><input type="text" th:field="*{weaponSlots3}" maxlength="2" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
 		<td><input type="text" th:field="*{weaponSlots2}" maxlength="2" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
 		<td><input type="text" th:field="*{weaponSlots1}" maxlength="2" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
 	</tr>
 	<tr>
 		<td>Required open slots</td>
+		<td><input type="text" th:field="*{requiredSlots4}" maxlength="2" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
 		<td><input type="text" th:field="*{requiredSlots3}" maxlength="2" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
 		<td><input type="text" th:field="*{requiredSlots2}" maxlength="2" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
 		<td><input type="text" th:field="*{requiredSlots1}" maxlength="2" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>

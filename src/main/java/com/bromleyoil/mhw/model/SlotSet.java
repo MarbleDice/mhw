@@ -13,13 +13,13 @@ public class SlotSet {
 	private static final int MAX_SLOT_LEVEL = 4;
 
 	public static final SlotSet ZERO = new SlotSet();
-	public static final SlotSet ONE = new SlotSet(0, 0, 1);
-	public static final SlotSet ONE_ONE = new SlotSet(0, 0, 2);
-	public static final SlotSet ONE_ONE_ONE = new SlotSet(0, 0, 3);
-	public static final SlotSet TWO = new SlotSet(0, 1, 0);
-	public static final SlotSet TWO_ONE = new SlotSet(0, 1, 1);
-	public static final SlotSet THREE = new SlotSet(1, 0, 0);
-	public static final SlotSet THREE_ONE = new SlotSet(1, 0, 1);
+	public static final SlotSet ONE = new SlotSet(0, 0, 0, 1);
+	public static final SlotSet ONE_ONE = new SlotSet(0, 0, 0, 2);
+	public static final SlotSet ONE_ONE_ONE = new SlotSet(0, 0, 0, 3);
+	public static final SlotSet TWO = new SlotSet(0, 0, 1, 0);
+	public static final SlotSet TWO_ONE = new SlotSet(0, 0, 1, 1);
+	public static final SlotSet THREE = new SlotSet(0, 1, 0, 0);
+	public static final SlotSet THREE_ONE = new SlotSet(0, 1, 0, 1);
 
 	private List<Integer> slots = new ArrayList<>();
 	private List<Integer> filledSlots = new ArrayList<>();
@@ -32,10 +32,11 @@ public class SlotSet {
 		add(slotSet);
 	}
 
-	public SlotSet(Integer numSlots3, Integer numSlots2, Integer numSlots1) {
+	public SlotSet(Integer numSlots4, Integer numSlots3, Integer numSlots2, Integer numSlots1) {
 		add(1, numSlots1);
 		add(2, numSlots2);
 		add(3, numSlots3);
+		add(4, numSlots4);
 	}
 
 	public void add(int slotLevel, Integer slotCount) {

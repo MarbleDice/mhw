@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 import java.io.IOException;
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -14,6 +15,7 @@ import org.junit.runners.JUnit4;
 public class SkillParserTest {
 
 	@Test
+	@Ignore
 	public void printEnumInitializers() throws IOException {
 		List<String> lines = SkillParser.getEnumInitializerLines();
 

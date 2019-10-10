@@ -22,7 +22,8 @@ public class UrlCodec {
 	}
 
 	public static String encode(EquipmentSet equipmentSet) {
-		ByteBuffer buffer = new ByteBuffer(EquipmentType.values().length * 2 + 3
+		// NOTE: the buffer size must be adjusted for the length of serialized data
+		ByteBuffer buffer = new ByteBuffer(EquipmentType.values().length * 2 + 4
 				+ equipmentSet.getDecorationCounts().size() * 3);
 
 		// Add the ID for each piece of equipment, or 0 if missing
@@ -32,6 +33,7 @@ public class UrlCodec {
 		}
 
 		// Add the number of weapon slots
+		buffer.write(equipmentSet.getWeaponSlotSet().getFour(), 1);
 		buffer.write(equipmentSet.getWeaponSlotSet().getThree(), 1);
 		buffer.write(equipmentSet.getWeaponSlotSet().getTwo(), 1);
 		buffer.write(equipmentSet.getWeaponSlotSet().getOne(), 1);
@@ -58,7 +60,8 @@ public class UrlCodec {
 		}
 
 		// Load the number of weapon slots
-		equipmentSet.setWeaponSlotSet(new SlotSet(buffer.readInt(1), buffer.readInt(1), buffer.readInt(1)));
+		equipmentSet.setWeaponSlotSet(new SlotSet(buffer.readInt(1), buffer.readInt(1), buffer.readInt(1),
+				buffer.readInt(1)));
 
 		// Load the decorated skills
 		while (buffer.hasBytes()) {
@@ -73,9 +76,11 @@ public class UrlCodec {
 	public String encode(SetBuilderForm form) {
 		ByteBuffer buffer = new ByteBuffer(3 + form.getSkillRows().size() * 4);
 
+		buffer.write(form.getWeaponSlots4(), 1);
 		buffer.write(form.getWeaponSlots3(), 1);
 		buffer.write(form.getWeaponSlots2(), 1);
 		buffer.write(form.getWeaponSlots1(), 1);
+		buffer.write(form.getRequiredSlots4(), 1);
 		buffer.write(form.getRequiredSlots3(), 1);
 		buffer.write(form.getRequiredSlots2(), 1);
 		buffer.write(form.getRequiredSlots1(), 1);
@@ -93,9 +98,11 @@ public class UrlCodec {
 		ByteBuffer buffer = new ByteBuffer(Base64Utils.decodeFromUrlSafeString(encodedString));
 		SetBuilderForm form = new SetBuilderForm();
 
+		form.setWeaponSlots4(buffer.readInt(1));
 		form.setWeaponSlots3(buffer.readInt(1));
 		form.setWeaponSlots2(buffer.readInt(1));
 		form.setWeaponSlots1(buffer.readInt(1));
+		form.setRequiredSlots4(buffer.readInt(1));
 		form.setRequiredSlots3(buffer.readInt(1));
 		form.setRequiredSlots2(buffer.readInt(1));
 		form.setRequiredSlots1(buffer.readInt(1));

@@ -60,11 +60,11 @@ public class SetBuilderController {
 		}
 		setBuilder.setRequiredSkillSet(new SkillSet(form.getSkills(), form.getLevels()));
 
-		setBuilder.setRequiredSlotSet(new SlotSet(form.getRequiredSlots3(), form.getRequiredSlots2(),
-				form.getRequiredSlots1()));
+		setBuilder.setRequiredSlotSet(new SlotSet(form.getRequiredSlots4(), form.getRequiredSlots3(),
+				form.getRequiredSlots2(), form.getRequiredSlots1()));
 
-		setBuilder.setWeaponSlotSet(new SlotSet(form.getWeaponSlots3(), form.getWeaponSlots2(),
-				form.getWeaponSlots1()));
+		setBuilder.setWeaponSlotSet(new SlotSet(form.getWeaponSlots4(), form.getWeaponSlots3(),
+				form.getWeaponSlots2(), form.getWeaponSlots1()));
 
 		setBuilder.setDecorationCounts(form.getDecorationCounts());
 

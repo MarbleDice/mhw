@@ -50,7 +50,7 @@ public class EquipmentSetTest {
 		Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
 		decorationCounts.put(EARPLUGS, 5);
 
-		set.setWeaponSlotSet(new SlotSet(1, 0, 0));
+		set.setWeaponSlotSet(new SlotSet(0, 1, 0, 0));
 		set.decorate(new SkillSet(EARPLUGS, 5), decorationCounts);
 
 		assertThat("decorated level", set.getSkillSet().getLevel(EARPLUGS), is(5));
