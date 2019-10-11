@@ -47,7 +47,7 @@ public class DataParser {
 	// Charm parsing
 	protected static final String SKILL1 = "Skill1";
 	protected static final String SKILL2 = "Skill2";
-	protected static final String LEVEL = "Level";
+	protected static final String POINTS = "Points";
 
 	protected static final Pattern descriptionPattern = Pattern.compile("\\s*([a-zA-Z0-9'/, -]+)\\s*(\\(.+\\))?\\s*");
 	protected static final Pattern skillPattern = Pattern.compile("\\s*(.+)\\s+(\\d+)\\s*");
@@ -176,7 +176,7 @@ public class DataParser {
 	protected static List<Equipment> parseCharms(Reader reader) throws IOException {
 		List<Equipment> charms = new ArrayList<>();
 		for (CSVRecord record : CSVFormat.TDF.withFirstRecordAsHeader().parse(reader)) {
-			int level = Integer.parseInt(record.get(LEVEL));
+			int level = Integer.parseInt(record.get(POINTS));
 			Equipment charm = new Equipment();
 
 			charm.setName(record.get(NAME));
