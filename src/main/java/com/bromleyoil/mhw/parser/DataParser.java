@@ -82,8 +82,12 @@ public class DataParser {
 	protected static Equipment createEquip(CSVRecord record) {
 		Equipment equipment = new Equipment();
 
-		// Name
-		equipment.setArmorName(record.get(SET_NAME));
+		// Name, replace suffixes to use non-breaking spaces
+		equipment.setArmorName(record.get(SET_NAME)
+				.replace(" +", " +")
+				.replace(" α", " α")
+				.replace(" β", " β"));
+
 		equipment.setType(EquipmentType.valueOf(record.get(TYPE).toUpperCase()));
 
 		// Skills
