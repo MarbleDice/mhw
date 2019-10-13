@@ -157,5 +157,7 @@ ID	Order	Rank	Name	Skill1	Skill2	Points
 	156	MR?	Guardian Charm III	Offensive Guard		3
 	157	HR?	Phoenix Charm I	Coalescence		1
 	158	MR?	Phoenix Charm II	Coalescence		2
-	159	HR?	Adamantine Charm	Non-Elemental Boost	Bludgeoner	1
-	160	HR?	Razor Sharp Charm	Razor Sharp/Spare Shot		1
+	159	MR?	Adamantine Charm	Non-Elemental Boost	Bludgeoner	1
+	160	MR?	Razor Sharp Charm	Razor Sharp/Spare Shot		1
+	161	MR?	Sealer's Charm	Elderseal Boost	Adrenaline	1
+	162	MR?	Gutsy Charm	Guts		1

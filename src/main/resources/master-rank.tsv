@@ -483,14 +483,114 @@ ID	Order	Set Name	Type	Item Name	Skills	Slots	Set Bonus Name	Set Bonus 2	Set Bon
 	482	Damascus β +	Arm		Handicraft 2	41					
 	483	Damascus β +	Waist		Focus 1	421					
 	484	Damascus β +	Leg		Defense Boost 2, Guard 1	42					
-	485	Velkhana α +	Head		Divine Blessing 2, Coalescence 1	32	Velkhana Divinity	Critical Element		Frostcraft	
-	486	Velkhana α +	Chest		Quick Sheath 2, Critical Draw 1	1	Velkhana Divinity	Critical Element		Frostcraft	
-	487	Velkhana α +	Arm		Quick Sheath 1, Flinch Free 2	1	Velkhana Divinity	Critical Element		Frostcraft	
-	488	Velkhana α +	Waist		Flinch Free 1, Coalescence 1	21	Velkhana Divinity	Critical Element		Frostcraft	
-	489	Velkhana α +	Leg		Critical Draw 2, Coalescence 1	11	Velkhana Divinity	Critical Element		Frostcraft	
-	490	Velkhana β +	Head		Divine Blessing 2	42	Velkhana Divinity	Critical Element		Frostcraft	
-	491	Velkhana β +	Chest		Quick Sheath 2	41	Velkhana Divinity	Critical Element		Frostcraft	
-	492	Velkhana β +	Arm		Quick Sheath 1, Flinch Free 1	4	Velkhana Divinity	Critical Element		Frostcraft	
-	493	Velkhana β +	Waist		Flinch Free 1	41	Velkhana Divinity	Critical Element		Frostcraft	
-	494	Velkhana β +	Leg		Critical Draw 2	41	Velkhana Divinity	Critical Element		Frostcraft	
-	495	Pearlspring α +	Head		Recovery Up 2	21					
+	485	Seething Bazel α +	Head		Earplugs 2, Blast Attack 2	21	Bazelgeuse Ambition	Guts			
+	486	Seething Bazel α +	Chest		Guard 2, Blast Resistance 2	11	Bazelgeuse Ambition	Guts			
+	487	Seething Bazel α +	Arm		Critical Draw 2, Earplugs 1	3	Bazelgeuse Ambition	Guts			
+	488	Seething Bazel α +	Waist		Bombardier 2, Critical Draw 1	3	Bazelgeuse Ambition	Guts			
+	489	Seething Bazel α +	Leg		Earplugs 2, Jump Master 1	3	Bazelgeuse Ambition	Guts			
+	490	Seething Bazel β +	Head		Earplugs 2, Blast Attack 1	41	Bazelgeuse Ambition	Guts			
+	491	Seething Bazel β +	Chest		Guard 2	411	Bazelgeuse Ambition	Guts			
+	492	Seething Bazel β +	Arm		Critical Draw 2	43	Bazelgeuse Ambition	Guts			
+	493	Seething Bazel β +	Waist		Bombardier 2	42	Bazelgeuse Ambition	Guts			
+	494	Seething Bazel β +	Leg		Earplugs 1, Jump Master 1	42	Bazelgeuse Ambition	Guts			
+	495	Savage Jho α +	Head		Partbreaker 1, Handicraft 2	1	Deviljho Essence		Stamina Thief Secret		
+	496	Savage Jho α +	Chest		Speed Eating 1, Handicraft 2	2	Deviljho Essence		Stamina Thief Secret		
+	497	Savage Jho α +	Arm		Stamina Thief 2, Partbreaker 1	2	Deviljho Essence		Stamina Thief Secret		
+	498	Savage Jho α +	Waist		Stamina Thief 2, Handicraft 1	1	Deviljho Essence		Stamina Thief Secret		
+	499	Savage Jho α +	Leg		Speed Eating 2, Stamina Thief 1	22	Deviljho Essence		Stamina Thief Secret		
+	500	Savage Jho β +	Head		Partbreaker 1	43	Deviljho Essence		Stamina Thief Secret		
+	501	Savage Jho β +	Chest		Speed Eating 1	422	Deviljho Essence		Stamina Thief Secret		
+	502	Savage Jho β +	Arm		Stamina Thief 2	4	Deviljho Essence		Stamina Thief Secret		
+	503	Savage Jho β +	Waist		Stamina Thief 2	41	Deviljho Essence		Stamina Thief Secret		
+	504	Savage Jho β +	Leg		Speed Eating 1, Stamina Thief 1	42	Deviljho Essence		Stamina Thief Secret		
+	505	Velkhana α +	Head		Divine Blessing 2, Coalescence 1	32	Velkhana Divinity	Critical Element		Frostcraft	
+	506	Velkhana α +	Chest		Quick Sheath 2, Critical Draw 1	1	Velkhana Divinity	Critical Element		Frostcraft	
+	507	Velkhana α +	Arm		Quick Sheath 1, Flinch Free 2	1	Velkhana Divinity	Critical Element		Frostcraft	
+	508	Velkhana α +	Waist		Flinch Free 1, Coalescence 1	21	Velkhana Divinity	Critical Element		Frostcraft	
+	509	Velkhana α +	Leg		Critical Draw 2, Coalescence 1	11	Velkhana Divinity	Critical Element		Frostcraft	
+	510	Velkhana β +	Head		Divine Blessing 2	42	Velkhana Divinity	Critical Element		Frostcraft	
+	511	Velkhana β +	Chest		Quick Sheath 2	41	Velkhana Divinity	Critical Element		Frostcraft	
+	512	Velkhana β +	Arm		Quick Sheath 1, Flinch Free 1	4	Velkhana Divinity	Critical Element		Frostcraft	
+	513	Velkhana β +	Waist		Flinch Free 1	41	Velkhana Divinity	Critical Element		Frostcraft	
+	514	Velkhana β +	Leg		Critical Draw 2	41	Velkhana Divinity	Critical Element		Frostcraft	
+	515	Blackveil Hazak α +	Head		Peak Performance 2, Dragon Attack 2	1	Vaal Soulvein	Super Recovery			
+	516	Blackveil Hazak α +	Chest		Recovery Speed 2, Dragon Attack 2	31	Vaal Soulvein	Super Recovery			
+	517	Blackveil Hazak α +	Arm		Recovery Up 2, Speed Eating 1	211	Vaal Soulvein	Super Recovery			
+	518	Blackveil Hazak α +	Waist		Speed Eating 2, Peak Performance 1	21	Vaal Soulvein	Super Recovery			
+	519	Blackveil Hazak α +	Leg		Effluvia Resistance 2, Dragon Attack 2	32	Vaal Soulvein	Super Recovery			
+	520	Blackveil Hazak β +	Head		Peak Performance 2	41	Vaal Soulvein	Super Recovery			
+	521	Blackveil Hazak β +	Chest		Recovery Speed 2, Dragon Attack 1	42	Vaal Soulvein	Super Recovery			
+	522	Blackveil Hazak β +	Arm		Recovery Up 2	411	Vaal Soulvein	Super Recovery			
+	523	Blackveil Hazak β +	Waist		Speed Eating 2	42	Vaal Soulvein	Super Recovery			
+	524	Blackveil Hazak β +	Leg		Effluvia Resistance 2	43	Vaal Soulvein	Super Recovery			
+	525	Teostra α +	Head		Latent Power 2, Critical Eye 2	1	Teostra Technique		Master's Touch		
+	526	Teostra α +	Chest		Latent Power 1, Special Ammo Boost 2	21	Teostra Technique		Master's Touch		
+	527	Teostra α +	Arm		Weakness Exploit 2, Heat Guard 1	2	Teostra Technique		Master's Touch		
+	528	Teostra α +	Waist		Blast Attack 2, Weakness Exploit 1	3	Teostra Technique		Master's Touch		
+	529	Teostra α +	Leg		Latent Power 2, Blast Attack 2	2	Teostra Technique		Master's Touch		
+	530	Teostra β +	Head		Latent Power 1, Critical Eye 2	4	Teostra Technique		Master's Touch		
+	531	Teostra β +	Chest		Latent Power 1	411	Teostra Technique		Master's Touch		
+	532	Teostra β +	Arm		Weakness Exploit 1, Heat Guard 1	43	Teostra Technique		Master's Touch		
+	533	Teostra β +	Waist		Blast Attack 2	421	Teostra Technique		Master's Touch		
+	534	Teostra β +	Leg		Latent Power 2, Blast Attack 1	4	Teostra Technique		Master's Touch		
+	535	Kushala α +	Head		Ice Attack 2, Evade Window 2	2	Kushala Daora Flight		Nullify Wind Pressure		
+	536	Kushala α +	Chest		Handicraft 3	1	Kushala Daora Flight		Nullify Wind Pressure		
+	537	Kushala α +	Arm		Evade Window 3	1	Kushala Daora Flight		Nullify Wind Pressure		
+	538	Kushala α +	Waist		Ice Attack 3, Evade Extender 1	2	Kushala Daora Flight		Nullify Wind Pressure		
+	539	Kushala α +	Leg		Evade Extender 2, Handicraft 2	1	Kushala Daora Flight		Nullify Wind Pressure		
+	540	Kushala β +	Head		Ice Attack 2, Evade Window 1	41	Kushala Daora Flight		Nullify Wind Pressure		
+	541	Kushala β +	Chest		Handicraft 2	42	Kushala Daora Flight		Nullify Wind Pressure		
+	542	Kushala β +	Arm		Evade Window 2	42	Kushala Daora Flight		Nullify Wind Pressure		
+	543	Kushala β +	Waist		Ice Attack 3	41	Kushala Daora Flight		Nullify Wind Pressure		
+	544	Kushala β +	Leg		Evade Extender 2	43	Kushala Daora Flight		Nullify Wind Pressure		
+	545	Kirin α +	Head		Marathon Runner 2, Divine Blessing 2	31	Kirin Divinity		Great Luck		
+	546	Kirin α +	Chest		Critical Eye 3, Divine Blessing 1	32	Kirin Divinity		Great Luck		
+	547	Kirin α +	Arm		Thunder Attack 3, Marathon Runner 1	32	Kirin Divinity		Great Luck		
+	548	Kirin α +	Waist		Blight Resistance 2, Free Elem/Ammo Up 1	2	Kirin Divinity		Great Luck		
+	549	Kirin α +	Leg		Free Elem/Ammo Up 2, Critical Eye 2	1	Kirin Divinity		Great Luck		
+	550	Kirin β +	Head		Marathon Runner 2	411	Kirin Divinity		Great Luck		
+	551	Kirin β +	Chest		Critical Eye 2, Divine Blessing 1	42	Kirin Divinity		Great Luck		
+	552	Kirin β +	Arm		Thunder Attack 3	422	Kirin Divinity		Great Luck		
+	553	Kirin β +	Waist		Blight Resistance 2	411	Kirin Divinity		Great Luck		
+	554	Kirin β +	Leg		Free Elem/Ammo Up 2	4	Kirin Divinity		Great Luck		
+	555	Namielle α +	Head		Constitution 3, Maximum Might 1	1	Namielle Divinity	Element Acceleration		True Element Acceleration	
+	556	Namielle α +	Chest		Blight Resistance 2, Tool Specialist 1	22	Namielle Divinity	Element Acceleration		True Element Acceleration	
+	557	Namielle α +	Arm		Tool Specialist 2, Maximum Might 1	1	Namielle Divinity	Element Acceleration		True Element Acceleration	
+	558	Namielle α +	Waist		Constitution 2, Stamina Surge 1	111	Namielle Divinity	Element Acceleration		True Element Acceleration	
+	559	Namielle α +	Leg		Stamina Surge 2, Blight Resistance 1	21	Namielle Divinity	Element Acceleration		True Element Acceleration	
+	560	Namielle β +	Head		Constitution 2, Maximum Might 1	4	Namielle Divinity	Element Acceleration		True Element Acceleration	
+	561	Namielle β +	Chest		Blight Resistance 1, Tool Specialist 1	42	Namielle Divinity	Element Acceleration		True Element Acceleration	
+	562	Namielle β +	Arm		Tool Specialist 2	4	Namielle Divinity	Element Acceleration		True Element Acceleration	
+	563	Namielle β +	Waist		Constitution 1, Stamina Surge 1	411	Namielle Divinity	Element Acceleration		True Element Acceleration	
+	564	Namielle β +	Leg		Stamina Surge 2	42	Namielle Divinity	Element Acceleration		True Element Acceleration	
+	565	Shara Ishvalda α +	Head		Recovery Up 2, Partbreaker 1	31	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+	566	Shara Ishvalda α +	Chest		Coalescence 2, Health Boost 1	32	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+	567	Shara Ishvalda α +	Arm		Critical Boost 2, Coalescence 1	1	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+	568	Shara Ishvalda α +	Waist		Health Boost 2, Recovery Up 1	32	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+	569	Shara Ishvalda α +	Leg		Partbreaker 2, Defense Boost 2	111	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+	570	Shara Ishvalda β +	Head		Recovery Up 2	42	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+	571	Shara Ishvalda β +	Chest		Coalescence 2	42	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+	572	Shara Ishvalda β +	Arm		Critical Boost 2	4	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+	573	Shara Ishvalda β +	Waist		Health Boost 2	43	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+	574	Shara Ishvalda β +	Leg		Partbreaker 1, Defense Boost 1	421	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+	575	Zorah α +	Head		Flinch Free 1, Artillery 2	22	Zorah Magdaros Essence		Artillery Secret		
+	576	Zorah α +	Chest		Tremor Resistance 2, Artillery 2	31	Zorah Magdaros Essence		Artillery Secret		
+	577	Zorah α +	Arm		Flinch Free 2, Free Meal 1	11	Zorah Magdaros Essence		Artillery Secret		
+	578	Zorah α +	Waist		Tremor Resistance 1, Artillery 1	32	Zorah Magdaros Essence		Artillery Secret		
+	579	Zorah α +	Leg		Earplugs 1, Handicraft 1	31	Zorah Magdaros Essence		Artillery Secret		
+	580	Zorah β +	Head		Flinch Free 1	421	Zorah Magdaros Essence		Artillery Secret		
+	581	Zorah β +	Chest		Tremor Resistance 2	42	Zorah Magdaros Essence		Artillery Secret		
+	582	Zorah β +	Arm		Flinch Free 2	41	Zorah Magdaros Essence		Artillery Secret		
+	583	Zorah β +	Waist		Tremor Resistance 1	43	Zorah Magdaros Essence		Artillery Secret		
+	584	Zorah β +	Leg		Earplugs 1	43	Zorah Magdaros Essence		Artillery Secret		
+	585	Zinogre α +	Head		Power Prolonger 2, Critical Boost 1	1	Zinogre Essence		Latent Power Secret		
+	586	Zinogre α +	Chest		Latent Power 3, Normal Shots 1	3	Zinogre Essence		Latent Power Secret		
+	587	Zinogre α +	Arm		Recovery Speed 2, Latent Power 2	21	Zinogre Essence		Latent Power Secret		
+	588	Zinogre α +	Waist		Power Prolonger 1, Thunder Attack 2	2	Zinogre Essence		Latent Power Secret		
+	589	Zinogre α +	Leg		Thunder Attack 3, Latent Power 2	1	Zinogre Essence		Latent Power Secret		
+	590	Zinogre β +	Head		Power Prolonger 1, Critical Boost 1	4	Zinogre Essence		Latent Power Secret		
+	591	Zinogre β +	Chest		Latent Power 3	4	Zinogre Essence		Latent Power Secret		
+	592	Zinogre β +	Arm		Recovery Speed 1, Latent Power 2	42	Zinogre Essence		Latent Power Secret		
+	593	Zinogre β +	Waist		Power Prolonger 1	42	Zinogre Essence		Latent Power Secret		
+	594	Zinogre β +	Leg		Thunder Attack 1, Latent Power 2	41	Zinogre Essence		Latent Power Secret		
+	595	Pearlspring α +	Head		Recovery Up 2	21					
