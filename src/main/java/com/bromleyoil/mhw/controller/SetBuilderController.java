@@ -2,18 +2,21 @@ package com.bromleyoil.mhw.controller;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.util.comparator.Comparators;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bromleyoil.mhw.form.SetBuilderForm;
 import com.bromleyoil.mhw.form.SkillRow;
+import com.bromleyoil.mhw.model.Rank;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
 import com.bromleyoil.mhw.model.SlotSet;
@@ -31,6 +34,11 @@ public class SetBuilderController {
 	@ModelAttribute
 	public List<Skill> getSkillList() {
 		return Arrays.asList(Skill.values());
+	}
+
+	@ModelAttribute
+	public List<Rank> getRankList() {
+		return Arrays.stream(Rank.values()).sorted(Comparators.comparable().reversed()).collect(Collectors.toList());
 	}
 
 	@RequestMapping
@@ -67,6 +75,8 @@ public class SetBuilderController {
 				form.getWeaponSlots2(), form.getWeaponSlots1()));
 
 		setBuilder.setDecorationCounts(form.getDecorationCounts());
+
+		setBuilder.setMaxRank(form.getMaxRank());
 
 		modelMap.put("result", setBuilder.search());
 

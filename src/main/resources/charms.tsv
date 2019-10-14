@@ -1,163 +1,163 @@
 ID	Order	Rank	Name	Skill1	Skill2	Points
-	1	HR?	Poison Charm III	Poison Resistance		3
-	2	HR?	Attack Charm III	Attack Boost		3
+	1		Poison Charm III	Poison Resistance		3
+	2		Attack Charm III	Attack Boost		3
 	3	MR50	Attack Charm IV	Attack Boost		4
-	4	HR?	Defense Charm III	Defense Boost		3
-	5	MR?	Defense Charm IV	Defense Boost		4
+	4		Defense Charm III	Defense Boost		3
+	5	MRU	Defense Charm IV	Defense Boost		4
 	6	MR22	Defense Charm V	Defense Boost		5
-	7	HR?	Paralysis Charm III	Paralysis Resistance		3
-	8	HR?	Sleep Charm III	Sleep Resistance		3
-	9	HR?	Stun Charm III	Stun Resistance		3
-	10	HR?	Windproof Charm III	Windproof		3
-	11	MR?	Windproof Charm IV	Windproof		4
-	12	HR?	Health Charm III	Health Boost		3
-	13	HR?	Recovery Charm III	Recovery Up		3
-	14	HR?	Fire Charm III	Fire Resistance		3
-	15	HR?	Water Charm III	Water Resistance		3
-	16	HR?	Thunder Charm III	Thunder Resistance		3
-	17	HR?	Blaze Charm III	Fire Attack		3
+	7		Paralysis Charm III	Paralysis Resistance		3
+	8		Sleep Charm III	Sleep Resistance		3
+	9		Stun Charm III	Stun Resistance		3
+	10		Windproof Charm III	Windproof		3
+	11	MRU	Windproof Charm IV	Windproof		4
+	12		Health Charm III	Health Boost		3
+	13		Recovery Charm III	Recovery Up		3
+	14		Fire Charm III	Fire Resistance		3
+	15		Water Charm III	Water Resistance		3
+	16		Thunder Charm III	Thunder Resistance		3
+	17		Blaze Charm III	Fire Attack		3
 	18	MR23	Blaze Charm IV	Fire Attack		4
 	19	MR50	Blaze Charm V	Fire Attack		5
-	20	HR?	Flood Charm III	Water Attack		3
+	20		Flood Charm III	Water Attack		3
 	21	MR23	Flood Charm IV	Water Attack		4
 	22	MR50	Flood Charm V	Water Attack		5
-	23	HR?	Shock Charm III	Thunder Attack		3
+	23		Shock Charm III	Thunder Attack		3
 	24	MR23	Shock Charm IV	Thunder Attack		4
 	25	MR50	Shock Charm V	Thunder Attack		5
-	26	HR?	Venom Charm III	Poison Attack		3
+	26		Venom Charm III	Poison Attack		3
 	27	MR23	Venom Charm IV	Poison Attack		4
-	28	HR?	Immobilize Charm III	Paralysis Attack		3
+	28		Immobilize Charm III	Paralysis Attack		3
 	29	MR23	Immobilize Charm IV	Paralysis Attack		4
-	30	HR?	Tranq Charm III	Sleep Attack		3
+	30		Tranq Charm III	Sleep Attack		3
 	31	MR23	Tranq Charm IV	Sleep Attack		4
-	32	HR?	KO Charm III	Slugger		3
-	33	HR?	Enervate Charm III	Stamina Thief		3
-	34	HR?	Artillery Charm III	Artillery		3
-	35	HR?	Hungerless Charm III	Hunger Resistance		3
-	36	HR?	Ironside Charm III	Guard		3
+	32		KO Charm III	Slugger		3
+	33		Enervate Charm III	Stamina Thief		3
+	34		Artillery Charm III	Artillery		3
+	35		Hungerless Charm III	Hunger Resistance		3
+	36		Ironside Charm III	Guard		3
 	37	MR23	Ironside Charm IV	Guard		4
-	38	MR?	Ironside Charm V	Guard		5
-	39	HR?	Friendship Charm III	Wide-Range		3
+	38	MRU	Ironside Charm V	Guard		5
+	39		Friendship Charm III	Wide-Range		3
 	40	MR23	Friendship Charm IV	Wide-Range		4
 	41	MR50	Friendship Charm V	Wide-Range		5
-	42	HR?	Extension Charm III	Item Prolonger		3
-	43	HR?	Glutton's Charm III	Speed Eating		3
-	44	HR?	Blessing Charm III	Divine Blessing		3
-	45	HR?	Rally Charm III	Palico Rally		3
-	46	MR?	Rally Charm IV	Palico Rally		4
-	47	MR?	Rally Charm V	Palico Rally		5
-	48	HR?	Botany Charm III	Botanist		3
-	49	MR?	Botany Charm IV	Botanist		4
-	50	HR?	Geology Charm III	Geologist		3
-	51	HR?	Slinger Charm III	Slinger Capacity		3
-	52	HR?	Stealth Charm III	Stealth		3
-	53	HR?	Survival Charm III	Survival Expert		3
-	54	HR?	Mirewalker Charm III	Aquatic/Polar Mobility		3
-	55	HR?	Insect Charm III	Entomologist		3
-	56	HR?	Intimidator Charm III	Intimidator		3
-	57	HR?	Heavy Artillery Charm II	Heavy Artillery		2
-	58	HR?	Light Eater's Charm	Free Meal		1
-	59	HR?	Tracker Charm	Scenthound		1
-	60	HR?	Fortification Charm	Fortify		1
-	61	HR?	Performer's Charm	Horn Maestro		1
-	62	HR?	Capacity Charm	Capacity Boost		1
-	63	HR?	Bleed Charm III	Bleeding Resistance		3
-	64	HR?	Speed Heal Charm III	Recovery Speed		3
-	65	HR?	Ice Charm III	Ice Resistance		3
-	66	HR?	Blight Charm III	Blight Resistance		3
-	67	HR?	Frost Charm III	Ice Attack		3
+	42		Extension Charm III	Item Prolonger		3
+	43		Glutton's Charm III	Speed Eating		3
+	44		Blessing Charm III	Divine Blessing		3
+	45		Rally Charm III	Palico Rally		3
+	46	MRU	Rally Charm IV	Palico Rally		4
+	47	MRU	Rally Charm V	Palico Rally		5
+	48		Botany Charm III	Botanist		3
+	49	MRU	Botany Charm IV	Botanist		4
+	50		Geology Charm III	Geologist		3
+	51		Slinger Charm III	Slinger Capacity		3
+	52		Stealth Charm III	Stealth		3
+	53		Survival Charm III	Survival Expert		3
+	54		Mirewalker Charm III	Aquatic/Polar Mobility		3
+	55		Insect Charm III	Entomologist		3
+	56		Intimidator Charm III	Intimidator		3
+	57		Heavy Artillery Charm II	Heavy Artillery		2
+	58		Light Eater's Charm	Free Meal		1
+	59		Tracker Charm	Scenthound		1
+	60		Fortification Charm	Fortify		1
+	61		Performer's Charm	Horn Maestro		1
+	62		Capacity Charm	Capacity Boost		1
+	63		Bleed Charm III	Bleeding Resistance		3
+	64		Speed Heal Charm III	Recovery Speed		3
+	65		Ice Charm III	Ice Resistance		3
+	66		Blight Charm III	Blight Resistance		3
+	67		Frost Charm III	Ice Attack		3
 	68	MR23	Frost Charm IV	Ice Attack		4
 	69	MR50	Frost Charm V	Ice Attack		5
-	70	HR?	Master's Charm III	Critical Eye		3
+	70		Master's Charm III	Critical Eye		3
 	71	MR23	Master's Charm IV	Critical Eye		4
-	72	HR?	Evasion Charm III	Evade Window		3
-	73	MR?	Evasion Charm IV	Evade Window		4
-	74	HR?	Sheath Charm III	Quick Sheath		3
-	75	HR?	Whetstone Charm III	Speed Sharpening		3
-	76	HR?	Blast Charm III	Blast Resistance		3
-	77	HR?	Dragon Charm III	Dragon Resistance		3
-	78	HR?	Wyrmsbane Charm III	Dragon Attack		3
+	72		Evasion Charm III	Evade Window		3
+	73	MRU	Evasion Charm IV	Evade Window		4
+	74		Sheath Charm III	Quick Sheath		3
+	75		Whetstone Charm III	Speed Sharpening		3
+	76		Blast Charm III	Blast Resistance		3
+	77		Dragon Charm III	Dragon Resistance		3
+	78		Wyrmsbane Charm III	Dragon Attack		3
 	79	MR23	Wyrmsbane Charm IV	Dragon Attack		4
 	80	MR70	Wyrmsbane Charm V	Dragon Attack		5
-	81	HR?	Demolition Charm III	Blast Attack		3
-	82	MR?	Demolition Charm IV	Blast Attack		4
-	83	HR?	Draw Charm II	Critical Draw		2
-	84	HR?	Special Shot Charm II	Special Ammo Boost		2
-	85	HR?	Marathon Charm II	Marathon Runner		2
+	81		Demolition Charm III	Blast Attack		3
+	82	MRU	Demolition Charm IV	Blast Attack		4
+	83		Draw Charm II	Critical Draw		2
+	84		Special Shot Charm II	Special Ammo Boost		2
+	85		Marathon Charm II	Marathon Runner		2
 	86	MR50	Marathon Charm III	Marathon Runner		3
-	87	HR?	Fitness Charm III	Constitution		3
+	87		Fitness Charm III	Constitution		3
 	88	MR50	Fitness Charm IV	Constitution		4
-	89	HR?	Surge Charm II	Stamina Surge		2
+	89		Surge Charm II	Stamina Surge		2
 	90	MR70	Surge Charm III	Stamina Surge		3
-	91	HR?	Leaping Charm II	Evade Extender		2
-	92	MR?	Leaping Charm III	Evade Extender		3
-	93	HR?	Bombardier Charm III	Bombardier		3
-	94	HR?	Mushroom Charm II	Mushroomancer		2
-	95	MR?	Mushroom Charm III	Mushroomancer		3
-	96	HR?	Awakening Charm II	Free Elem/Ammo Up		2
+	91		Leaping Charm II	Evade Extender		2
+	92	MRU	Leaping Charm III	Evade Extender		3
+	93		Bombardier Charm III	Bombardier		3
+	94		Mushroom Charm II	Mushroomancer		2
+	95	MRU	Mushroom Charm III	Mushroomancer		3
+	96		Awakening Charm II	Free Elem/Ammo Up		2
 	97	MR100	Awakening Charm III	Free Elem/Ammo Up		3
-	98	HR?	Handicraft Charm III	Handicraft		3
+	98		Handicraft Charm III	Handicraft		3
 	99	MR100	Handicraft Charm IV	Handicraft		4
-	100	HR?	Mud Puppy Charm	Muck Resistance	Leap of Faith	1
-	101	HR?	Trickshot Charm	Dungmaster	Blindsider	1
-	102	HR?	Hunter's Life Charm	BBQ Master	Master Fisher	1
-	103	HR?	Procurer's Charm	Pro Transporter	Honey Hunter	1
-	104	HR?	Gatherer's Charm	Master Gatherer	Carving Pro	1
-	105	HR?	Guard Charm III	Iron Skin		3
-	106	HR?	Earplugs Charm III	Earplugs		3
+	100		Mud Puppy Charm	Muck Resistance	Leap of Faith	1
+	101		Trickshot Charm	Dungmaster	Blindsider	1
+	102		Hunter's Life Charm	BBQ Master	Master Fisher	1
+	103		Procurer's Charm	Pro Transporter	Honey Hunter	1
+	104		Gatherer's Charm	Master Gatherer	Carving Pro	1
+	105		Guard Charm III	Iron Skin		3
+	106		Earplugs Charm III	Earplugs		3
 	107	MR100	Earplugs Charm IV	Earplugs		4
-	108	HR?	Tremor Charm II	Tremor Resistance		2
-	109	MR?	Tremor Charm III	Tremor Resistance		3
-	110	HR?	Exploiter Charm II	Weakness Exploit		2
-	111	HR?	Focus Charm II	Focus		2
+	108		Tremor Charm II	Tremor Resistance		2
+	109	MRU	Tremor Charm III	Tremor Resistance		3
+	110		Exploiter Charm II	Weakness Exploit		2
+	111		Focus Charm II	Focus		2
 	112	MR100	Focus Charm III	Focus		3
-	113	HR?	Breaker Charm II	Partbreaker		2
-	114	MR?	Breaker Charm III	Partbreaker		3
-	115	HR?	Fury Charm II	Resentment		2
+	113		Breaker Charm II	Partbreaker		2
+	114	MRU	Breaker Charm III	Partbreaker		3
+	115		Fury Charm II	Resentment		2
 	116	MR70	Fury Charm III	Resentment		3
 	117	MR100	Fury Charm IV	Resentment		4
-	118	HR?	Grit Charm II	Heroics		2
-	119	MR?	Grit Charm III	Heroics		3
-	120	MR?	Grit Charm IV	Heroics		4
-	121	HR?	Maintenance Charm III	Tool Specialist		3
-	122	HR?	Power Charm II	Latent Power		2
-	123	MR?	Power Charm III	Latent Power		3
-	124	MR?	Power Charm IV	Latent Power		4
-	125	HR?	Challenger Charm II	Agitator		2
+	118		Grit Charm II	Heroics		2
+	119	MRU	Grit Charm III	Heroics		3
+	120	MRU	Grit Charm IV	Heroics		4
+	121		Maintenance Charm III	Tool Specialist		3
+	122		Power Charm II	Latent Power		2
+	123	MRU	Power Charm III	Latent Power		3
+	124	MRU	Power Charm IV	Latent Power		4
+	125		Challenger Charm II	Agitator		2
 	126	MR70	Challenger Charm III	Agitator		3
 	127	MR100	Challenger Charm IV	Agitator		4
-	128	HR?	Unscathed Charm II	Peak Performance		2
-	129	HR?	Mighty Charm II	Maximum Might		2
-	130	HR?	Impact Charm II	Flinch Free		2
-	131	MR?	Impact Charm III	Flinch Free		3
-	132	HR?	Miasma Charm III	Effluvia Resistance		3
-	133	HR?	Normal Shots Charm	Normal Shots		1
-	134	MR?	Normal Shots Charm II	Normal Shots		2
-	135	HR?	Clearmind Charm	Heat Guard	Effluvial Expert	1
-	136	HR?	Rider's Charm	Master Mounter	Jump Master	1
-	137	HR?	Surveyor's Charm	Scoutfly Range Up	Scholar	1
-	138	HR?	Critical Charm I	Critical Boost		1
+	128		Unscathed Charm II	Peak Performance		2
+	129		Mighty Charm II	Maximum Might		2
+	130		Impact Charm II	Flinch Free		2
+	131	MRU	Impact Charm III	Flinch Free		3
+	132		Miasma Charm III	Effluvia Resistance		3
+	133		Normal Shots Charm	Normal Shots		1
+	134	MRU	Normal Shots Charm II	Normal Shots		2
+	135		Clearmind Charm	Heat Guard	Effluvial Expert	1
+	136		Rider's Charm	Master Mounter	Jump Master	1
+	137		Surveyor's Charm	Scoutfly Range Up	Scholar	1
+	138		Critical Charm I	Critical Boost		1
 	139	MR100	Critical Charm II	Critical Boost		2
-	140	HR?	Invigorate Charm II	Power Prolonger		2
+	140		Invigorate Charm II	Power Prolonger		2
 	141	MR50	Invigorate Charm III	Power Prolonger		3
-	142	HR?	Penetration Charm	Piercing Shots		1
-	143	MR?	Penetration Charm II	Piercing Shots		2
-	144	HR?	Dispersal Charm	Spread/Power Shots		1
-	145	MR?	Dispersal Charm II	Spread/Power Shots		2
-	146	HR?	Poison Coating Charm	Poison Functionality		1
-	147	HR?	Para Coating Charm	Para Functionality		1
-	148	HR?	Sleep Coating Charm	Sleep Functionality		1
-	149	HR?	Blast Coating Charm	Blast Functionality		1
-	150	HR?	Geomancy Charm	Forager's Luck	Detector	1
-	151	HR?	Gale Charm	Affinity Sliding	Airborne	1
-	152	HR?	Wyrmslayer Charm	Elderseal Boost	Dragon Attack	1
-	153	HR?	Bulwark Charm	Guard Up	Resuscitate	1
-	154	HR?	Guardian Charm I	Offensive Guard		1
+	142		Penetration Charm	Piercing Shots		1
+	143	MRU	Penetration Charm II	Piercing Shots		2
+	144		Dispersal Charm	Spread/Power Shots		1
+	145	MRU	Dispersal Charm II	Spread/Power Shots		2
+	146		Poison Coating Charm	Poison Functionality		1
+	147		Para Coating Charm	Para Functionality		1
+	148		Sleep Coating Charm	Sleep Functionality		1
+	149		Blast Coating Charm	Blast Functionality		1
+	150		Geomancy Charm	Forager's Luck	Detector	1
+	151		Gale Charm	Affinity Sliding	Airborne	1
+	152		Wyrmslayer Charm	Elderseal Boost	Dragon Attack	1
+	153		Bulwark Charm	Guard Up	Resuscitate	1
+	154		Guardian Charm I	Offensive Guard		1
 	155	MR18	Guardian Charm II	Offensive Guard		2
 	156	MR100	Guardian Charm III	Offensive Guard		3
-	157	HR?	Phoenix Charm I	Coalescence		1
-	158	MR?	Phoenix Charm II	Coalescence		2
-	159	MR?	Adamantine Charm	Non-Elemental Boost	Bludgeoner	1
-	160	MR?	Razor Sharp Charm	Razor Sharp/Spare Shot		1
-	161	MR?	Sealer's Charm	Elderseal Boost	Adrenaline	1
-	162	MR?	Gutsy Charm	Guts		1
+	157		Phoenix Charm I	Coalescence		1
+	158	MRU	Phoenix Charm II	Coalescence		2
+	159	MRU	Adamantine Charm	Non-Elemental Boost	Bludgeoner	1
+	160	MRU	Razor Sharp Charm	Razor Sharp/Spare Shot		1
+	161	MRU	Sealer's Charm	Elderseal Boost	Adrenaline	1
+	162	MRU	Gutsy Charm	Guts		1

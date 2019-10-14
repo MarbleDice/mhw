@@ -19,6 +19,7 @@ import org.springframework.web.context.WebApplicationContext;
 import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.EquipmentType;
+import com.bromleyoil.mhw.model.Rank;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
 
@@ -42,7 +43,9 @@ public class CandidateList {
 		this.equipmentList = equipmentList;
 	}
 
-	protected void buildCandidates(EquipmentList equipmentList) {
+	protected void buildCandidates(Rank maxRank, SkillSet requiredSkillSet) {
+		this.requiredSkillSet = requiredSkillSet;
+
 		// Initialize the candidates
 		candidates = new EnumMap<>(EquipmentType.class);
 		for (EquipmentType type : EquipmentType.values()) {
@@ -53,9 +56,12 @@ public class CandidateList {
 		filteredCandidateCount = 0;
 		for (Equipment equipment : equipmentList.getItems()) {
 			Set<Skill> equipmentSkills = equipment.getSkillSet().getSkills();
+			boolean isRankFiltered = maxRank != null && equipment.getRank() != null
+					&& equipment.getRank().ordinal() > maxRank.ordinal();
 
 			// Non-disjoint sets mean there is overlap
-			if (!Collections.disjoint(requiredSkillSet.getSkills(), equipmentSkills) || equipment.hasSlots()) {
+			if (!isRankFiltered
+					&& !Collections.disjoint(requiredSkillSet.getSkills(), equipmentSkills) || equipment.hasSlots()) {
 				addCandidate(equipment);
 			}
 		}
@@ -90,15 +96,6 @@ public class CandidateList {
 		// The potential candidate is not worse than any existing one, so it should be added
 		log.debug("Adding " + potential.getFullDescription());
 		candidates.get(potential.getType()).add(potential);
-	}
-
-	public SkillSet getRequiredSkillSet() {
-		return requiredSkillSet;
-	}
-
-	public void setRequiredSkillSet(SkillSet requiredSkillSet) {
-		this.requiredSkillSet = requiredSkillSet;
-		buildCandidates(equipmentList);
 	}
 
 	public List<Equipment> getCandidates(EquipmentType type) {

@@ -79,6 +79,18 @@
 		<td><input type="text" th:field="*{requiredSlots2}" maxlength="2" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
 		<td><input type="text" th:field="*{requiredSlots1}" maxlength="2" placeholder="0" class="numberBox" th:errorclass="field-error" /></td>
 	</tr>
+	<tr>
+		<th colspan="5">Search</th>
+	</tr>
+	<tr>
+		<td>Maximum rank</td>
+		<td colspan="4">
+			<select th:field="*{maxRank}">
+				<option selected value="">any</option>
+				<option th:each="rank : ${rankList}" th:value="${rank.name}" th:text="${rank.name}"></option>
+			</select>
+		</td>
+	</tr>
 </table>
 <div class="actions">
 	<button name="search">Search</button>

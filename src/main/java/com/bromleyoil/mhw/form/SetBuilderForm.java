@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import com.bromleyoil.mhw.model.Rank;
 import com.bromleyoil.mhw.model.Skill;
 
 public class SetBuilderForm {
@@ -20,6 +21,7 @@ public class SetBuilderForm {
 	private Integer requiredSlots3;
 	private Integer requiredSlots2;
 	private Integer requiredSlots1;
+	private Rank maxRank;
 
 	public Skill getNewSkill() {
 		return newSkill;
@@ -116,6 +118,14 @@ public class SetBuilderForm {
 
 	public void setRequiredSlots1(Integer requiredSlots1) {
 		this.requiredSlots1 = requiredSlots1;
+	}
+
+	public Rank getMaxRank() {
+		return maxRank;
+	}
+
+	public void setMaxRank(Rank maxRank) {
+		this.maxRank = maxRank;
 	}
 
 	public Map<Skill, Integer> getDecorationCounts() {

@@ -18,6 +18,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.bromleyoil.mhw.comparator.Comparators;
 import com.bromleyoil.mhw.model.EquipmentSet;
+import com.bromleyoil.mhw.model.Rank;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
 import com.bromleyoil.mhw.model.SlotSet;
@@ -35,6 +36,7 @@ public class SetBuilder {
 	private SlotSet requiredSlotSet = new SlotSet();
 	private SlotSet weaponSlotSet = new SlotSet();
 	private Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
+	private Rank maxRank;
 	private SearchResult result;
 
 	public SetBuilder() {
@@ -47,7 +49,7 @@ public class SetBuilder {
 	public SearchResult search() {
 		result = new SearchResult();
 
-		candidateList.setRequiredSkillSet(requiredSkillSet);
+		candidateList.buildCandidates(maxRank, requiredSkillSet);
 		result.setCandidateCount(candidateList.size());
 		result.setPermutationCount(candidateList.getPermutationCount());
 		result.setFilteredCandidateCount(candidateList.getFilteredCandidateCount());
@@ -155,5 +157,13 @@ public class SetBuilder {
 
 	public void setDecorationCounts(Map<Skill, Integer> decorationCounts) {
 		this.decorationCounts = decorationCounts;
+	}
+
+	public Rank getMaxRank() {
+		return maxRank;
+	}
+
+	public void setMaxRank(Rank maxRank) {
+		this.maxRank = maxRank;
 	}
 }

@@ -17,6 +17,7 @@ import org.apache.commons.lang3.StringUtils;
 import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentType;
 import com.bromleyoil.mhw.model.Fraction;
+import com.bromleyoil.mhw.model.Rank;
 import com.bromleyoil.mhw.model.Skill;
 
 public class DataParser {
@@ -48,6 +49,7 @@ public class DataParser {
 	protected static final String SKILL1 = "Skill1";
 	protected static final String SKILL2 = "Skill2";
 	protected static final String POINTS = "Points";
+	protected static final String RANK = "Rank";
 
 	protected static final Pattern descriptionPattern = Pattern.compile("\\s*([a-zA-Z0-9'/, -]+)\\s*(\\(.+\\))?\\s*");
 	protected static final Pattern skillPattern = Pattern.compile("\\s*(.+)\\s+(\\d+)\\s*");
@@ -146,6 +148,9 @@ public class DataParser {
 		// Name
 		equipment.setArmorName(record.get(NAME));
 		equipment.setType(type);
+		if (!StringUtils.isBlank(record.get(RANK))) {
+			equipment.setRank(Rank.valueOf(record.get(RANK)));
+		}
 
 		// Parse skills and slots
 		Matcher matcher = descriptionPattern.matcher(description);
@@ -186,6 +191,9 @@ public class DataParser {
 			charm.setName(record.get(NAME));
 			charm.setArmorName(charm.getName());
 			charm.setType(EquipmentType.CHARM);
+			if (!StringUtils.isBlank(record.get(RANK))) {
+				charm.setRank(Rank.valueOf(record.get(RANK)));
+			}
 
 			Skill skill = Skill.valueOfName(record.get(SKILL1));
 			charm.addSkill(skill, level);

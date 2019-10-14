@@ -35,7 +35,7 @@ public class CandidateListTest {
 
 	@Test
 	public void buildCandidates_noSkills_onlySlotted() {
-		candidateList.setRequiredSkillSet(new SkillSet());
+		candidateList.buildCandidates(null, new SkillSet());
 
 		log.debug(candidateList.toString());
 
@@ -49,7 +49,7 @@ public class CandidateListTest {
 
 	@Test
 	public void buildCandidates_greatSword_correct() {
-		candidateList.setRequiredSkillSet(new SkillSet(
+		candidateList.buildCandidates(null, new SkillSet(
 				Arrays.asList(Skill.EARPLUGS, Skill.FOCUS, Skill.WEAKNESS_EXPLOIT),
 				Arrays.asList(5, 3, 3)));
 

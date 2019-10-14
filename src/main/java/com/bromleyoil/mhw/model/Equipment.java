@@ -13,6 +13,7 @@ public class Equipment {
 	private EquipmentType type;
 	private SkillSet skillSet = new SkillSet();
 	private SlotSet slotSet = new SlotSet();
+	private Rank rank;
 
 	public static final Comparator<Equipment> ARMOR_NAME_AND_TYPE_ORDER = (a, b) -> {
 		int rv = a.getArmorName().compareTo(b.getArmorName());
@@ -106,5 +107,13 @@ public class Equipment {
 
 	public void setSlotSet(SlotSet slots) {
 		this.slotSet = slots;
+	}
+
+	public Rank getRank() {
+		return rank;
+	}
+
+	public void setRank(Rank rank) {
+		this.rank = rank;
 	}
 }
