@@ -35,7 +35,7 @@ ID	Order	Rank	Name	Skill1	Skill2	Points
 	34	HR?	Artillery Charm III	Artillery		3
 	35	HR?	Hungerless Charm III	Hunger Resistance		3
 	36	HR?	Ironside Charm III	Guard		3
-	37	MR?	Ironside Charm IV	Guard		4
+	37	MR23	Ironside Charm IV	Guard		4
 	38	MR?	Ironside Charm V	Guard		5
 	39	HR?	Friendship Charm III	Wide-Range		3
 	40	MR?	Friendship Charm IV	Wide-Range		4
@@ -97,7 +97,7 @@ ID	Order	Rank	Name	Skill1	Skill2	Points
 	96	HR?	Awakening Charm II	Free Elem/Ammo Up		2
 	97	MR?	Awakening Charm III	Free Elem/Ammo Up		3
 	98	HR?	Handicraft Charm III	Handicraft		3
-	99	MR?	Handicraft Charm IV	Handicraft		4
+	99	MR100	Handicraft Charm IV	Handicraft		4
 	100	HR?	Mud Puppy Charm	Muck Resistance	Leap of Faith	1
 	101	HR?	Trickshot Charm	Dungmaster	Blindsider	1
 	102	HR?	Hunter's Life Charm	BBQ Master	Master Fisher	1
@@ -110,7 +110,7 @@ ID	Order	Rank	Name	Skill1	Skill2	Points
 	109	MR?	Tremor Charm III	Tremor Resistance		3
 	110	HR?	Exploiter Charm II	Weakness Exploit		2
 	111	HR?	Focus Charm II	Focus		2
-	112	MR?	Focus Charm III	Focus		3
+	112	MR100	Focus Charm III	Focus		3
 	113	HR?	Breaker Charm II	Partbreaker		2
 	114	MR?	Breaker Charm III	Partbreaker		3
 	115	HR?	Fury Charm II	Resentment		2
@@ -124,8 +124,8 @@ ID	Order	Rank	Name	Skill1	Skill2	Points
 	123	MR?	Power Charm III	Latent Power		3
 	124	MR?	Power Charm IV	Latent Power		4
 	125	HR?	Challenger Charm II	Agitator		2
-	126	MR?	Challenger Charm III	Agitator		3
-	127	MR?	Challenger Charm IV	Agitator		4
+	126	MR70	Challenger Charm III	Agitator		3
+	127	MR100	Challenger Charm IV	Agitator		4
 	128	HR?	Unscathed Charm II	Peak Performance		2
 	129	HR?	Mighty Charm II	Maximum Might		2
 	130	HR?	Impact Charm II	Flinch Free		2
@@ -153,8 +153,8 @@ ID	Order	Rank	Name	Skill1	Skill2	Points
 	152	HR?	Wyrmslayer Charm	Elderseal Boost	Dragon Attack	1
 	153	HR?	Bulwark Charm	Guard Up	Resuscitate	1
 	154	HR?	Guardian Charm I	Offensive Guard		1
-	155	MR?	Guardian Charm II	Offensive Guard		2
-	156	MR?	Guardian Charm III	Offensive Guard		3
+	155	MR18	Guardian Charm II	Offensive Guard		2
+	156	MR100	Guardian Charm III	Offensive Guard		3
 	157	HR?	Phoenix Charm I	Coalescence		1
 	158	MR?	Phoenix Charm II	Coalescence		2
 	159	MR?	Adamantine Charm	Non-Elemental Boost	Bludgeoner	1
