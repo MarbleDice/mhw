@@ -1,10 +1,10 @@
 ID	Order	Rank	Name	Skill1	Skill2	Points
 	1	HR?	Poison Charm III	Poison Resistance		3
 	2	HR?	Attack Charm III	Attack Boost		3
-	3	MR?	Attack Charm IV	Attack Boost		4
+	3	MR50	Attack Charm IV	Attack Boost		4
 	4	HR?	Defense Charm III	Defense Boost		3
 	5	MR?	Defense Charm IV	Defense Boost		4
-	6	MR?	Defense Charm V	Defense Boost		5
+	6	MR22	Defense Charm V	Defense Boost		5
 	7	HR?	Paralysis Charm III	Paralysis Resistance		3
 	8	HR?	Sleep Charm III	Sleep Resistance		3
 	9	HR?	Stun Charm III	Stun Resistance		3
@@ -16,20 +16,20 @@ ID	Order	Rank	Name	Skill1	Skill2	Points
 	15	HR?	Water Charm III	Water Resistance		3
 	16	HR?	Thunder Charm III	Thunder Resistance		3
 	17	HR?	Blaze Charm III	Fire Attack		3
-	18	MR?	Blaze Charm IV	Fire Attack		4
-	19	MR?	Blaze Charm V	Fire Attack		5
+	18	MR23	Blaze Charm IV	Fire Attack		4
+	19	MR50	Blaze Charm V	Fire Attack		5
 	20	HR?	Flood Charm III	Water Attack		3
-	21	MR?	Flood Charm IV	Water Attack		4
-	22	MR?	Flood Charm V	Water Attack		5
+	21	MR23	Flood Charm IV	Water Attack		4
+	22	MR50	Flood Charm V	Water Attack		5
 	23	HR?	Shock Charm III	Thunder Attack		3
-	24	MR?	Shock Charm IV	Thunder Attack		4
-	25	MR?	Shock Charm V	Thunder Attack		5
+	24	MR23	Shock Charm IV	Thunder Attack		4
+	25	MR50	Shock Charm V	Thunder Attack		5
 	26	HR?	Venom Charm III	Poison Attack		3
-	27	MR?	Venom Charm IV	Poison Attack		4
+	27	MR23	Venom Charm IV	Poison Attack		4
 	28	HR?	Immobilize Charm III	Paralysis Attack		3
-	29	MR?	Immobilize Charm IV	Paralysis Attack		4
+	29	MR23	Immobilize Charm IV	Paralysis Attack		4
 	30	HR?	Tranq Charm III	Sleep Attack		3
-	31	MR?	Tranq Charm IV	Sleep Attack		4
+	31	MR23	Tranq Charm IV	Sleep Attack		4
 	32	HR?	KO Charm III	Slugger		3
 	33	HR?	Enervate Charm III	Stamina Thief		3
 	34	HR?	Artillery Charm III	Artillery		3
@@ -38,8 +38,8 @@ ID	Order	Rank	Name	Skill1	Skill2	Points
 	37	MR23	Ironside Charm IV	Guard		4
 	38	MR?	Ironside Charm V	Guard		5
 	39	HR?	Friendship Charm III	Wide-Range		3
-	40	MR?	Friendship Charm IV	Wide-Range		4
-	41	MR?	Friendship Charm V	Wide-Range		5
+	40	MR23	Friendship Charm IV	Wide-Range		4
+	41	MR50	Friendship Charm V	Wide-Range		5
 	42	HR?	Extension Charm III	Item Prolonger		3
 	43	HR?	Glutton's Charm III	Speed Eating		3
 	44	HR?	Blessing Charm III	Divine Blessing		3
@@ -66,10 +66,10 @@ ID	Order	Rank	Name	Skill1	Skill2	Points
 	65	HR?	Ice Charm III	Ice Resistance		3
 	66	HR?	Blight Charm III	Blight Resistance		3
 	67	HR?	Frost Charm III	Ice Attack		3
-	68	MR?	Frost Charm IV	Ice Attack		4
-	69	MR?	Frost Charm V	Ice Attack		5
+	68	MR23	Frost Charm IV	Ice Attack		4
+	69	MR50	Frost Charm V	Ice Attack		5
 	70	HR?	Master's Charm III	Critical Eye		3
-	71	MR?	Master's Charm IV	Critical Eye		4
+	71	MR23	Master's Charm IV	Critical Eye		4
 	72	HR?	Evasion Charm III	Evade Window		3
 	73	MR?	Evasion Charm IV	Evade Window		4
 	74	HR?	Sheath Charm III	Quick Sheath		3
@@ -77,25 +77,25 @@ ID	Order	Rank	Name	Skill1	Skill2	Points
 	76	HR?	Blast Charm III	Blast Resistance		3
 	77	HR?	Dragon Charm III	Dragon Resistance		3
 	78	HR?	Wyrmsbane Charm III	Dragon Attack		3
-	79	MR?	Wyrmsbane Charm IV	Dragon Attack		4
-	80	MR?	Wyrmsbane Charm V	Dragon Attack		5
+	79	MR23	Wyrmsbane Charm IV	Dragon Attack		4
+	80	MR70	Wyrmsbane Charm V	Dragon Attack		5
 	81	HR?	Demolition Charm III	Blast Attack		3
 	82	MR?	Demolition Charm IV	Blast Attack		4
 	83	HR?	Draw Charm II	Critical Draw		2
 	84	HR?	Special Shot Charm II	Special Ammo Boost		2
 	85	HR?	Marathon Charm II	Marathon Runner		2
-	86	MR?	Marathon Charm III	Marathon Runner		3
+	86	MR50	Marathon Charm III	Marathon Runner		3
 	87	HR?	Fitness Charm III	Constitution		3
-	88	MR?	Fitness Charm IV	Constitution		4
+	88	MR50	Fitness Charm IV	Constitution		4
 	89	HR?	Surge Charm II	Stamina Surge		2
-	90	MR?	Surge Charm III	Stamina Surge		3
+	90	MR70	Surge Charm III	Stamina Surge		3
 	91	HR?	Leaping Charm II	Evade Extender		2
 	92	MR?	Leaping Charm III	Evade Extender		3
 	93	HR?	Bombardier Charm III	Bombardier		3
 	94	HR?	Mushroom Charm II	Mushroomancer		2
 	95	MR?	Mushroom Charm III	Mushroomancer		3
 	96	HR?	Awakening Charm II	Free Elem/Ammo Up		2
-	97	MR?	Awakening Charm III	Free Elem/Ammo Up		3
+	97	MR100	Awakening Charm III	Free Elem/Ammo Up		3
 	98	HR?	Handicraft Charm III	Handicraft		3
 	99	MR100	Handicraft Charm IV	Handicraft		4
 	100	HR?	Mud Puppy Charm	Muck Resistance	Leap of Faith	1
@@ -105,7 +105,7 @@ ID	Order	Rank	Name	Skill1	Skill2	Points
 	104	HR?	Gatherer's Charm	Master Gatherer	Carving Pro	1
 	105	HR?	Guard Charm III	Iron Skin		3
 	106	HR?	Earplugs Charm III	Earplugs		3
-	107	MR?	Earplugs Charm IV	Earplugs		4
+	107	MR100	Earplugs Charm IV	Earplugs		4
 	108	HR?	Tremor Charm II	Tremor Resistance		2
 	109	MR?	Tremor Charm III	Tremor Resistance		3
 	110	HR?	Exploiter Charm II	Weakness Exploit		2
@@ -114,8 +114,8 @@ ID	Order	Rank	Name	Skill1	Skill2	Points
 	113	HR?	Breaker Charm II	Partbreaker		2
 	114	MR?	Breaker Charm III	Partbreaker		3
 	115	HR?	Fury Charm II	Resentment		2
-	116	MR?	Fury Charm III	Resentment		3
-	117	MR?	Fury Charm IV	Resentment		4
+	116	MR70	Fury Charm III	Resentment		3
+	117	MR100	Fury Charm IV	Resentment		4
 	118	HR?	Grit Charm II	Heroics		2
 	119	MR?	Grit Charm III	Heroics		3
 	120	MR?	Grit Charm IV	Heroics		4
@@ -137,9 +137,9 @@ ID	Order	Rank	Name	Skill1	Skill2	Points
 	136	HR?	Rider's Charm	Master Mounter	Jump Master	1
 	137	HR?	Surveyor's Charm	Scoutfly Range Up	Scholar	1
 	138	HR?	Critical Charm I	Critical Boost		1
-	139	MR?	Critical Charm II	Critical Boost		2
+	139	MR100	Critical Charm II	Critical Boost		2
 	140	HR?	Invigorate Charm II	Power Prolonger		2
-	141	MR?	Invigorate Charm III	Power Prolonger		3
+	141	MR50	Invigorate Charm III	Power Prolonger		3
 	142	HR?	Penetration Charm	Piercing Shots		1
 	143	MR?	Penetration Charm II	Piercing Shots		2
 	144	HR?	Dispersal Charm	Spread/Power Shots		1
