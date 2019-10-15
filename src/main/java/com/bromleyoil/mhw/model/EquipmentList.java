@@ -59,10 +59,10 @@ public class EquipmentList {
 			if (equipment.getType() == EquipmentType.CHARM) {
 				continue;
 			}
-			if (!matrix.containsKey(equipment.getArmorName())) {
-				matrix.put(equipment.getArmorName(), new Equipment[5]);
+			if (!matrix.containsKey(equipment.getNbspArmorName())) {
+				matrix.put(equipment.getNbspArmorName(), new Equipment[5]);
 			}
-			matrix.get(equipment.getArmorName())[equipment.getType().ordinal()] = equipment;
+			matrix.get(equipment.getNbspArmorName())[equipment.getType().ordinal()] = equipment;
 		}
 
 		return matrix;

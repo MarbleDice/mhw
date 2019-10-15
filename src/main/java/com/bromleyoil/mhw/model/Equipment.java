@@ -61,6 +61,12 @@ public class Equipment {
 		this.armorName = name;
 	}
 
+	public String getNbspArmorName() {
+		return armorName.replace(" +", " +")
+				.replace(" α", " α")
+				.replace(" β", " β");
+	}
+
 	public EquipmentType getType() {
 		return type;
 	}
