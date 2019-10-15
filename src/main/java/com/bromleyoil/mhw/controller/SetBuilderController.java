@@ -11,7 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.comparator.Comparators;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bromleyoil.mhw.form.SetBuilderForm;
@@ -41,12 +43,12 @@ public class SetBuilderController {
 		return Arrays.stream(Rank.values()).sorted(Comparators.comparable().reversed()).collect(Collectors.toList());
 	}
 
-	@RequestMapping
+	@GetMapping
 	public String initialRequest(SetBuilderForm form) {
 		return VIEW;
 	}
 
-	@RequestMapping(params = "addSkill")
+	@PostMapping(params = "addSkill")
 	public String addSkill(SetBuilderForm form, BindingResult bindingResult, ModelMap modelMap) {
 		modelMap.put("autofocus", form.getNewSkill());
 		form.addSkillRow(new SkillRow(form.getNewSkill()));
@@ -54,14 +56,14 @@ public class SetBuilderController {
 		return VIEW;
 	}
 
-	@RequestMapping(params = "removeSkill")
+	@PostMapping(params = "removeSkill")
 	public String removeSkill(SetBuilderForm form, BindingResult bindingResult, HttpServletRequest request) {
 		int index = Integer.parseInt(request.getParameter("removeSkill"));
 		form.getSkillRows().remove(index);
 		return VIEW;
 	}
 
-	@RequestMapping(params = "search")
+	@PostMapping(params = "search")
 	public String search(SetBuilderForm form, BindingResult bindingResult, ModelMap modelMap) {
 		if (bindingResult.hasErrors()) {
 			return VIEW;

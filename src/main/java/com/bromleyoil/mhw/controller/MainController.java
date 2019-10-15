@@ -2,8 +2,8 @@ package com.bromleyoil.mhw.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bromleyoil.mhw.UrlCodec;
@@ -18,12 +18,12 @@ public class MainController {
 	@Autowired
 	private EquipmentList equipmentList;
 
-	@RequestMapping("/")
+	@GetMapping("/")
 	public String index() {
 		return "index";
 	}
 
-	@RequestMapping("/skill-list")
+	@GetMapping("/skill-list")
 	public ModelAndView skillList() {
 		ModelAndView mav = new ModelAndView("skill-list");
 
@@ -32,7 +32,7 @@ public class MainController {
 		return mav;
 	}
 
-	@RequestMapping("/skill/{skillName}")
+	@GetMapping("/skill/{skillName}")
 	public ModelAndView skill(@PathVariable String skillName) {
 		ModelAndView mav = new ModelAndView("skill");
 
@@ -44,7 +44,7 @@ public class MainController {
 		return mav;
 	}
 
-	@RequestMapping("/equipment-list")
+	@GetMapping("/equipment-list")
 	public ModelAndView equipmentList() {
 		ModelAndView mav = new ModelAndView("equipment-list");
 
@@ -53,7 +53,7 @@ public class MainController {
 		return mav;
 	}
 
-	@RequestMapping("/equipment-set/{encodedSet}")
+	@GetMapping("/equipment-set/{encodedSet}")
 	public ModelAndView equipmentSet(@PathVariable String encodedSet) {
 		ModelAndView mav = new ModelAndView("equipment-set");
 
