@@ -3,6 +3,7 @@ package com.bromleyoil.mhw.setbuilder;
 import static com.bromleyoil.mhw.model.EquipmentType.*;
 import static com.bromleyoil.mhw.setbuilder.Superiority.*;
 
+import java.util.Comparator;
 import java.util.EnumMap;
 import java.util.Iterator;
 import java.util.List;
@@ -16,7 +17,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.bromleyoil.mhw.comparator.Comparators;
+import com.bromleyoil.mhw.comparator.SkillwiseComparator;
 import com.bromleyoil.mhw.model.EquipmentSet;
 import com.bromleyoil.mhw.model.Rank;
 import com.bromleyoil.mhw.model.Skill;
@@ -58,8 +59,8 @@ public class SetBuilder {
 		doSearch();
 
 		log.info("Found {} solutions", result.getSolutions().size());
-		result.getSolutions().sort(Comparators.adapted(EquipmentSet::getSkillSet,
-				Comparators.composite(Comparators.skillwise(requiredSkillSet.getSkills()), Comparators.ALL_SKILLS)));
+		result.getSolutions().sort(Comparator.comparing(EquipmentSet::getSkillSet, SkillwiseComparator.of(requiredSkillSet))
+						.thenComparing(Comparator.comparing(EquipmentSet::getSkillSet, SkillwiseComparator.ALL_SKILLS)));
 
 		log.info("Sort complete");
 		return result;

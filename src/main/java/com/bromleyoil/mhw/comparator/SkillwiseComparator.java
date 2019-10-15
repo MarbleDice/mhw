@@ -11,11 +11,17 @@ public class SkillwiseComparator implements Comparator<SkillSet> {
 
 	private Set<Skill> interestingSkills = null;
 
-	public SkillwiseComparator() {
+	public static final SkillwiseComparator ALL_SKILLS = new SkillwiseComparator();
+
+	private SkillwiseComparator() {
 	}
 
-	public SkillwiseComparator(Set<Skill> interestingSkills) {
+	private SkillwiseComparator(Set<Skill> interestingSkills) {
 		this.interestingSkills = interestingSkills;
+	}
+
+	public static SkillwiseComparator of(SkillSet skillSet) {
+		return new SkillwiseComparator(skillSet.getSkills());
 	}
 
 	@Override
