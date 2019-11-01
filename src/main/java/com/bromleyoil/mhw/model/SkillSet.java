@@ -32,15 +32,15 @@ public class SkillSet {
 		}
 	}
 
-	public void add(Skill skill, int level) {
-		if (skill != null && level > 0) {
-			skillLevels.put(skill, skillLevels.getOrDefault(skill, 0) + level);
-		}
-	}
-
 	public void add(SkillSet skillSet) {
 		for (Entry<Skill, Integer> entry : skillSet.skillLevels.entrySet()) {
 			add(entry.getKey(), entry.getValue());
+		}
+	}
+
+	public void add(Skill skill, int level) {
+		if (skill != null && level > 0) {
+			skillLevels.put(skill, Integer.min(skillLevels.getOrDefault(skill, 0) + level, skill.getMaxLevel()));
 		}
 	}
 

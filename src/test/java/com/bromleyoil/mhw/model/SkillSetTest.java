@@ -12,6 +12,14 @@ import org.junit.runners.JUnit4;
 public class SkillSetTest {
 
 	@Test
+	public void add_beyondMax_cannotBeImproved() {
+		SkillSet base = new SkillSet(SLUGGER, SLUGGER.getMaxLevel());
+		base.add(SLUGGER, SLUGGER.getMaxLevel());
+
+		assertThat("skill unchanged", base.getLevel(SLUGGER), is(SLUGGER.getMaxLevel()));
+	}
+
+	@Test
 	public void subtract_largerSubtrahend_emptyDifference() {
 		SkillSet minuend = new SkillSet(SLUGGER, 3);
 		SkillSet subtrahend = new SkillSet(SLUGGER, 3);
