@@ -547,7 +547,7 @@ public enum Skill {
 	}
 
 	public static Skill valueOfName(String skillName) {
-		return valueOf(getEnumName(skillName));
+		return StringUtils.isBlank(skillName) ? null : valueOf(getEnumName(skillName));
 	}
 
 	public String getUrlName() {

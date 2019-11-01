@@ -1,5 +1,6 @@
 package com.bromleyoil.mhw.model;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.stream.Collectors;
 
@@ -13,6 +14,7 @@ public class Equipment {
 	private EquipmentType type;
 	private SkillSet skillSet = new SkillSet();
 	private SlotSet slotSet = new SlotSet();
+	private SetBonus setBonus = new SetBonus();
 	private Rank rank;
 
 	public static final Comparator<Equipment> ARMOR_NAME_AND_TYPE_ORDER = (a, b) -> {
@@ -79,16 +81,14 @@ public class Equipment {
 		skillSet.add(skill, level);
 	}
 
-	public void addSkill(Skill skill, Fraction fraction) {
-		skillSet.add(skill, fraction);
-	}
-
 	public boolean hasSkill(Skill skill) {
-		return skillSet.contains(skill);
+		return skillSet.contains(skill) || setBonus.hasSkill(skill);
 	}
 
-	public int getValue(Skill skill) {
-		return skillSet.getValue(skill);
+	public boolean hasAnySkill(SkillSet skillSet) {
+		// Non-disjoint sets mean there is overlap
+		return !Collections.disjoint(this.skillSet.getSkills(), skillSet.getSkills()) ||
+				!Collections.disjoint(setBonus.getSkills().values(), skillSet.getSkills());
 	}
 
 	public SkillSet getSkillSet() {
@@ -113,6 +113,18 @@ public class Equipment {
 
 	public void setSlotSet(SlotSet slots) {
 		this.slotSet = slots;
+	}
+
+	public SetBonus getSetBonus() {
+		return setBonus;
+	}
+
+	public void setSetBonus(SetBonus setBonus) {
+		this.setBonus = setBonus;
+	}
+
+	public boolean hasSetBonus() {
+		return setBonus != null;
 	}
 
 	public Rank getRank() {

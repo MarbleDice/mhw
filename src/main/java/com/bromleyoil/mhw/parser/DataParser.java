@@ -16,8 +16,8 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentType;
-import com.bromleyoil.mhw.model.Fraction;
 import com.bromleyoil.mhw.model.Rank;
+import com.bromleyoil.mhw.model.SetBonus;
 import com.bromleyoil.mhw.model.Skill;
 
 public class DataParser {
@@ -97,20 +97,12 @@ public class DataParser {
 				.forEach(equipment::addSlot);
 
 		// Set bonus skills
-		if (!StringUtils.isBlank(record.get(SET_BONUS_2))) {
-			equipment.addSkill(Skill.valueOfName(record.get(SET_BONUS_2)), Fraction.SET2);
-		}
-
-		if (!StringUtils.isBlank(record.get(SET_BONUS_3))) {
-			equipment.addSkill(Skill.valueOfName(record.get(SET_BONUS_3)), Fraction.SET3);
-		}
-
-		if (!StringUtils.isBlank(record.get(SET_BONUS_4))) {
-			equipment.addSkill(Skill.valueOfName(record.get(SET_BONUS_4)), Fraction.SET4);
-		}
-
-		if (!StringUtils.isBlank(record.get(SET_BONUS_5))) {
-			equipment.addSkill(Skill.valueOfName(record.get(SET_BONUS_5)), Fraction.SET5);
+		if (!StringUtils.isBlank(record.get(SET_BONUS_NAME))) {
+			equipment.setSetBonus(new SetBonus(record.get(SET_BONUS_NAME),
+					Skill.valueOfName(record.get(SET_BONUS_2)),
+					Skill.valueOfName(record.get(SET_BONUS_3)),
+					Skill.valueOfName(record.get(SET_BONUS_4)),
+					Skill.valueOfName(record.get(SET_BONUS_5))));
 		}
 
 		return equipment;
@@ -163,16 +155,12 @@ public class DataParser {
 		}
 
 		// Set bonus skills
-		if (!StringUtils.isBlank(record.get(SET2))) {
-			equipment.addSkill(Skill.valueOfName(record.get(SET2)), Fraction.SET2);
-		}
-
-		if (!StringUtils.isBlank(record.get(SET3))) {
-			equipment.addSkill(Skill.valueOfName(record.get(SET3)), Fraction.SET3);
-		}
-
-		if (!StringUtils.isBlank(record.get(SET4))) {
-			equipment.addSkill(Skill.valueOfName(record.get(SET4)), Fraction.SET4);
+		if (!StringUtils.isBlank(record.get(SET_BONUS_NAME))) {
+			equipment.setSetBonus(new SetBonus(record.get(SET_BONUS_NAME),
+					Skill.valueOfName(record.get(SET_BONUS_2)),
+					Skill.valueOfName(record.get(SET_BONUS_3)),
+					Skill.valueOfName(record.get(SET_BONUS_4)),
+					null));
 		}
 
 		return equipment;

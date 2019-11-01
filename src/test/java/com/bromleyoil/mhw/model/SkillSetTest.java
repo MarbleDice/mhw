@@ -44,16 +44,4 @@ public class SkillSetTest {
 		assertThat("difference set size", difference.getSkills().size(), is(1));
 		assertThat("difference skill level", difference.getLevel(SLUGGER), is(3));
 	}
-
-	@Test
-	public void subtract_incompleteSet_noChange() {
-		SkillSet minuend = new SkillSet(RAZOR_SHARP_SPARE_SHOT, 1);
-		SkillSet subtrahend = new SkillSet();
-		subtrahend.add(RAZOR_SHARP_SPARE_SHOT, Fraction.SET3);
-
-		SkillSet difference = minuend.subtractByLevel(subtrahend);
-
-		assertThat("difference set size", difference.getSkills().size(), is(1));
-		assertThat("difference skill level", difference.getLevel(Skill.RAZOR_SHARP_SPARE_SHOT), is(1));
-	}
 }

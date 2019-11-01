@@ -26,6 +26,15 @@ public class EquipmentSet {
 		equipmentMap.put(equipment.getType(), equipment);
 		skillSet.add(equipment.getSkillSet());
 		slotSet.add(equipment.getSlotSet());
+
+		// Add the activated set bonus skill
+		if (equipment.hasSetBonus()) {
+			int numPieces = equipmentMap.values().stream()
+					.filter(e -> e.getSetBonus().getName().equals(equipment.getSetBonus().getName()))
+					.mapToInt(e -> 1).sum();
+			Skill skill = equipment.getSetBonus().getSkill(numPieces);
+			skillSet.add(skill, 1);
+		}
 	}
 
 	/**

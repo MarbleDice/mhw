@@ -47,7 +47,7 @@ public class DataParserTest {
 			}
 			setBonuses = paddedBonuses;
 		}
-		String content = "Name\tRank\tHead\tBody\tHands\tWaist\tLegs\tSet2\tSet3\tSet4\n"
+		String content = "Name\tRank\tHead\tBody\tHands\tWaist\tLegs\tSet Bonus Name\tSet2\tSet3\tSet4\n"
 				+ name + "\t\t\t\t\t\t\t" + String.join("\t", setBonuses);
 		CSVRecord record;
 		try {

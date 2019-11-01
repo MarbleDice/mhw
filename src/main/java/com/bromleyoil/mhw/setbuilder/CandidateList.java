@@ -1,11 +1,9 @@
 package com.bromleyoil.mhw.setbuilder;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.EnumMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
@@ -20,7 +18,6 @@ import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.EquipmentType;
 import com.bromleyoil.mhw.model.Rank;
-import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
 
 @Component
@@ -55,13 +52,10 @@ public class CandidateList {
 		// Add all gear with matching skills or slots
 		filteredCandidateCount = 0;
 		for (Equipment equipment : equipmentList.getItems()) {
-			Set<Skill> equipmentSkills = equipment.getSkillSet().getSkills();
 			boolean isRankFiltered = maxRank != null && equipment.getRank() != null
 					&& equipment.getRank().ordinal() > maxRank.ordinal();
 
-			// Non-disjoint sets mean there is overlap
-			if (!isRankFiltered
-					&& !Collections.disjoint(requiredSkillSet.getSkills(), equipmentSkills) || equipment.hasSlots()) {
+			if (!isRankFiltered && (equipment.hasAnySkill(requiredSkillSet) || equipment.hasSlots())) {
 				addCandidate(equipment);
 			}
 		}
@@ -82,19 +76,19 @@ public class CandidateList {
 			Superiority superiority = Superiority.compare(potential, existing, requiredSkillSet.getSkills());
 			if (superiority == Superiority.WORSE) {
 				// Potential candidate is worse than an existing candidate, so it should not be used
-				log.debug("Will not add " + potential.getFullDescription());
+				log.debug("Will not add {}", potential.getFullDescription());
 				filteredCandidateCount++;
 				return;
 			} else if (superiority == Superiority.BETTER) {
 				// Potential candidate is better than an existing candidate which should be removed
-				log.debug("  Removing " + existing.getFullDescription());
+				log.debug("  Removing {}", existing.getFullDescription());
 				filteredCandidateCount++;
 				iterator.remove();
 			}
 		}
 
 		// The potential candidate is not worse than any existing one, so it should be added
-		log.debug("Adding " + potential.getFullDescription());
+		log.debug("Adding {}", potential.getFullDescription());
 		candidates.get(potential.getType()).add(potential);
 	}
 

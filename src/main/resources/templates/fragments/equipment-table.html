@@ -22,6 +22,13 @@
 						<span th:text="${skillLabel.value}"></span>
 					</li>
 					<li th:if="${equipment.slotSet.count gt 0}"><span th:text="${equipment.slotSet.label}"></span></li>
+					<th:block th:if="${equipment.hasSetBonus()}">
+						<li><span th:text="${equipment.setBonus.name}"></span></li>
+						<li th:each="entry : ${equipment.setBonus.skills}">
+							<span th:text="${entry.key + 'x'}"></span>
+							<a th:href="@{${'/skill/' + entry.value.urlName}}" th:text="${entry.value.name}"></a>
+						</li>
+					</th:block>
 				</ul>
 			</td>
 		</tr>

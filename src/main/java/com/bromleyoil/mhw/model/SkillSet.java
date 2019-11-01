@@ -14,7 +14,6 @@ import org.springframework.util.Assert;
 
 public class SkillSet {
 
-	private Map<Skill, Integer> skillValues = new EnumMap<>(Skill.class);
 	private Map<Skill, Integer> skillLevels = new EnumMap<>(Skill.class);
 
 	public SkillSet() {
@@ -34,27 +33,14 @@ public class SkillSet {
 	}
 
 	public void add(Skill skill, int level) {
-		addByValue(skill, Fraction.getNumerator(level));
-	}
-
-	public void add(Skill skill, Fraction fraction) {
-		addByValue(skill, fraction.getNumerator());
-	}
-
-	public void add(SkillSet skillSet) {
-		for (Entry<Skill, Integer> entry : skillSet.skillValues.entrySet()) {
-			addByValue(entry.getKey(), entry.getValue());
+		if (skill != null && level > 0) {
+			skillLevels.put(skill, skillLevels.getOrDefault(skill, 0) + level);
 		}
 	}
 
-	protected void addByValue(Skill skill, int value) {
-		int newSkillValue = Integer.min(skillValues.getOrDefault(skill, 0) + value,
-				Fraction.getNumerator(skill.getMaxLevel()));
-		skillValues.put(skill, newSkillValue);
-
-		int newSkillLevel = Fraction.getQuotient(newSkillValue);
-		if (newSkillLevel > 0) {
-			skillLevels.put(skill, newSkillLevel);
+	public void add(SkillSet skillSet) {
+		for (Entry<Skill, Integer> entry : skillSet.skillLevels.entrySet()) {
+			add(entry.getKey(), entry.getValue());
 		}
 	}
 
@@ -68,37 +54,32 @@ public class SkillSet {
 			int minuendLevel = difference.getLevel(skill);
 			if (difference.contains(skill)) {
 				if (minuendLevel <= subtrahendLevel) {
-					difference.skillValues.remove(skill);
 					difference.skillLevels.remove(skill);
 				} else {
-					difference.skillValues.put(skill, Fraction.getNumerator(minuendLevel - subtrahendLevel));
 					difference.skillLevels.put(skill, minuendLevel - subtrahendLevel);
 				}
 			}
 		}
+
 		return difference;
 	}
 
 	public boolean contains(Skill skill) {
-		return skillValues.containsKey(skill);
+		return skillLevels.containsKey(skill);
 	}
 
 	public int getLevel(Skill skill) {
 		return skillLevels.getOrDefault(skill, 0);
 	}
 
-	public int getValue(Skill skill) {
-		return skillValues.getOrDefault(skill, 0);
-	}
-
 	public Set<Skill> getSkills() {
-		return skillValues.keySet();
+		return skillLevels.keySet();
 	}
 
 	public List<Entry<Skill, String>> getSkillLabels() {
-		return skillValues.entrySet().stream()
+		return skillLevels.entrySet().stream()
 				.sorted((a, b) -> Integer.compare(b.getValue(), a.getValue()))
-				.map(x -> new SimpleEntry<>(x.getKey(), Fraction.getLabel(x.getValue())))
+				.map(x -> new SimpleEntry<>(x.getKey(), x.getValue().toString()))
 				.collect(Collectors.toList());
 	}
 

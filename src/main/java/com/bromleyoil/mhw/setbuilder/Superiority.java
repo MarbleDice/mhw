@@ -5,6 +5,7 @@ import java.util.Set;
 
 import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentSet;
+import com.bromleyoil.mhw.model.SetBonus;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
 import com.bromleyoil.mhw.model.SlotSet;
@@ -35,7 +36,7 @@ public enum Superiority {
 	}
 
 	/**
-	 * Compares partial skills on two sets, using only the interesting skills.
+	 * Compares skill levels on two skill sets, using only the interesting skills.
 	 * 
 	 * @param a
 	 * @param b
@@ -47,8 +48,8 @@ public enum Superiority {
 		boolean isWorse = false;
 
 		for (Skill skill : interestingSkills) {
-			isBetter |= Integer.compare(a.getValue(skill), b.getValue(skill)) > 0;
-			isWorse |= Integer.compare(a.getValue(skill), b.getValue(skill)) < 0;
+			isBetter |= Integer.compare(a.getLevel(skill), b.getLevel(skill)) > 0;
+			isWorse |= Integer.compare(a.getLevel(skill), b.getLevel(skill)) < 0;
 		}
 
 		if (isBetter && isWorse) {
@@ -62,7 +63,7 @@ public enum Superiority {
 	}
 
 	/**
-	 * Compares full skill levels on two sets.
+	 * Compares skill levels on two skill sets.
 	 * 
 	 * @param a
 	 * @param b
@@ -77,6 +78,33 @@ public enum Superiority {
 		for (Skill skill : allSkills) {
 			isBetter |= Integer.compare(a.getLevel(skill), b.getLevel(skill)) > 0;
 			isWorse |= Integer.compare(a.getLevel(skill), b.getLevel(skill)) < 0;
+		}
+
+		if (isBetter && isWorse) {
+			return INCOMPARABLE;
+		} else if (isBetter) {
+			return BETTER;
+		} else if (isWorse) {
+			return WORSE;
+		}
+		return EQUAL;
+	}
+
+	/**
+	 * Compares two set bonuses.
+	 * 
+	 * @param a
+	 * @param b
+	 * @param interestingSkills
+	 * @return BETTER if a is better than b, WORSE if it is worse, or EQUAL, or INCOMPARABLE.
+	 */
+	public static Superiority compare(SetBonus a, SetBonus b, Set<Skill> interestingSkills) {
+		boolean isBetter = false;
+		boolean isWorse = false;
+
+		for (Skill skill : interestingSkills) {
+			isBetter |= Integer.compare(a.getNumPieces(skill), b.getNumPieces(skill)) < 0;
+			isWorse |= Integer.compare(a.getNumPieces(skill), b.getNumPieces(skill)) > 0;
 		}
 
 		if (isBetter && isWorse) {
@@ -120,7 +148,9 @@ public enum Superiority {
 	}
 
 	/**
-	 * Compares slots and partial skills on two pieces of equipment, using only the interesting skills.
+	 * Compares two pieces of equipment, using only the interesting skills.
+	 * 
+	 * NOTE: Does not consider that set bonuses could appear as skill points.
 	 * 
 	 * @param a
 	 * @param b
@@ -128,12 +158,14 @@ public enum Superiority {
 	 * @return BETTER if a is better than b, WORSE if it is worse, or EQUAL, or INCOMPARABLE.
 	 */
 	public static Superiority compare(Equipment a, Equipment b, Set<Skill> interestingSkills) {
-		return combine(compare(a.getSkillSet(), b.getSkillSet(), interestingSkills),
-				compare(a.getSlotSet(), b.getSlotSet()));
+		return a.getType() != b.getType() ? INCOMPARABLE
+				: combine(compare(a.getSkillSet(), b.getSkillSet(), interestingSkills),
+						compare(a.getSetBonus(), b.getSetBonus(), interestingSkills),
+						compare(a.getSlotSet(), b.getSlotSet()));
 	}
 
 	/**
-	 * Compares slots and full skill levels on two equipment sets.
+	 * Compares two equipment sets.
 	 * 
 	 * @param a
 	 * @param b
