@@ -12,7 +12,7 @@ public class SlotSet {
 
 	private static final int MAX_SLOT_LEVEL = 4;
 
-	public static final SlotSet ZERO = new SlotSet();
+	public static final SlotSet NONE = new SlotSet();
 	public static final SlotSet ONE = new SlotSet(0, 0, 0, 1);
 	public static final SlotSet ONE_ONE = new SlotSet(0, 0, 0, 2);
 	public static final SlotSet ONE_ONE_ONE = new SlotSet(0, 0, 0, 3);

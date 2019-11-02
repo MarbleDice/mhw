@@ -1,5 +1,6 @@
 package com.bromleyoil.mhw.setbuilder;
 
+import static com.bromleyoil.mhw.model.EquipmentType.*;
 import static com.bromleyoil.mhw.model.Skill.*;
 import static com.bromleyoil.mhw.model.SlotSet.*;
 import static com.bromleyoil.mhw.setbuilder.Superiority.*;
@@ -16,6 +17,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import com.bromleyoil.mhw.model.Equipment;
+import com.bromleyoil.mhw.model.EquipmentType;
+import com.bromleyoil.mhw.model.SetBonus;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
 import com.bromleyoil.mhw.model.SlotSet;
@@ -29,6 +32,24 @@ public class SuperiorityTest {
 	private SkillSet focus1 = new SkillSet(FOCUS, 1);
 	private SkillSet marathon1 = new SkillSet(MARATHON_RUNNER, 1);
 	private SkillSet guard1 = new SkillSet(GUARD, 1);
+	private Equipment eqBetterHead = mockEquip(HEAD, earplugs2, SlotSet.NONE, SetBonus.NONE);
+	private Equipment eqHead = mockEquip(HEAD, earplugs1, SlotSet.NONE, SetBonus.NONE);
+	private Equipment eqChest = mockEquip(CHEST, earplugs1, SlotSet.NONE, SetBonus.NONE);
+
+	@Test
+	public void compare_sameEquip_equal() {
+		assertThat("head vs head", compare(eqHead, eqHead, greatSwordSkills), is(EQUAL));
+	}
+
+	@Test
+	public void compare_betterSkills_better() {
+		assertThat("head vs chest", compare(eqBetterHead, eqHead, greatSwordSkills), is(BETTER));
+	}
+
+	@Test
+	public void compare_differentTypes_incomparable() {
+		assertThat("head vs chest", compare(eqBetterHead, eqChest, greatSwordSkills), is(INCOMPARABLE));
+	}
 
 	@Test
 	public void compare_moreSlots_better() {
@@ -122,5 +143,14 @@ public class SuperiorityTest {
 	@Test
 	public void compare_lowerSkills_worse() {
 		assertThat("earplugs1 earplugs2", compare(earplugs1, earplugs2, greatSwordSkills), is(WORSE));
+	}
+
+	private Equipment mockEquip(EquipmentType type, SkillSet skillSet, SlotSet slotSet, SetBonus setBonus) {
+		Equipment equip = new Equipment();
+		equip.setType(type);
+		equip.setSkillSet(skillSet);
+		equip.setSlotSet(slotSet);
+		equip.setSetBonus(setBonus);
+		return equip;
 	}
 }

@@ -5,6 +5,8 @@ import java.util.TreeMap;
 
 public class SetBonus {
 
+	public static final SetBonus NONE = new SetBonus();
+
 	private String name;
 	private Map<Integer, Skill> pieceSkills = new TreeMap<>();
 	private Map<Skill, Integer> skillPieces = new TreeMap<>();
