@@ -14,22 +14,26 @@
 			<th>Legs</th>
 		</tr>
 		<tr th:each="entry : ${matrix.entrySet()}" th:class="${entryStat.odd ? 'odd' : 'even'}">
-			<th th:text="${entry.key}"></th>
+			<th th:text="${entry.key}">Alloy α +</th>
 			<td th:each="equipment : ${entry.value}" th:class="${equipment eq null ? 'empty' : ''}">
-				<ul class="unstyled" th:if="${equipment != null}">
-					<li th:each="skillLabel : ${equipment.skillSet.skillLabels}">
-						<a th:href="@{${'/skill/' + skillLabel.key.urlName}}" th:text="${skillLabel.key.name}"></a>
-						<span th:text="${skillLabel.value}"></span>
-					</li>
-					<li th:if="${equipment.slotSet.count gt 0}"><span th:text="${equipment.slotSet.label}"></span></li>
-					<th:block th:if="${equipment.hasSetBonus()}">
-						<li><span th:text="${equipment.setBonus.name}"></span></li>
-						<li th:each="entry : ${equipment.setBonus.skills}">
-							<span th:text="${entry.key + 'x'}"></span>
-							<a th:href="@{${'/skill/' + entry.value.urlName}}" th:text="${entry.value.name}"></a>
+				<th:block th:if="${equipment != null}">
+					<ul class="unstyled">
+						<li th:each="skillLabel : ${equipment.skillSet.skillLabels}">
+							<a th:href="@{${'/skill/' + skillLabel.key.urlName}}" th:text="${skillLabel.key.name}">Partbreaker</a>
+							<span th:text="${skillLabel.value}">3</span>
 						</li>
-					</th:block>
-				</ul>
+						<li th:if="${equipment.slotSet.count gt 0}"><span th:text="${equipment.slotSet.label}">①①①</span></li>
+					</ul>
+					<div class="set-bonus" th:if="${equipment.hasSetBonus()}">
+						<ul class="unstyled">
+							<li><span th:text="${equipment.setBonus.name}"></span></li>
+							<li th:each="entry : ${equipment.setBonus.skills}">
+								<span th:text="${entry.key + 'x'}"></span>
+								<a th:href="@{${'/skill/' + entry.value.urlName}}" th:text="${entry.value.name}"></a>
+							</li>
+						</ul>
+					</div>
+				</th:block>
 			</td>
 		</tr>
 	</table>

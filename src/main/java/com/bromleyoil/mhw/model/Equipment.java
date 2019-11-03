@@ -124,7 +124,7 @@ public class Equipment {
 	}
 
 	public boolean hasSetBonus() {
-		return setBonus != null;
+		return setBonus != null && !StringUtils.isBlank(setBonus.getName());
 	}
 
 	public Rank getRank() {
