@@ -14,10 +14,10 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.bromleyoil.mhw.form.SetBuilderForm;
 import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.EquipmentType;
-import com.bromleyoil.mhw.model.Rank;
 import com.bromleyoil.mhw.model.SkillSet;
 
 @Component
@@ -40,8 +40,8 @@ public class CandidateList {
 		this.equipmentList = equipmentList;
 	}
 
-	protected void buildCandidates(Rank maxRank, SkillSet requiredSkillSet) {
-		this.requiredSkillSet = requiredSkillSet;
+	protected void buildCandidates(SetBuilderForm form) {
+		this.requiredSkillSet = form.getRequiredSkillSet();
 
 		// Initialize the candidates
 		candidates = new EnumMap<>(EquipmentType.class);
@@ -52,8 +52,8 @@ public class CandidateList {
 		// Add all gear with matching skills or slots
 		filteredCandidateCount = 0;
 		for (Equipment equipment : equipmentList.getItems()) {
-			boolean isRankFiltered = maxRank != null && equipment.getRank() != null
-					&& equipment.getRank().ordinal() > maxRank.ordinal();
+			boolean isRankFiltered = form.getMaxRank() != null && equipment.getRank() != null
+					&& equipment.getRank().ordinal() > form.getMaxRank().ordinal();
 
 			if (!isRankFiltered && (equipment.hasAnySkill(requiredSkillSet) || equipment.hasSlots())) {
 				addCandidate(equipment);

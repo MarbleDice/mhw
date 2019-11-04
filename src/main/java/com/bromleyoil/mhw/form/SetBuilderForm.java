@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 
 import com.bromleyoil.mhw.model.Rank;
 import com.bromleyoil.mhw.model.Skill;
+import com.bromleyoil.mhw.model.SkillSet;
+import com.bromleyoil.mhw.model.SlotSet;
 
 public class SetBuilderForm {
 
@@ -52,6 +54,10 @@ public class SetBuilderForm {
 		return skillRows.stream().map(x -> x.getLevel() != null ? x.getLevel() : 0).collect(Collectors.toList());
 	}
 
+	public SkillSet getRequiredSkillSet() {
+		return new SkillSet(getSkills(), getLevels());
+	}
+
 	public boolean contains(Skill skill) {
 		return skillRows.stream().anyMatch(x -> x.getSkill() == skill);
 	}
@@ -88,6 +94,10 @@ public class SetBuilderForm {
 		this.weaponSlots1 = weaponSlots1;
 	}
 
+	public SlotSet getWeaponSlotSet() {
+		return new SlotSet(getWeaponSlots4(), getWeaponSlots3(), getWeaponSlots2(), getWeaponSlots1());
+	}
+
 	public Integer getRequiredSlots4() {
 		return requiredSlots4;
 	}
@@ -118,6 +128,10 @@ public class SetBuilderForm {
 
 	public void setRequiredSlots1(Integer requiredSlots1) {
 		this.requiredSlots1 = requiredSlots1;
+	}
+
+	public SlotSet getRequiredSlotSet() {
+		return new SlotSet(getRequiredSlots4(), getRequiredSlots3(), getRequiredSlots2(), getRequiredSlots1());
 	}
 
 	public Rank getMaxRank() {

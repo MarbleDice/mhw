@@ -1,11 +1,11 @@
 package com.bromleyoil.mhw.setbuilder;
 
 import static com.bromleyoil.mhw.model.EquipmentType.*;
+import static com.bromleyoil.mhw.model.Skill.*;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -14,9 +14,9 @@ import org.junit.runners.JUnit4;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.bromleyoil.mhw.form.SetBuilderForm;
+import com.bromleyoil.mhw.form.SkillRow;
 import com.bromleyoil.mhw.model.EquipmentList;
-import com.bromleyoil.mhw.model.Skill;
-import com.bromleyoil.mhw.model.SkillSet;
 
 @RunWith(JUnit4.class)
 public class CandidateListTest {
@@ -35,7 +35,7 @@ public class CandidateListTest {
 
 	@Test
 	public void buildCandidates_noSkills_onlySlotted() {
-		candidateList.buildCandidates(null, new SkillSet());
+		candidateList.buildCandidates(new SetBuilderForm());
 
 		log.debug(candidateList.toString());
 
@@ -49,9 +49,12 @@ public class CandidateListTest {
 
 	@Test
 	public void buildCandidates_greatSword_correct() {
-		candidateList.buildCandidates(null, new SkillSet(
-				Arrays.asList(Skill.EARPLUGS, Skill.FOCUS, Skill.WEAKNESS_EXPLOIT),
-				Arrays.asList(5, 3, 3)));
+		SetBuilderForm form = new SetBuilderForm();
+		form.addSkillRow(new SkillRow(EARPLUGS, 5, 0));
+		form.addSkillRow(new SkillRow(FOCUS, 3, 0));
+		form.addSkillRow(new SkillRow(WEAKNESS_EXPLOIT, 3, 0));
+
+		candidateList.buildCandidates(form);
 
 		log.debug(candidateList.toString());
 

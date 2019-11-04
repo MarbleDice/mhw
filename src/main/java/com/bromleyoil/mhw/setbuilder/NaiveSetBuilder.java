@@ -48,14 +48,12 @@ public class NaiveSetBuilder implements SetBuilder {
 
 	@Override
 	public SearchResult search(SetBuilderForm form) {
-		requiredSkillSet = new SkillSet(form.getSkills(), form.getLevels());
-		requiredSlotSet = new SlotSet(form.getRequiredSlots4(), form.getRequiredSlots3(),
-				form.getRequiredSlots2(), form.getRequiredSlots1());
-		weaponSlotSet = new SlotSet(form.getWeaponSlots4(), form.getWeaponSlots3(),
-				form.getWeaponSlots2(), form.getWeaponSlots1());
+		requiredSkillSet = form.getRequiredSkillSet();
+		requiredSlotSet = form.getRequiredSlotSet();
+		weaponSlotSet = form.getWeaponSlotSet();
 		decorationCounts = form.getDecorationCounts();
 
-		candidateList.buildCandidates(form.getMaxRank(), requiredSkillSet);
+		candidateList.buildCandidates(form);
 
 		result = new SearchResult();
 		result.setCandidateCount(candidateList.size());
