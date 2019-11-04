@@ -1,6 +1,7 @@
 package com.bromleyoil.mhw.model;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,12 +17,14 @@ import com.bromleyoil.mhw.parser.DataParser;
 public class EquipmentList {
 
 	private List<Equipment> items;
+	private List<Decoration> decorations;
 
 	public EquipmentList() {
 	}
 
-	public EquipmentList(List<Equipment> items) {
+	public EquipmentList(List<Equipment> items, List<Decoration> decorations) {
 		this.items = items;
+		this.decorations = decorations;
 	}
 
 	@PostConstruct
@@ -29,18 +32,31 @@ public class EquipmentList {
 		if (items == null) {
 			items = DataParser.parseAllEquipment();
 		}
+		if (decorations == null) {
+			decorations = DataParser.parseAllDecorations();
+		}
 	}
 
 	public EquipmentList filter(EquipmentType type) {
-		return new EquipmentList(items.stream().filter(x -> x.getType().equals(type)).collect(Collectors.toList()));
+		EquipmentList rv = new EquipmentList();
+		rv.items = items.stream().filter(x -> x.getType().equals(type)).collect(Collectors.toList());
+		rv.decorations = new ArrayList<>(decorations);
+		return rv;
 	}
 
 	public EquipmentList filter(Skill skill) {
-		return new EquipmentList(items.stream().filter(x -> x.hasSkill(skill)).collect(Collectors.toList()));
+		EquipmentList rv = new EquipmentList();
+		rv.items = items.stream().filter(x -> x.hasSkill(skill)).collect(Collectors.toList());
+		rv.decorations = decorations.stream().filter(x -> x.getSkillSet().contains(skill)).collect(Collectors.toList());
+		return rv;
 	}
 
 	public List<Equipment> getItems() {
 		return items;
+	}
+
+	public List<Decoration> getDecorations() {
+		return decorations;
 	}
 
 	public Equipment find(String armorName, EquipmentType type) {

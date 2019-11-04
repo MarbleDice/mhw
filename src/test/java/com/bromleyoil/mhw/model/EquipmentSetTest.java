@@ -14,8 +14,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import com.bromleyoil.mhw.parser.DataParser;
-
 @RunWith(JUnit4.class)
 public class EquipmentSetTest {
 
@@ -25,7 +23,8 @@ public class EquipmentSetTest {
 
 	@Before
 	public void before() throws IOException {
-		equipmentList = new EquipmentList(DataParser.parseAllEquipment());
+		equipmentList = new EquipmentList();
+		equipmentList.postConstruct();
 
 		set = new EquipmentSet();
 		set.add(equipmentList.find("Alloy α +", HEAD));

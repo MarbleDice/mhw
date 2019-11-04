@@ -20,7 +20,6 @@ import org.springframework.web.context.WebApplicationContext;
 import com.bromleyoil.mhw.comparator.SkillwiseComparator;
 import com.bromleyoil.mhw.form.SetBuilderForm;
 import com.bromleyoil.mhw.model.EquipmentSet;
-import com.bromleyoil.mhw.model.Rank;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
 import com.bromleyoil.mhw.model.SlotSet;
@@ -38,7 +37,6 @@ public class NaiveSetBuilder implements SetBuilder {
 	private SlotSet requiredSlotSet = new SlotSet();
 	private SlotSet weaponSlotSet = new SlotSet();
 	private Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
-	private Rank maxRank;
 	private SearchResult result;
 
 	public NaiveSetBuilder() {
@@ -56,11 +54,10 @@ public class NaiveSetBuilder implements SetBuilder {
 		weaponSlotSet = new SlotSet(form.getWeaponSlots4(), form.getWeaponSlots3(),
 				form.getWeaponSlots2(), form.getWeaponSlots1());
 		decorationCounts = form.getDecorationCounts();
-		maxRank = form.getMaxRank();
+
+		candidateList.buildCandidates(form.getMaxRank(), requiredSkillSet);
 
 		result = new SearchResult();
-
-		candidateList.buildCandidates(maxRank, requiredSkillSet);
 		result.setCandidateCount(candidateList.size());
 		result.setPermutationCount(candidateList.getPermutationCount());
 		result.setFilteredCandidateCount(candidateList.getFilteredCandidateCount());

@@ -14,7 +14,6 @@ import org.junit.runners.JUnit4;
 import com.bromleyoil.mhw.form.SetBuilderForm;
 import com.bromleyoil.mhw.form.SkillRow;
 import com.bromleyoil.mhw.model.EquipmentList;
-import com.bromleyoil.mhw.parser.DataParser;
 
 @RunWith(JUnit4.class)
 public class NaiveSetBuilderTest {
@@ -25,7 +24,8 @@ public class NaiveSetBuilderTest {
 
 	@Before
 	public void before() throws IOException {
-		equipmentList = new EquipmentList(DataParser.parseAllEquipment());
+		equipmentList = new EquipmentList();
+		equipmentList.postConstruct();
 		candidateList = new CandidateList(equipmentList);
 		setBuilder = new NaiveSetBuilder(candidateList);
 	}

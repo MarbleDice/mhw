@@ -17,7 +17,6 @@ import org.slf4j.LoggerFactory;
 import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
-import com.bromleyoil.mhw.parser.DataParser;
 
 @RunWith(JUnit4.class)
 public class CandidateListTest {
@@ -29,7 +28,8 @@ public class CandidateListTest {
 
 	@Before
 	public void before() throws IOException {
-		equipmentList = new EquipmentList(DataParser.parseAllEquipment());
+		equipmentList = new EquipmentList();
+		equipmentList.postConstruct();
 		candidateList = new CandidateList(equipmentList);
 	}
 

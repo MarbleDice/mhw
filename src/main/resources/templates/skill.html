@@ -15,10 +15,6 @@
 		</tr>
 	</table>
 
-	<h3>Decoration</h3>
-	<p th:text="${'No decoration for ' + skill.name}" th:if="${!skill.hasDecoration()}"></p>
-	<p th:text="${'Rare ' + skill.decorationRarity + ' (Table ' + skill.decorationTable + ') ' + skill.decorationName}" th:if="${skill.hasDecoration()}"></p>
-
 	<h3>Charms</h3>
 	<p th:text="${'No charms with ' + skill.name}" th:if="${charms.isEmpty()}"></p>
 	<table th:if="${!charms.isEmpty()}" class="data">
@@ -30,6 +26,24 @@
 			<td th:text="${charm.name}"></td>
 			<td>
 				<th:block th:each="entry : ${charm.skillSet.orderedSkillLevels}">
+				<a th:href="@{${'/skill/' + entry.key.urlName}}" th:text="${entry.key.name}"></a>
+				<span th:text="${entry.value + (entryStat.last ? '' : ',')}"></span>
+				</th:block>
+			</td>
+		</tr>
+	</table>
+
+	<h3>Decorations</h3>
+	<p th:text="${'No decorations with ' + skill.name}" th:if="${decorations.isEmpty()}"></p>
+	<table th:if="${!decorations.isEmpty()}" class="data">
+		<tr>
+			<th>Decoration Name</th>
+			<th>Skills</th>
+		</tr>
+		<tr th:each="decoration : ${decorations}" th:class="${decorationStat.odd ? 'odd' : 'even'}">
+			<td th:text="${decoration.name}"></td>
+			<td>
+				<th:block th:each="entry : ${decoration.skillSet.skillLevels}">
 				<a th:href="@{${'/skill/' + entry.key.urlName}}" th:text="${entry.key.name}"></a>
 				<span th:text="${entry.value + (entryStat.last ? '' : ',')}"></span>
 				</th:block>

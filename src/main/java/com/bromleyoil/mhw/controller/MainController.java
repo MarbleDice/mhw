@@ -39,6 +39,7 @@ public class MainController {
 		Skill skill = Skill.valueOfName(skillName);
 		mav.addObject("skill", skill);
 		mav.addObject("charms", equipmentList.filter(skill).filter(EquipmentType.CHARM).getItems());
+		mav.addObject("decorations", equipmentList.filter(skill).getDecorations());
 		mav.addObject("matrix", equipmentList.filter(skill).getMatrix());
 
 		return mav;

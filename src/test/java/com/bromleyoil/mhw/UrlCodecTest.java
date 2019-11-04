@@ -15,7 +15,6 @@ import org.junit.runners.JUnit4;
 
 import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.EquipmentSet;
-import com.bromleyoil.mhw.parser.DataParser;
 
 @RunWith(JUnit4.class)
 public class UrlCodecTest {
@@ -24,7 +23,8 @@ public class UrlCodecTest {
 
 	@Before
 	public void before() throws IOException {
-		equipmentList = new EquipmentList(DataParser.parseAllEquipment());
+		equipmentList = new EquipmentList();
+		equipmentList.postConstruct();
 	}
 
 	@Test

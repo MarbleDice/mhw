@@ -14,6 +14,7 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.lang3.StringUtils;
 
+import com.bromleyoil.mhw.model.Decoration;
 import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentType;
 import com.bromleyoil.mhw.model.Rank;
@@ -50,7 +51,8 @@ public class DataParser {
 	protected static final String SKILL2 = "Skill2";
 	protected static final String POINTS = "Points";
 	protected static final String RANK = "Rank";
-
+	protected static final String RARITY = "Rarity";
+	protected static final String LEVEL = "Level";
 	protected static final Pattern descriptionPattern = Pattern.compile("\\s*([a-zA-Z0-9'/, -]+)\\s*(\\(.+\\))?\\s*");
 	protected static final Pattern skillPattern = Pattern.compile("\\s*(.+)\\s+(\\d+)\\s*");
 
@@ -189,6 +191,37 @@ public class DataParser {
 			charms.add(charm);
 		}
 		return charms;
+	}
+
+	public static List<Decoration> parseAllDecorations() throws IOException {
+		List<Decoration> decorations = new ArrayList<>();
+		Reader reader = DataParser.openResource("decorations.tsv");
+		for (CSVRecord record : CSVFormat.TDF.withFirstRecordAsHeader().parse(reader)) {
+			decorations.add(createDecoration(record));
+		}
+
+		// Set IDs
+		for (int i = 0; i < decorations.size(); i++) {
+			decorations.get(i).setId(i + 1);
+		}
+
+		return decorations;
+	}
+
+	protected static Decoration createDecoration(CSVRecord record) {
+		Decoration deco = new Decoration();
+
+		deco.setName(record.get(NAME));
+		deco.setLevel(Integer.parseInt(record.get(LEVEL)));
+		if (!StringUtils.isBlank(record.get(RARITY))) {
+			deco.setRarity(Integer.parseInt(record.get(RARITY)));
+		}
+		deco.getSkillSet().add(Skill.valueOfName(record.get(SKILL1)), Integer.parseInt(record.get(POINTS)));
+		if (!StringUtils.isBlank(record.get(SKILL2))) {
+			deco.getSkillSet().add(Skill.valueOfName(record.get(SKILL2)), Integer.parseInt(record.get(POINTS)));
+		}
+
+		return deco;
 	}
 
 	protected static void addSkills(Equipment equipment, String skills) {
