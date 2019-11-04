@@ -20,9 +20,7 @@ import com.bromleyoil.mhw.form.SetBuilderForm;
 import com.bromleyoil.mhw.form.SkillRow;
 import com.bromleyoil.mhw.model.Rank;
 import com.bromleyoil.mhw.model.Skill;
-import com.bromleyoil.mhw.model.SkillSet;
-import com.bromleyoil.mhw.model.SlotSet;
-import com.bromleyoil.mhw.setbuilder.SetBuilder;
+import com.bromleyoil.mhw.setbuilder.NaiveSetBuilder;
 
 @Controller
 @RequestMapping("/set-builder")
@@ -31,7 +29,7 @@ public class SetBuilderController {
 	private static final String VIEW = "set-builder";
 
 	@Autowired
-	private SetBuilder setBuilder;
+	private NaiveSetBuilder setBuilder;
 
 	@ModelAttribute
 	public List<Skill> getSkillList() {
@@ -68,19 +66,8 @@ public class SetBuilderController {
 		if (bindingResult.hasErrors()) {
 			return VIEW;
 		}
-		setBuilder.setRequiredSkillSet(new SkillSet(form.getSkills(), form.getLevels()));
 
-		setBuilder.setRequiredSlotSet(new SlotSet(form.getRequiredSlots4(), form.getRequiredSlots3(),
-				form.getRequiredSlots2(), form.getRequiredSlots1()));
-
-		setBuilder.setWeaponSlotSet(new SlotSet(form.getWeaponSlots4(), form.getWeaponSlots3(),
-				form.getWeaponSlots2(), form.getWeaponSlots1()));
-
-		setBuilder.setDecorationCounts(form.getDecorationCounts());
-
-		setBuilder.setMaxRank(form.getMaxRank());
-
-		modelMap.put("result", setBuilder.search());
+		modelMap.put("result", setBuilder.search(form));
 
 		return VIEW;
 	}
