@@ -1,12 +1,9 @@
 package com.bromleyoil.mhw.setbuilder;
 
 import static com.bromleyoil.mhw.model.EquipmentType.*;
-import static com.bromleyoil.mhw.setbuilder.Superiority.*;
 
 import java.util.Comparator;
 import java.util.EnumMap;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -56,9 +53,7 @@ public class NaiveSetBuilder implements SetBuilder {
 		candidateList.buildCandidates(form);
 
 		result = new SearchResult();
-		result.setCandidateCount(candidateList.size());
-		result.setPermutationCount(candidateList.getPermutationCount());
-		result.setFilteredCandidateCount(candidateList.getFilteredCandidateCount());
+		result.setCandidateList(candidateList);
 
 		log.info("Searching {} possibilities", candidateList.getPermutationCount());
 		doSearch();
@@ -107,29 +102,7 @@ public class NaiveSetBuilder implements SetBuilder {
 		// Check if the potential solution meets the required skills and slots
 		if (Superiority.equalOrBetter(set.getSkillSet(), requiredSkillSet)
 				&& Superiority.equalOrBetter(set.getSlotSet(), requiredSlotSet)) {
-			addSolution(result.getSolutions(), set);
+			result.addSolution(set);
 		}
-	}
-
-	protected void addSolution(List<EquipmentSet> solutions, EquipmentSet newSolution) {
-		Iterator<EquipmentSet> iterator = solutions.iterator();
-		while (iterator.hasNext()) {
-			EquipmentSet solution = iterator.next();
-			Superiority sup = Superiority.compare(newSolution, solution);
-			if (sup == WORSE) {
-				// New solution is worse than an existing solution, so it should not be used
-				log.debug("Will not add {}", newSolution);
-				result.setFilteredSetCount(result.getFilteredSetCount() + 1);
-				return;
-			} else if (sup == BETTER) {
-				// Potential candidate is better than an existing candidate which should be removed
-				log.debug("  Removing {}", solution);
-				result.setFilteredSetCount(result.getFilteredSetCount() + 1);
-				iterator.remove();
-			}
-		}
-		// The new solution is not worse than any existing one, so it should be added
-		log.debug("Adding {}", newSolution);
-		solutions.add(newSolution);
 	}
 }

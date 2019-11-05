@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.lang3.time.StopWatch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -63,11 +64,16 @@ public class SetBuilderController {
 
 	@PostMapping(params = "search")
 	public String search(SetBuilderForm form, BindingResult bindingResult, ModelMap modelMap) {
+		StopWatch stopWatch = new StopWatch();
+
 		if (bindingResult.hasErrors()) {
 			return VIEW;
 		}
 
+		stopWatch.start();
 		modelMap.put("result", setBuilder.search(form));
+		stopWatch.stop();
+		modelMap.put("time", stopWatch.getTime() / 1000d);
 
 		return VIEW;
 	}
