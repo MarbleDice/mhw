@@ -1,6 +1,6 @@
 package com.bromleyoil.mhw.setbuilder;
 
-import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import org.slf4j.Logger;
@@ -12,11 +12,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.bromleyoil.mhw.form.SetBuilderForm;
-import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.EquipmentSet;
 import com.bromleyoil.mhw.model.EquipmentType;
-import com.bromleyoil.mhw.model.Skill;
 
 @Component
 @Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
@@ -30,11 +28,8 @@ public class ParallelSetBuilder implements SetBuilder {
 
 	private CandidateList candidateList;
 
-	private int[] lengthByType = new int[EquipmentType.values().length];
-	private int[] offsetByType = new int[EquipmentType.values().length];
+	private FlatMultiArray search;
 
-	int numSkills;
-	private byte[] search;
 	private byte[] goal;
 
 	private SearchResult searchResult = new SearchResult();
@@ -46,33 +41,16 @@ public class ParallelSetBuilder implements SetBuilder {
 
 		searchResult.setCandidateList(candidateList);
 
-		numSkills = form.getSkills().size();
+		goal = FlatMultiArray.convertToByteArray(form.getLevels());
 
-		// Calculate equipment type block length and offset
-		offsetByType = new int[EquipmentType.values().length];
+		search = new FlatMultiArray(EquipmentType.values().length, candidateList.size(), form.getSkills().size());
 		for (int t = 0; t < EquipmentType.values().length; t++) {
-			lengthByType[t] = candidateList.getCandidates(EquipmentType.values()[t]).size();
-			offsetByType[t] = t == 0 ? 0 : offsetByType[t - 1] + lengthByType[t - 1] * numSkills;
+			search.addCategory(t, candidateList.getCandidates(EquipmentType.values()[t]).stream()
+					.flatMap(e -> form.getSkills().stream().map(s -> e.getSkillSet().getLevel(s)))
+					.collect(Collectors.toList()));
 		}
 
-		// Populate the goal and search array
-		goal = new byte[numSkills];
-		search = new byte[candidateList.size() * numSkills];
-		for (int s = 0; s < numSkills; s++) {
-			Skill skill = form.getSkills().get(s);
-			goal[s] = (byte) form.getLevels().get(s).intValue();
-			for (int t = 0; t < EquipmentType.values().length; t++) {
-				List<Equipment> candidates = candidateList.getCandidates(EquipmentType.values()[t]);
-				for (int c = 0; c < candidates.size(); c++) {
-					search[offsetByType[t] + c * numSkills + s] = (byte) candidates.get(c).getSkillSet()
-							.getLevel(skill);
-				}
-			}
-		}
-
-		log.debug("LBT: {}", lengthByType);
-		log.debug("OBT: {}", offsetByType);
-		log.debug("Goal: {}", goal);
+		log.debug("Goal : {}", goal);
 
 		IntStream.range(0, candidateList.getPermutationCount()).parallel().anyMatch(this::checkSolution);
 
@@ -80,13 +58,13 @@ public class ParallelSetBuilder implements SetBuilder {
 	}
 
 	private boolean checkSolution(int perm) {
-		int[] indexByType = calculateIndexByType(perm);
+		int[] indexByType = search.getIndexesForPerm(perm);
 
 		// TODO needs set bonuses
-		for (int s = 0; s < numSkills; s++) {
+		for (int s = 0; s < search.getRecordLength(); s++) {
 			byte total = 0;
 			for (int t = 0; t < EquipmentType.values().length; t++) {
-				total += search[offsetByType[t] + indexByType[t] * numSkills + s];
+				total += search.getField(t, indexByType[t], s);
 			}
 			if (total < goal[s]) {
 				return false;
@@ -106,15 +84,5 @@ public class ParallelSetBuilder implements SetBuilder {
 		}
 
 		return searchResult.getSolutions().size() >= MAX_RESULTS;
-	}
-
-	protected int[] calculateIndexByType(int perm) {
-		int[] indexByType = new int[EquipmentType.values().length];
-		int permProduct = 1;
-		for (int i = 0; i < EquipmentType.values().length; i++) {
-			indexByType[i] = perm / permProduct % lengthByType[i];
-			permProduct *= lengthByType[i];
-		}
-		return indexByType;
 	}
 }
