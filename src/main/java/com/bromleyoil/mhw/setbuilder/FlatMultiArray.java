@@ -17,6 +17,16 @@ class FlatMultiArray {
 	private int[] categoryLength;
 	private int[] categoryOffset;
 
+	/**
+	 * Initializes a new FlatMultiArray of the given size.
+	 * 
+	 * @param numCategories
+	 *     The number of categories.
+	 * @param numRecords
+	 *     The total number of records in all categories.
+	 * @param numFields
+	 *     The number of fields in each record.
+	 */
 	public FlatMultiArray(int numCategories, int numRecords, int numFields) {
 		this.numCategories = numCategories;
 		recordLength = numFields;
