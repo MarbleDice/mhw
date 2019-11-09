@@ -1,21 +1,25 @@
 package com.bromleyoil.mhw.model;
 
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 public class SetBonus {
 
-	public static final SetBonus NONE = new SetBonus();
+	private static final Map<String, SetBonus> SET_BONUSES = new TreeMap<>();
+
+	public static final SetBonus NONE = SetBonus.of("");
 
 	private String name;
 	private Map<Integer, Skill> pieceSkills = new TreeMap<>();
 	private Map<Skill, Integer> skillPieces = new TreeMap<>();
 
-	public SetBonus() {
+	private SetBonus() {
 		this.name = "";
 	}
 
-	public SetBonus(String name, Skill... skills) {
+	private SetBonus(String name, Skill... skills) {
 		this.name = name;
 		for (int i = 0; i < skills.length; i++) {
 			if (skills[i] != null) {
@@ -23,6 +27,19 @@ public class SetBonus {
 				skillPieces.put(skills[i], i + 2);
 			}
 		}
+	}
+
+	public static SetBonus of(String name, Skill... skills) {
+		SET_BONUSES.computeIfAbsent(name, n -> new SetBonus(n, skills));
+		return SET_BONUSES.get(name);
+	}
+
+	public static List<SetBonus> values() {
+		return SET_BONUSES.values().stream().collect(Collectors.toList());
+	}
+
+	public int getIndex() {
+		return values().indexOf(this);
 	}
 
 	public String getName() {
@@ -44,6 +61,10 @@ public class SetBonus {
 	 */
 	public Skill getSkill(int numPieces) {
 		return pieceSkills.get(numPieces);
+	}
+
+	public Integer getLevel(Skill skill, int numPieces) {
+		return skillPieces.containsKey(skill) && numPieces >= skillPieces.get(skill) ? 1 : 0;
 	}
 
 	public boolean hasSkill(Skill skill) {

@@ -14,7 +14,7 @@ public class Equipment {
 	private EquipmentType type;
 	private SkillSet skillSet = new SkillSet();
 	private SlotSet slotSet = new SlotSet();
-	private SetBonus setBonus = new SetBonus();
+	private SetBonus setBonus = SetBonus.NONE;
 	private Rank rank;
 
 	public static final Comparator<Equipment> ARMOR_NAME_AND_TYPE_ORDER = (a, b) -> {

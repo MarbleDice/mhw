@@ -100,7 +100,7 @@ public class DataParser {
 
 		// Set bonus skills
 		if (!StringUtils.isBlank(record.get(SET_BONUS_NAME))) {
-			equipment.setSetBonus(new SetBonus(record.get(SET_BONUS_NAME),
+			equipment.setSetBonus(SetBonus.of(record.get(SET_BONUS_NAME),
 					Skill.valueOfName(record.get(SET_BONUS_2)),
 					Skill.valueOfName(record.get(SET_BONUS_3)),
 					Skill.valueOfName(record.get(SET_BONUS_4)),
@@ -158,7 +158,7 @@ public class DataParser {
 
 		// Set bonus skills
 		if (!StringUtils.isBlank(record.get(SET_BONUS_NAME))) {
-			equipment.setSetBonus(new SetBonus(record.get(SET_BONUS_NAME),
+			equipment.setSetBonus(SetBonus.of(record.get(SET_BONUS_NAME),
 					Skill.valueOfName(record.get(SET_BONUS_2)),
 					Skill.valueOfName(record.get(SET_BONUS_3)),
 					Skill.valueOfName(record.get(SET_BONUS_4)),
