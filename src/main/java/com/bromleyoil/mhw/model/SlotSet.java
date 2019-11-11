@@ -1,97 +1,97 @@
 package com.bromleyoil.mhw.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
+import java.util.Optional;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import com.bromleyoil.mhw.comparator.Comparators;
+import org.apache.commons.lang3.StringUtils;
 
 public class SlotSet {
 
+	private static final Map<String, SlotSet> SLOT_SETS = new HashMap<>();
 	private static final int MAX_SLOT_LEVEL = 4;
 
-	public static final SlotSet NONE = new SlotSet();
-	public static final SlotSet ONE = new SlotSet(0, 0, 0, 1);
-	public static final SlotSet ONE_ONE = new SlotSet(0, 0, 0, 2);
-	public static final SlotSet ONE_ONE_ONE = new SlotSet(0, 0, 0, 3);
-	public static final SlotSet TWO = new SlotSet(0, 0, 1, 0);
-	public static final SlotSet TWO_ONE = new SlotSet(0, 0, 1, 1);
-	public static final SlotSet THREE = new SlotSet(0, 1, 0, 0);
-	public static final SlotSet THREE_ONE = new SlotSet(0, 1, 0, 1);
+	public static final SlotSet NONE = of(0, 0, 0, 0);
+	public static final SlotSet ONE = of(1, 0, 0, 0);
+	public static final SlotSet ONE_ONE = of(2, 0, 0, 0);
+	public static final SlotSet ONE_ONE_ONE = of(3, 0, 0, 0);
+	public static final SlotSet TWO = of(0, 1, 0, 0);
+	public static final SlotSet TWO_ONE = of(1, 1, 0, 0);
+	public static final SlotSet THREE = of(0, 0, 1, 0);
+	public static final SlotSet THREE_ONE = of(1, 0, 1, 0);
 
-	private List<Integer> slots = new ArrayList<>();
-	private List<Integer> filledSlots = new ArrayList<>();
-	private Map<Skill, Integer> decorationCounts = new TreeMap<>(Skill.DECORATION_AND_NAME_ORDER);
+	private int[] slots = new int[MAX_SLOT_LEVEL];
+	private int[] filledSlots = new int[MAX_SLOT_LEVEL];
 
-	public SlotSet() {
+	private SlotSet(int... slotArray) {
+		slots = slotArray;
 	}
 
-	public SlotSet(SlotSet slotSet) {
-		add(slotSet);
-	}
-
-	public SlotSet(Integer numSlots4, Integer numSlots3, Integer numSlots2, Integer numSlots1) {
-		add(1, numSlots1);
-		add(2, numSlots2);
-		add(3, numSlots3);
-		add(4, numSlots4);
-	}
-
-	public void add(int slotLevel, Integer slotCount) {
-		for (int i = 0; slotCount != null && i < slotCount; i++) {
-			add(slotLevel);
-		}
-	}
-
-	public void add(int... slots) {
-		for (int slot : slots) {
-			if (slot < 1 || slot > MAX_SLOT_LEVEL) {
-				throw new InvalidSlotException();
+	private static String hash(int... slotArray) {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < slotArray.length; i++) {
+			if (i > 0) {
+				sb.append("-");
 			}
-			this.slots.add(slot);
+			sb.append(slotArray[i]);
 		}
-		this.slots.sort(Comparators.DESCENDING);
+		return sb.toString();
 	}
 
-	public void add(SlotSet slotSet) {
-		slots.addAll(slotSet.slots);
-		slots.sort(Comparators.DESCENDING);
+	public static SlotSet of(Integer numSlots1, Integer numSlots2, Integer numSlots3, Integer numSlots4) {
+		int[] slotArray = new int[] { Optional.ofNullable(numSlots1).orElse(0),
+				Optional.ofNullable(numSlots2).orElse(0), Optional.ofNullable(numSlots3).orElse(0),
+				Optional.ofNullable(numSlots4).orElse(0) };
+		if (Arrays.stream(slotArray).sum() > 18) {
+			throw new TooManySlotsException();
+		}
+
+		return SLOT_SETS.computeIfAbsent(hash(slotArray), s -> new SlotSet(slotArray));
+	}
+
+	public static SlotSet of(String slotString) {
+		Map<Integer, Long> countBySlot = Optional.ofNullable(slotString).orElse("").replaceAll("[^0-9]", "")
+				.codePoints()
+				.mapToObj(i -> (char) i)
+				.map(String::valueOf)
+				.map(Integer::parseInt)
+				.collect(Collectors.groupingBy(k -> k, Collectors.counting()));
+
+		return of(countBySlot.getOrDefault(1, 0L).intValue(), countBySlot.getOrDefault(2, 0L).intValue(),
+				countBySlot.getOrDefault(3, 0L).intValue(), countBySlot.getOrDefault(4, 0L).intValue());
+	}
+
+	public SlotSet add(SlotSet slotSet) {
+		return SlotSet.of(slots[0] + slotSet.slots[0], slots[1] + slotSet.slots[1],
+				slots[2] + slotSet.slots[2], slots[3] + slotSet.slots[3]);
 	}
 
 	public boolean decorate(Skill skill) {
-		for (int level = skill.getDecorationLevel(); level <= MAX_SLOT_LEVEL; level++) {
-			if (slots.contains(level)) {
-				// Remove by reference (not index)
-				slots.remove(Integer.valueOf(level));
-				filledSlots.add(level);
-				filledSlots.sort(Comparators.DESCENDING);
-				decorationCounts.compute(skill, (k, v) -> v != null ? v + 1 : 1);
-				return true;
-			}
-		}
+		// for (int level = skill.getDecorationLevel(); level <= MAX_SLOT_LEVEL; level++) {
+		// if (slots.contains(level)) {
+		// // Remove by reference (not index)
+		// slots.remove(Integer.valueOf(level));
+		// filledSlots.add(level);
+		// filledSlots.sort(Comparators.DESCENDING);
+		// decorationCounts.compute(skill, (k, v) -> v != null ? v + 1 : 1);
+		// return true;
+		// }
+		// }
 		return false;
 	}
 
 	public boolean hasSlots() {
-		return !slots.isEmpty() || !filledSlots.isEmpty();
+		return getOnePlus() > 0;
 	}
 
 	public boolean hasOpenSlot(int level) {
-		for (int l = level; l <= MAX_SLOT_LEVEL; l++) {
-			if (slots.contains(l)) {
-				return true;
-			}
-		}
-		return false;
+		return slots[level - 1] - filledSlots[level - 1] > 0;
 	}
 
-	public List<Integer> getSlots() {
-		return slots;
-	}
-
-	public static String getSlotLabel(Integer slotLevel) {
+	private static String getSlotLabel(Integer slotLevel) {
 		if (slotLevel == 1) {
 			return "①";
 		} else if (slotLevel == 2) {
@@ -102,7 +102,7 @@ public class SlotSet {
 		return "④";
 	}
 
-	public static String getFilledSlotLabel(Integer slotLevel) {
+	private static String getFilledSlotLabel(Integer slotLevel) {
 		if (slotLevel == 1) {
 			return "❶";
 		} else if (slotLevel == 2) {
@@ -114,54 +114,52 @@ public class SlotSet {
 	}
 
 	public String getLabel() {
-		return String.join(" ", filledSlots.stream().map(SlotSet::getFilledSlotLabel).collect(Collectors.joining(" ")),
-				slots.stream().map(SlotSet::getSlotLabel).collect(Collectors.joining(" ")));
+		return getLabel(filledSlots, SlotSet::getFilledSlotLabel)
+				+ " " + getLabel(slots, SlotSet::getSlotLabel);
 	}
 
 	public String getAsciiLabel() {
-		return String.join(" ",
-				filledSlots.stream().map(x -> String.format("[%d]", x)).collect(Collectors.joining(" ")),
-				slots.stream().map(x -> String.format("(%d)", x)).collect(Collectors.joining(" ")));
+		return getLabel(filledSlots, i -> String.format("[%d]", i))
+				+ " " + getLabel(slots, i -> String.format("(%d)", i));
 	}
 
-	public boolean isEmpty() {
-		return slots.isEmpty();
-	}
-
-	public void setSlots(List<Integer> slots) {
-		this.slots = slots;
-	}
-
-	public int getCount() {
-		return slots.size();
+	private static String getLabel(int[] slots, Function<Integer, String> labelMapper) {
+		StringBuilder sb = new StringBuilder();
+		for (int i = slots.length; i > 0; i--) {
+			if (sb.length() > 0) {
+				sb.append(" ");
+			}
+			sb.append(StringUtils.repeat(labelMapper.apply(i), " ", slots[i - 1]));
+		}
+		return sb.toString();
 	}
 
 	public int getOne() {
-		return (int) slots.stream().filter(x -> x == 1).count();
+		return slots[0];
 	}
 
 	public int getOnePlus() {
-		return slots.size();
+		return slots[0] + slots[1] + slots[2] + slots[3];
 	}
 
 	public int getTwo() {
-		return (int) slots.stream().filter(x -> x == 2).count();
+		return slots[1];
 	}
 
 	public int getTwoPlus() {
-		return (int) slots.stream().filter(x -> x >= 2).count();
+		return slots[1] + slots[2] + slots[3];
 	}
 
 	public int getThree() {
-		return (int) slots.stream().filter(x -> x == 3).count();
+		return slots[2];
 	}
 
 	public int getThreePlus() {
-		return (int) slots.stream().filter(x -> x >= 3).count();
+		return slots[2] + slots[3];
 	}
 
 	public int getFour() {
-		return (int) slots.stream().filter(x -> x == 4).count();
+		return slots[3];
 	}
 
 	public static class InvalidSlotException extends IllegalArgumentException {
@@ -169,7 +167,16 @@ public class SlotSet {
 		private static final long serialVersionUID = 1L;
 
 		public InvalidSlotException() {
-			super("Slot must be between 1 and 4");
+			super("Slot level must be between 1 and 4");
+		}
+	}
+
+	public static class TooManySlotsException extends IllegalArgumentException {
+
+		private static final long serialVersionUID = 1L;
+
+		public TooManySlotsException() {
+			super("Slot count must be between 0 and 18 slots");
 		}
 	}
 }

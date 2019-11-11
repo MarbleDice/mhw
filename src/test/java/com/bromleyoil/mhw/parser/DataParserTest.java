@@ -22,14 +22,7 @@ public class DataParserTest {
 	@Test
 	public void createEquipment_withSlots_parsed() {
 		Equipment equipment = DataParser.createOldEquip(mockRecord("test beta"), EquipmentType.HEAD, "Handicraft 2 (2)");
-		assertThat("num slots", equipment.getSlotSet().getCount(), is(1));
-	}
-
-	@Test
-	public void addSlots_threeSlot_parsed() {
-		Equipment equipment = new Equipment();
-		DataParser.addSlots(equipment, "(3,1)");
-		assertThat("num slots", equipment.getSlotSet().getCount(), is(2));
+		assertThat("num slots", equipment.getSlotSet().getOnePlus(), is(1));
 	}
 
 	@Test

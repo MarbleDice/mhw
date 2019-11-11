@@ -13,7 +13,7 @@ public class Equipment {
 	private String armorName;
 	private EquipmentType type;
 	private SkillSet skillSet = new SkillSet();
-	private SlotSet slotSet = new SlotSet();
+	private SlotSet slotSet = SlotSet.NONE;
 	private SetBonus setBonus = SetBonus.NONE;
 	private Rank rank;
 
@@ -99,12 +99,8 @@ public class Equipment {
 		this.skillSet = skillSet;
 	}
 
-	public void addSlot(int level) {
-		slotSet.add(level);
-	}
-
 	public boolean hasSlots() {
-		return slotSet.getCount() > 0;
+		return slotSet.hasSlots();
 	}
 
 	public SlotSet getSlotSet() {

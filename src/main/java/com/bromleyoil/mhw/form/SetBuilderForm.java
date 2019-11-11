@@ -95,7 +95,8 @@ public class SetBuilderForm {
 	}
 
 	public SlotSet getWeaponSlotSet() {
-		return new SlotSet(getWeaponSlots4(), getWeaponSlots3(), getWeaponSlots2(), getWeaponSlots1());
+		// TODO this is input by user and probably doesn't need caching
+		return SlotSet.of(getWeaponSlots1(), getWeaponSlots2(), getWeaponSlots3(), getWeaponSlots4());
 	}
 
 	public Integer getRequiredSlots4() {
@@ -131,7 +132,8 @@ public class SetBuilderForm {
 	}
 
 	public SlotSet getRequiredSlotSet() {
-		return new SlotSet(getRequiredSlots4(), getRequiredSlots3(), getRequiredSlots2(), getRequiredSlots1());
+		// TODO this is a big set probably doesn't need caching
+		return SlotSet.of(getRequiredSlots1(), getRequiredSlots2(), getRequiredSlots3(), getRequiredSlots4());
 	}
 
 	public Rank getMaxRank() {
