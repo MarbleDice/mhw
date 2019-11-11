@@ -14,7 +14,7 @@ public class EquipmentSet {
 
 	private Map<EquipmentType, Equipment> equipmentMap = new EnumMap<>(EquipmentType.class);
 	private SkillSet skillSet = new SkillSet();
-	private SlotSet slotSet = new SlotSet();
+	private SlotSet slotSet = SlotSet.NONE;
 	private SlotSet weaponSlotSet;
 	private Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
 
@@ -25,7 +25,7 @@ public class EquipmentSet {
 
 		equipmentMap.put(equipment.getType(), equipment);
 		skillSet.add(equipment.getSkillSet());
-		slotSet.add(equipment.getSlotSet());
+		slotSet = slotSet.add(equipment.getSlotSet());
 
 		// Add the activated set bonus skill
 		if (equipment.hasSetBonus()) {
@@ -99,7 +99,7 @@ public class EquipmentSet {
 			lines.add("\t" + equipment.getFullDescription());
 		}
 		lines.add("Total: " + skillSet.getSkillLevels().stream().map(x -> x.getKey() + " " + x.getValue())
-				.collect(Collectors.joining(", ")) + (!slotSet.isEmpty() ? " " + slotSet.getAsciiLabel() : ""));
+				.collect(Collectors.joining(", ")) + (slotSet.hasSlots() ? " " + slotSet.getAsciiLabel() : ""));
 		return String.join("\n", lines);
 	}
 
@@ -145,13 +145,13 @@ public class EquipmentSet {
 
 	public SlotSet getWeaponSlotSet() {
 		if (weaponSlotSet == null) {
-			setWeaponSlotSet(new SlotSet());
+			setWeaponSlotSet(SlotSet.NONE);
 		}
 		return weaponSlotSet;
 	}
 
 	public void setWeaponSlotSet(SlotSet weaponSlotSet) {
 		this.weaponSlotSet = weaponSlotSet;
-		slotSet.add(weaponSlotSet);
+		slotSet = slotSet.add(weaponSlotSet);
 	}
 }

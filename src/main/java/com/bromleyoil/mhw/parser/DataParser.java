@@ -6,7 +6,6 @@ import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,6 +19,7 @@ import com.bromleyoil.mhw.model.EquipmentType;
 import com.bromleyoil.mhw.model.Rank;
 import com.bromleyoil.mhw.model.SetBonus;
 import com.bromleyoil.mhw.model.Skill;
+import com.bromleyoil.mhw.model.SlotSet;
 
 public class DataParser {
 
@@ -94,9 +94,7 @@ public class DataParser {
 		addSkills(equipment, record.get(SKILLS));
 
 		// Slots
-		Optional.ofNullable(record.get(SLOTS)).orElse("").codePoints()
-				.mapToObj(c -> Integer.valueOf(String.valueOf((char) c)))
-				.forEach(equipment::addSlot);
+		equipment.setSlotSet(SlotSet.of(record.get(SLOTS)));
 
 		// Set bonus skills
 		if (!StringUtils.isBlank(record.get(SET_BONUS_NAME))) {
@@ -150,7 +148,7 @@ public class DataParser {
 
 			// Slots
 			if (matcher.groupCount() > 1 && !StringUtils.isBlank(matcher.group(2))) {
-				addSlots(equipment, matcher.group(2));
+				equipment.setSlotSet(SlotSet.of(matcher.group(2)));
 			}
 		} else {
 			throw new IllegalArgumentException("Invalid description string: " + description);
@@ -236,14 +234,6 @@ public class DataParser {
 			} else {
 				throw new IllegalArgumentException("Invalid skill string: " + skills);
 			}
-		}
-	}
-
-	protected static void addSlots(Equipment equipment, String slots) {
-		slots = slots.replace("(", "").replace(")", "");
-		for (String slot : slots.split(",")) {
-			slot = slot.trim();
-			equipment.addSlot(Integer.valueOf(slot));
 		}
 	}
 }

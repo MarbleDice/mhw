@@ -33,10 +33,10 @@ public class UrlCodec {
 		}
 
 		// Add the number of weapon slots
-		buffer.write(equipmentSet.getWeaponSlotSet().getFour(), 1);
-		buffer.write(equipmentSet.getWeaponSlotSet().getThree(), 1);
-		buffer.write(equipmentSet.getWeaponSlotSet().getTwo(), 1);
 		buffer.write(equipmentSet.getWeaponSlotSet().getOne(), 1);
+		buffer.write(equipmentSet.getWeaponSlotSet().getTwo(), 1);
+		buffer.write(equipmentSet.getWeaponSlotSet().getThree(), 1);
+		buffer.write(equipmentSet.getWeaponSlotSet().getFour(), 1);
 
 		// Add the ID and count for each decorated skill
 		for (Entry<Skill, Integer> entry : equipmentSet.getDecorationCounts()) {
@@ -60,7 +60,7 @@ public class UrlCodec {
 		}
 
 		// Load the number of weapon slots
-		equipmentSet.setWeaponSlotSet(new SlotSet(buffer.readInt(1), buffer.readInt(1), buffer.readInt(1),
+		equipmentSet.setWeaponSlotSet(SlotSet.of(buffer.readInt(1), buffer.readInt(1), buffer.readInt(1),
 				buffer.readInt(1)));
 
 		// Load the decorated skills

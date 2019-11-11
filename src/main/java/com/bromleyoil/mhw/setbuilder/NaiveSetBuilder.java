@@ -31,8 +31,8 @@ public class NaiveSetBuilder implements SetBuilder {
 	private CandidateList candidateList;
 
 	private SkillSet requiredSkillSet = new SkillSet();
-	private SlotSet requiredSlotSet = new SlotSet();
-	private SlotSet weaponSlotSet = new SlotSet();
+	private SlotSet requiredSlotSet = SlotSet.NONE;
+	private SlotSet weaponSlotSet = SlotSet.NONE;
 	private Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
 	private SearchResult result;
 
