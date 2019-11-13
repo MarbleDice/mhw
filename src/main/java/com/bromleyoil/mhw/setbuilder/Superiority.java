@@ -1,7 +1,10 @@
 package com.bromleyoil.mhw.setbuilder;
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import com.bromleyoil.mhw.model.Equipment;
 import com.bromleyoil.mhw.model.EquipmentSet;
@@ -13,6 +16,26 @@ import com.bromleyoil.mhw.model.SlotSet;
 public enum Superiority {
 	WORSE, EQUAL, BETTER, INCOMPARABLE;
 
+	/** A collector that combines Superiority into one aggregate rating. */
+	private static final Collector<Superiority, ?, Superiority> COMBINING_COLLECTOR = Collectors.reducing(EQUAL,
+			Superiority::combine);
+
+	/**
+	 * Returns a superiority value for the given compareTo return value, where 0 is EQUAL, 1 is BETTER, and -1 is WORSE.
+	 * 
+	 * @param compareValue
+	 * @return
+	 */
+	public static Superiority valueOf(int compareValue) {
+		if (compareValue < 0) {
+			return WORSE;
+		} else if (compareValue > 0) {
+			return BETTER;
+		} else {
+			return EQUAL;
+		}
+	}
+
 	/**
 	 * Compares two slot sets.
 	 * 
@@ -21,18 +44,10 @@ public enum Superiority {
 	 * @return BETTER if a is better than b, WORSE if it is worse, or EQUAL, or INCOMPARABLE.
 	 */
 	public static Superiority compare(SlotSet a, SlotSet b) {
-		int onePlus = Integer.compare(a.getOnePlus(), b.getOnePlus());
-		int twoPlus = Integer.compare(a.getTwoPlus(), b.getTwoPlus());
-		int threePlus = Integer.compare(a.getThreePlus(), b.getThreePlus());
-		int four = Integer.compare(a.getFour(), b.getFour());
-		if (onePlus == 0 && twoPlus == 0 && threePlus == 0 && four == 0) {
-			return EQUAL;
-		} else if (onePlus >= 0 && twoPlus >= 0 && threePlus >= 0 && four >= 0) {
-			return BETTER;
-		} else if (onePlus <= 0 && twoPlus <= 0 && threePlus <= 0 && four <= 0) {
-			return WORSE;
-		}
-		return INCOMPARABLE;
+		return IntStream.rangeClosed(1, SlotSet.MAX_SLOT_LEVEL)
+				.map(level -> Integer.compare(a.getSlotCountForDeco(level), b.getSlotCountForDeco(level)))
+				.mapToObj(Superiority::valueOf)
+				.collect(COMBINING_COLLECTOR);
 	}
 
 	/**
@@ -44,22 +59,10 @@ public enum Superiority {
 	 * @return BETTER if a is better than b, WORSE if it is worse, or EQUAL, or INCOMPARABLE.
 	 */
 	public static Superiority compare(SkillSet a, SkillSet b, Set<Skill> interestingSkills) {
-		boolean isBetter = false;
-		boolean isWorse = false;
-
-		for (Skill skill : interestingSkills) {
-			isBetter |= Integer.compare(a.getLevel(skill), b.getLevel(skill)) > 0;
-			isWorse |= Integer.compare(a.getLevel(skill), b.getLevel(skill)) < 0;
-		}
-
-		if (isBetter && isWorse) {
-			return INCOMPARABLE;
-		} else if (isBetter) {
-			return BETTER;
-		} else if (isWorse) {
-			return WORSE;
-		}
-		return EQUAL;
+		return interestingSkills.stream()
+				.mapToInt(s -> Integer.compare(a.getLevel(s), b.getLevel(s)))
+				.mapToObj(Superiority::valueOf)
+				.collect(COMBINING_COLLECTOR);
 	}
 
 	/**
@@ -70,24 +73,10 @@ public enum Superiority {
 	 * @return BETTER if a is better than b, WORSE if it is worse, or EQUAL, or INCOMPARABLE.
 	 */
 	public static Superiority compare(SkillSet a, SkillSet b) {
-		boolean isBetter = false;
-		boolean isWorse = false;
-
-		Set<Skill> allSkills = new HashSet<>(a.getSkills());
-		allSkills.addAll(b.getSkills());
-		for (Skill skill : allSkills) {
-			isBetter |= Integer.compare(a.getLevel(skill), b.getLevel(skill)) > 0;
-			isWorse |= Integer.compare(a.getLevel(skill), b.getLevel(skill)) < 0;
-		}
-
-		if (isBetter && isWorse) {
-			return INCOMPARABLE;
-		} else if (isBetter) {
-			return BETTER;
-		} else if (isWorse) {
-			return WORSE;
-		}
-		return EQUAL;
+		return Stream.concat(a.getSkills().stream(), b.getSkills().stream())
+				.mapToInt(s -> Integer.compare(a.getLevel(s), b.getLevel(s)))
+				.mapToObj(Superiority::valueOf)
+				.collect(COMBINING_COLLECTOR);
 	}
 
 	/**
@@ -99,22 +88,10 @@ public enum Superiority {
 	 * @return BETTER if a is better than b, WORSE if it is worse, or EQUAL, or INCOMPARABLE.
 	 */
 	public static Superiority compare(SetBonus a, SetBonus b, Set<Skill> interestingSkills) {
-		boolean isBetter = false;
-		boolean isWorse = false;
-
-		for (Skill skill : interestingSkills) {
-			isBetter |= Integer.compare(a.getNumPieces(skill), b.getNumPieces(skill)) < 0;
-			isWorse |= Integer.compare(a.getNumPieces(skill), b.getNumPieces(skill)) > 0;
-		}
-
-		if (isBetter && isWorse) {
-			return INCOMPARABLE;
-		} else if (isBetter) {
-			return BETTER;
-		} else if (isWorse) {
-			return WORSE;
-		}
-		return EQUAL;
+		return interestingSkills.stream()
+				.mapToInt(s -> 0 - Integer.compare(a.getNumPieces(s), b.getNumPieces(s)))
+				.mapToObj(Superiority::valueOf)
+				.collect(COMBINING_COLLECTOR);
 	}
 
 	/**
@@ -143,8 +120,8 @@ public enum Superiority {
 	 */
 	public static boolean equalOrBetter(SlotSet a, SlotSet b) {
 		// Short-circuit if a is worse than b
-		return a.getFour() >= b.getFour() && a.getThreePlus() >= b.getThreePlus() && a.getTwoPlus() >= b.getTwoPlus()
-				&& a.getOnePlus() >= b.getOnePlus();
+		return IntStream.rangeClosed(1, SlotSet.MAX_SLOT_LEVEL)
+				.allMatch(level -> a.getSlotCountForDeco(level) >= b.getSlotCountForDeco(level));
 	}
 
 	/**

@@ -14,8 +14,9 @@ public class EquipmentSet {
 
 	private Map<EquipmentType, Equipment> equipmentMap = new EnumMap<>(EquipmentType.class);
 	private SkillSet skillSet = new SkillSet();
+	private SlotSet weaponSlotSet = SlotSet.NONE;
 	private SlotSet slotSet = SlotSet.NONE;
-	private SlotSet weaponSlotSet;
+	private SlotSet filledSlotSet = SlotSet.NONE;
 	private Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
 
 	public void add(Equipment equipment) {
@@ -60,10 +61,11 @@ public class EquipmentSet {
 	 * @param skill
 	 */
 	public void decorate(Skill skill) {
-		if (slotSet.hasOpenSlot(skill.getDecorationLevel())) {
+		SlotSet openSlots = slotSet.subtract(filledSlotSet);
+		if (openSlots.getSlotCountForDeco(skill.getDecorationLevel()) > 0) {
 			decorationCounts.compute(skill, (k, v) -> v != null ? v + 1 : 1);
 			skillSet.add(skill, 1);
-			slotSet.decorate(skill);
+			filledSlotSet = filledSlotSet.add(openSlots.getMinSlotLevel(skill.getDecorationLevel()));
 		}
 	}
 
@@ -99,12 +101,12 @@ public class EquipmentSet {
 			lines.add("\t" + equipment.getFullDescription());
 		}
 		lines.add("Total: " + skillSet.getSkillLevels().stream().map(x -> x.getKey() + " " + x.getValue())
-				.collect(Collectors.joining(", ")) + (slotSet.hasSlots() ? " " + slotSet.getAsciiLabel() : ""));
+				.collect(Collectors.joining(", ")) + (slotSet.hasSlots() ? " " + slotSet.getLabel() : ""));
 		return String.join("\n", lines);
 	}
 
 	public String getWeaponLabel() {
-		return hasWeaponSlots() ? "Slotted Weapon " + getWeaponSlotSet().getAsciiLabel() : "Any weapon";
+		return hasWeaponSlots() ? "Slotted Weapon " + getWeaponSlotSet().getLabel() : "Any weapon";
 	}
 
 	public String getBase64() {
@@ -140,13 +142,10 @@ public class EquipmentSet {
 	}
 
 	public boolean hasWeaponSlots() {
-		return weaponSlotSet != null && weaponSlotSet.hasSlots();
+		return weaponSlotSet.hasSlots();
 	}
 
 	public SlotSet getWeaponSlotSet() {
-		if (weaponSlotSet == null) {
-			setWeaponSlotSet(SlotSet.NONE);
-		}
 		return weaponSlotSet;
 	}
 
