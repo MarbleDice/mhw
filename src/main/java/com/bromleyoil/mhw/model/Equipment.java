@@ -100,7 +100,7 @@ public class Equipment {
 	}
 
 	public boolean hasSlots() {
-		return slotSet.hasSlots();
+		return slotSet.getSlotCountForDeco(1) > 0;
 	}
 
 	public SlotSet getSlotSet() {

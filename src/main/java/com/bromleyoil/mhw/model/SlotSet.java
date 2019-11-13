@@ -83,10 +83,6 @@ public class SlotSet {
 		return new SlotSet(newSlots);
 	}
 
-	public boolean hasSlots() {
-		return getSlotCountForDeco(1) > 0;
-	}
-
 	public boolean hasSlot(int slotLevel) {
 		return slots[slotLevel - 1] > 0;
 	}

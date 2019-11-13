@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import org.apache.commons.lang3.StringUtils;
 
 import com.bromleyoil.mhw.UrlCodec;
 
@@ -101,7 +104,7 @@ public class EquipmentSet {
 			lines.add("\t" + equipment.getFullDescription());
 		}
 		lines.add("Total: " + skillSet.getSkillLevels().stream().map(x -> x.getKey() + " " + x.getValue())
-				.collect(Collectors.joining(", ")) + (slotSet.hasSlots() ? " " + slotSet.getLabel() : ""));
+				.collect(Collectors.joining(", ")) + (hasSlots() ? " " + slotSet.getLabel() : ""));
 		return String.join("\n", lines);
 	}
 
@@ -133,16 +136,12 @@ public class EquipmentSet {
 		this.skillSet = skillSet;
 	}
 
-	public SlotSet getSlotSet() {
-		return slotSet;
-	}
-
-	public void setSlotSet(SlotSet slotSet) {
-		this.slotSet = slotSet;
+	public boolean hasSlots() {
+		return slotSet.getSlotCountForDeco(1) > 0;
 	}
 
 	public boolean hasWeaponSlots() {
-		return weaponSlotSet.hasSlots();
+		return weaponSlotSet.getSlotCountForDeco(1) > 0;
 	}
 
 	public SlotSet getWeaponSlotSet() {
@@ -152,5 +151,19 @@ public class EquipmentSet {
 	public void setWeaponSlotSet(SlotSet weaponSlotSet) {
 		this.weaponSlotSet = weaponSlotSet;
 		slotSet = slotSet.add(weaponSlotSet);
+	}
+
+	public SlotSet getSlotSet() {
+		return slotSet;
+	}
+
+	public void setSlotSet(SlotSet slotSet) {
+		this.slotSet = slotSet;
+	}
+
+	public String getSlotLabel() {
+		return Stream.of(filledSlotSet.getFilledLabel(), slotSet.subtract(filledSlotSet).getLabel())
+				.filter(s -> !StringUtils.isBlank(s))
+				.collect(Collectors.joining(" "));
 	}
 }

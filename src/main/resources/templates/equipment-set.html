@@ -26,7 +26,7 @@
 					</th:block>
 				</li>
 				<!-- Total slots on the next line -->
-				<li th:if="${set.slotSet.hasSlots()}"><span th:text="${set.slotSet.label}"></span></li>
+				<li th:if="${set.hasSlots()}"><span th:text="${set.slotLabel}"></span></li>
 				<!-- List of decorations -->
 				<li th:if="${!set.decorationCounts.isEmpty()}">
 					<th:block th:each="entry : ${set.decorationCounts}">
