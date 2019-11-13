@@ -73,7 +73,7 @@ public class SetBuilderController {
 		stopWatch.start();
 		modelMap.put("result", setBuilder.search(form));
 		stopWatch.stop();
-		modelMap.put("time", stopWatch.getTime() / 1000d);
+		modelMap.put("time", String.format("%.3f", stopWatch.getTime() / 1000d));
 
 		return VIEW;
 	}
