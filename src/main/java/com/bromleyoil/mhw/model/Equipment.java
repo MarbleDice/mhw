@@ -31,12 +31,12 @@ public class Equipment {
 	}
 
 	public String getNameAndSlots() {
-		return getName() + (hasSlots() ? " " + slotSet.getAsciiLabel() : "");
+		return getName() + (hasSlots() ? " " + slotSet.getLabel() : "");
 	}
 
 	public String getFullDescription() {
 		return getName() + " | " + skillSet.getSkillLabels().stream().map(x -> x.getKey() + " " + x.getValue())
-				.collect(Collectors.joining(", ")) + (hasSlots() ? " " + slotSet.getAsciiLabel() : "");
+				.collect(Collectors.joining(", ")) + (hasSlots() ? " " + slotSet.getLabel() : "");
 	}
 
 	public int getId() {

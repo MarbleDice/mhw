@@ -23,7 +23,8 @@ public class UrlCodec {
 
 	public static String encode(EquipmentSet equipmentSet) {
 		// NOTE: the buffer size must be adjusted for the length of serialized data
-		ByteBuffer buffer = new ByteBuffer(EquipmentType.values().length * 2 + 4
+		ByteBuffer buffer = new ByteBuffer(EquipmentType.values().length * 2
+				+ SlotSet.MAX_SLOT_LEVEL
 				+ equipmentSet.getDecorationCounts().size() * 3);
 
 		// Add the ID for each piece of equipment, or 0 if missing
@@ -33,10 +34,9 @@ public class UrlCodec {
 		}
 
 		// Add the number of weapon slots
-		buffer.write(equipmentSet.getWeaponSlotSet().getOne(), 1);
-		buffer.write(equipmentSet.getWeaponSlotSet().getTwo(), 1);
-		buffer.write(equipmentSet.getWeaponSlotSet().getThree(), 1);
-		buffer.write(equipmentSet.getWeaponSlotSet().getFour(), 1);
+		for (int level = 1; level <= SlotSet.MAX_SLOT_LEVEL; level++) {
+			buffer.write(equipmentSet.getWeaponSlotSet().getSlotCount(level), 1);
+		}
 
 		// Add the ID and count for each decorated skill
 		for (Entry<Skill, Integer> entry : equipmentSet.getDecorationCounts()) {
