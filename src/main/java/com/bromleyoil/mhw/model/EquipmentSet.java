@@ -64,7 +64,7 @@ public class EquipmentSet {
 	 * @param skill
 	 */
 	public void decorate(Skill skill) {
-		SlotSet openSlots = slotSet.subtract(filledSlotSet);
+		SlotSet openSlots = getOpenSlotSet();
 		if (openSlots.getSlotCountForDeco(skill.getDecorationLevel()) > 0) {
 			decorationCounts.compute(skill, (k, v) -> v != null ? v + 1 : 1);
 			skillSet.add(skill, 1);
@@ -157,12 +157,16 @@ public class EquipmentSet {
 		return slotSet;
 	}
 
+	public SlotSet getOpenSlotSet() {
+		return slotSet.subtract(filledSlotSet);
+	}
+
 	public void setSlotSet(SlotSet slotSet) {
 		this.slotSet = slotSet;
 	}
 
 	public String getSlotLabel() {
-		return Stream.of(filledSlotSet.getFilledLabel(), slotSet.subtract(filledSlotSet).getLabel())
+		return Stream.of(filledSlotSet.getFilledLabel(), getOpenSlotSet().getLabel())
 				.filter(s -> !StringUtils.isBlank(s))
 				.collect(Collectors.joining(" "));
 	}

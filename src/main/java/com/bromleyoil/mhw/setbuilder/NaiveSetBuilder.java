@@ -101,7 +101,7 @@ public class NaiveSetBuilder implements SetBuilder {
 
 		// Check if the potential solution meets the required skills and slots
 		if (Superiority.equalOrBetter(set.getSkillSet(), requiredSkillSet)
-				&& Superiority.equalOrBetter(set.getSlotSet(), requiredSlotSet)) {
+				&& Superiority.equalOrBetter(set.getOpenSlotSet(), requiredSlotSet)) {
 			result.addSolution(set);
 		}
 	}
