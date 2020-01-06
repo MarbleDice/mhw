@@ -128,4 +128,17 @@ public class ParallelSetBuilder implements SetBuilder {
 		// Return true to trigger short-circuit evaluation with anyMatch
 		return searchResult.getSolutions().size() >= MAX_RESULTS;
 	}
+
+	public static int[] getIndexesForPerm(int perm, int numCategories, int[] categoryLength) {
+		int[] indexByType = new int[numCategories];
+
+		int permProduct = 1;
+		for (int i = 0; i < numCategories; i++) {
+			indexByType[i] = perm / permProduct % categoryLength[i];
+			permProduct *= categoryLength[i];
+		}
+
+		return indexByType;
+	}
+
 }
