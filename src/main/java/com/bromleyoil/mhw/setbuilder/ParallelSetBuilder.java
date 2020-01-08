@@ -1,5 +1,6 @@
 package com.bromleyoil.mhw.setbuilder;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -33,7 +34,9 @@ public class ParallelSetBuilder implements SetBuilder {
 
 	private CandidateList candidateList;
 
+	/* Set bonuses indexed by [set bonus][num pieces][skill] */
 	private FlatMultiArray setBonusSearch;
+	/* Equipment indexed by [type][index][skill] */
 	private FlatMultiArray equipmentSearch;
 
 	private byte[] goal;
@@ -86,41 +89,52 @@ public class ParallelSetBuilder implements SetBuilder {
 	}
 
 	private boolean checkSolution(int perm) {
-		int[] indexByType = equipmentSearch.getIndexesForPerm(perm);
+		int[] equipmentIndexes = equipmentSearch.getIndexesForPerm(perm);
+		byte[] solution = new byte[goal.length];
+		byte[] setBonuses = new byte[EquipmentType.values().length];
+
+		// Add skill points from equipment and extract set bonuses
+		for (int t = 0; t < EquipmentType.values().length; t++) {
+			setBonuses[t] = equipmentSearch.getField(t, equipmentIndexes[t], goal.length);
+
+			for (int s = 0; s < goal.length; s++) {
+				solution[s] += equipmentSearch.getField(t, equipmentIndexes[t], s);
+			}
+		}
+
+		// Add skill points from set bonuses
+		Arrays.sort(setBonuses);
+		int numPieces;
+		for (int i = 0; i < setBonuses.length; i += numPieces) {
+			numPieces = 1;
+
+			for (int j = i + 1; j < setBonuses.length; j++) {
+				if (setBonuses[i] == setBonuses[j]) {
+					numPieces++;
+				}
+			}
+
+			for (int s = 0; s < goal.length; s++) {
+				solution[s] += setBonusSearch.getField(setBonuses[i], numPieces, s);
+			}
+		}
 
 		// Check if every skill in the goal is met
 		for (int s = 0; s < goal.length; s++) {
-			byte total = 0;
-			// Add skill points from equipment
-			for (int t = 0; t < EquipmentType.values().length; t++) {
-				total += equipmentSearch.getField(t, indexByType[t], s);
-			}
-
-			// Add skill points from set bonuses
-			for (int i = 0; i < setBonusSearch.getNumCategories(); i++) {
-				// Check the number of times this set bonus appears in the equipment permutation
-				int numPieces = 0;
-				for (int t = 0; t < EquipmentType.values().length; t++) {
-					numPieces += i == equipmentSearch.getField(t, indexByType[t], goal.length) ? 1 : 0;
-				}
-
-				total += setBonusSearch.getField(i, numPieces, s);
-			}
-
 			// Goal not met, abort
-			if (total < goal[s]) {
+			if (solution[s] < goal[s]) {
 				return false;
 			}
 		}
 
 		// This is a solution, so add it to the results
-		log.debug("Solution at {} : {} {} {} {} {} {}", perm, indexByType[0], indexByType[1], indexByType[2],
-				indexByType[3], indexByType[4], indexByType[5]);
+		log.debug("Solution at {} : {} {} {} {} {} {}", perm, equipmentIndexes[0], equipmentIndexes[1],
+				equipmentIndexes[2], equipmentIndexes[3], equipmentIndexes[4], equipmentIndexes[5]);
 
 		synchronized (this) {
 			EquipmentSet set = new EquipmentSet();
 			for (int t = 0; t < EquipmentType.values().length; t++) {
-				set.add(candidateList.getCandidates(EquipmentType.values()[t]).get(indexByType[t]));
+				set.add(candidateList.getCandidates(EquipmentType.values()[t]).get(equipmentIndexes[t]));
 			}
 			searchResult.addSolution(set);
 		}

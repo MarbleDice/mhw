@@ -21,7 +21,7 @@ import com.bromleyoil.mhw.form.SetBuilderForm;
 import com.bromleyoil.mhw.form.SkillRow;
 import com.bromleyoil.mhw.model.Rank;
 import com.bromleyoil.mhw.model.Skill;
-import com.bromleyoil.mhw.setbuilder.NaiveSetBuilder;
+import com.bromleyoil.mhw.setbuilder.ParallelSetBuilder;
 
 @Controller
 @RequestMapping("/set-builder")
@@ -30,7 +30,7 @@ public class SetBuilderController {
 	private static final String VIEW = "set-builder";
 
 	@Autowired
-	private NaiveSetBuilder setBuilder;
+	private ParallelSetBuilder setBuilder;
 
 	@ModelAttribute
 	public List<Skill> getSkillList() {
