@@ -91,6 +91,15 @@
 			</select>
 		</td>
 	</tr>
+	<tr>
+		<td>Algorithm</td>
+		<td colspan="4">
+			<select th:field="*{algorithm}">
+				<option th:selected="${setBuilderForm.algorithm == 'Naive'}" value="Naive">Slow (with deco)</option>
+				<option th:selected="${setBuilderForm.algorithm == 'Parallel'}" value="Parallel">Parallel (no deco)</option>
+			</select>
+		</td>
+	</tr>
 </table>
 <div class="actions">
 	<button name="search">Search</button>

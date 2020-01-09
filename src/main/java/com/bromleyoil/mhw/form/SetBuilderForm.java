@@ -24,6 +24,7 @@ public class SetBuilderForm {
 	private Integer requiredSlots2;
 	private Integer requiredSlots1;
 	private Rank maxRank;
+	private String algorithm;
 
 	public Skill getNewSkill() {
 		return newSkill;
@@ -142,6 +143,14 @@ public class SetBuilderForm {
 
 	public void setMaxRank(Rank maxRank) {
 		this.maxRank = maxRank;
+	}
+
+	public String getAlgorithm() {
+		return algorithm;
+	}
+
+	public void setAlgorithm(String algorithm) {
+		this.algorithm = algorithm;
 	}
 
 	public Map<Skill, Integer> getDecorationCounts() {
