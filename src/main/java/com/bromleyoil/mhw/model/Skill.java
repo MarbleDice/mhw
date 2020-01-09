@@ -430,7 +430,7 @@ public enum Skill {
 		"Reduces the duration of sleep by 30%.",
 		"Reduces the duration of sleep by 60%.",
 		"Prevents sleep."),
-	SLINGER_AMMO_SECRET("Stamina Thief Secret", "", 0, 0,
+	SLINGER_AMMO_SECRET("Slinger Ammo Secret", "", 0, 0,
 		"Raises the maximum level of the Slinger Capacity skill."),
 	SLINGER_CAPACITY("Slinger Capacity", "Stonethrower Jewel 1", 1, 6,
 		"Increases the loading capacity for slinger ammo collected from the ground or plants.",
