@@ -22,7 +22,7 @@
 							<a th:href="@{${'/skill/' + skillLabel.key.urlName}}" th:text="${skillLabel.key.name}">Partbreaker</a>
 							<span th:text="${skillLabel.value}">3</span>
 						</li>
-						<li th:if="${equipment.slotSet.count gt 0}"><span th:text="${equipment.slotSet.label}">①①①</span></li>
+						<li th:if="${equipment.hasSlots()}"><span th:text="${equipment.slotSet.label}">①①①</span></li>
 					</ul>
 					<div class="set-bonus" th:if="${equipment.hasSetBonus()}">
 						<ul class="unstyled">
