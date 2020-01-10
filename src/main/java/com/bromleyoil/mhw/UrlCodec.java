@@ -54,6 +54,8 @@ public class UrlCodec {
 			int id = buffer.readInt(2);
 			if (id > 0) {
 				equipmentSet.add(equipmentList.getItems().get(id - 1));
+			} else {
+				equipmentSet.add(equipmentList.getAny(EquipmentType.values()[i]));
 			}
 		}
 

@@ -47,6 +47,7 @@ public class CandidateList {
 		candidates = new EnumMap<>(EquipmentType.class);
 		for (EquipmentType type : EquipmentType.values()) {
 			candidates.put(type, new ArrayList<>());
+			candidates.get(type).add(equipmentList.getAny(type));
 		}
 
 		// Add all gear with matching skills or slots

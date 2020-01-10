@@ -34,10 +34,12 @@ public class ParallelSetBuilder implements SetBuilder {
 
 	private CandidateList candidateList;
 
-	/* Set bonuses indexed by [set bonus][num pieces][skill] */
-	private FlatMultiArray setBonusSearch;
-	/* Equipment indexed by [type][index][skill] */
+	/* Equipment indexed by [type][equipment index][field] */
 	private FlatMultiArray equipmentSearch;
+	/* Set bonuses indexed by [set bonus index][num pieces][skill] */
+	private FlatMultiArray setBonusSearch;
+	/* Equipment indexed by [slot set][deco set index][skill] */
+	private FlatMultiArray decoSearch;
 
 	private byte[] goal;
 
@@ -53,17 +55,20 @@ public class ParallelSetBuilder implements SetBuilder {
 		goal = FlatMultiArray.convertToByteArray(form.getLevels());
 
 		// Build the set bonus search array
-		setBonusSearch = new FlatMultiArray(SetBonus.values().size(), SetBonus.values().size() * 6,
-				form.getSkills().size());
+		setBonusSearch = new FlatMultiArray(SetBonus.values().size(), SetBonus.values().size() * 6, goal.length);
 		for (int i = 0; i < SetBonus.values().size(); i++) {
 			setBonusSearch.addCategory(i, getRecord(SetBonus.values().get(i), form.getSkills())
 					.collect(Collectors.toList()));
 		}
 
 		// Build the decorations search array
+		decoSearch = new FlatMultiArray(1, 1, goal.length);
+		decoSearch.addCategory(0, IntStream.range(0, goal.length)
+				.mapToObj(i -> Integer.valueOf(0))
+				.collect(Collectors.toList()));
 
 		// Build the main equipment search array. Record length is number of skills, plus two set bonus and slots.
-		equipmentSearch = new FlatMultiArray(EquipmentType.values().length, candidateList.size(), form.getSkills().size() + 2);
+		equipmentSearch = new FlatMultiArray(EquipmentType.values().length, candidateList.size(), goal.length + 2);
 		for (int t = 0; t < EquipmentType.values().length; t++) {
 			equipmentSearch.addCategory(t, candidateList.getCandidates(EquipmentType.values()[t]).stream()
 					.flatMap(e -> getRecord(e, form.getSkills()))
@@ -73,7 +78,7 @@ public class ParallelSetBuilder implements SetBuilder {
 		log.debug("Goal : {}", goal);
 
 		// Perform the parallel search
-		IntStream.range(0, candidateList.getPermutationCount()).parallel().anyMatch(this::checkSolution);
+		IntStream.range(0, candidateList.getPermutationCount()).parallel().anyMatch(this::checkSolutions);
 
 		return searchResult;
 	}
@@ -88,7 +93,7 @@ public class ParallelSetBuilder implements SetBuilder {
 				.flatMap(n -> skills.stream().map(s -> setBonus.getLevel(s, n)));
 	}
 
-	private boolean checkSolution(int perm) {
+	private boolean checkSolutions(int perm) {
 		int[] equipmentIndexes = equipmentSearch.getIndexesForPerm(perm);
 		byte[] solution = new byte[goal.length];
 		byte[] setBonuses = new byte[EquipmentType.values().length];
@@ -119,16 +124,33 @@ public class ParallelSetBuilder implements SetBuilder {
 			}
 		}
 
+		// Check every decoration permutation for solutions
+		int decoCategory = 0;
+		for (int d = 0; d < decoSearch.getCategoryLength(decoCategory); d++) {
+			if (checkSolution(solution, decoCategory, d)) {
+				addSolution(equipmentIndexes, decoCategory, d);
+			}
+		}
+
+		// Return true to trigger short-circuit evaluation with anyMatch
+		return searchResult.getSolutions().size() >= MAX_RESULTS;
+	}
+
+	public boolean checkSolution(byte[] solution, int decoCategory, int decoIndex) {
 		// Check if every skill in the goal is met
 		for (int s = 0; s < goal.length; s++) {
 			// Goal not met, abort
-			if (solution[s] < goal[s]) {
+			if (solution[s] + decoSearch.getField(decoCategory, decoIndex, s) < goal[s]) {
 				return false;
 			}
 		}
 
-		// This is a solution, so add it to the results
-		log.debug("Solution at {} : {} {} {} {} {} {}", perm, equipmentIndexes[0], equipmentIndexes[1],
+		// Solution found
+		return true;
+	}
+
+	public void addSolution(int[] equipmentIndexes, int decoCategory, int decoIndex) {
+		log.debug("Solution at: {} {} {} {} {} {}", equipmentIndexes[0], equipmentIndexes[1],
 				equipmentIndexes[2], equipmentIndexes[3], equipmentIndexes[4], equipmentIndexes[5]);
 
 		synchronized (this) {
@@ -138,21 +160,5 @@ public class ParallelSetBuilder implements SetBuilder {
 			}
 			searchResult.addSolution(set);
 		}
-
-		// Return true to trigger short-circuit evaluation with anyMatch
-		return searchResult.getSolutions().size() >= MAX_RESULTS;
 	}
-
-	public static int[] getIndexesForPerm(int perm, int numCategories, int[] categoryLength) {
-		int[] indexByType = new int[numCategories];
-
-		int permProduct = 1;
-		for (int i = 0; i < numCategories; i++) {
-			indexByType[i] = perm / permProduct % categoryLength[i];
-			permProduct *= categoryLength[i];
-		}
-
-		return indexByType;
-	}
-
 }

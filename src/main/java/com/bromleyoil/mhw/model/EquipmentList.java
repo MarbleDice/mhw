@@ -2,6 +2,7 @@ package com.bromleyoil.mhw.model;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,12 +19,21 @@ public class EquipmentList {
 
 	private List<Equipment> items;
 	private List<Decoration> decorations;
+
+	/** Generic "any" equipment for each slot */
+	private Map<EquipmentType, Equipment> anyEquipment;
+
+	/** The MH:W base game decorations for each skill */
 	private Map<Skill, Decoration> baseDecorations;
 
 	public EquipmentList() {
+		anyEquipment = Arrays.stream(EquipmentType.values())
+				.map(EquipmentList::createDefaultEquipment)
+				.collect(Collectors.toMap(Equipment::getType, e -> e));
 	}
 
 	public EquipmentList(List<Equipment> items, List<Decoration> decorations) {
+		this();
 		this.items = items;
 		this.decorations = decorations;
 	}
@@ -39,6 +49,24 @@ public class EquipmentList {
 					.filter(d -> d.getLevel() < 4)
 					.collect(Collectors.toMap(d -> d.getSkillSet().getOrderedSkillLevels().get(0).getKey(), d -> d));
 		}
+	}
+
+	private static Equipment createDefaultEquipment(EquipmentType type) {
+		Equipment equipment = new Equipment();
+		equipment.setId(0);
+		equipment.setType(type);
+		equipment.setName("Any " + type.getDescription());
+		return equipment;
+	}
+
+	/**
+	 * Gets a generic "any piece of equipment" for the given slot.
+	 * 
+	 * @param type
+	 * @return
+	 */
+	public Equipment getAny(EquipmentType type) {
+		return anyEquipment.get(type);
 	}
 
 	public EquipmentList filter(EquipmentType type) {
@@ -63,10 +91,21 @@ public class EquipmentList {
 		return decorations;
 	}
 
+	/**
+	 * Gets all base decorations
+	 * 
+	 * @return
+	 */
 	public Map<Skill, Decoration> getBaseDecorations() {
 		return baseDecorations;
 	}
 
+	/**
+	 * Gets a MH:W base game per-skill decoration for the given skill.
+	 * 
+	 * @param skill
+	 * @return
+	 */
 	public Decoration getBaseDecoration(Skill skill) {
 		return baseDecorations.get(skill);
 	}

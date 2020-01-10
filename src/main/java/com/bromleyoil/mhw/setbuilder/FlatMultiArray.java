@@ -105,4 +105,8 @@ class FlatMultiArray {
 	public void setRecordLength(int recordLength) {
 		this.recordLength = recordLength;
 	}
+
+	public int getCategoryLength(int category) {
+		return categoryLength[category];
+	}
 }
