@@ -31,7 +31,7 @@
 				<li th:if="${!set.decorationCounts.isEmpty()}">
 					<th:block th:each="entry : ${set.decorationCounts}">
 					<span th:text="${entry.value + 'x'}"></span>
-					<span th:text="${entry.key.decorationName + (entryStat.last ? '' : ',')}"></span>
+					<span th:text="${entry.key.name + (entryStat.last ? '' : ',')}"></span>
 					</th:block>
 				</li>
 			</ul>

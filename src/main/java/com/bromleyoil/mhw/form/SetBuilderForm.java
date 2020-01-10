@@ -96,7 +96,6 @@ public class SetBuilderForm {
 	}
 
 	public SlotSet getWeaponSlotSet() {
-		// TODO this is input by user and probably doesn't need caching
 		return SlotSet.of(getWeaponSlots1(), getWeaponSlots2(), getWeaponSlots3(), getWeaponSlots4());
 	}
 
@@ -133,7 +132,6 @@ public class SetBuilderForm {
 	}
 
 	public SlotSet getRequiredSlotSet() {
-		// TODO this is a big set probably doesn't need caching
 		return SlotSet.of(getRequiredSlots1(), getRequiredSlots2(), getRequiredSlots3(), getRequiredSlots4());
 	}
 

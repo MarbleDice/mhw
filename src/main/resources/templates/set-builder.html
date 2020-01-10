@@ -34,10 +34,10 @@
 			<span th:text="' / ' + ${row.skill.maxLevel}"></span>
 		</td>
 		<td>
-			<th:block th:if="${row.skill.decorationLevel > 0}">
+			<th:block th:if="${baseDecorations.containsKey(row.skill)}">
 			<input type="text" th:field="*{skillRows[__${rowStat.index}__].decorationCount}"
 					class="numberBox" maxlength="1" placeholder="0" th:errorclass="field-error" />
-			<span th:text="${row.skill.decorationName}"></span>
+			<span th:text="${baseDecorations.get(row.skill).name}">Handicraft Jewel 3</span>
 			</th:block>
 		</td>
 	</tr>
@@ -46,7 +46,7 @@
 		<td>
 			<select th:field="*{newSkill}" onchange="document.getElementById('addSkill').click()">
 				<option disabled selected value="">Select a skill</option>
-				<option th:each="skill : ${skillList}" th:if="${not setBuilderForm.contains(skill)}"
+				<option th:each="skill : ${skills}" th:if="${not setBuilderForm.contains(skill)}"
 						th:value="${skill.urlName}" th:text="${skill.name}"></option>
 			</select>
 			<button id="addSkill" name="addSkill" style="display: none;">+</button>
@@ -87,7 +87,7 @@
 		<td colspan="4">
 			<select th:field="*{maxRank}">
 				<option selected value="">any</option>
-				<option th:each="rank : ${rankList}" th:value="${rank.name}" th:text="${rank.name}"></option>
+				<option th:each="rank : ${ranks}" th:value="${rank.name}" th:text="${rank.name}"></option>
 			</select>
 		</td>
 	</tr>
@@ -140,7 +140,7 @@
 				<li th:if="${!set.decorationCounts.isEmpty()}">
 					<th:block th:each="entry : ${set.decorationCounts}">
 					<span th:text="${entry.value + 'x'}"></span>
-					<span th:text="${entry.key.decorationName + (entryStat.last ? '' : ',')}"></span>
+					<span th:text="${entry.key.name + (entryStat.last ? '' : ',')}"></span>
 					</th:block>
 				</li>
 			</ul>

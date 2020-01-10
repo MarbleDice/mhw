@@ -3,6 +3,7 @@ package com.bromleyoil.mhw.model;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -20,7 +21,7 @@ public class EquipmentSet {
 	private SlotSet weaponSlotSet = SlotSet.NONE;
 	private SlotSet slotSet = SlotSet.NONE;
 	private SlotSet filledSlotSet = SlotSet.NONE;
-	private Map<Skill, Integer> decorationCounts = new EnumMap<>(Skill.class);
+	private Map<Decoration, Integer> decorationCounts = new HashMap<>();
 
 	public void add(Equipment equipment) {
 		if (equipmentMap.containsKey(equipment.getType())) {
@@ -42,45 +43,28 @@ public class EquipmentSet {
 	}
 
 	/**
-	 * Tries to add enough decorations to match the required skill set, without exceeding the decoration counts.
+	 * Tries to add a single decoration into the equipment set.
 	 * 
-	 * @param requiredSkillSet
-	 * @param decorationCounts
+	 * @param decoration
 	 */
-	public void decorate(SkillSet requiredSkillSet, Map<Skill, Integer> decorationCounts) {
-		SkillSet missingSkillSet = requiredSkillSet.subtractByLevel(getSkillSet());
-		for (Entry<Skill, Integer> entry : missingSkillSet.getSkillLevels()) {
-			Skill skill = entry.getKey();
-			Integer levels = entry.getValue();
-			if (decorationCounts.containsKey(skill) && decorationCounts.get(skill) >= levels) {
-				decorate(skill, levels);
-			}
-		}
-	}
-
-	/**
-	 * Tries to add a single decoration for the given skill into the equipment set.
-	 * 
-	 * @param skill
-	 */
-	public void decorate(Skill skill) {
+	public void decorate(Decoration decoration) {
 		SlotSet openSlots = getOpenSlotSet();
-		if (openSlots.getSlotCountForDeco(skill.getDecorationLevel()) > 0) {
-			decorationCounts.compute(skill, (k, v) -> v != null ? v + 1 : 1);
-			skillSet.add(skill, 1);
-			filledSlotSet = filledSlotSet.add(openSlots.getMinSlotLevel(skill.getDecorationLevel()));
+		if (openSlots.getSlotCountForDeco(decoration.getLevel()) > 0) {
+			decorationCounts.compute(decoration, (k, v) -> v != null ? v + 1 : 1);
+			skillSet.add(decoration.getSkillSet());
+			filledSlotSet = filledSlotSet.add(openSlots.getMinSlotLevel(decoration.getLevel()));
 		}
 	}
 
 	/**
-	 * Tries to add multiple decorations for the given skill into the equipment set.
+	 * Tries to add multiple decorations of the given type into the equipment set.
 	 * 
-	 * @param skill
-	 * @param levels
+	 * @param decoration
+	 * @param count
 	 */
-	public void decorate(Skill skill, int levels) {
-		for (int i = 0; i < levels; i++) {
-			decorate(skill);
+	public void decorate(Decoration decoration, int count) {
+		for (int i = 0; i < count; i++) {
+			decorate(decoration);
 		}
 	}
 
@@ -116,7 +100,7 @@ public class EquipmentSet {
 		return UrlCodec.encode(this);
 	}
 
-	public List<Entry<Skill, Integer>> getDecorationCounts() {
+	public List<Entry<Decoration, Integer>> getDecorationCounts() {
 		return decorationCounts.entrySet().stream().collect(Collectors.toList());
 	}
 

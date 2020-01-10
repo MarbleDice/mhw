@@ -51,8 +51,8 @@ public class UrlCodecTest {
 		set.add(equipmentList.find("Alloy β +", WAIST));
 		set.add(equipmentList.find("Alloy β +", LEG));
 		set.add(equipmentList.find("Challenger Charm II"));
-		set.decorate(ATTACK_BOOST, 4);
-		set.decorate(WEAKNESS_EXPLOIT, 3);
+		set.decorate(equipmentList.getBaseDecoration(ATTACK_BOOST), 4);
+		set.decorate(equipmentList.getBaseDecoration(WEAKNESS_EXPLOIT), 3);
 
 		EquipmentSet decodedSet = UrlCodec.decode(equipmentList, set.getBase64());
 

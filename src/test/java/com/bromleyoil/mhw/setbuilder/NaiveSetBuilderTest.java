@@ -27,7 +27,7 @@ public class NaiveSetBuilderTest {
 		equipmentList = new EquipmentList();
 		equipmentList.postConstruct();
 		candidateList = new CandidateList(equipmentList);
-		setBuilder = new NaiveSetBuilder(candidateList);
+		setBuilder = new NaiveSetBuilder(equipmentList, candidateList);
 	}
 
 	@Test
@@ -58,8 +58,8 @@ public class NaiveSetBuilderTest {
 	@Test
 	public void search_godlyDamageNoDeco_notPossible() {
 		SetBuilderForm form = new SetBuilderForm();
-		form.addSkillRow(new SkillRow(AGITATOR, 5, 0));
 		form.addSkillRow(new SkillRow(ATTACK_BOOST, 7, 0));
+		form.addSkillRow(new SkillRow(CRITICAL_EYE, 7, 0));
 		form.addSkillRow(new SkillRow(WEAKNESS_EXPLOIT, 3, 0));
 
 		SearchResult result = setBuilder.search(form);
@@ -70,8 +70,8 @@ public class NaiveSetBuilderTest {
 	@Test
 	public void search_godlyDamageWithDeco_hasSolutions() {
 		SetBuilderForm form = new SetBuilderForm();
-		form.addSkillRow(new SkillRow(AGITATOR, 5, 3));
-		form.addSkillRow(new SkillRow(ATTACK_BOOST, 7, 1));
+		form.addSkillRow(new SkillRow(ATTACK_BOOST, 7, 0));
+		form.addSkillRow(new SkillRow(CRITICAL_EYE, 7, 0));
 		form.addSkillRow(new SkillRow(WEAKNESS_EXPLOIT, 3, 3));
 
 		SearchResult result = setBuilder.search(form);

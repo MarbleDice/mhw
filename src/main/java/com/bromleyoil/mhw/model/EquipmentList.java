@@ -18,6 +18,7 @@ public class EquipmentList {
 
 	private List<Equipment> items;
 	private List<Decoration> decorations;
+	private Map<Skill, Decoration> baseDecorations;
 
 	public EquipmentList() {
 	}
@@ -34,6 +35,9 @@ public class EquipmentList {
 		}
 		if (decorations == null) {
 			decorations = DataParser.parseAllDecorations();
+			baseDecorations = decorations.stream()
+					.filter(d -> d.getLevel() < 4)
+					.collect(Collectors.toMap(d -> d.getSkillSet().getOrderedSkillLevels().get(0).getKey(), d -> d));
 		}
 	}
 
@@ -57,6 +61,14 @@ public class EquipmentList {
 
 	public List<Decoration> getDecorations() {
 		return decorations;
+	}
+
+	public Map<Skill, Decoration> getBaseDecorations() {
+		return baseDecorations;
+	}
+
+	public Decoration getBaseDecoration(Skill skill) {
+		return baseDecorations.get(skill);
 	}
 
 	public Equipment find(String armorName, EquipmentType type) {

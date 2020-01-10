@@ -5,6 +5,7 @@ import static com.bromleyoil.mhw.model.EquipmentType.*;
 import java.util.Comparator;
 import java.util.EnumMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.bromleyoil.mhw.comparator.SkillwiseComparator;
 import com.bromleyoil.mhw.form.SetBuilderForm;
+import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.EquipmentSet;
 import com.bromleyoil.mhw.model.Skill;
 import com.bromleyoil.mhw.model.SkillSet;
@@ -26,6 +28,9 @@ import com.bromleyoil.mhw.model.SlotSet;
 public class NaiveSetBuilder implements SetBuilder {
 
 	private static Logger log = LoggerFactory.getLogger(NaiveSetBuilder.class);
+
+	@Autowired
+	private EquipmentList equipmentList;
 
 	@Autowired
 	private CandidateList candidateList;
@@ -39,7 +44,8 @@ public class NaiveSetBuilder implements SetBuilder {
 	public NaiveSetBuilder() {
 	}
 
-	public NaiveSetBuilder(CandidateList candidateList) {
+	public NaiveSetBuilder(EquipmentList equipmentList, CandidateList candidateList) {
+		this.equipmentList = equipmentList;
 		this.candidateList = candidateList;
 	}
 
@@ -97,12 +103,30 @@ public class NaiveSetBuilder implements SetBuilder {
 		set.add(candidateList.getCandidates(CHARM).get(n));
 
 		// Compute missing skills and decorate if necessary
-		set.decorate(requiredSkillSet, decorationCounts);
+		decorate(set, requiredSkillSet, decorationCounts);
 
 		// Check if the potential solution meets the required skills and slots
 		if (Superiority.equalOrBetter(set.getSkillSet(), requiredSkillSet)
 				&& Superiority.equalOrBetter(set.getOpenSlotSet(), requiredSlotSet)) {
 			result.addSolution(set);
+		}
+	}
+
+	/**
+	 * Tries to add enough decorations to match the required skill set, without exceeding the decoration counts.
+	 * 
+	 * @param requiredSkillSet
+	 * @param decorationCounts
+	 */
+	protected void decorate(EquipmentSet equipmentSet, SkillSet requiredSkillSet,
+			Map<Skill, Integer> decorationCounts) {
+		SkillSet missingSkillSet = requiredSkillSet.subtractByLevel(equipmentSet.getSkillSet());
+		for (Entry<Skill, Integer> entry : missingSkillSet.getSkillLevels()) {
+			Skill skill = entry.getKey();
+			Integer levels = entry.getValue();
+			if (decorationCounts.containsKey(skill) && decorationCounts.get(skill) >= levels) {
+				equipmentSet.decorate(equipmentList.getBaseDecoration(skill), levels);
+			}
 		}
 	}
 }
