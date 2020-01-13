@@ -1,8 +1,10 @@
 package com.bromleyoil.mhw.model;
 
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,8 +29,9 @@ public class EquipmentList {
 	private Map<Skill, Decoration> baseDecorations;
 
 	public EquipmentList() {
+		// Setup generic "any" equipment
 		anyEquipment = Arrays.stream(EquipmentType.values())
-				.map(EquipmentList::createDefaultEquipment)
+				.map(EquipmentList::createAnyEquipment)
 				.collect(Collectors.toMap(Equipment::getType, e -> e));
 	}
 
@@ -36,27 +39,60 @@ public class EquipmentList {
 		this();
 		this.items = items;
 		this.decorations = decorations;
+		postConstruct();
 	}
 
 	@PostConstruct
-	public void postConstruct() throws IOException {
-		if (items == null) {
-			items = DataParser.parseAllEquipment();
+	public void postConstruct() {
+		try {
+			if (items == null) {
+				items = DataParser.parseAllEquipment();
+			}
+			if (decorations == null) {
+				decorations = DataParser.parseAllDecorations();
+			}
+		} catch (IOException e) {
+			throw new UncheckedIOException("Could not load equipment list", e);
 		}
-		if (decorations == null) {
-			decorations = DataParser.parseAllDecorations();
-			baseDecorations = decorations.stream()
-					.filter(d -> d.getLevel() < 4)
-					.collect(Collectors.toMap(d -> d.getSkillSet().getOrderedSkillLevels().get(0).getKey(), d -> d));
-		}
+
+		// Setup base decorations
+		baseDecorations = decorations.stream()
+				.filter(d -> d.getLevel() < 4)
+				.collect(Collectors.toMap(d -> d.getSkillSet().getOrderedSkillLevels().get(0).getKey(), d -> d));
+
+		// Setup wildcard decorations
+		addWildcardDecos(decorations.stream()
+				.filter(d -> d.getLevel() == 4 && d.getSkillSet().getSkills().size() > 1)
+				.flatMap(d -> d.getSkillSet().getSkills().stream())
+				.distinct()
+				.map(this::createWildcardDeco)
+				.collect(Collectors.toSet()));
 	}
 
-	private static Equipment createDefaultEquipment(EquipmentType type) {
+	private static Equipment createAnyEquipment(EquipmentType type) {
 		Equipment equipment = new Equipment();
 		equipment.setId(0);
 		equipment.setType(type);
 		equipment.setName("Any " + type.getDescription());
 		return equipment;
+	}
+
+	private Decoration createWildcardDeco(Skill skill) {
+		String jewelName = getBaseDecoration(skill).getName();
+		jewelName = jewelName.substring(0, jewelName.indexOf(" Jewel ")) + "/* Jewel 4";
+		Decoration decoration = new Decoration();
+		decoration.setName(jewelName);
+		decoration.setLevel(4);
+		decoration.setSkillSet(new SkillSet(Arrays.asList(skill, Skill.ANY_COMBO_SKILL), Arrays.asList(1, 1)));
+		decoration.setWildcard(true);
+		return decoration;
+	}
+
+	private void addWildcardDecos(Collection<Decoration> decorations) {
+		for (Decoration decoration : decorations) {
+			decoration.setId(decorations.size());
+			this.decorations.add(decoration);
+		}
 	}
 
 	/**

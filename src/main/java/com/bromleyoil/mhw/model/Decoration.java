@@ -9,6 +9,7 @@ public class Decoration {
 	private int rarity;
 	private Rank rank;
 	private SkillSet skillSet = new SkillSet();
+	private boolean isWildcard;
 
 	public int getId() {
 		return id;
@@ -64,5 +65,13 @@ public class Decoration {
 
 	public void setSkillSet(SkillSet skillSet) {
 		this.skillSet = skillSet;
+	}
+
+	public boolean isWildcard() {
+		return isWildcard;
+	}
+
+	public void setWildcard(boolean isWildcard) {
+		this.isWildcard = isWildcard;
 	}
 }

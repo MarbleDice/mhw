@@ -8,6 +8,10 @@ import org.apache.commons.lang3.StringUtils;
 
 public enum Skill {
 
+	ANY_COMBO_SKILL("Any Combo Skill", "",
+			"", "", "", "", "",
+			"", "", "", "", "",
+			"", "", "", "", ""),
 	ADRENALINE("Adrenaline", "",
 			"Temporarily reduces stamina depletion when health is at 40% or lower."),
 	AFFINITY_SLIDING("Affinity Sliding", "",
@@ -592,5 +596,9 @@ public enum Skill {
 
 	public String getDescription(int i) {
 		return levelDescriptions.get(i);
+	}
+
+	public boolean isWildcard() {
+		return this == ANY_COMBO_SKILL;
 	}
 }
