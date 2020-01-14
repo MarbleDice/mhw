@@ -44,7 +44,7 @@ public class CandidateListTest {
 		assertThat("arm candidate count", candidateList.getCandidates(ARM).size(), greaterThan(0));
 		assertThat("waist candidate count", candidateList.getCandidates(WAIST).size(), greaterThan(0));
 		assertThat("leg candidate count", candidateList.getCandidates(LEG).size(), greaterThan(0));
-		assertThat("charm candidate count", candidateList.getCandidates(CHARM).size(), is(0));
+		assertThat("charm candidate count", candidateList.getCandidates(CHARM).size(), is(1));
 	}
 
 	@Test

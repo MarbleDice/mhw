@@ -453,240 +453,260 @@ ID	Order	Rank	Set Name	Type	Item Name	Skills	Slots	Set Bonus Name	Set Bonus 2	Se
 452	452		Tigrex β +	Arm		Speed Eating 2, Attack Boost 1	4	Tigrex Essence		Free Meal Secret		
 453	453		Tigrex β +	Waist		Earplugs 1	421	Tigrex Essence		Free Meal Secret		
 454	454		Tigrex β +	Leg		Speed Eating 1	42	Tigrex Essence		Free Meal Secret		
-455	455		Black Belt α +	Head		Marathon Runner 2, Mushroomancer 1	3	Instructor's Guidance	Capture Master			
-456	456		Black Belt α +	Chest		Mushroomancer 2, Wide-Range 1	111	Instructor's Guidance	Capture Master			
-457	457		Black Belt α +	Arm		Wide-Range 2, Horn Maestro 2	3	Instructor's Guidance	Capture Master			
-458	458		Black Belt α +	Waist		Recovery Up 2, Marathon Runner 1	3	Instructor's Guidance	Capture Master			
-459	459		Black Belt α +	Leg		Wide-Range 2, Recovery Up 1	22	Instructor's Guidance	Capture Master			
-460	460		Black Belt β +	Head		Marathon Runner 2	42	Instructor's Guidance	Capture Master			
-461	461		Black Belt β +	Chest		Mushroomancer 2	411	Instructor's Guidance	Capture Master			
-462	462		Black Belt β +	Arm		Wide-Range 2	41	Instructor's Guidance	Capture Master			
-463	463		Black Belt β +	Waist		Recovery Up 2	41	Instructor's Guidance	Capture Master			
-464	464		Black Belt β +	Leg		Wide-Range 2	42	Instructor's Guidance	Capture Master			
-465	465		Dober α +	Head		Free Elem/Ammo Up 2, Stamina Surge 1	1					
-466	466		Dober α +	Chest		Attack Boost 2, Effluvia Resistance 1	111					
-467	467		Dober α +	Arm		Stamina Surge 2, Mushroomancer 1	21					
-468	468		Dober α +	Waist		Attack Boost 2, Stun Resistance 2	21					
-469	469		Dober α +	Leg		Attack Boost 2, Mushroomancer 2	2					
-470	470		Dober β +	Head		Free Elem/Ammo Up 2	4					
-471	471		Dober β +	Chest		Attack Boost 1, Effluvia Resistance 1	411					
-472	472		Dober β +	Arm		Stamina Surge 1, Mushroomancer 1	41					
-473	473		Dober β +	Waist		Attack Boost 1, Stun Resistance 1	42					
-474	474		Dober β +	Leg		Attack Boost 1, Mushroomancer 1	42					
-475	475		Damascus α +	Head		Defense Boost 3, Speed Sharpening 2	3					
-476	476		Damascus α +	Chest		Focus 2, Defense Boost 2	31					
-477	477		Damascus α +	Arm		Handicraft 2, Speed Sharpening 1	21					
-478	478		Damascus α +	Waist		Focus 1, Guard 1	32					
-479	479		Damascus α +	Leg		Defense Boost 2, Guard 2	21					
-480	480		Damascus β +	Head		Defense Boost 3	411					
-481	481		Damascus β +	Chest		Focus 2	421					
-482	482		Damascus β +	Arm		Handicraft 2	41					
-483	483		Damascus β +	Waist		Focus 1	421					
-484	484		Damascus β +	Leg		Defense Boost 2, Guard 1	42					
-485	485		Seething Bazel α +	Head		Earplugs 2, Blast Attack 2	21	Bazelgeuse Ambition	Guts			
-486	486		Seething Bazel α +	Chest		Guard 2, Blast Resistance 2	11	Bazelgeuse Ambition	Guts			
-487	487		Seething Bazel α +	Arm		Critical Draw 2, Earplugs 1	3	Bazelgeuse Ambition	Guts			
-488	488		Seething Bazel α +	Waist		Bombardier 2, Critical Draw 1	3	Bazelgeuse Ambition	Guts			
-489	489		Seething Bazel α +	Leg		Earplugs 2, Jump Master 1	3	Bazelgeuse Ambition	Guts			
-490	490		Seething Bazel β +	Head		Earplugs 2, Blast Attack 1	41	Bazelgeuse Ambition	Guts			
-491	491		Seething Bazel β +	Chest		Guard 2	411	Bazelgeuse Ambition	Guts			
-492	492		Seething Bazel β +	Arm		Critical Draw 2	43	Bazelgeuse Ambition	Guts			
-493	493		Seething Bazel β +	Waist		Bombardier 2	42	Bazelgeuse Ambition	Guts			
-494	494		Seething Bazel β +	Leg		Earplugs 1, Jump Master 1	42	Bazelgeuse Ambition	Guts			
-495	495		Savage Jho α +	Head		Partbreaker 1, Handicraft 2	1	Deviljho Essence		Stamina Thief Secret		
-496	496		Savage Jho α +	Chest		Speed Eating 1, Handicraft 2	2	Deviljho Essence		Stamina Thief Secret		
-497	497		Savage Jho α +	Arm		Stamina Thief 2, Partbreaker 1	2	Deviljho Essence		Stamina Thief Secret		
-498	498		Savage Jho α +	Waist		Stamina Thief 2, Handicraft 1	1	Deviljho Essence		Stamina Thief Secret		
-499	499		Savage Jho α +	Leg		Speed Eating 2, Stamina Thief 1	22	Deviljho Essence		Stamina Thief Secret		
-500	500		Savage Jho β +	Head		Partbreaker 1	43	Deviljho Essence		Stamina Thief Secret		
-501	501		Savage Jho β +	Chest		Speed Eating 1	422	Deviljho Essence		Stamina Thief Secret		
-502	502		Savage Jho β +	Arm		Stamina Thief 2	4	Deviljho Essence		Stamina Thief Secret		
-503	503		Savage Jho β +	Waist		Stamina Thief 2	41	Deviljho Essence		Stamina Thief Secret		
-504	504		Savage Jho β +	Leg		Speed Eating 1, Stamina Thief 1	42	Deviljho Essence		Stamina Thief Secret		
-505	505		Velkhana α +	Head		Divine Blessing 2, Coalescence 1	32	Velkhana Divinity	Critical Element		Frostcraft	
-506	506		Velkhana α +	Chest		Quick Sheath 2, Critical Draw 1	1	Velkhana Divinity	Critical Element		Frostcraft	
-507	507		Velkhana α +	Arm		Quick Sheath 1, Flinch Free 2	1	Velkhana Divinity	Critical Element		Frostcraft	
-508	508		Velkhana α +	Waist		Flinch Free 1, Coalescence 1	21	Velkhana Divinity	Critical Element		Frostcraft	
-509	509		Velkhana α +	Leg		Critical Draw 2, Coalescence 1	11	Velkhana Divinity	Critical Element		Frostcraft	
-510	510		Velkhana β +	Head		Divine Blessing 2	42	Velkhana Divinity	Critical Element		Frostcraft	
-511	511		Velkhana β +	Chest		Quick Sheath 2	41	Velkhana Divinity	Critical Element		Frostcraft	
-512	512		Velkhana β +	Arm		Quick Sheath 1, Flinch Free 1	4	Velkhana Divinity	Critical Element		Frostcraft	
-513	513		Velkhana β +	Waist		Flinch Free 1	41	Velkhana Divinity	Critical Element		Frostcraft	
-514	514		Velkhana β +	Leg		Critical Draw 2	41	Velkhana Divinity	Critical Element		Frostcraft	
-515	515		Blackveil Hazak α +	Head		Peak Performance 2, Dragon Attack 2	1	Vaal Soulvein	Super Recovery			
-516	516		Blackveil Hazak α +	Chest		Recovery Speed 2, Dragon Attack 2	31	Vaal Soulvein	Super Recovery			
-517	517		Blackveil Hazak α +	Arm		Recovery Up 2, Speed Eating 1	211	Vaal Soulvein	Super Recovery			
-518	518		Blackveil Hazak α +	Waist		Speed Eating 2, Peak Performance 1	21	Vaal Soulvein	Super Recovery			
-519	519		Blackveil Hazak α +	Leg		Effluvia Resistance 2, Dragon Attack 2	32	Vaal Soulvein	Super Recovery			
-520	520		Blackveil Hazak β +	Head		Peak Performance 2	41	Vaal Soulvein	Super Recovery			
-521	521		Blackveil Hazak β +	Chest		Recovery Speed 2, Dragon Attack 1	42	Vaal Soulvein	Super Recovery			
-522	522		Blackveil Hazak β +	Arm		Recovery Up 2	411	Vaal Soulvein	Super Recovery			
-523	523		Blackveil Hazak β +	Waist		Speed Eating 2	42	Vaal Soulvein	Super Recovery			
-524	524		Blackveil Hazak β +	Leg		Effluvia Resistance 2	43	Vaal Soulvein	Super Recovery			
-525	525		Teostra α +	Head		Latent Power 2, Critical Eye 2	1	Teostra Technique		Master's Touch		
-526	526		Teostra α +	Chest		Latent Power 1, Special Ammo Boost 2	21	Teostra Technique		Master's Touch		
-527	527		Teostra α +	Arm		Weakness Exploit 2, Heat Guard 1	2	Teostra Technique		Master's Touch		
-528	528		Teostra α +	Waist		Blast Attack 2, Weakness Exploit 1	3	Teostra Technique		Master's Touch		
-529	529		Teostra α +	Leg		Latent Power 2, Blast Attack 2	2	Teostra Technique		Master's Touch		
-530	530		Teostra β +	Head		Latent Power 1, Critical Eye 2	4	Teostra Technique		Master's Touch		
-531	531		Teostra β +	Chest		Latent Power 1	411	Teostra Technique		Master's Touch		
-532	532		Teostra β +	Arm		Weakness Exploit 1, Heat Guard 1	43	Teostra Technique		Master's Touch		
-533	533		Teostra β +	Waist		Blast Attack 2	421	Teostra Technique		Master's Touch		
-534	534		Teostra β +	Leg		Latent Power 2, Blast Attack 1	4	Teostra Technique		Master's Touch		
-535	535		Kushala α +	Head		Ice Attack 2, Evade Window 2	2	Kushala Daora Flight		Nullify Wind Pressure		
-536	536		Kushala α +	Chest		Handicraft 3	1	Kushala Daora Flight		Nullify Wind Pressure		
-537	537		Kushala α +	Arm		Evade Window 3	1	Kushala Daora Flight		Nullify Wind Pressure		
-538	538		Kushala α +	Waist		Ice Attack 3, Evade Extender 1	2	Kushala Daora Flight		Nullify Wind Pressure		
-539	539		Kushala α +	Leg		Evade Extender 2, Handicraft 2	1	Kushala Daora Flight		Nullify Wind Pressure		
-540	540		Kushala β +	Head		Ice Attack 2, Evade Window 1	41	Kushala Daora Flight		Nullify Wind Pressure		
-541	541		Kushala β +	Chest		Handicraft 2	42	Kushala Daora Flight		Nullify Wind Pressure		
-542	542		Kushala β +	Arm		Evade Window 2	42	Kushala Daora Flight		Nullify Wind Pressure		
-543	543		Kushala β +	Waist		Ice Attack 3	41	Kushala Daora Flight		Nullify Wind Pressure		
-544	544		Kushala β +	Leg		Evade Extender 2	43	Kushala Daora Flight		Nullify Wind Pressure		
-545	545		Kirin α +	Head		Marathon Runner 2, Divine Blessing 2	31	Kirin Divinity		Great Luck		
-546	546		Kirin α +	Chest		Critical Eye 3, Divine Blessing 1	32	Kirin Divinity		Great Luck		
-547	547		Kirin α +	Arm		Thunder Attack 3, Marathon Runner 1	32	Kirin Divinity		Great Luck		
-548	548		Kirin α +	Waist		Blight Resistance 2, Free Elem/Ammo Up 1	2	Kirin Divinity		Great Luck		
-549	549		Kirin α +	Leg		Free Elem/Ammo Up 2, Critical Eye 2	1	Kirin Divinity		Great Luck		
-550	550		Kirin β +	Head		Marathon Runner 2	411	Kirin Divinity		Great Luck		
-551	551		Kirin β +	Chest		Critical Eye 2, Divine Blessing 1	42	Kirin Divinity		Great Luck		
-552	552		Kirin β +	Arm		Thunder Attack 3	422	Kirin Divinity		Great Luck		
-553	553		Kirin β +	Waist		Blight Resistance 2	411	Kirin Divinity		Great Luck		
-554	554		Kirin β +	Leg		Free Elem/Ammo Up 2	4	Kirin Divinity		Great Luck		
-555	555		Namielle α +	Head		Constitution 3, Maximum Might 1	1	Namielle Divinity	Element Acceleration		True Element Acceleration	
-556	556		Namielle α +	Chest		Blight Resistance 2, Tool Specialist 1	22	Namielle Divinity	Element Acceleration		True Element Acceleration	
-557	557		Namielle α +	Arm		Tool Specialist 2, Maximum Might 1	1	Namielle Divinity	Element Acceleration		True Element Acceleration	
-558	558		Namielle α +	Waist		Constitution 2, Stamina Surge 1	111	Namielle Divinity	Element Acceleration		True Element Acceleration	
-559	559		Namielle α +	Leg		Stamina Surge 2, Blight Resistance 1	21	Namielle Divinity	Element Acceleration		True Element Acceleration	
-560	560		Namielle β +	Head		Constitution 2, Maximum Might 1	4	Namielle Divinity	Element Acceleration		True Element Acceleration	
-561	561		Namielle β +	Chest		Blight Resistance 1, Tool Specialist 1	42	Namielle Divinity	Element Acceleration		True Element Acceleration	
-562	562		Namielle β +	Arm		Tool Specialist 2	4	Namielle Divinity	Element Acceleration		True Element Acceleration	
-563	563		Namielle β +	Waist		Constitution 1, Stamina Surge 1	411	Namielle Divinity	Element Acceleration		True Element Acceleration	
-564	564		Namielle β +	Leg		Stamina Surge 2	42	Namielle Divinity	Element Acceleration		True Element Acceleration	
-596	565		Guild Palace α +	Head		Health Boost 2, Offensive Guard 1	3	Guild Pride	Good Luck		Carving Master	
-597	566		Guild Palace α +	Chest		Agitator 2, Heroics 1	11	Guild Pride	Good Luck		Carving Master	
-598	567		Guild Palace α +	Arm		Offensive Guard 2, Heroics 1	3	Guild Pride	Good Luck		Carving Master	
-599	568		Guild Palace α +	Waist		Agitator 3, Resuscitate 1	11	Guild Pride	Good Luck		Carving Master	
-600	569		Guild Palace α +	Leg		Heroics 3, Health Boost 1	2	Guild Pride	Good Luck		Carving Master	
-601	570		Guild Palace β +	Head		Health Boost 2	42	Guild Pride	Good Luck		Carving Master	
-602	571		Guild Palace β +	Chest		Agitator 1, Heroics 1	42	Guild Pride	Good Luck		Carving Master	
-603	572		Guild Palace β +	Arm		Offensive Guard 2	41	Guild Pride	Good Luck		Carving Master	
-604	573		Guild Palace β +	Waist		Agitator 2, Resuscitate 1	41	Guild Pride	Good Luck		Carving Master	
-605	574		Guild Palace β +	Leg		Heroics 2, Health Boost 1	41	Guild Pride	Good Luck		Carving Master	
-565	575		Shara Ishvalda α +	Head		Recovery Up 2, Partbreaker 1	31	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
-566	576		Shara Ishvalda α +	Chest		Coalescence 2, Health Boost 1	32	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
-567	577		Shara Ishvalda α +	Arm		Critical Boost 2, Coalescence 1	1	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
-568	578		Shara Ishvalda α +	Waist		Health Boost 2, Recovery Up 1	32	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
-569	579		Shara Ishvalda α +	Leg		Partbreaker 2, Defense Boost 2	111	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
-570	580		Shara Ishvalda β +	Head		Recovery Up 2	42	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
-571	581		Shara Ishvalda β +	Chest		Coalescence 2	42	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
-572	582		Shara Ishvalda β +	Arm		Critical Boost 2	4	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
-573	583		Shara Ishvalda β +	Waist		Health Boost 2	43	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
-574	584		Shara Ishvalda β +	Leg		Partbreaker 1, Defense Boost 1	421	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
-575	585		Zorah α +	Head		Flinch Free 1, Artillery 2	22	Zorah Magdaros Essence		Artillery Secret		
-576	586		Zorah α +	Chest		Tremor Resistance 2, Artillery 2	31	Zorah Magdaros Essence		Artillery Secret		
-577	587		Zorah α +	Arm		Flinch Free 2, Free Meal 1	11	Zorah Magdaros Essence		Artillery Secret		
-578	588		Zorah α +	Waist		Tremor Resistance 1, Artillery 1	32	Zorah Magdaros Essence		Artillery Secret		
-579	589		Zorah α +	Leg		Earplugs 1, Handicraft 1	31	Zorah Magdaros Essence		Artillery Secret		
-580	590		Zorah β +	Head		Flinch Free 1	421	Zorah Magdaros Essence		Artillery Secret		
-581	591		Zorah β +	Chest		Tremor Resistance 2	42	Zorah Magdaros Essence		Artillery Secret		
-582	592		Zorah β +	Arm		Flinch Free 2	41	Zorah Magdaros Essence		Artillery Secret		
-583	593		Zorah β +	Waist		Tremor Resistance 1	43	Zorah Magdaros Essence		Artillery Secret		
-584	594		Zorah β +	Leg		Earplugs 1	43	Zorah Magdaros Essence		Artillery Secret		
-606	595		Yian Garuga α +	Head		Critical Eye 2, Resentment 1	3					
-607	596		Yian Garuga α +	Chest		Earplugs 2, Critical Eye 2	1					
-608	597		Yian Garuga α +	Arm		Earplugs 3	1					
-609	598		Yian Garuga α +	Waist		Resentment 2, Poison Attack 2	11					
-610	599		Yian Garuga α +	Leg		Critical Eye 2, Piercing Shots 1	33					
-611	600		Yian Garuga β +	Head		Critical Eye 1, Resentment 1	42					
-612	601		Yian Garuga β +	Chest		Earplugs 1, Critical Eye 2	4					
-613	602		Yian Garuga β +	Arm		Earplugs 2	4					
-614	603		Yian Garuga β +	Waist		Resentment 2	43					
-615	604		Yian Garuga β +	Leg		Critical Eye 2	422					
-585	605		Zinogre α +	Head		Power Prolonger 2, Critical Boost 1	1	Zinogre Essence		Latent Power Secret		
-586	606		Zinogre α +	Chest		Latent Power 3, Normal Shots 1	3	Zinogre Essence		Latent Power Secret		
-587	607		Zinogre α +	Arm		Recovery Speed 2, Latent Power 2	21	Zinogre Essence		Latent Power Secret		
-588	608		Zinogre α +	Waist		Power Prolonger 1, Thunder Attack 2	2	Zinogre Essence		Latent Power Secret		
-589	609		Zinogre α +	Leg		Thunder Attack 3, Latent Power 2	1	Zinogre Essence		Latent Power Secret		
-590	610		Zinogre β +	Head		Power Prolonger 1, Critical Boost 1	4	Zinogre Essence		Latent Power Secret		
-591	611		Zinogre β +	Chest		Latent Power 3	4	Zinogre Essence		Latent Power Secret		
-592	612		Zinogre β +	Arm		Recovery Speed 1, Latent Power 2	42	Zinogre Essence		Latent Power Secret		
-593	613		Zinogre β +	Waist		Power Prolonger 1	42	Zinogre Essence		Latent Power Secret		
-594	614		Zinogre β +	Leg		Thunder Attack 1, Latent Power 2	41	Zinogre Essence		Latent Power Secret		
-616	615		Golden Lune α +	Head		Health Boost 2, Poison Attack 2	22	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
-617	616		Golden Lune α +	Chest		Divine Blessing 2, Resentment 1	31	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
-618	617		Golden Lune α +	Arm		Resentment 2, Poison Attack 2	2	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
-619	618		Golden Lune α +	Waist		Divine Blessing 3, Health Boost 1	22	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
-620	619		Golden Lune α +	Leg		Weakness Exploit 2, Spread/Power Shots 1	1	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
-621	620		Golden Lune β +	Head		Health Boost 2	42	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
-622	621		Golden Lune β +	Chest		Divine Blessing 2	421	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
-623	622		Golden Lune β +	Arm		Resentment 2	42	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
-624	623		Golden Lune β +	Waist		Divine Blessing 3	42	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
-625	624		Golden Lune β +	Leg		Weakness Exploit 2	4	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
-626	625		Silver Sol α +	Head		Windproof 2, Fire Attack 2	22	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
-627	626		Silver Sol α +	Chest		Critical Boost 2, Fire Attack 2	1	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
-628	627		Silver Sol α +	Arm		Slinger Capacity 3, Windproof 1	22	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
-629	628		Silver Sol α +	Waist		Windproof 2, Critical Boost 1	11	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
-630	629		Silver Sol α +	Leg		Slinger Capacity 2, Fire Attack 2	32	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
-631	630		Silver Sol β +	Head		Windproof 2	43	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
-632	631		Silver Sol β +	Chest		Critical Boost 2	4	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
-633	632		Silver Sol β +	Arm		Slinger Capacity 3	42	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
-634	633		Silver Sol β +	Waist		Windproof 1, Critical Boost 1	41	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
-635	634		Silver Sol β +	Leg		Slinger Capacity 2	421	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
-636	635		Ruiner Nergi α +	Head		Maximum Might 2, Stamina Surge 1	31	Nergigante Ambition	Hasten Recovery			
-637	636		Ruiner Nergi α +	Chest		Stamina Surge 2, Maximum Might 1	22	Nergigante Ambition	Hasten Recovery			
-638	637		Ruiner Nergi α +	Arm		Agitator 2, Attack Boost 2	3	Nergigante Ambition	Hasten Recovery			
-639	638		Ruiner Nergi α +	Waist		Attack Boost 3, Earplugs 1	21	Nergigante Ambition	Hasten Recovery			
-640	639		Ruiner Nergi α +	Leg		Earplugs 2, Agitator 1	2	Nergigante Ambition	Hasten Recovery			
-641	640		Ruiner Nergi β +	Head		Maximum Might 2	42	Nergigante Ambition	Hasten Recovery			
-642	641		Ruiner Nergi β +	Chest		Stamina Surge 2	42	Nergigante Ambition	Hasten Recovery			
-643	642		Ruiner Nergi β +	Arm		Agitator 2, Attack Boost 1	41	Nergigante Ambition	Hasten Recovery			
-644	643		Ruiner Nergi β +	Waist		Attack Boost 2, Earplugs 1	41	Nergigante Ambition	Hasten Recovery			
-645	644		Ruiner Nergi β +	Leg		Earplugs 2	41	Nergigante Ambition	Hasten Recovery			
-646	645		Rajang α +	Head		Weakness Exploit 2, Handicraft 2		Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
-647	646		Rajang α +	Chest		Resentment 2, Speed Sharpening 2	31	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
-648	647		Rajang α +	Arm		Resentment 1, Handicraft 2	2	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
-649	648		Rajang α +	Waist		Weakness Exploit 1, Handicraft 1	31	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
-650	649		Rajang α +	Leg		Resentment 2, Attack Boost 2	22	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
-651	650		Rajang β +	Head		Weakness Exploit 2	41	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
-652	651		Rajang β +	Chest		Resentment 2	411	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
-653	652		Rajang β +	Arm		Resentment 1	43	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
-654	653		Rajang β +	Waist		Weakness Exploit 1	43	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
-655	654		Rajang β +	Leg		Resentment 2, Attack Boost 1	42	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
-656	655		Stygian Zin α +	Head		Latent Power 3, Tremor Resistance 2	21	Zinogre Essence		Latent Power Secret		
-657	656		Stygian Zin α +	Chest		Windproof 3, Flinch Free 2	2	Zinogre Essence		Latent Power Secret		
-658	657		Stygian Zin α +	Arm		Partbreaker 2, Dragon Attack 3	2	Zinogre Essence		Latent Power Secret		
-659	658		Stygian Zin α +	Waist		Latent Power 3, Earplugs 2	111	Zinogre Essence		Latent Power Secret		
-660	659		Stygian Zin α +	Leg		Focus 2, Elderseal Boost 1	11	Zinogre Essence		Latent Power Secret		
-661	660		Stygian Zin β +	Head		Latent Power 3, Tremor Resistance 1	41	Zinogre Essence		Latent Power Secret		
-662	661		Stygian Zin β +	Chest		Windproof 3, Flinch Free 1	4	Zinogre Essence		Latent Power Secret		
-663	662		Stygian Zin β +	Arm		Partbreaker 2	43	Zinogre Essence		Latent Power Secret		
-664	663		Stygian Zin β +	Waist		Latent Power 3, Earplugs 1	411	Zinogre Essence		Latent Power Secret		
-665	664		Stygian Zin β +	Leg		Focus 2	41	Zinogre Essence		Latent Power Secret		
-666	665		Safi'jiiva α +	Head		Evade Window 2, Critical Boost 1	211	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
-667	666		Safi'jiiva α +	Chest		Blight Resistance 2, Critical Boost 1	32	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
-668	667		Safi'jiiva α +	Arm		Blight Resistance 1, Maximum Might 1	222	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
-669	668		Safi'jiiva α +	Waist		Evade Window 2, Maximum Might 1	3	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
-670	669		Safi'jiiva α +	Leg		Critical Boost 1, Maximum Might 1	321	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
-671	670		Safi'jiiva β +	Head		Evade Window 1, Critical Boost 1	411	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
-672	671		Safi'jiiva β +	Chest		Blight Resistance 1, Critical Boost 1	42	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
-673	672		Safi'jiiva β +	Arm		Blight Resistance 1	422	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
-674	673		Safi'jiiva β +	Waist		Evade Window 2	41	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
-675	674		Safi'jiiva β +	Leg		Critical Boost 1	421	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
-676	675		Oolong α +	Head		Critical Eye 3	4	Joyful Blessing		Joy's Gift		Joy's Gratitude
-677	676		Oolong α +	Chest		Stamina Surge 2	4	Joyful Blessing		Joy's Gift		Joy's Gratitude
-678	677		Oolong α +	Arm		Coalescence 2	4	Joyful Blessing		Joy's Gift		Joy's Gratitude
-679	678		Oolong α +	Waist		Constitution 3	11	Joyful Blessing		Joy's Gift		Joy's Gratitude
-680	679		Oolong α +	Leg		Health Boost 2	42	Joyful Blessing		Joy's Gift		Joy's Gratitude
-681	680		Banuk α +	Head		Focus 2, Aquatic/Polar Mobility 1	411	Anjanath Dominance	Stamina Cap Up			
-682	681		Banuk α +	Chest		Marathon Runner 1, Stamina Surge 1	43	Anjanath Dominance	Stamina Cap Up			
-683	682		Banuk α +	Arm		Focus 1, Stamina Surge 1	43	Anjanath Dominance	Stamina Cap Up			
-684	683		Banuk α +	Waist		Marathon Runner 2, Aquatic/Polar Mobility 1	411	Anjanath Dominance	Stamina Cap Up			
-685	684		Banuk α +	Leg		Stamina Surge 1, Resuscitate 1	422	Anjanath Dominance	Stamina Cap Up			
-686	685		Buff Body α +	Chest		Agitator 3, Fortify 1	111					
-687	686		Buff Body α +	Arm		Attack Boost 3, Resuscitate 1	4					
-688	687		Buff Body α +	Waist		Agitator 2, Heroics 3	4					
-689	688		Buff Body α +	Leg		Attack Boost 3, Heroics 2	4					
-595	689		Pearlspring α +	Head		Recovery Up 2	21					
-690	690		Duffel Penguin Mask α +	Head		Evade Window 2	4					
-691	691		Sealed Dragon Cloth α +	Head		Resentment 1	44					
+455	455		Brute Tigrex α +	Head		Attack Boost 3, Free Meal 1	3	Tigrex Essence		Free Meal Secret		
+456	456		Brute Tigrex α +	Chest		Attack Boost 3, Weakness Exploit 1	3	Tigrex Essence		Free Meal Secret		
+457	457		Brute Tigrex α +	Arm		Health Boost 3, Attack Boost 2	3	Tigrex Essence		Free Meal Secret		
+458	458		Brute Tigrex α +	Waist		Recovery Up 3, Weakness Exploit 1	2	Tigrex Essence		Free Meal Secret		
+459	459		Brute Tigrex α +	Leg		Agitator 3, Weakness Exploit 1	1	Tigrex Essence		Free Meal Secret		
+460	460		Brute Tigrex β +	Head		Attack Boost 2, Free Meal 1	4	Tigrex Essence		Free Meal Secret		
+461	461		Brute Tigrex β +	Chest		Attack Boost 2, Weakness Exploit 1	41	Tigrex Essence		Free Meal Secret		
+462	462		Brute Tigrex β +	Arm		Health Boost 2, Attack Boost 2	4	Tigrex Essence		Free Meal Secret		
+463	463		Brute Tigrex β +	Waist		Recovery Up 2, Weakness Exploit 1	4	Tigrex Essence		Free Meal Secret		
+464	464		Brute Tigrex β +	Leg		Agitator 2, Weakness Exploit 1	4	Tigrex Essence		Free Meal Secret		
+455	465		Black Belt α +	Head		Marathon Runner 2, Mushroomancer 1	3	Instructor's Guidance	Capture Master			
+456	466		Black Belt α +	Chest		Mushroomancer 2, Wide-Range 1	111	Instructor's Guidance	Capture Master			
+457	467		Black Belt α +	Arm		Wide-Range 2, Horn Maestro 2	3	Instructor's Guidance	Capture Master			
+458	468		Black Belt α +	Waist		Recovery Up 2, Marathon Runner 1	3	Instructor's Guidance	Capture Master			
+459	469		Black Belt α +	Leg		Wide-Range 2, Recovery Up 1	22	Instructor's Guidance	Capture Master			
+460	470		Black Belt β +	Head		Marathon Runner 2	42	Instructor's Guidance	Capture Master			
+461	471		Black Belt β +	Chest		Mushroomancer 2	411	Instructor's Guidance	Capture Master			
+462	472		Black Belt β +	Arm		Wide-Range 2	41	Instructor's Guidance	Capture Master			
+463	473		Black Belt β +	Waist		Recovery Up 2	41	Instructor's Guidance	Capture Master			
+464	474		Black Belt β +	Leg		Wide-Range 2	42	Instructor's Guidance	Capture Master			
+465	475		Dober α +	Head		Free Elem/Ammo Up 2, Stamina Surge 1	1					
+466	476		Dober α +	Chest		Attack Boost 2, Effluvia Resistance 1	111					
+467	477		Dober α +	Arm		Stamina Surge 2, Mushroomancer 1	21					
+468	478		Dober α +	Waist		Attack Boost 2, Stun Resistance 2	21					
+469	479		Dober α +	Leg		Attack Boost 2, Mushroomancer 2	2					
+470	480		Dober β +	Head		Free Elem/Ammo Up 2	4					
+471	481		Dober β +	Chest		Attack Boost 1, Effluvia Resistance 1	411					
+472	482		Dober β +	Arm		Stamina Surge 1, Mushroomancer 1	41					
+473	483		Dober β +	Waist		Attack Boost 1, Stun Resistance 1	42					
+474	484		Dober β +	Leg		Attack Boost 1, Mushroomancer 1	42					
+475	485		Damascus α +	Head		Defense Boost 3, Speed Sharpening 2	3					
+476	486		Damascus α +	Chest		Focus 2, Defense Boost 2	31					
+477	487		Damascus α +	Arm		Handicraft 2, Speed Sharpening 1	21					
+478	488		Damascus α +	Waist		Focus 1, Guard 1	32					
+479	489		Damascus α +	Leg		Defense Boost 2, Guard 2	21					
+480	490		Damascus β +	Head		Defense Boost 3	411					
+481	491		Damascus β +	Chest		Focus 2	421					
+482	492		Damascus β +	Arm		Handicraft 2	41					
+483	493		Damascus β +	Waist		Focus 1	421					
+484	494		Damascus β +	Leg		Defense Boost 2, Guard 1	42					
+485	495		Seething Bazel α +	Head		Earplugs 2, Blast Attack 2	21	Bazelgeuse Ambition	Guts			
+486	496		Seething Bazel α +	Chest		Guard 2, Blast Resistance 2	11	Bazelgeuse Ambition	Guts			
+487	497		Seething Bazel α +	Arm		Critical Draw 2, Earplugs 1	3	Bazelgeuse Ambition	Guts			
+488	498		Seething Bazel α +	Waist		Bombardier 2, Critical Draw 1	3	Bazelgeuse Ambition	Guts			
+489	499		Seething Bazel α +	Leg		Earplugs 2, Jump Master 1	3	Bazelgeuse Ambition	Guts			
+490	500		Seething Bazel β +	Head		Earplugs 2, Blast Attack 1	41	Bazelgeuse Ambition	Guts			
+491	501		Seething Bazel β +	Chest		Guard 2	411	Bazelgeuse Ambition	Guts			
+492	502		Seething Bazel β +	Arm		Critical Draw 2	43	Bazelgeuse Ambition	Guts			
+493	503		Seething Bazel β +	Waist		Bombardier 2	42	Bazelgeuse Ambition	Guts			
+494	504		Seething Bazel β +	Leg		Earplugs 1, Jump Master 1	42	Bazelgeuse Ambition	Guts			
+495	505		Savage Jho α +	Head		Partbreaker 1, Handicraft 2	1	Deviljho Essence		Stamina Thief Secret		
+496	506		Savage Jho α +	Chest		Speed Eating 1, Handicraft 2	2	Deviljho Essence		Stamina Thief Secret		
+497	507		Savage Jho α +	Arm		Stamina Thief 2, Partbreaker 1	2	Deviljho Essence		Stamina Thief Secret		
+498	508		Savage Jho α +	Waist		Stamina Thief 2, Handicraft 1	1	Deviljho Essence		Stamina Thief Secret		
+499	509		Savage Jho α +	Leg		Speed Eating 2, Stamina Thief 1	22	Deviljho Essence		Stamina Thief Secret		
+500	510		Savage Jho β +	Head		Partbreaker 1	43	Deviljho Essence		Stamina Thief Secret		
+501	511		Savage Jho β +	Chest		Speed Eating 1	422	Deviljho Essence		Stamina Thief Secret		
+502	512		Savage Jho β +	Arm		Stamina Thief 2	4	Deviljho Essence		Stamina Thief Secret		
+503	513		Savage Jho β +	Waist		Stamina Thief 2	41	Deviljho Essence		Stamina Thief Secret		
+504	514		Savage Jho β +	Leg		Speed Eating 1, Stamina Thief 1	42	Deviljho Essence		Stamina Thief Secret		
+505	515		Velkhana α +	Head		Divine Blessing 2, Coalescence 1	32	Velkhana Divinity	Critical Element		Frostcraft	
+506	516		Velkhana α +	Chest		Quick Sheath 2, Critical Draw 1	1	Velkhana Divinity	Critical Element		Frostcraft	
+507	517		Velkhana α +	Arm		Quick Sheath 1, Flinch Free 2	1	Velkhana Divinity	Critical Element		Frostcraft	
+508	518		Velkhana α +	Waist		Flinch Free 1, Coalescence 1	21	Velkhana Divinity	Critical Element		Frostcraft	
+509	519		Velkhana α +	Leg		Critical Draw 2, Coalescence 1	11	Velkhana Divinity	Critical Element		Frostcraft	
+510	520		Velkhana β +	Head		Divine Blessing 2	42	Velkhana Divinity	Critical Element		Frostcraft	
+511	521		Velkhana β +	Chest		Quick Sheath 2	41	Velkhana Divinity	Critical Element		Frostcraft	
+512	522		Velkhana β +	Arm		Quick Sheath 1, Flinch Free 1	4	Velkhana Divinity	Critical Element		Frostcraft	
+513	523		Velkhana β +	Waist		Flinch Free 1	41	Velkhana Divinity	Critical Element		Frostcraft	
+514	524		Velkhana β +	Leg		Critical Draw 2	41	Velkhana Divinity	Critical Element		Frostcraft	
+515	525		Blackveil Hazak α +	Head		Peak Performance 2, Dragon Attack 2	1	Vaal Soulvein	Super Recovery			
+516	526		Blackveil Hazak α +	Chest		Recovery Speed 2, Dragon Attack 2	31	Vaal Soulvein	Super Recovery			
+517	527		Blackveil Hazak α +	Arm		Recovery Up 2, Speed Eating 1	211	Vaal Soulvein	Super Recovery			
+518	528		Blackveil Hazak α +	Waist		Speed Eating 2, Peak Performance 1	21	Vaal Soulvein	Super Recovery			
+519	529		Blackveil Hazak α +	Leg		Effluvia Resistance 2, Dragon Attack 2	32	Vaal Soulvein	Super Recovery			
+520	530		Blackveil Hazak β +	Head		Peak Performance 2	41	Vaal Soulvein	Super Recovery			
+521	531		Blackveil Hazak β +	Chest		Recovery Speed 2, Dragon Attack 1	42	Vaal Soulvein	Super Recovery			
+522	532		Blackveil Hazak β +	Arm		Recovery Up 2	411	Vaal Soulvein	Super Recovery			
+523	533		Blackveil Hazak β +	Waist		Speed Eating 2	42	Vaal Soulvein	Super Recovery			
+524	534		Blackveil Hazak β +	Leg		Effluvia Resistance 2	43	Vaal Soulvein	Super Recovery			
+525	535		Teostra α +	Head		Latent Power 2, Critical Eye 2	1	Teostra Technique		Master's Touch		
+526	536		Teostra α +	Chest		Latent Power 1, Special Ammo Boost 2	21	Teostra Technique		Master's Touch		
+527	537		Teostra α +	Arm		Weakness Exploit 2, Heat Guard 1	2	Teostra Technique		Master's Touch		
+528	538		Teostra α +	Waist		Blast Attack 2, Weakness Exploit 1	3	Teostra Technique		Master's Touch		
+529	539		Teostra α +	Leg		Latent Power 2, Blast Attack 2	2	Teostra Technique		Master's Touch		
+530	540		Teostra β +	Head		Latent Power 1, Critical Eye 2	4	Teostra Technique		Master's Touch		
+531	541		Teostra β +	Chest		Latent Power 1	411	Teostra Technique		Master's Touch		
+532	542		Teostra β +	Arm		Weakness Exploit 1, Heat Guard 1	43	Teostra Technique		Master's Touch		
+533	543		Teostra β +	Waist		Blast Attack 2	421	Teostra Technique		Master's Touch		
+534	544		Teostra β +	Leg		Latent Power 2, Blast Attack 1	4	Teostra Technique		Master's Touch		
+535	545		Kushala α +	Head		Ice Attack 2, Evade Window 2	2	Kushala Daora Flight		Nullify Wind Pressure		
+536	546		Kushala α +	Chest		Handicraft 3	1	Kushala Daora Flight		Nullify Wind Pressure		
+537	547		Kushala α +	Arm		Evade Window 3	1	Kushala Daora Flight		Nullify Wind Pressure		
+538	548		Kushala α +	Waist		Ice Attack 3, Evade Extender 1	2	Kushala Daora Flight		Nullify Wind Pressure		
+539	549		Kushala α +	Leg		Evade Extender 2, Handicraft 2	1	Kushala Daora Flight		Nullify Wind Pressure		
+540	550		Kushala β +	Head		Ice Attack 2, Evade Window 1	41	Kushala Daora Flight		Nullify Wind Pressure		
+541	551		Kushala β +	Chest		Handicraft 2	42	Kushala Daora Flight		Nullify Wind Pressure		
+542	552		Kushala β +	Arm		Evade Window 2	42	Kushala Daora Flight		Nullify Wind Pressure		
+543	553		Kushala β +	Waist		Ice Attack 3	41	Kushala Daora Flight		Nullify Wind Pressure		
+544	554		Kushala β +	Leg		Evade Extender 2	43	Kushala Daora Flight		Nullify Wind Pressure		
+545	555		Kirin α +	Head		Marathon Runner 2, Divine Blessing 2	31	Kirin Divinity		Great Luck		
+546	556		Kirin α +	Chest		Critical Eye 3, Divine Blessing 1	32	Kirin Divinity		Great Luck		
+547	557		Kirin α +	Arm		Thunder Attack 3, Marathon Runner 1	32	Kirin Divinity		Great Luck		
+548	558		Kirin α +	Waist		Blight Resistance 2, Free Elem/Ammo Up 1	2	Kirin Divinity		Great Luck		
+549	559		Kirin α +	Leg		Free Elem/Ammo Up 2, Critical Eye 2	1	Kirin Divinity		Great Luck		
+550	560		Kirin β +	Head		Marathon Runner 2	411	Kirin Divinity		Great Luck		
+551	561		Kirin β +	Chest		Critical Eye 2, Divine Blessing 1	42	Kirin Divinity		Great Luck		
+552	562		Kirin β +	Arm		Thunder Attack 3	422	Kirin Divinity		Great Luck		
+553	563		Kirin β +	Waist		Blight Resistance 2	411	Kirin Divinity		Great Luck		
+554	564		Kirin β +	Leg		Free Elem/Ammo Up 2	4	Kirin Divinity		Great Luck		
+555	565		Namielle α +	Head		Constitution 3, Maximum Might 1	1	Namielle Divinity	Element Acceleration		True Element Acceleration	
+556	566		Namielle α +	Chest		Blight Resistance 2, Tool Specialist 1	22	Namielle Divinity	Element Acceleration		True Element Acceleration	
+557	567		Namielle α +	Arm		Tool Specialist 2, Maximum Might 1	1	Namielle Divinity	Element Acceleration		True Element Acceleration	
+558	568		Namielle α +	Waist		Constitution 2, Stamina Surge 1	111	Namielle Divinity	Element Acceleration		True Element Acceleration	
+559	569		Namielle α +	Leg		Stamina Surge 2, Blight Resistance 1	21	Namielle Divinity	Element Acceleration		True Element Acceleration	
+560	570		Namielle β +	Head		Constitution 2, Maximum Might 1	4	Namielle Divinity	Element Acceleration		True Element Acceleration	
+561	571		Namielle β +	Chest		Blight Resistance 1, Tool Specialist 1	42	Namielle Divinity	Element Acceleration		True Element Acceleration	
+562	572		Namielle β +	Arm		Tool Specialist 2	4	Namielle Divinity	Element Acceleration		True Element Acceleration	
+563	573		Namielle β +	Waist		Constitution 1, Stamina Surge 1	411	Namielle Divinity	Element Acceleration		True Element Acceleration	
+564	574		Namielle β +	Leg		Stamina Surge 2	42	Namielle Divinity	Element Acceleration		True Element Acceleration	
+596	575		Guild Palace α +	Head		Health Boost 2, Offensive Guard 1	3	Guild Pride	Good Luck		Carving Master	
+597	576		Guild Palace α +	Chest		Agitator 2, Heroics 1	11	Guild Pride	Good Luck		Carving Master	
+598	577		Guild Palace α +	Arm		Offensive Guard 2, Heroics 1	3	Guild Pride	Good Luck		Carving Master	
+599	578		Guild Palace α +	Waist		Agitator 3, Resuscitate 1	11	Guild Pride	Good Luck		Carving Master	
+600	579		Guild Palace α +	Leg		Heroics 3, Health Boost 1	2	Guild Pride	Good Luck		Carving Master	
+601	580		Guild Palace β +	Head		Health Boost 2	42	Guild Pride	Good Luck		Carving Master	
+602	581		Guild Palace β +	Chest		Agitator 1, Heroics 1	42	Guild Pride	Good Luck		Carving Master	
+603	582		Guild Palace β +	Arm		Offensive Guard 2	41	Guild Pride	Good Luck		Carving Master	
+604	583		Guild Palace β +	Waist		Agitator 2, Resuscitate 1	41	Guild Pride	Good Luck		Carving Master	
+605	584		Guild Palace β +	Leg		Heroics 2, Health Boost 1	41	Guild Pride	Good Luck		Carving Master	
+565	585		Shara Ishvalda α +	Head		Recovery Up 2, Partbreaker 1	31	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+566	586		Shara Ishvalda α +	Chest		Coalescence 2, Health Boost 1	32	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+567	587		Shara Ishvalda α +	Arm		Critical Boost 2, Coalescence 1	1	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+568	588		Shara Ishvalda α +	Waist		Health Boost 2, Recovery Up 1	32	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+569	589		Shara Ishvalda α +	Leg		Partbreaker 2, Defense Boost 2	111	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+570	590		Shara Ishvalda β +	Head		Recovery Up 2	42	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+571	591		Shara Ishvalda β +	Chest		Coalescence 2	42	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+572	592		Shara Ishvalda β +	Arm		Critical Boost 2	4	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+573	593		Shara Ishvalda β +	Waist		Health Boost 2	43	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+574	594		Shara Ishvalda β +	Leg		Partbreaker 1, Defense Boost 1	421	Shara Ishvalda Divinity			Gaia's Veil	True Gaia's Veil
+575	595		Zorah α +	Head		Flinch Free 1, Artillery 2	22	Zorah Magdaros Essence		Artillery Secret		
+576	596		Zorah α +	Chest		Tremor Resistance 2, Artillery 2	31	Zorah Magdaros Essence		Artillery Secret		
+577	597		Zorah α +	Arm		Flinch Free 2, Free Meal 1	11	Zorah Magdaros Essence		Artillery Secret		
+578	598		Zorah α +	Waist		Tremor Resistance 1, Artillery 1	32	Zorah Magdaros Essence		Artillery Secret		
+579	599		Zorah α +	Leg		Earplugs 1, Handicraft 1	31	Zorah Magdaros Essence		Artillery Secret		
+580	600		Zorah β +	Head		Flinch Free 1	421	Zorah Magdaros Essence		Artillery Secret		
+581	601		Zorah β +	Chest		Tremor Resistance 2	42	Zorah Magdaros Essence		Artillery Secret		
+582	602		Zorah β +	Arm		Flinch Free 2	41	Zorah Magdaros Essence		Artillery Secret		
+583	603		Zorah β +	Waist		Tremor Resistance 1	43	Zorah Magdaros Essence		Artillery Secret		
+584	604		Zorah β +	Leg		Earplugs 1	43	Zorah Magdaros Essence		Artillery Secret		
+606	605		Yian Garuga α +	Head		Critical Eye 2, Resentment 1	3					
+607	606		Yian Garuga α +	Chest		Earplugs 2, Critical Eye 2	1					
+608	607		Yian Garuga α +	Arm		Earplugs 3	1					
+609	608		Yian Garuga α +	Waist		Resentment 2, Poison Attack 2	11					
+610	609		Yian Garuga α +	Leg		Critical Eye 2, Piercing Shots 1	33					
+611	610		Yian Garuga β +	Head		Critical Eye 1, Resentment 1	42					
+612	611		Yian Garuga β +	Chest		Earplugs 1, Critical Eye 2	4					
+613	612		Yian Garuga β +	Arm		Earplugs 2	4					
+614	613		Yian Garuga β +	Waist		Resentment 2	43					
+615	614		Yian Garuga β +	Leg		Critical Eye 2	422					
+585	615		Zinogre α +	Head		Power Prolonger 2, Critical Boost 1	1	Zinogre Essence		Latent Power Secret		
+586	616		Zinogre α +	Chest		Latent Power 3, Normal Shots 1	3	Zinogre Essence		Latent Power Secret		
+587	617		Zinogre α +	Arm		Recovery Speed 2, Latent Power 2	21	Zinogre Essence		Latent Power Secret		
+588	618		Zinogre α +	Waist		Power Prolonger 1, Thunder Attack 2	2	Zinogre Essence		Latent Power Secret		
+589	619		Zinogre α +	Leg		Thunder Attack 3, Latent Power 2	1	Zinogre Essence		Latent Power Secret		
+590	620		Zinogre β +	Head		Power Prolonger 1, Critical Boost 1	4	Zinogre Essence		Latent Power Secret		
+591	621		Zinogre β +	Chest		Latent Power 3	4	Zinogre Essence		Latent Power Secret		
+592	622		Zinogre β +	Arm		Recovery Speed 1, Latent Power 2	42	Zinogre Essence		Latent Power Secret		
+593	623		Zinogre β +	Waist		Power Prolonger 1	42	Zinogre Essence		Latent Power Secret		
+594	624		Zinogre β +	Leg		Thunder Attack 1, Latent Power 2	41	Zinogre Essence		Latent Power Secret		
+616	625		Golden Lune α +	Head		Health Boost 2, Poison Attack 2	22	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
+617	626		Golden Lune α +	Chest		Divine Blessing 2, Resentment 1	31	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
+618	627		Golden Lune α +	Arm		Resentment 2, Poison Attack 2	2	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
+619	628		Golden Lune α +	Waist		Divine Blessing 3, Health Boost 1	22	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
+620	629		Golden Lune α +	Leg		Weakness Exploit 2, Spread/Power Shots 1	1	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
+621	630		Golden Lune β +	Head		Health Boost 2	42	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
+622	631		Golden Lune β +	Chest		Divine Blessing 2	421	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
+623	632		Golden Lune β +	Arm		Resentment 2	42	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
+624	633		Golden Lune β +	Waist		Divine Blessing 3	42	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
+625	634		Golden Lune β +	Leg		Weakness Exploit 2	4	Gold Rathian Essence	Divine Blessing Secret		True Critical Status	
+626	635		Silver Sol α +	Head		Windproof 2, Fire Attack 2	22	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
+627	636		Silver Sol α +	Chest		Critical Boost 2, Fire Attack 2	1	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
+628	637		Silver Sol α +	Arm		Slinger Capacity 3, Windproof 1	22	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
+629	638		Silver Sol α +	Waist		Windproof 2, Critical Boost 1	11	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
+630	639		Silver Sol α +	Leg		Slinger Capacity 2, Fire Attack 2	32	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
+631	640		Silver Sol β +	Head		Windproof 2	43	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
+632	641		Silver Sol β +	Chest		Critical Boost 2	4	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
+633	642		Silver Sol β +	Arm		Slinger Capacity 3	42	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
+634	643		Silver Sol β +	Waist		Windproof 1, Critical Boost 1	41	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
+635	644		Silver Sol β +	Leg		Slinger Capacity 2	421	Silver Rathalos Essence	Slinger Ammo Secret		True Critical Element	
+636	645		Ruiner Nergi α +	Head		Maximum Might 2, Stamina Surge 1	31	Nergigante Ambition	Hasten Recovery			
+637	646		Ruiner Nergi α +	Chest		Stamina Surge 2, Maximum Might 1	22	Nergigante Ambition	Hasten Recovery			
+638	647		Ruiner Nergi α +	Arm		Agitator 2, Attack Boost 2	3	Nergigante Ambition	Hasten Recovery			
+639	648		Ruiner Nergi α +	Waist		Attack Boost 3, Earplugs 1	21	Nergigante Ambition	Hasten Recovery			
+640	649		Ruiner Nergi α +	Leg		Earplugs 2, Agitator 1	2	Nergigante Ambition	Hasten Recovery			
+641	650		Ruiner Nergi β +	Head		Maximum Might 2	42	Nergigante Ambition	Hasten Recovery			
+642	651		Ruiner Nergi β +	Chest		Stamina Surge 2	42	Nergigante Ambition	Hasten Recovery			
+643	652		Ruiner Nergi β +	Arm		Agitator 2, Attack Boost 1	41	Nergigante Ambition	Hasten Recovery			
+644	653		Ruiner Nergi β +	Waist		Attack Boost 2, Earplugs 1	41	Nergigante Ambition	Hasten Recovery			
+645	654		Ruiner Nergi β +	Leg		Earplugs 2	41	Nergigante Ambition	Hasten Recovery			
+655	655		Guildwork α +	Head		Botanist 3, Honey Hunter 1	32	Guild Pride	Good Luck		Carving Master	
+656	656		Guildwork α +	Chest		Cliffhanger 1, Flinch Free 1	311	Guild Pride	Good Luck		Carving Master	
+657	657		Guildwork α +	Arm		Geologist 2, Botanist 1	32	Guild Pride	Good Luck		Carving Master	
+658	658		Guildwork α +	Waist		Forager's Luck 1, Detector 1	32	Guild Pride	Good Luck		Carving Master	
+659	659		Guildwork α +	Leg		Flinch Free 2, Geologist 1	21	Guild Pride	Good Luck		Carving Master	
+660	660		Guildwork β +	Head		Botanist 2, Honey Hunter 1	43	Guild Pride	Good Luck		Carving Master	
+661	661		Guildwork β +	Chest		Cliffhanger 1	422	Guild Pride	Good Luck		Carving Master	
+662	662		Guildwork β +	Arm		Geologist 1, Botanist 1	43	Guild Pride	Good Luck		Carving Master	
+663	663		Guildwork β +	Waist		Forager's Luck 1	43	Guild Pride	Good Luck		Carving Master	
+664	664		Guildwork β +	Leg		Flinch Free 2	41	Guild Pride	Good Luck		Carving Master	
+646	665		Rajang α +	Head		Weakness Exploit 2, Handicraft 2		Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
+647	666		Rajang α +	Chest		Resentment 2, Speed Sharpening 2	31	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
+648	667		Rajang α +	Arm		Resentment 1, Handicraft 2	2	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
+649	668		Rajang α +	Waist		Weakness Exploit 1, Handicraft 1	31	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
+650	669		Rajang α +	Leg		Resentment 2, Attack Boost 2	22	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
+651	670		Rajang β +	Head		Weakness Exploit 2	41	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
+652	671		Rajang β +	Chest		Resentment 2	411	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
+653	672		Rajang β +	Arm		Resentment 1	43	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
+654	673		Rajang β +	Waist		Weakness Exploit 1	43	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
+655	674		Rajang β +	Leg		Resentment 2, Attack Boost 1	42	Rajang's Rage	Mind's Eye/Ballistics		Protective Polish	
+656	675		Stygian Zin α +	Head		Latent Power 3, Tremor Resistance 2	21	Zinogre Essence		Latent Power Secret		
+657	676		Stygian Zin α +	Chest		Windproof 3, Flinch Free 2	2	Zinogre Essence		Latent Power Secret		
+658	677		Stygian Zin α +	Arm		Partbreaker 2, Dragon Attack 3	2	Zinogre Essence		Latent Power Secret		
+659	678		Stygian Zin α +	Waist		Latent Power 3, Earplugs 2	111	Zinogre Essence		Latent Power Secret		
+660	679		Stygian Zin α +	Leg		Focus 2, Elderseal Boost 1	11	Zinogre Essence		Latent Power Secret		
+661	680		Stygian Zin β +	Head		Latent Power 3, Tremor Resistance 1	41	Zinogre Essence		Latent Power Secret		
+662	681		Stygian Zin β +	Chest		Windproof 3, Flinch Free 1	4	Zinogre Essence		Latent Power Secret		
+663	682		Stygian Zin β +	Arm		Partbreaker 2	43	Zinogre Essence		Latent Power Secret		
+664	683		Stygian Zin β +	Waist		Latent Power 3, Earplugs 1	411	Zinogre Essence		Latent Power Secret		
+665	684		Stygian Zin β +	Leg		Focus 2	41	Zinogre Essence		Latent Power Secret		
+666	685		Safi'jiiva α +	Head		Evade Window 2, Critical Boost 1	211	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
+667	686		Safi'jiiva α +	Chest		Blight Resistance 2, Critical Boost 1	32	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
+668	687		Safi'jiiva α +	Arm		Blight Resistance 1, Maximum Might 1	222	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
+669	688		Safi'jiiva α +	Waist		Evade Window 2, Maximum Might 1	3	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
+670	689		Safi'jiiva α +	Leg		Critical Boost 1, Maximum Might 1	321	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
+671	690		Safi'jiiva β +	Head		Evade Window 1, Critical Boost 1	411	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
+672	691		Safi'jiiva β +	Chest		Blight Resistance 1, Critical Boost 1	42	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
+673	692		Safi'jiiva β +	Arm		Blight Resistance 1	422	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
+674	693		Safi'jiiva β +	Waist		Evade Window 2	41	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
+675	694		Safi'jiiva β +	Leg		Critical Boost 1	421	Safi'jiiva Seal		Dragonvein Awakening		True Dragonvein Awakening
+676	695		Oolong α +	Head		Critical Eye 3	4	Joyful Blessing		Joy's Gift		Joy's Gratitude
+677	696		Oolong α +	Chest		Stamina Surge 2	4	Joyful Blessing		Joy's Gift		Joy's Gratitude
+678	697		Oolong α +	Arm		Coalescence 2	4	Joyful Blessing		Joy's Gift		Joy's Gratitude
+679	698		Oolong α +	Waist		Constitution 3	11	Joyful Blessing		Joy's Gift		Joy's Gratitude
+680	699		Oolong α +	Leg		Health Boost 2	42	Joyful Blessing		Joy's Gift		Joy's Gratitude
+681	700		Banuk α +	Head		Focus 2, Aquatic/Polar Mobility 1	411	Anjanath Dominance	Stamina Cap Up			
+682	701		Banuk α +	Chest		Marathon Runner 1, Stamina Surge 1	43	Anjanath Dominance	Stamina Cap Up			
+683	702		Banuk α +	Arm		Focus 1, Stamina Surge 1	43	Anjanath Dominance	Stamina Cap Up			
+684	703		Banuk α +	Waist		Marathon Runner 2, Aquatic/Polar Mobility 1	411	Anjanath Dominance	Stamina Cap Up			
+685	704		Banuk α +	Leg		Stamina Surge 1, Resuscitate 1	422	Anjanath Dominance	Stamina Cap Up			
+686	705		Buff Body α +	Chest		Agitator 3, Fortify 1	111					
+687	706		Buff Body α +	Arm		Attack Boost 3, Resuscitate 1	4					
+688	707		Buff Body α +	Waist		Agitator 2, Heroics 3	4					
+689	708		Buff Body α +	Leg		Attack Boost 3, Heroics 2	4					
+595	709		Pearlspring α +	Head		Recovery Up 2	21					
+690	710		Duffel Penguin Mask α +	Head		Evade Window 2	4					
+691	711		Sealed Dragon Cloth α +	Head		Resentment 1	44					

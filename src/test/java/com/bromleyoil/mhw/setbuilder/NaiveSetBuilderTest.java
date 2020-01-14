@@ -59,6 +59,7 @@ public class NaiveSetBuilderTest {
 	public void search_godlyDamageNoDeco_notPossible() {
 		SetBuilderForm form = new SetBuilderForm();
 		form.addSkillRow(new SkillRow(ATTACK_BOOST, 7, 0));
+		form.addSkillRow(new SkillRow(CRITICAL_BOOST, 3, 0));
 		form.addSkillRow(new SkillRow(CRITICAL_EYE, 7, 0));
 		form.addSkillRow(new SkillRow(WEAKNESS_EXPLOIT, 3, 0));
 
@@ -71,6 +72,7 @@ public class NaiveSetBuilderTest {
 	public void search_godlyDamageWithDeco_hasSolutions() {
 		SetBuilderForm form = new SetBuilderForm();
 		form.addSkillRow(new SkillRow(ATTACK_BOOST, 7, 0));
+		form.addSkillRow(new SkillRow(CRITICAL_BOOST, 3, 3));
 		form.addSkillRow(new SkillRow(CRITICAL_EYE, 7, 0));
 		form.addSkillRow(new SkillRow(WEAKNESS_EXPLOIT, 3, 3));
 
