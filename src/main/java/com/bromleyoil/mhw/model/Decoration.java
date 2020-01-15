@@ -1,5 +1,9 @@
 package com.bromleyoil.mhw.model;
 
+import java.util.Comparator;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
+
 public class Decoration {
 
 	private int id;
@@ -10,6 +14,20 @@ public class Decoration {
 	private Rank rank;
 	private SkillSet skillSet = new SkillSet();
 	private boolean isWildcard;
+
+	public static final Comparator<Decoration> LEVEL_ORDER = Comparator.comparing(Decoration::getLevel)
+			.thenComparing(Comparator.comparing(Decoration::isWildcard))
+			.thenComparing(Comparator.comparing(Decoration::isCombination))
+			.thenComparing(Comparator.comparing(Decoration::getPoints))
+			.thenComparing(Comparator.comparing(Decoration::getName));
+
+	public boolean isCombination() {
+		return skillSet.getSkills().size() > 1;
+	}
+
+	public int getPoints() {
+		return skillSet.getSkillLevels().stream().collect(Collectors.summingInt(Entry::getValue));
+	}
 
 	public int getId() {
 		return id;

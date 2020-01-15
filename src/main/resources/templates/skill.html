@@ -4,7 +4,7 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{template}" th:with="title=${skill}">
 <th:block layout:fragment="content">
-	<table class="data">
+	<table class="data" th:if="${!skill.isWildcard()}">
 		<tr>
 			<th>Level</th>
 			<th>Description</th>
@@ -15,23 +15,25 @@
 		</tr>
 	</table>
 
-	<h3>Charms</h3>
-	<p th:text="${'No charms with ' + skill.name}" th:if="${charms.isEmpty()}"></p>
-	<table th:if="${!charms.isEmpty()}" class="data">
-		<tr>
-			<th>Charm Name</th>
-			<th>Skills</th>
-		</tr>
-		<tr th:each="charm : ${charms}" th:class="${charmStat.odd ? 'odd' : 'even'}">
-			<td th:text="${charm.name}"></td>
-			<td>
-				<th:block th:each="entry : ${charm.skillSet.orderedSkillLevels}">
-				<a th:href="@{${'/skill/' + entry.key.urlName}}" th:text="${entry.key.name}"></a>
-				<span th:text="${entry.value + (entryStat.last ? '' : ',')}"></span>
-				</th:block>
-			</td>
-		</tr>
-	</table>
+	<th:block th:if="${!skill.isWildcard()}">
+		<h3>Charms</h3>
+		<p th:text="${'No charms with ' + skill.name}" th:if="${charms.isEmpty()}"></p>
+		<table th:if="${!charms.isEmpty()}" class="data">
+			<tr>
+				<th>Charm Name</th>
+				<th>Skills</th>
+			</tr>
+			<tr th:each="charm : ${charms}" th:class="${charmStat.odd ? 'odd' : 'even'}">
+				<td th:text="${charm.name}"></td>
+				<td>
+					<th:block th:each="entry : ${charm.skillSet.orderedSkillLevels}">
+					<a th:href="@{${'/skill/' + entry.key.urlName}}" th:text="${entry.key.name}"></a>
+					<span th:text="${entry.value + (entryStat.last ? '' : ',')}"></span>
+					</th:block>
+				</td>
+			</tr>
+		</table>
+	</th:block>
 
 	<h3>Decorations</h3>
 	<p th:text="${'No decorations with ' + skill.name}" th:if="${decorations.isEmpty()}"></p>
@@ -51,8 +53,10 @@
 		</tr>
 	</table>
 
-	<h3 th:text="'Equipment with ' + ${skill.name}"></h3>
-	<table th:insert="~{fragments/equipment-table :: standard}"></table>
+	<th:block th:if="${!skill.isWildcard()}">
+		<h3 th:text="'Equipment with ' + ${skill.name}"></h3>
+		<table th:insert="~{fragments/equipment-table :: standard}"></table>
+	</th:block>
 
 </th:block>
 </html>

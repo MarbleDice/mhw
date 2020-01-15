@@ -1,5 +1,7 @@
 package com.bromleyoil.mhw.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bromleyoil.mhw.UrlCodec;
+import com.bromleyoil.mhw.model.Decoration;
 import com.bromleyoil.mhw.model.EquipmentList;
 import com.bromleyoil.mhw.model.EquipmentSet;
 import com.bromleyoil.mhw.model.EquipmentType;
@@ -39,7 +42,11 @@ public class MainController {
 		Skill skill = Skill.valueOfName(skillName);
 		mav.addObject("skill", skill);
 		mav.addObject("charms", equipmentList.filter(skill).filter(EquipmentType.CHARM).getItems());
-		mav.addObject("decorations", equipmentList.filter(skill).getDecorations());
+
+		List<Decoration> decorations = equipmentList.filter(skill).getDecorations();
+		decorations.sort(Decoration.LEVEL_ORDER);
+		mav.addObject("decorations", decorations);
+
 		mav.addObject("matrix", equipmentList.filter(skill).getMatrix());
 
 		return mav;

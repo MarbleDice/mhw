@@ -49,7 +49,7 @@ public class SetBuilderController {
 
 	@ModelAttribute(name = "skills")
 	public List<Skill> skills() {
-		return Arrays.asList(Skill.values());
+		return Arrays.stream(Skill.values()).filter(s -> !s.isWildcard()).collect(Collectors.toList());
 	}
 
 	@ModelAttribute(name = "ranks")
