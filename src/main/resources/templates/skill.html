@@ -4,12 +4,14 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{template}" th:with="title=${skill}">
 <th:block layout:fragment="content">
+	<p th:text="${skill.description}">The main skill description.</p>
+
 	<table class="data" th:if="${!skill.isWildcard()}">
 		<tr>
 			<th>Level</th>
 			<th>Description</th>
 		</tr>
-		<tr th:each="description : ${skill.descriptions}" th:class="${descriptionStat.odd ? 'odd' : 'even'}">
+		<tr th:each="description : ${skill.levelDescriptions}" th:class="${descriptionStat.odd ? 'odd' : 'even'}">
 			<td th:text="'Lv ' + ${descriptionStat.count}"></td>
 			<td th:text="${description}"></td>
 		</tr>

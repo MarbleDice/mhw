@@ -8,7 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 
 public enum Skill {
 
-	ANY_COMBO_SKILL("Any Combo Skill", "",
+	ANY_COMBO_SKILL("Any Combo Skill", "Any skill which can be found on a combination decoration.",
 			"", "", "", "", "",
 			"", "", "", "", "",
 			"", "", "", "", ""),
@@ -215,10 +215,10 @@ public enum Skill {
 			"Draws out 100% of hidden element and expands clip size for some ammo."),
 	FREE_MEAL("Free Meal", "",
 			"Activates 25% of the time."),
-	FROSTCRAFT("Frostcraft", "",
-			"An aura of frost builds when your weapon is sheathed, raising attack. Wanes each melee hit or shot fired."),
 	FREE_MEAL_SECRET("Free Meal Secret", "",
 			"Raises the maximum level of the Free Meal skill."),
+	FROSTCRAFT("Frostcraft", "",
+			"An aura of frost builds when your weapon is sheathed, raising attack. Wanes each melee hit or shot fired."),
 	GAIAS_VEIL("Gaia's Veil", "",
 			"TODO."),
 	GEOLOGIST("Geologist", "",
@@ -548,13 +548,11 @@ public enum Skill {
 	public static final Comparator<Skill> NAME_ORDER = (a, b) -> a.getName().compareTo(b.getName());
 
 	private String skillName;
-	private String description;
-	private List<String> levelDescriptions;
+	private List<String> allDescriptions;
 
-	private Skill(String name, String description, String... levelDescriptions) {
+	private Skill(String name, String... allDescriptions) {
 		this.skillName = name;
-		this.description = description;
-		this.levelDescriptions = Arrays.asList(levelDescriptions);
+		this.allDescriptions = Arrays.asList(allDescriptions);
 	}
 
 	public static Skill valueOfName(String skillName) {
@@ -570,7 +568,7 @@ public enum Skill {
 	}
 
 	public int getMaxLevel() {
-		return levelDescriptions.size();
+		return allDescriptions.size() - 1;
 	}
 
 	@Override
@@ -583,19 +581,15 @@ public enum Skill {
 	}
 
 	public String getDescription() {
-		return description;
+		return allDescriptions.get(0);
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public List<String> getLevelDescriptions() {
+		return allDescriptions.subList(1, allDescriptions.size());
 	}
 
-	public List<String> getDescriptions() {
-		return levelDescriptions;
-	}
-
-	public String getDescription(int i) {
-		return levelDescriptions.get(i);
+	public List<String> getAllDescriptions() {
+		return allDescriptions;
 	}
 
 	public boolean isWildcard() {

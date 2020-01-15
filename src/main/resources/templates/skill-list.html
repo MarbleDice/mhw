@@ -11,13 +11,13 @@
 			<th>Description</th>
 		</tr>
 		<th:block th:each="skill : ${skills}">
-		<tr th:each="description : ${skill.descriptions}"
+		<tr th:each="description : ${skill.allDescriptions}"
 				th:class="${skillStat.odd ? 'odd' : 'even'}">
 			<th th:attr="rowspan=${descriptionStat.size}" th:if="${descriptionStat.first}">
 				<a th:href="@{${'/skill/' + skill.urlName}}" th:text="${skill.name}"></a>
 			</th>
-			<td th:text="'Lv ' + ${descriptionStat.count}" />
-			<td th:text="${description}" />
+			<td th:text="'Lv ' + ${descriptionStat.index}" th:if="${!descriptionStat.first && !skill.isWildcard()}" />
+			<td th:text="${description}" th:attr="colspan=${descriptionStat.first ? 2 : 1}" th:if="${descriptionStat.first || !skill.isWildcard()}" />
 		</tr>
 		</th:block>
 	</table>
